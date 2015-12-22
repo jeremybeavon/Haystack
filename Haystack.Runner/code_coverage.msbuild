@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="RunCodeCoverage" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="RunCodeCoverage">
+    <Error Text="PathToOpenCover property is not found" Condition="'$(PathToOpenCover)' == ''" />
+    <Error Text="PathToReportGenerator property is not found" Condition="'$(PathToReportGenerator)' == ''" />
+    <Error Text="PathToTestRunner property is not found" Condition="'$(PathToTestRunner)' == ''" />
+    <Error Text="TestRunnerArguments property is not found" Condition="'$(TestRunnerArguments)' == ''" />
+    <Error Text="PathToCodeCoverageXmlFile property is not found" Condition="'$(PathToCodeCoverageXmlFile)' == ''" />
+    <Error Text="PathToCodeCoverageReportDirectory property is not found" Condition="'$(PathToCodeCoverageReportDirectory)' == ''" />
+    <Error Text="CodeCoverageFilter property is not found" Condition="'$(CodeCoverageFilter)' == ''"/>
+    <PropertyGroup>
+      <CodeCoverageCommand>&quot;$(PathToOpenCover)&quot;</CodeCoverageCommand>
+      <CodeCoverageCommand>$(CodeCoverageCommand) &quot;-target:$(PathToTestRunner)&quot;</CodeCoverageCommand>
+      <CodeCoverageCommand>$(CodeCoverageCommand) &quot;-targetargs:$(TestRunnerArguments)&quot;</CodeCoverageCommand>
+      <CodeCoverageCommand>$(CodeCoverageCommand) -register:user</CodeCoverageCommand>
+      <CodeCoverageCommand>$(CodeCoverageCommand) &quot;-output:$(PathToCodeCoverageXmlFile)&quot;</CodeCoverageCommand>
+      <CodeCoverageCommand>$(CodeCoverageCommand) &quot;-filter:$(CodeCoverageFilter)&quot;</CodeCoverageCommand>
+      <ReportGeneratorCommand>&quot;$(PathToReportGenerator)&quot;</ReportGeneratorCommand>
+      <ReportGeneratorCommand>$(ReportGeneratorCommand) &quot;-reports:$(PathToCodeCoverageXmlFile)&quot;</ReportGeneratorCommand>
+      <ReportGeneratorCommand>$(ReportGeneratorCommand) &quot;-targetdir:$(PathToCodeCoverageReportDirectory)&quot;</ReportGeneratorCommand>
+    </PropertyGroup>
+    <Exec Command="$(CodeCoverageCommand)" />
+    <Exec Command="$(ReportGeneratorCommand)" />
+  </Target>
+</Project>
