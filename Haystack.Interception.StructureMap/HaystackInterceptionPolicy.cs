@@ -14,7 +14,7 @@ namespace Haystack.Interception.StructureMap
             get { return "Haystack"; }
         }
 
-        public static void SetUp(Container container)
+        public static void SetUp(IContainer container)
         {
             container.Model.Pipeline.Policies.Add(new HaystackInterceptionPolicy());
         }

@@ -84,14 +84,19 @@ namespace Haystack.Diagnostics
             RemoveMethodCallFromStack();
         }
 
-        public void Save(string fileName, string description)
+        public MethodCallTrace BuildMethodCallTrace()
         {
-            var methodCallTrace = new MethodCallTrace
+            return new MethodCallTrace
             {
                 MethodCallThreads = methodCallStack.Select(entry => new MethodCallThreadTrace(entry.Key, entry.Value.Peek().MethodCalls)).ToList(),
                 Objects = objects.Values.OrderBy(entry => entry.Index).Select(entry => entry.Object).ToList(),
                 Types = types.Values.OrderBy(entry => entry.Index).Select(entry => entry.Object).ToList()
             };
+        }
+
+        public void Save(string fileName, string description)
+        {
+            MethodCallTrace methodCallTrace = BuildMethodCallTrace();
             using (Stream stream = File.Create(fileName))
             {
                 SerializationContext.Default.GetSerializer<MethodCallTrace>().Pack(stream, methodCallTrace);

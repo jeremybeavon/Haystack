@@ -23,6 +23,11 @@
         public static void Save(string fileName, string description)
         {
             MethodCallTrace.Save(fileName, description);
+            Dispose();
+        }
+
+        public static void Dispose()
+        {
             methodCallTrace = null;
         }
     }

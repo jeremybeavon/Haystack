@@ -6,12 +6,12 @@ using System;
 
 namespace Haystack.Interception.Unity
 {
-    public sealed class IntegrationTestInterceptor : UnityContainerExtension, IBuilderStrategy
+    public sealed class HaystackInterceptor : UnityContainerExtension, IBuilderStrategy
     {
         private readonly IUnityContainer container;
         private readonly InjectionMember[] injectionMembers;
 
-        public IntegrationTestInterceptor(IUnityContainer container)
+        public HaystackInterceptor(IUnityContainer container)
         {
             this.container = container;
             injectionMembers = new InjectionMember[]
@@ -21,9 +21,9 @@ namespace Haystack.Interception.Unity
             };
         }
 
-        protected override void Initialize()
+        public static void SetUp(IUnityContainer container)
         {
-            Context.Strategies.Add(this, UnityBuildStage.Setup);
+            container.AddExtension(new HaystackInterceptor(container));
         }
 
         public void PreBuildUp(IBuilderContext context)
@@ -56,6 +56,11 @@ namespace Haystack.Interception.Unity
 
         public void PreTearDown(IBuilderContext context)
         {
+        }
+
+        protected override void Initialize()
+        {
+            Context.Strategies.Add(this, UnityBuildStage.Setup);
         }
 
         private static Type GetClassType(Type interfaceType)

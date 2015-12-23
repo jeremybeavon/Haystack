@@ -49,6 +49,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Struc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Autofac", "Haystack.Interception.Autofac\Haystack.Interception.Autofac.csproj", "{D098830C-0E03-44FF-B79F-05814E7D2DCD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interception", "Interception", "{157E85A4-36D9-4796-9334-77DB19C3C084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Autofac.Tests", "Haystack.Interception.Autofac.Tests\Haystack.Interception.Autofac.Tests.csproj", "{625A6C41-C48C-4026-AF81-A20D2B25919B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Ninject.Tests", "Haystack.Interception.Ninject.Tests\Haystack.Interception.Ninject.Tests.csproj", "{D00C414F-A223-42F8-85F7-CE1E61EB7F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Afterthought.Tests", "Haystack.Interception.Afterthought.Tests\Haystack.Interception.Afterthought.Tests.csproj", "{E2D6E877-C0FC-4297-8644-018AFDBBC077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Castle.Core.Tests", "Haystack.Interception.Castle.Core.Tests\Haystack.Interception.Castle.Core.Tests.csproj", "{318A1BD6-2BEE-47CB-9357-ED99F8954FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.StructureMap.Tests", "Haystack.Interception.StructureMap.Tests\Haystack.Interception.StructureMap.Tests.csproj", "{8FFF34C8-188D-43BD-AC57-9281B352DDC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_2_1_505.Tests", "Haystack.Interception.Unity_2_1_505.Tests\Haystack.Interception.Unity_2_1_505.Tests.csproj", "{0196165C-EFD0-4431-B9E7-0A491F6DC478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_2_1_505_2.Tests", "Haystack.Interception.Unity_2_1_505_2.Tests\Haystack.Interception.Unity_2_1_505_2.Tests.csproj", "{519AAF4E-B646-4747-AE06-F00439E353F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_3_0_1304.Tests", "Haystack.Interception.Unity_3_0_1304.Tests\Haystack.Interception.Unity_3_0_1304.Tests.csproj", "{194FA15C-D996-4F63-B577-DE3C4E78EEF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_3_5_1304.Tests", "Haystack.Interception.Unity_3_5_1304.Tests\Haystack.Interception.Unity_3_5_1304.Tests.csproj", "{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_4_0_1.Tests", "Haystack.Interception.Unity_4_0_1.Tests\Haystack.Interception.Unity_4_0_1.Tests.csproj", "{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Tests", "Haystack.Interception.Tests\Haystack.Interception.Tests.csproj", "{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +159,50 @@ Global
 		{D098830C-0E03-44FF-B79F-05814E7D2DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D098830C-0E03-44FF-B79F-05814E7D2DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D098830C-0E03-44FF-B79F-05814E7D2DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625A6C41-C48C-4026-AF81-A20D2B25919B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625A6C41-C48C-4026-AF81-A20D2B25919B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625A6C41-C48C-4026-AF81-A20D2B25919B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625A6C41-C48C-4026-AF81-A20D2B25919B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00C414F-A223-42F8-85F7-CE1E61EB7F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00C414F-A223-42F8-85F7-CE1E61EB7F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00C414F-A223-42F8-85F7-CE1E61EB7F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00C414F-A223-42F8-85F7-CE1E61EB7F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D6E877-C0FC-4297-8644-018AFDBBC077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D6E877-C0FC-4297-8644-018AFDBBC077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D6E877-C0FC-4297-8644-018AFDBBC077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D6E877-C0FC-4297-8644-018AFDBBC077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318A1BD6-2BEE-47CB-9357-ED99F8954FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318A1BD6-2BEE-47CB-9357-ED99F8954FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318A1BD6-2BEE-47CB-9357-ED99F8954FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318A1BD6-2BEE-47CB-9357-ED99F8954FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FFF34C8-188D-43BD-AC57-9281B352DDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFF34C8-188D-43BD-AC57-9281B352DDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFF34C8-188D-43BD-AC57-9281B352DDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFF34C8-188D-43BD-AC57-9281B352DDC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0196165C-EFD0-4431-B9E7-0A491F6DC478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0196165C-EFD0-4431-B9E7-0A491F6DC478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0196165C-EFD0-4431-B9E7-0A491F6DC478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0196165C-EFD0-4431-B9E7-0A491F6DC478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{519AAF4E-B646-4747-AE06-F00439E353F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519AAF4E-B646-4747-AE06-F00439E353F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{519AAF4E-B646-4747-AE06-F00439E353F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{519AAF4E-B646-4747-AE06-F00439E353F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194FA15C-D996-4F63-B577-DE3C4E78EEF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194FA15C-D996-4F63-B577-DE3C4E78EEF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194FA15C-D996-4F63-B577-DE3C4E78EEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194FA15C-D996-4F63-B577-DE3C4E78EEF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,8 +226,20 @@ Global
 		{F9A8B021-5E78-42B1-A1D7-D89330786721} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
 		{B416969D-9033-46C3-AAD8-08CF293E45AD} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{D098830C-0E03-44FF-B79F-05814E7D2DCD} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
+		{157E85A4-36D9-4796-9334-77DB19C3C084} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{625A6C41-C48C-4026-AF81-A20D2B25919B} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{D00C414F-A223-42F8-85F7-CE1E61EB7F51} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{E2D6E877-C0FC-4297-8644-018AFDBBC077} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{318A1BD6-2BEE-47CB-9357-ED99F8954FEF} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{8FFF34C8-188D-43BD-AC57-9281B352DDC3} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{0196165C-EFD0-4431-B9E7-0A491F6DC478} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{519AAF4E-B646-4747-AE06-F00439E353F8} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{194FA15C-D996-4F63-B577-DE3C4E78EEF9} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1} = {157E85A4-36D9-4796-9334-77DB19C3C084}
+		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal

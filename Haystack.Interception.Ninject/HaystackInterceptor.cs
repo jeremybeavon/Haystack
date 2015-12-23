@@ -13,7 +13,7 @@ namespace Haystack.Interception.Ninject
 {
     public class HaystackInterceptor : IInterceptor
     {
-        public static void Setup(IKernel kernel)
+        public static void SetUp(IKernel kernel)
         {
             IAdvice advice = kernel.Components.Get<IAdviceFactory>().Create(context => context.Binding.Service.IsInterface);
             advice.Interceptor = new HaystackInterceptor();

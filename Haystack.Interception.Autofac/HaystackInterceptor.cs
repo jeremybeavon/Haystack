@@ -25,7 +25,13 @@ namespace Haystack.Interception.Autofac
                 registration.Activating += (sender, args) =>
                 {
                     Type[] interfaces = args.Instance.GetType().GetInterfaces().Where(type => type.IsVisible).ToArray();
-                    args.Instance = InstanceInterceptor.CreateInstance(interfaces[0], args.Instance, interfaces.Skip(1).ToArray());
+                    if (interfaces.Length == 0)
+                    {
+                        return;
+                    }
+
+                    Type[] additionalInterfaces = interfaces.Skip(1).ToArray();
+                    args.Instance = InstanceInterceptor.CreateInstance(interfaces[0], args.Instance, additionalInterfaces);
                 };
             }
         }
