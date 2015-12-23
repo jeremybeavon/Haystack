@@ -1,22 +1,23 @@
-﻿using Castle.DynamicProxy;
-using Haystack.Diagnostics;
+﻿using Haystack.Diagnostics;
 using Haystack.Diagnostics.ObjectModel;
-using System;
+using Ninject;
+using Ninject.Extensions.Interception;
+using Ninject.Extensions.Interception.Advice;
+using Ninject.Extensions.Interception.Registry;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using ParameterModifier = Haystack.Diagnostics.ObjectModel.ParameterModifier;
 
-namespace Haystack.Interception.Castle.Core
+namespace Haystack.Interception.Ninject
 {
-    public sealed class InstanceInterceptor : IInterceptor
+    public class HaystackInterceptor : IInterceptor
     {
-        private static readonly ProxyGenerator proxyGenerator = new ProxyGenerator();
-        private static readonly IInterceptor instanceInterceptor = new InstanceInterceptor();
-
-        public static object CreateInstance(Type interfaceType, object target, params Type[] additionalInterfaceTypes)
+        public static void Setup(IKernel kernel)
         {
-            return proxyGenerator.CreateInterfaceProxyWithTarget(interfaceType, additionalInterfaceTypes, target, instanceInterceptor);
+            IAdvice advice = kernel.Components.Get<IAdviceFactory>().Create(context => context.Binding.Service.IsInterface);
+            advice.Interceptor = new HaystackInterceptor();
+            kernel.Components.Get<IAdviceRegistry>().Register(advice);
         }
 
         public void Intercept(IInvocation invocation)
@@ -29,13 +30,13 @@ namespace Haystack.Interception.Castle.Core
         private void EnterMethodCall(IInvocation methodInvocation)
         {
             MethodCallTraceProvider provider = MethodCallTraceContext.MethodCallTrace;
-            MethodInfo method = methodInvocation.Method;
+            MethodInfo method = methodInvocation.Request.Method;
             MethodCall methodCall = new MethodCall()
             {
                 DeclaringTypeIndex = provider.GetTypeIndex(method.DeclaringType),
-                InstanceIndex = provider.GetObjectIndex(methodInvocation.InvocationTarget),
+                InstanceIndex = provider.GetObjectIndex(methodInvocation.Request.Target),
                 MethodName = method.Name,
-                Parameters = provider.GetParameters(methodInvocation.Arguments, method.GetParameters()),
+                Parameters = provider.GetParameters(methodInvocation.Request.Arguments, method.GetParameters()),
                 ReturnTypeIndex = provider.GetTypeIndex(method.ReturnType),
             };
             if (method.Attributes.HasFlag(MethodAttributes.SpecialName) && Regex.IsMatch(method.Name, "^[gs]et_"))
@@ -54,7 +55,7 @@ namespace Haystack.Interception.Castle.Core
             methodCall.ReturnValue = provider.GetValue(methodInvocation.ReturnValue);
             foreach (int index in methodCall.Parameters.Where(param => param.Modifier != ParameterModifier.None).Select((value, index) => index))
             {
-                methodCall.Parameters[index].OutputValue = provider.GetValue(methodInvocation.Arguments[index]);
+                methodCall.Parameters[index].OutputValue = provider.GetValue(methodInvocation.Request.Arguments[index]);
             }
         }
     }
