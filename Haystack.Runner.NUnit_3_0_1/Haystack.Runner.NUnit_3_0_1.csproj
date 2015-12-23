@@ -7,8 +7,8 @@
     <ProjectGuid>{9B69D2BF-F18D-4FA4-AEB0-E245BB26C2A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Runner.NUnit_3_0_1</RootNamespace>
-    <AssemblyName>Haystack.Runner.NUnit_3_0_1</AssemblyName>
+    <RootNamespace>Haystack.Runner.NUnit</RootNamespace>
+    <AssemblyName>Haystack.Runner.NUnit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Haystack.Runner\bin\NUnit\3.0.1\addins\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack.Runner\NUnit\3.0.1\addins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Haystack.Runner\bin\NUnit\3.0.1\addins\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack.Runner\NUnit\3.0.1\addins\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
