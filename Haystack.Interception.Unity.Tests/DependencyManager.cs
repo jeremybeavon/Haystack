@@ -17,7 +17,7 @@ namespace Haystack.Interception.Unity.Tests
                     if (simpleContainer == null)
                     {
                         IUnityContainer container = new UnityContainer();
-                        //container.RegisterType<ISimpleService, SimpleService>();
+                        container.RegisterType<ISimpleService, SimpleService>();
                         simpleContainer = container;
                     }
 

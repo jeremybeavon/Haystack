@@ -44,14 +44,6 @@
       <HintPath>..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Interception, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.Interception.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.Interception.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,8 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Haystack.Interception.Unity\HaystackInterceptionBehaviour.cs">
-      <Link>HaystackInterceptionBehaviour.cs</Link>
+    <Compile Include="..\Haystack.Interception.Unity\HaystackInterceptionBuilderStrategy.cs">
+      <Link>HaystackInterceptionBuilderStrategy.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Interception.Unity\HaystackInterceptor.cs">
       <Link>HaystackInterceptor.cs</Link>
@@ -79,6 +71,10 @@
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>
       <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Interception.Castle.Core\Haystack.Interception.Castle.Core.csproj">
+      <Project>{f7ff30d3-aa8c-4df9-aa03-b39b5a63a11b}</Project>
+      <Name>Haystack.Interception.Castle.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
