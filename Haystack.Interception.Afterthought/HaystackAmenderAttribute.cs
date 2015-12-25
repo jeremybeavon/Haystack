@@ -8,7 +8,7 @@ namespace Haystack.Interception.Afterthought
     {
         public IEnumerable<ITypeAmendment> GetAmendments(Type target)
         {
-            return CreateAmendment(typeof(PropertyAmender<>), target);
+            return CreateAmendment(typeof(HaystackAmender<>), target);
         }
 
         private static IEnumerable<ITypeAmendment> CreateAmendment(Type type, Type target)

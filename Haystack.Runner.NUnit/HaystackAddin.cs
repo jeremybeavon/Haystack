@@ -1,7 +1,9 @@
-﻿using NUnit.Core;
+﻿using Haystack.Diagnostics.TestIntegration;
+using NUnit.Core;
 using NUnit.Core.Builders;
 using NUnit.Core.Extensibility;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -30,7 +32,7 @@ namespace Haystack.Runner.NUnit
             if (!File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Haystack.Diagnostics.dll")))
                 return true;
 
-            //SetupDiagnosticsIfNecessary();
+            InitializeTestFramework();
             builders = new SuiteBuilderCollection(host);
             builders.Install(new NUnitTestFixtureBuilder());
             builders.Install(new SetUpFixtureBuilder());
@@ -72,6 +74,24 @@ namespace Haystack.Runner.NUnit
         public Test BuildFrom(MethodInfo method, Test suite)
         {
             return DecorateTest(testCaseBuilder.BuildFrom(method, suite));
+        }
+
+        public static void InitializeOrCleanUp<T>(IEnumerable<T> interfaces, Action<T> action)
+        {
+            if (interfaces != null)
+            {
+                foreach (T @interface in interfaces)
+                {
+                    action(@interface);
+                }
+            }
+        }
+
+        private static void InitializeTestFramework()
+        {
+            InitializeOrCleanUp(
+                TestIntegrationRepository.IntitializeTestFrameworkMethods,
+                initialize => initialize.InitializeTestFramework());
         }
 
         private Test DecorateTest(Test test)

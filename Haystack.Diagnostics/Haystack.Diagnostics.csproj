@@ -51,6 +51,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amendments\ConstructorAmendments.cs" />
+    <Compile Include="Amendments\DefaultHaystackAmender.cs" />
+    <Compile Include="Amendments\AmendmentRepository.cs" />
+    <Compile Include="Amendments\IAfterConstructorAmender.cs" />
+    <Compile Include="Amendments\IAfterMethodAmender.cs" />
+    <Compile Include="Amendments\IAfterVoidMethodAmender.cs" />
+    <Compile Include="Amendments\IAfterPropertyGetAmender.cs" />
+    <Compile Include="Amendments\IAfterPropertySetAmender.cs" />
+    <Compile Include="Amendments\IBeforeConstructorAmender.cs" />
+    <Compile Include="Amendments\IBeforeMethodAmender.cs" />
+    <Compile Include="Amendments\IBeforePropertyGetAmender.cs" />
+    <Compile Include="Amendments\IBeforePropertySetAmender.cs" />
+    <Compile Include="Amendments\ICatchConstructorAmender.cs" />
+    <Compile Include="Amendments\ICatchMethodAmender.cs" />
+    <Compile Include="Amendments\ICatchVoidMethodAmender.cs" />
+    <Compile Include="Amendments\IConstructorAmender.cs" />
+    <Compile Include="Amendments\IFinallyMethodAmender.cs" />
+    <Compile Include="Amendments\IHaystackAmender.cs" />
+    <Compile Include="Amendments\IMethodAmender.cs" />
+    <Compile Include="Amendments\IPropertyAmender.cs" />
+    <Compile Include="Amendments\MethodAmendments.cs" />
+    <Compile Include="Amendments\PropertyAmendments.cs" />
     <Compile Include="Configuration\HaystackConfigurationSection.cs" />
     <Compile Include="IO\DirectoryReader.cs" />
     <Compile Include="IO\FileReader.cs" />
@@ -71,12 +93,20 @@
     <Compile Include="ObjectModel\Value.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyDiagnostics.cs" />
+    <Compile Include="TestIntegration\ICleanUpTestMethod.cs" />
+    <Compile Include="TestIntegration\ICleanUpTestSuite.cs" />
+    <Compile Include="TestIntegration\IInitializeTestFramework.cs" />
+    <Compile Include="TestIntegration\IInitializeTestMethod.cs" />
+    <Compile Include="TestIntegration\IInitializeTestSuite.cs" />
+    <Compile Include="TestIntegration\TestIntegrationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="StaticAnalysis\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

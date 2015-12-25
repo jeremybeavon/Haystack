@@ -66,14 +66,17 @@
     <Compile Include="..\Haystack.Runner.NUnit\MethodCallTraceManager.cs">
       <Link>MethodCallTraceManager.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\MethodInfoToDelegateExtensions.cs">
-      <Link>MethodInfoToDelegateExtensions.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

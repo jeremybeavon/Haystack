@@ -1,4 +1,5 @@
-﻿using NUnit.Core;
+﻿using Haystack.Diagnostics.TestIntegration;
+using NUnit.Core;
 
 namespace Haystack.Runner.NUnit
 {
@@ -14,9 +15,14 @@ namespace Haystack.Runner.NUnit
 
         public override TestResult Run(EventListener listener, ITestFilter filter)
         {
-            addin.MethodCallTraceManager.Initialize();
+            HaystackAddin.InitializeOrCleanUp(
+                TestIntegrationRepository.IntitializeTestSuiteMethods,
+                suite => suite.InitializeTestSuite(TestName.FullName));
             TestResult result = base.Run(listener, filter);
             addin.MethodCallTraceManager.SaveFixtureTearDownCallTrace();
+            HaystackAddin.InitializeOrCleanUp(
+                TestIntegrationRepository.CleanUpTestSuiteMethods,
+                suite => suite.CleanUpTestSuite(TestName.FullName));
             return result;
         }
     }

@@ -67,13 +67,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AfterthoughtSetupProvider.cs" />
+    <Compile Include="AmendmentExtensions.cs" />
     <Compile Include="HaystackAmenderAttribute.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PropertyAmender.cs" />
+    <Compile Include="HaystackAmender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

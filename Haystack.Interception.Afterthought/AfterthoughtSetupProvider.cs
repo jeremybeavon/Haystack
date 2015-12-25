@@ -24,7 +24,7 @@ namespace Haystack.Interception.Afterthought
                     File.Delete(file);
             }
 
-            IDictionary<string, string> properties = GetProperties(baseDirectory, assemblyPath);
+            IDictionary<string, string> properties = GetProperties(baseDirectory, assemblyPath, strongNameKey);
             if (properties != null)
             {
                 MsBuildRunner.RunMsBuildXml(Resources.HaystackAfterthoughtSetup, properties);
@@ -36,7 +36,7 @@ namespace Haystack.Interception.Afterthought
             return AssemblyDefinition.ReadAssembly(path).MainModule.AssemblyReferences.Any(assembly => assembly.Name == "Haystack.Diagnostics");
         }
 
-        private static IDictionary<string, string> GetProperties(string baseDirectory, string assemblyPath)
+        private static IDictionary<string, string> GetProperties(string baseDirectory, string assemblyPath, string strongNameKey)
         {
             string currentLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty;
             string afterthoughtAmenderExe = Path.Combine(currentLocation, "Afterthought.Amender.exe");
@@ -52,14 +52,7 @@ namespace Haystack.Interception.Afterthought
                 Trace.WriteLine("Cannot set up Haystack diagnostics because {0} was not found.", amendmentsDll);
                 return null;
             }
-
-            string strongNameKey = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\..\_Shared\keypair.snk"));
-            if (!File.Exists(strongNameKey))
-            {
-                Trace.WriteLine("Cannot set up Haystack diagnostics because {0} was not found.", strongNameKey);
-                return null;
-            }
-
+            
             return new Dictionary<string, string>
             {
                 {"AssemblyPath", assemblyPath},
