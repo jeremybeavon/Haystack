@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -52,8 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Amendments\ConstructorAmendments.cs" />
-    <Compile Include="Amendments\DefaultHaystackAmender.cs" />
+    <Compile Include="Amendments\HaystackConstructorAmender.cs" />
+    <Compile Include="Amendments\HaystackMethodAmender.cs" />
+    <Compile Include="Amendments\HaystackNonVoidMethodAmender.cs" />
+    <Compile Include="Amendments\HaystackPropertyAmender.cs" />
     <Compile Include="Amendments\AmendmentRepository.cs" />
+    <Compile Include="Amendments\HaystackVoidMethodCall.cs" />
     <Compile Include="Amendments\IAfterConstructorAmender.cs" />
     <Compile Include="Amendments\IAfterMethodAmender.cs" />
     <Compile Include="Amendments\IAfterVoidMethodAmender.cs" />
@@ -68,12 +72,19 @@
     <Compile Include="Amendments\ICatchVoidMethodAmender.cs" />
     <Compile Include="Amendments\IConstructorAmender.cs" />
     <Compile Include="Amendments\IFinallyMethodAmender.cs" />
-    <Compile Include="Amendments\IHaystackAmender.cs" />
     <Compile Include="Amendments\IMethodAmender.cs" />
     <Compile Include="Amendments\IPropertyAmender.cs" />
     <Compile Include="Amendments\MethodAmendments.cs" />
     <Compile Include="Amendments\PropertyAmendments.cs" />
     <Compile Include="Configuration\HaystackConfigurationSection.cs" />
+    <Compile Include="Configuration\IAmendmentConfiguration.cs" />
+    <Compile Include="Configuration\ICodeCoverageConfiguration.cs" />
+    <Compile Include="Configuration\IHaystackConfiguration.cs" />
+    <Compile Include="Configuration\IInterceptionConfiguration.cs" />
+    <Compile Include="Configuration\IRunnerConfiguration.cs" />
+    <Compile Include="Configuration\ISourceControlConfiguration.cs" />
+    <Compile Include="Configuration\IStaticAnalysisConfiguration.cs" />
+    <Compile Include="IInitializeInterception.cs" />
     <Compile Include="IO\DirectoryReader.cs" />
     <Compile Include="IO\FileReader.cs" />
     <Compile Include="IO\IDirectoryReader.cs" />
@@ -104,9 +115,7 @@
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StaticAnalysis\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

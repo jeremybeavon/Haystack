@@ -1,0 +1,66 @@
+﻿using Afterthought;
+using Haystack.Diagnostics.Amendments;
+
+namespace Haystack.Amendments
+{
+    public class HaystackAmender<T> : Amendment<T, T>
+    {
+        public HaystackAmender()
+        {
+            AmendProperties();
+            AmendConstructors();
+            AmendMethods();
+        }
+
+        private void AmendProperties()
+        {
+            Properties
+                .Where(AmendmentRepository.BeforePropertyGetAmenders)
+                .BeforeGet(PropertyAmendments<T>.BeforePropertyGet);
+            Properties
+                .Where(AmendmentRepository.AfterPropertyGetAmenders)
+                .AfterGet(PropertyAmendments<T>.AfterPropertyGet);
+            Properties
+                .Where(AmendmentRepository.BeforePropertySetAmenders)
+                .BeforeSet(PropertyAmendments<T>.BeforePropertySet);
+            Properties
+                .Where(AmendmentRepository.AfterPropertySetAmenders)
+                .AfterSet(PropertyAmendments<T>.AfterPropertySet);
+        }
+
+        private void AmendConstructors()
+        {
+            Constructors
+                .Where(AmendmentRepository.BeforeConstructorAmenders)
+                .Before(ConstructorAmendments<T>.BeforeConstructor);
+            Constructors
+                .Where(AmendmentRepository.AfterConstructorAmenders)
+                .After(ConstructorAmendments<T>.AfterConstructor);
+            Constructors
+                .Where(AmendmentRepository.CatchConstructorAmenders)
+                .Catch(ConstructorAmendments<T>.CatchConstructor);
+        }
+
+        private void AmendMethods()
+        {
+            Methods
+                .Where(AmendmentRepository.BeforeMethodAmenders)
+                .Before(MethodAmendments<T>.BeforeMethod);
+            Methods
+                .Where(AmendmentRepository.AfterVoidMethodAmenders)
+                .After(MethodAmendments<T>.AfterVoidMethod);
+            Methods
+                .Where(AmendmentRepository.AfterMethodAmenders)
+                .After(MethodAmendments<T>.AfterMethod);
+            /*Methods
+                .Where(AmendmentRepository.CatchVoidMethodAmenders)
+                .Catch(MethodAmendments<T>.CatchVoidMethod);
+            Methods
+                .Where(AmendmentRepository.CatchMethodAmenders)
+                .Catch(MethodAmendments<T>.CatchMethod);*/
+            Methods
+                .Where(AmendmentRepository.FinallyMethodAmenders)
+                .Finally(MethodAmendments<T>.Finally);
+        }
+    }
+}

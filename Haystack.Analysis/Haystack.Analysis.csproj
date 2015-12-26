@@ -4,27 +4,29 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B69D2BF-F18D-4FA4-AEB0-E245BB26C2A1}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{4A7B0200-7A29-44D2-85CE-DE48FCB47D6A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Runner.NUnit</RootNamespace>
-    <AssemblyName>Haystack.Runner.NUnit</AssemblyName>
+    <RootNamespace>Haystack.Analysis</RootNamespace>
+    <AssemblyName>Haystack.Analysis</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Runner\NUnit\3.0.1\addins\</OutputPath>
+    <OutputPath>..\bin\Debug\Analysis\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Runner\NUnit\3.0.1\addins\</OutputPath>
+    <OutputPath>..\bin\Release\Analysis\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -36,13 +38,13 @@
     <AssemblyOriginatorKeyFile>Haystack.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.core">
-      <HintPath>..\packages\NUnit.Console.3.0.1\tools\addins\nunit.core.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\packages\NUnit.Console.3.0.1\tools\addins\nunit.core.interfaces.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DiffPlex, Version=1.2.0.0, Culture=neutral, PublicKeyToken=1d35e91d1bd7bc0f, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiffPlex.1.2.1\lib\portable-net40+sl50+win+wpa81+wp80\DiffPlex.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,21 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackAddin.cs">
-      <Link>HaystackAddin.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestMethod.cs">
-      <Link>HaystackTestMethod.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestSuite.cs">
-      <Link>HaystackTestSuite.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\MethodCallTraceManager.cs">
-      <Link>MethodCallTraceManager.cs</Link>
-    </Compile>
+    <Compile Include="CodeCoverage\CodeCoverageComparison.cs" />
+    <Compile Include="CodeCoverage\FileDifferences.cs" />
+    <Compile Include="CodeCoverage\Range.cs" />
+    <Compile Include="CommandLineOptions.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -77,6 +73,9 @@
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interception\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
