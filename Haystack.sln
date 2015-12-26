@@ -77,6 +77,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analysis.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments", "Haystack.Amendments\Haystack.Amendments.csproj", "{FF76E013-1F51-4972-95A7-2CBB1CC27269}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.FileSystem", "Haystack.StaticAnalysis.FileSystem\Haystack.StaticAnalysis.FileSystem.csproj", "{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.FileContent", "Haystack.StaticAnalysis.FileContent\Haystack.StaticAnalysis.FileContent.csproj", "{D4DDB95D-F957-479B-A6B2-970E943FC944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.EnvironmentVariables", "Haystack.StaticAnalysis.EnvironmentVariables\Haystack.StaticAnalysis.EnvironmentVariables.csproj", "{837BD2F8-9525-4F73-9EB4-A821684BFF11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.Reflection", "Haystack.StaticAnalysis.Reflection\Haystack.StaticAnalysis.Reflection.csproj", "{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.Tests", "Haystack.StaticAnalysis.Tests\Haystack.StaticAnalysis.Tests.csproj", "{AA332DA3-CFFB-4693-B8CA-534A57450DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments.Tests", "Haystack.Amendments.Tests\Haystack.Amendments.Tests.csproj", "{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -203,6 +215,30 @@ Global
 		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DDB95D-F957-479B-A6B2-970E943FC944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DDB95D-F957-479B-A6B2-970E943FC944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DDB95D-F957-479B-A6B2-970E943FC944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DDB95D-F957-479B-A6B2-970E943FC944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837BD2F8-9525-4F73-9EB4-A821684BFF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837BD2F8-9525-4F73-9EB4-A821684BFF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837BD2F8-9525-4F73-9EB4-A821684BFF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837BD2F8-9525-4F73-9EB4-A821684BFF11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA332DA3-CFFB-4693-B8CA-534A57450DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA332DA3-CFFB-4693-B8CA-534A57450DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA332DA3-CFFB-4693-B8CA-534A57450DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA332DA3-CFFB-4693-B8CA-534A57450DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -236,6 +272,12 @@ Global
 		{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{F9A8B021-5E78-42B1-A1D7-D89330786721} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
+		{D4DDB95D-F957-479B-A6B2-970E943FC944} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
+		{837BD2F8-9525-4F73-9EB4-A821684BFF11} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
+		{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
+		{AA332DA3-CFFB-4693-B8CA-534A57450DD6} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\Unity.2.1.505.2\lib\NET35

@@ -89,6 +89,7 @@
     <Compile Include="IO\FileReader.cs" />
     <Compile Include="IO\IDirectoryReader.cs" />
     <Compile Include="IO\IFileReader.cs" />
+    <Compile Include="IStaticAnalysis.cs" />
     <Compile Include="MethodCallTraceContext.cs" />
     <Compile Include="MethodCallTraceProvider.cs" />
     <Compile Include="MsBuildRunner.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="ObjectModel\Value.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyDiagnostics.cs" />
+    <Compile Include="StaticAnalysisOutput.cs" />
     <Compile Include="TestIntegration\ICleanUpTestMethod.cs" />
     <Compile Include="TestIntegration\ICleanUpTestSuite.cs" />
     <Compile Include="TestIntegration\IInitializeTestFramework.cs" />

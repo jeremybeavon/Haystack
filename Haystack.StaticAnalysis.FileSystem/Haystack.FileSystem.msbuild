@@ -1,0 +1,7 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="FindFiles">
+  <ItemGroup>
+    <Files Include="$(IncludedFiles)" Exclude="$(ExcludedFiles)" />
+  </ItemGroup>
+	<Target Name="FindFiles" Outputs="@(Files)">
+	</Target>
+</Project>

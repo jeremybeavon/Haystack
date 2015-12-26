@@ -14,6 +14,11 @@ namespace Haystack.Diagnostics
     {
         public static void RunMsBuildXml(string xml, IDictionary<string, string> properties)
         {
+            RunMsBuildXmlWithResult(xml, properties);
+        }
+
+        public static BuildResult RunMsBuildXmlWithResult(string xml, IDictionary<string, string> properties)
+        {
             using (TextReader reader = new StringReader(xml))
             {
                 using (XmlReader xmlReader = XmlReader.Create(reader))
@@ -27,7 +32,11 @@ namespace Haystack.Diagnostics
                     };
                     BuildResult result = BuildManager.DefaultBuildManager.Build(parameters, new BuildRequestData(project, new string[0]));
                     if (result.OverallResult == BuildResultCode.Failure)
+                    {
                         throw new InvalidOperationException("Haystack diagnostics failed.");
+                    }
+
+                    return result;
                 }
             }
         }

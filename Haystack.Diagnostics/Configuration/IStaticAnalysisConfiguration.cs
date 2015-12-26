@@ -6,6 +6,8 @@ namespace Haystack.Diagnostics.Configuration
     {
         string StaticAnalysisFramework { get; }
 
-        IEnumerable<string> Paths { get; }
+        IEnumerable<string> IncludedItems { get; }
+
+        IEnumerable<string> ExcludedItems { get; }
     }
 }
