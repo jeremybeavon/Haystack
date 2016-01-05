@@ -57,9 +57,11 @@ namespace Haystack.Amendments
                 .Before(MethodAmendments<T>.BeforeMethod);
             Methods
                 .Where(AmendmentRepository.AfterVoidMethodAmenders)
+                .Where(method => method.ReturnType == typeof(void))
                 .After(MethodAmendments<T>.AfterVoidMethod);
             Methods
                 .Where(AmendmentRepository.AfterMethodAmenders)
+                .Where(method => method.ReturnType != typeof(void))
                 .After(MethodAmendments<T>.AfterMethod);
             /*Methods
                 .Where(AmendmentRepository.CatchVoidMethodAmenders)

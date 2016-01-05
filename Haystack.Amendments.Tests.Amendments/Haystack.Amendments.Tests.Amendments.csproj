@@ -55,6 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfterPropertySetAmendment.cs" />
+    <Compile Include="AfterPropertyGetAmendment.cs" />
+    <Compile Include="AfterConstructorAmendment.cs" />
+    <Compile Include="AfterMethodAmendment.cs" />
+    <Compile Include="AfterVoidMethodAmendment.cs" />
+    <Compile Include="BeforeMethodAmendment.cs" />
+    <Compile Include="BeforeConstructorAmendment.cs" />
+    <Compile Include="BeforePropertySetAmendment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BeforePropertyGetAmendment.cs" />
     <Compile Include="TestCallback.cs" />

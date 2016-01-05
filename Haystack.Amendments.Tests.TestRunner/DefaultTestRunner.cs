@@ -12,5 +12,26 @@ namespace Haystack.Amendments.Tests.TestRunner
             new SimpleProperty("Instance1").TestProperty = new SimpleProperty("Instance2").TestProperty;
             return TestTrace.TraceText;
         }
+
+        public static string ConstructorTest(string configurationText)
+        {
+            AmendmentRepository.Initialize(configurationText);
+            new SimpleProperty("Instance1");
+            return TestTrace.TraceText;
+        }
+
+        public static string VoidMethodTest(string configurationText)
+        {
+            AmendmentRepository.Initialize(configurationText);
+            new SimpleVoidMethod().TestMethod();
+            return TestTrace.TraceText;
+        }
+
+        public static string MethodTest(string configurationText)
+        {
+            AmendmentRepository.Initialize(configurationText);
+            new SimpleMethod().TestMethod();
+            return TestTrace.TraceText;
+        }
     }
 }

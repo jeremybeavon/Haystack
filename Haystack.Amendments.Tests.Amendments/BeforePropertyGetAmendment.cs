@@ -18,7 +18,8 @@ namespace Haystack.Amendments.Tests.Amendments
 
         public void BeforePropertyGet<TInstance>(TInstance instance, string propertyName)
         {
-            TestTrace.TraceText = string.Format("BeforePropertyGet(instance = {0}, propertyName = {1})", instance, propertyName);
+            const string format = "BeforePropertyGet(instance = {0}, propertyName = {1})";
+            TestTrace.TraceText = string.Format(format, typeof(TInstance).FullName, propertyName);
         }
     }
 }
