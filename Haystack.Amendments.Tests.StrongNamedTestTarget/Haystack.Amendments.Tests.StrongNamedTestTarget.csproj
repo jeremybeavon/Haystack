@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3BDAC78A-2092-42E0-A22D-7340894884AD}</ProjectGuid>
+    <ProjectGuid>{1D923B6E-6301-4BAA-8F0C-CD775ADA4135}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Amendments.Tests.TestRunner</RootNamespace>
-    <AssemblyName>Haystack.Amendments.Tests.TestRunner</AssemblyName>
+    <RootNamespace>Haystack.Amendments.Tests.StrongNamedTestTarget</RootNamespace>
+    <AssemblyName>Haystack.Amendments.Tests.StrongNamedTestTarget</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Haystack.Amendments.Tests\bin\Debug\TestTarget\</OutputPath>
+    <OutputPath>..\Haystack.Amendments.Tests\bin\Debug\StrongNamedTestTarget\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,10 +24,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Haystack.Amendments.Tests\bin\Release\TestTarget\</OutputPath>
+    <OutputPath>..\Haystack.Amendments.Tests\bin\Release\StrongNamedTestTarget\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Haystack.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -36,25 +42,15 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefaultTestRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleProperty.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Haystack.Amendments.Tests.Amendments\Haystack.Amendments.Tests.Amendments.csproj">
-      <Project>{d8e9c6c2-e585-44fb-bbf6-05187682ae67}</Project>
-      <Name>Haystack.Amendments.Tests.Amendments</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Haystack.Amendments.Tests.TestTarget\Haystack.Amendments.Tests.TestTarget.csproj">
-      <Project>{e8e6bbd9-90db-4b75-aad7-48e54c061a9b}</Project>
-      <Name>Haystack.Amendments.Tests.TestTarget</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
-      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
-    </ProjectReference>
+    <None Include="Haystack.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

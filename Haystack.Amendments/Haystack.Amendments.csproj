@@ -40,6 +40,10 @@
     <Reference Include="Afterthought">
       <HintPath>..\References\Afterthought.dll</HintPath>
     </Reference>
+    <Reference Include="AppDomainCallbackExtensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b779ee9e6a5a3f4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppDomainCallbackExtensions.1.0.6\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll</HintPath>
       <Private>True</Private>
@@ -58,17 +62,21 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TextSerialization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=048350c573d540a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\TextSerialization.1.0.0\lib\net45\TextSerialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmendmentSetupProvider.cs" />
     <Compile Include="AmendmentExtensions.cs" />
-    <Compile Include="DisposableAppDomain.cs" />
     <Compile Include="HaystackAmenderAttribute.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,6 +87,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Haystack.Amendments.Setup\Haystack.Amendments.Setup.csproj">
+      <Project>{4ef7cbb7-a491-493d-9b91-a33d718195d4}</Project>
+      <Name>Haystack.Amendments.Setup</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>

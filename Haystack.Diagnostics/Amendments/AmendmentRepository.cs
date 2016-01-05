@@ -31,6 +31,12 @@ namespace Haystack.Diagnostics.Amendments
 
         public static IEnumerable<IFinallyMethodAmender> FinallyMethodAmenders { get; set; }
 
+        public static void Initialize(string configurationText)
+        {
+            HaystackConfiguration configuration = HaystackConfiguration.LoadText(configurationText);
+            Initialize(configuration.Amendments);
+        }
+
         public static void Initialize(IAmendmentConfiguration configuration)
         {
             BeforePropertyGetAmenders = configuration.BeforePropertyGetAmendments;

@@ -1,14 +1,12 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="MakeAssemblyAmendments">
 	<Target Name="MakeAssemblyAmendments">
 		<Error Text="AssemblyPath property is not found." Condition="'$(AssemblyPath)' == ''" />
+    <Error Text="StrongNameKey property is not found." Condition="'$(StrongNameKey)' == ''" />
 		<PropertyGroup>
 			<IldasmExe>&quot;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\ildasm.exe&quot;</IldasmExe>
 			<IlasmExe>&quot;C:\Windows\Microsoft.NET\Framework\v4.0.30319\ilasm.exe&quot;</IlasmExe>
 		</PropertyGroup>
-		<Exec Command="&quot;$(AfterthoughtAmenderExe)&quot; &quot;$(AssemblyPath)&quot; &quot;$(AmendmentsDll)&quot;" />
-		<Exec Command="$(IldasmExe) &quot;$(AssemblyPath)&quot; /out:&quot;$(AssemblyPath).il&quot; /nobar /linenum"
-          Condition="'$(StrongNameKey)' != ''"/>
-		<Exec Command="$(IlasmExe) &quot;$(AssemblyPath).il&quot; /dll /debug /resource=&quot;$(AssemblyPath).res&quot; /key=&quot;$(StrongNameKey)&quot; /output=&quot;$(AssemblyPath)&quot;"
-          Condition="'$(StrongNameKey)' != ''"/>
+		<Exec Command="$(IldasmExe) &quot;$(AssemblyPath)&quot; /out:&quot;$(AssemblyPath).il&quot; /nobar /linenum" />
+		<Exec Command="$(IlasmExe) &quot;$(AssemblyPath).il&quot; /dll /debug /resource=&quot;$(AssemblyPath).res&quot; /key=&quot;$(StrongNameKey)&quot; /output=&quot;$(AssemblyPath)&quot;" />
 	</Target>
 </Project>

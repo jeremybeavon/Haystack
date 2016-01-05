@@ -1,4 +1,6 @@
-﻿using Haystack.Amendments.Properties;
+﻿using AppDomainCallbackExtensions;
+using Haystack.Amendments.Properties;
+using Haystack.Amendments.Setup;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.Configuration;
 using Mono.Cecil;
@@ -101,10 +103,17 @@ namespace Haystack.Amendments
                 ApplicationBase = Path.GetDirectoryName(AfterthoughtAmenderExe),
                 ConfigurationFile = AfterthoughtAmenderExe + ".config"
             };
+            AmendmentConsole console = new AmendmentConsole();
+            string[] args = new string[] { AssemblyPath, AmendmentsDll };
             using (DisposableAppDomain appDomain = new DisposableAppDomain("Amender", appDomainSetup))
-            { 
+            {
                 appDomain.AppDomain.SetData(ConfigurationKey, Configuration.ToString());
-                appDomain.AppDomain.ExecuteAssembly(AfterthoughtAmenderExe, new string[] { AssemblyPath, AmendmentsDll });
+                appDomain.AppDomain.CreateInstanceFromAndUnwrap<AmendmentConsoleProvider>().InitializeConsole(console);
+                int result = appDomain.AppDomain.ExecuteAssembly(AfterthoughtAmenderExe, args);
+                if (result != 0)
+                {
+                    throw new InvalidOperationException("Assembly amendment failed.");
+                }
             }
         }
     }

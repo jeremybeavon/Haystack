@@ -8,18 +8,24 @@ namespace Haystack.Diagnostics.Amendments
         public static void BeforeMethod(TInstance instance, string methodName, object[] parameters)
         {
             IEnumerable<IBeforeMethodAmender> amenders = AmendmentRepository.BeforeMethodAmenders;
-            foreach (IBeforeMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+            if (amenders != null)
             {
-                amender.BeforeMethod(instance, methodName, parameters);
+                foreach (IBeforeMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+                {
+                    amender.BeforeMethod(instance, methodName, parameters);
+                }
             }
         }
 
         public static void AfterVoidMethod(TInstance instance, string methodName, object[] parameters)
         {
             IEnumerable<IAfterVoidMethodAmender> amenders = AmendmentRepository.AfterVoidMethodAmenders;
-            foreach (IAfterVoidMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+            if (amenders != null)
             {
-                amender.AfterMethod(instance, methodName, parameters);
+                foreach (IAfterVoidMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+                {
+                    amender.AfterMethod(instance, methodName, parameters);
+                }
             }
         }
 
@@ -40,9 +46,12 @@ namespace Haystack.Diagnostics.Amendments
             object[] parameters)
         {
             IEnumerable<ICatchVoidMethodAmender> amenders = AmendmentRepository.CatchVoidMethodAmenders;
-            foreach (ICatchVoidMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+            if (amenders != null)
             {
-                amender.CatchMethod(instance, methodName, exception, parameters);
+                foreach (ICatchVoidMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+                {
+                    amender.CatchMethod(instance, methodName, exception, parameters);
+                }
             }
         }
 
@@ -60,9 +69,12 @@ namespace Haystack.Diagnostics.Amendments
         public static void Finally(TInstance instance, string methodName, object[] parameters)
         {
             IEnumerable<IFinallyMethodAmender> amenders = AmendmentRepository.FinallyMethodAmenders;
-            foreach (IFinallyMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+            if (amenders != null)
             {
-                amender.Finally(instance, methodName, parameters);
+                foreach (IFinallyMethodAmender amender in GetAmenders(amenders, methodName, parameters))
+                {
+                    amender.Finally(instance, methodName, parameters);
+                }
             }
         }
 
@@ -72,7 +84,9 @@ namespace Haystack.Diagnostics.Amendments
             object[] parameters)
             where TAmender : IMethodAmender
         {
-            return amenders.Where(amender => amender.AmendMethod(typeof(TInstance), methodName, parameters));
+            return amenders == null ?
+                new TAmender[0] : 
+                amenders.Where(amender => amender.AmendMethod(typeof(TInstance), methodName, parameters));
         }
     }
 }

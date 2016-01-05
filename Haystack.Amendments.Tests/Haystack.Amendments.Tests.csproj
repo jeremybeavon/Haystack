@@ -35,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppDomainCallbackExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppDomainCallbackExtensions.1.0.4\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
+    <Reference Include="AppDomainCallbackExtensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b779ee9e6a5a3f4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppDomainCallbackExtensions.1.0.6\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FluentAssertions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
@@ -74,12 +74,15 @@
     <Compile Include="AmendmentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StrongNamedAmendmentTestRunner.cs" />
-    <Compile Include="TestCallback.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Amendments.Tests.Amendments\Haystack.Amendments.Tests.Amendments.csproj">
       <Project>{d8e9c6c2-e585-44fb-bbf6-05187682ae67}</Project>
       <Name>Haystack.Amendments.Tests.Amendments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Amendments.Tests.StrongNamedTestRunner\Haystack.Amendments.Tests.StrongNamedTestRunner.csproj">
+      <Project>{c77a196c-a800-4225-a58c-b5d8a99e8d3e}</Project>
+      <Name>Haystack.Amendments.Tests.StrongNamedTestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Amendments.Tests.TestRunner\Haystack.Amendments.Tests.TestRunner.csproj">
       <Project>{3bdac78a-2092-42e0-a22d-7340894884ad}</Project>

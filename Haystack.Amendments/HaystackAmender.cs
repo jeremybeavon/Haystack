@@ -18,8 +18,7 @@ namespace Haystack.Amendments
         private void InitializeConfiguration()
         {
             string configurationText = (string)AppDomain.CurrentDomain.GetData(AmendmentSetupProvider.ConfigurationKey);
-            HaystackConfiguration configuration = HaystackConfiguration.LoadText(configurationText);
-            AmendmentRepository.Initialize(configuration.Amendments);
+            AmendmentRepository.Initialize(configurationText);
         }
 
         private void AmendProperties()

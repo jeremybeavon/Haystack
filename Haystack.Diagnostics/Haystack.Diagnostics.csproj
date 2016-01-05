@@ -91,6 +91,8 @@
     <Compile Include="Configuration\SourceControlConfiguration.cs" />
     <Compile Include="Configuration\StaticAnalysisConfiguration.cs" />
     <Compile Include="Configuration\TypeResolver.cs" />
+    <Compile Include="CrossDomainObject.cs" />
+    <Compile Include="DisposableAppDomain.cs" />
     <Compile Include="IInitializeInterception.cs" />
     <Compile Include="IO\DirectoryReader.cs" />
     <Compile Include="IO\FileReader.cs" />

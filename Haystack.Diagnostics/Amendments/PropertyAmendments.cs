@@ -8,9 +8,12 @@ namespace Haystack.Diagnostics.Amendments
         public static void BeforePropertyGet(TInstance instance, string propertyName)
         {
             IEnumerable<IBeforePropertyGetAmender> amenders = AmendmentRepository.BeforePropertyGetAmenders;
-            foreach (IBeforePropertyGetAmender amender in GetAmenders(amenders, propertyName))
+            if (amenders != null)
             {
-                amender.BeforePropertyGet(instance, propertyName);
+                foreach (IBeforePropertyGetAmender amender in GetAmenders(amenders, propertyName))
+                {
+                    amender.BeforePropertyGet(instance, propertyName);
+                }
             }
         }
 
@@ -30,16 +33,19 @@ namespace Haystack.Diagnostics.Amendments
             TProperty value, TProperty newValue)
         {
             IEnumerable<IAfterPropertySetAmender> amenders = AmendmentRepository.AfterPropertySetAmenders;
-            foreach (IAfterPropertySetAmender amender in GetAmenders(amenders, propertyName))
+            if (amenders != null)
             {
-                amender.AfterPropertySet(instance, propertyName, value);
+                foreach (IAfterPropertySetAmender amender in GetAmenders(amenders, propertyName))
+                {
+                    amender.AfterPropertySet(instance, propertyName, value);
+                }
             }
         }
 
         private static IEnumerable<TAmender> GetAmenders<TAmender>(IEnumerable<TAmender> amenders, string propertyName)
             where TAmender : IPropertyAmender
         {
-            return amenders.Where(amender => amender.AmendProperty(typeof(TInstance), propertyName));
+            return amenders == null ? new TAmender[0] : amenders.Where(amender => amender.AmendProperty(typeof(TInstance), propertyName));
         }
     }
 }

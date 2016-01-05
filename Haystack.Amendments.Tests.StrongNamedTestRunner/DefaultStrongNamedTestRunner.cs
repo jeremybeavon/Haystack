@@ -1,10 +1,10 @@
 ﻿using Haystack.Amendments.Tests.Amendments;
-using Haystack.Amendments.Tests.TestTarget;
+using Haystack.Amendments.Tests.StrongNamedTestTarget;
 using Haystack.Diagnostics.Amendments;
 
-namespace Haystack.Amendments.Tests.TestRunner
+namespace Haystack.Amendments.Tests.StrongNamedTestRunner
 {
-    public static class DefaultTestRunner
+    public static class DefaultStrongNamedTestRunner
     {
         public static string PropertyTest(string configurationText)
         {

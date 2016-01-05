@@ -36,9 +36,12 @@ namespace Haystack.Diagnostics.Amendments
             Action<TAmender> action)
             where TAmender : IConstructorAmender
         {
-            foreach (TAmender amendment in amenders.Where(amender => amender.AmendConstructor(typeof(TInstance), parameters)))
+            if (amenders != null)
             {
-                action(amendment);
+                foreach (TAmender amendment in amenders.Where(amender => amender.AmendConstructor(typeof(TInstance), parameters)))
+                {
+                    action(amendment);
+                }
             }
         }
     }

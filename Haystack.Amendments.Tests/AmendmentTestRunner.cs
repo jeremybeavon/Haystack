@@ -1,4 +1,6 @@
 ﻿using AppDomainCallbackExtensions;
+using Haystack.Amendments.Tests.Amendments;
+using Haystack.Diagnostics;
 using Haystack.Diagnostics.Configuration;
 using Microsoft.VisualBasic.FileIO;
 using System;
@@ -23,7 +25,7 @@ namespace Haystack.Amendments.Tests
         
         public HaystackConfiguration Configuration { get; set; }
 
-        public Func<string> TestRunnerMethod { get; set; }
+        public Func<string, string> TestRunnerMethod { get; set; }
         
         protected string BaseDirectory
         {
@@ -47,11 +49,11 @@ namespace Haystack.Amendments.Tests
             using (DisposableAppDomain appDomain = new DisposableAppDomain("TestRunner", appDomainSetup))
             {
                 return appDomain.AppDomain.DoCallBackWithResponse<TestCallback, DataContractSerialization, string>(
-                    new TestCallback(TestRunnerDll, TestRunnerMethod),
+                    new TestCallback(Path.Combine(testDirectory, Path.GetFileName(TestRunnerDll)), TestRunnerMethod, Configuration),
                     new DataContractSerialization());
             }
         }
-
+        
         private void SetUpTestRun(string testDirectory)
         {
             if (Directory.Exists(testDirectory))
