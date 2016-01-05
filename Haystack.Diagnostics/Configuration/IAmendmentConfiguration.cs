@@ -17,7 +17,7 @@ namespace Haystack.Diagnostics.Configuration
 
         IEnumerable<IAfterPropertyGetAmender> AfterPropertyGetAmendments { get; }
 
-        IEnumerable<IBeforePropertyGetAmender> BeforePropertySetAmendments { get; }
+        IEnumerable<IBeforePropertySetAmender> BeforePropertySetAmendments { get; }
 
         IEnumerable<IAfterPropertySetAmender> AfterPropertySetAmendments { get; }
 

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}</ProjectGuid>
+    <ProjectGuid>{2DD4DBED-891F-465D-855E-B5ABFCD24603}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Amendments.Tests</RootNamespace>
-    <AssemblyName>Haystack.Amendments.Tests</AssemblyName>
+    <RootNamespace>Haystack.Diagnostics.Tests</RootNamespace>
+    <AssemblyName>Haystack.Diagnostics.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,7 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -51,16 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Amendments\SimplePropertyAmendments.cs" />
-    <Compile Include="AmendmentTestBuilder.cs" />
-    <Compile Include="AmendmentTests.cs" />
+    <Compile Include="Configuration\HaystackConfigurationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Haystack.Amendments\Haystack.Amendments.csproj">
-      <Project>{ff76e013-1f51-4972-95a7-2cbb1cc27269}</Project>
-      <Name>Haystack.Amendments</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>

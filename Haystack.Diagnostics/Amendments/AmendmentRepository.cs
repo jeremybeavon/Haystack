@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Haystack.Diagnostics.Configuration;
+using System.Collections.Generic;
 
 namespace Haystack.Diagnostics.Amendments
 {
@@ -29,5 +30,22 @@ namespace Haystack.Diagnostics.Amendments
         public static IEnumerable<ICatchMethodAmender> CatchMethodAmenders { get; set; }
 
         public static IEnumerable<IFinallyMethodAmender> FinallyMethodAmenders { get; set; }
+
+        public static void Initialize(IAmendmentConfiguration configuration)
+        {
+            BeforePropertyGetAmenders = configuration.BeforePropertyGetAmendments;
+            AfterPropertyGetAmenders = configuration.AfterPropertyGetAmendments;
+            BeforePropertySetAmenders = configuration.BeforePropertySetAmendments;
+            AfterPropertySetAmenders = configuration.AfterPropertySetAmendments;
+            BeforeConstructorAmenders = configuration.BeforeConstructorAmendments;
+            CatchConstructorAmenders = configuration.CatchConstructorAmendments;
+            AfterConstructorAmenders = configuration.AfterConstructorAmendments;
+            BeforeMethodAmenders = configuration.BeforeMethodAmendments;
+            AfterVoidMethodAmenders = configuration.AfterVoidMethodAmendments;
+            AfterMethodAmenders = configuration.AfterMethodAmendments;
+            CatchVoidMethodAmenders = configuration.CatchVoidMethodAmendments;
+            CatchMethodAmenders = configuration.CatchMethodAmendments;
+            FinallyMethodAmenders = configuration.FinallyMethodAmendments;
+        }
     }
 }

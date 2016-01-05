@@ -1,5 +1,7 @@
 ﻿using Afterthought;
 using Haystack.Diagnostics.Amendments;
+using Haystack.Diagnostics.Configuration;
+using System;
 
 namespace Haystack.Amendments
 {
@@ -7,9 +9,17 @@ namespace Haystack.Amendments
     {
         public HaystackAmender()
         {
+            InitializeConfiguration();
             AmendProperties();
             AmendConstructors();
             AmendMethods();
+        }
+
+        private void InitializeConfiguration()
+        {
+            string configurationText = (string)AppDomain.CurrentDomain.GetData(AmendmentSetupProvider.ConfigurationKey);
+            HaystackConfiguration configuration = HaystackConfiguration.LoadText(configurationText);
+            AmendmentRepository.Initialize(configuration.Amendments);
         }
 
         private void AmendProperties()

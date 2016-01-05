@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}</ProjectGuid>
+    <ProjectGuid>{67DDC6A6-1C2E-48A1-A8E3-3F6C96082397}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Amendments.Tests</RootNamespace>
-    <AssemblyName>Haystack.Amendments.Tests</AssemblyName>
+    <RootNamespace>Haystack.Interception.Ninject_3_2_0.Tests</RootNamespace>
+    <AssemblyName>Haystack.Interception.Ninject_3_2_0.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,8 +35,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="FluentAssertions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.1.1\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.1.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.1.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -51,20 +64,28 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Amendments\SimplePropertyAmendments.cs" />
-    <Compile Include="AmendmentTestBuilder.cs" />
-    <Compile Include="AmendmentTests.cs" />
+    <Compile Include="..\Haystack.Interception.Ninject.Tests\DependencyManager.cs">
+      <Link>DependencyManager.cs</Link>
+    </Compile>
+    <Compile Include="Ninject_3_2_0_InterceptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Haystack.Amendments\Haystack.Amendments.csproj">
-      <Project>{ff76e013-1f51-4972-95a7-2cbb1cc27269}</Project>
-      <Name>Haystack.Amendments</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Haystack.Interception.Ninject_3_2_0\Haystack.Interception.Ninject_3_2_0.csproj">
+      <Project>{796f4f40-6c51-4f61-9ba9-ed4b42a9e0af}</Project>
+      <Name>Haystack.Interception.Ninject_3_2_0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Interception.Tests\Haystack.Interception.Tests.csproj">
+      <Project>{77e43fb4-ca70-45d0-a968-6aea3719ab4a}</Project>
+      <Name>Haystack.Interception.Tests</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
