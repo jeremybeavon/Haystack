@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="AmendmentSetupProvider.cs" />
     <Compile Include="AmendmentExtensions.cs" />
+    <Compile Include="DisposableAppDomain.cs" />
     <Compile Include="HaystackAmenderAttribute.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

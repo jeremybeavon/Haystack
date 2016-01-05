@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8351A1A6-CD0E-4888-A150-F323603E8440}</ProjectGuid>
+    <ProjectGuid>{3BDAC78A-2092-42E0-A22D-7340894884AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Amendments.TestTarget</RootNamespace>
-    <AssemblyName>Haystack.Amendments.TestTarget</AssemblyName>
+    <RootNamespace>Haystack.Amendments.Tests.TestRunner</RootNamespace>
+    <AssemblyName>Haystack.Amendments.Tests.TestRunner</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SimpleProperty.cs" />
+    <Compile Include="DefaultTestRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Amendments.Tests.Amendments\Haystack.Amendments.Tests.Amendments.csproj">
+      <Project>{d8e9c6c2-e585-44fb-bbf6-05187682ae67}</Project>
+      <Name>Haystack.Amendments.Tests.Amendments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Amendments.Tests.TestTarget\Haystack.Amendments.Tests.TestTarget.csproj">
+      <Project>{e8e6bbd9-90db-4b75-aad7-48e54c061a9b}</Project>
+      <Name>Haystack.Amendments.Tests.TestTarget</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

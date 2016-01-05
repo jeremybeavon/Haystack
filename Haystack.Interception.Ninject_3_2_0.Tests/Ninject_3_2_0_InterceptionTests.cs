@@ -18,7 +18,7 @@ namespace Haystack.Interception.Ninject.Tests
         }
 
         [TestMethod]
-        public void TestSimpleNinjectInterception()
+        public void TestSimpleNinject_3_2_0_Interception()
         {
             HaystackInterceptor.SetUp(DependencyManager.SimpleKernel);
             DependencyManager.SimpleKernel.Get<ISimpleService>().TestMethod();

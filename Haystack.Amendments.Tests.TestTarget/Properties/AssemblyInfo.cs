@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Haystack.Interception.Unity.Tests")]
+[assembly: AssemblyTitle("Haystack.Amendments.Tests.TestTarget")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Haystack.Interception.Unity.Tests")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyProduct("Haystack.Amendments.Tests.TestTarget")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7df5ec1f-0719-4cf9-95f9-9d29a48b9cc1")]
+[assembly: Guid("e8e6bbd9-90db-4b75-aad7-48e54c061a9b")]
 
 // Version information for an assembly consists of the following four values:
 //

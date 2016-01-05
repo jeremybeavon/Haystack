@@ -18,7 +18,7 @@ namespace Haystack.Interception.StructureMap.Tests
         }
 
         [TestMethod]
-        public void TestSimpleStructureMapInterception()
+        public void TestSimpleStructureMap_4_0_1_318_Interception()
         {
             HaystackInterceptionPolicy.SetUp(DependencyManager.SimpleContainer);
             DependencyManager.SimpleContainer.GetInstance<ISimpleService>().TestMethod();

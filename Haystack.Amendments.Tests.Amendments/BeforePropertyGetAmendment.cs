@@ -4,7 +4,7 @@ using Haystack.Diagnostics.Amendments;
 
 namespace Haystack.Amendments.Tests.Amendments
 {
-    public sealed class SimplePropertyAmendments : IBeforePropertyGetAmender
+    public sealed class BeforePropertyGetAmendment : IBeforePropertyGetAmender
     {
         public bool AmendProperty(PropertyInfo property)
         {
@@ -18,6 +18,7 @@ namespace Haystack.Amendments.Tests.Amendments
 
         public void BeforePropertyGet<TInstance>(TInstance instance, string propertyName)
         {
+            TestTrace.TraceText = string.Format("BeforeProperty(instance = {0}, propertyName = {1})", instance, propertyName);
         }
     }
 }

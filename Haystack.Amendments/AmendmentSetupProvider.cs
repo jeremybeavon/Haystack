@@ -101,15 +101,10 @@ namespace Haystack.Amendments
                 ApplicationBase = Path.GetDirectoryName(AfterthoughtAmenderExe),
                 ConfigurationFile = AfterthoughtAmenderExe + ".config"
             };
-            AppDomain appDomain = AppDomain.CreateDomain("Amender", null, appDomainSetup);
-            try
-            {
-                appDomain.SetData(ConfigurationKey, Configuration.ToString());
-                appDomain.ExecuteAssembly(AfterthoughtAmenderExe, new string[] { AssemblyPath, AmendmentsDll });
-            }
-            finally
-            {
-                AppDomain.Unload(appDomain);
+            using (DisposableAppDomain appDomain = new DisposableAppDomain("Amender", appDomainSetup))
+            { 
+                appDomain.AppDomain.SetData(ConfigurationKey, Configuration.ToString());
+                appDomain.AppDomain.ExecuteAssembly(AfterthoughtAmenderExe, new string[] { AssemblyPath, AmendmentsDll });
             }
         }
     }

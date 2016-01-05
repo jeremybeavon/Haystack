@@ -1,6 +1,7 @@
 ﻿using Castle.Core;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Facilities;
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Haystack.Interception.Castle.Core;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Haystack.Interception.Castle.Windsor
 
         public static void SetUp(IWindsorContainer container)
         {
+            container.Register(Component.For<InstanceInterceptor>().LifestyleSingleton());
             container.AddFacility(new HaystackInterceptor());
         }
 
@@ -30,14 +32,17 @@ namespace Haystack.Interception.Castle.Windsor
 
         private void ComponentRegistered(string key, IHandler handler)
         {
-            handler.ComponentModel.Interceptors.Add(interceptor);
+            if (handler.ComponentModel.Implementation != typeof(InstanceInterceptor))
+            {
+                handler.ComponentModel.Interceptors.Add(interceptor);
+            }
         }
 
         private void UpdateRegisteredComponents(IEnumerable<ComponentModel> components, ISet<ComponentModel> set)
         {
             foreach (ComponentModel component in components)
             {
-                if (set.Add(component))
+                if (component.Implementation != typeof(InstanceInterceptor) && set.Add(component))
                 {
                     component.Interceptors.Add(interceptor);
                     UpdateRegisteredComponents(component.Dependencies.OfType<ComponentModel>(), set);

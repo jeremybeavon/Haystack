@@ -19,7 +19,7 @@ namespace Haystack.Interception.Autofac.Tests
         }
 
         [TestMethod]
-        public void TestSimpleAutofacInterceptionWithContainerBuilder()
+        public void TestSimpleAutofac_3_5_2_InterceptionWithContainerBuilder()
         {
             HaystackInterceptor.SetUp(DependencyManager.SimpleContainerBuilder);
             DependencyManager.SimpleContainer.Resolve<ISimpleService>().TestMethod();
