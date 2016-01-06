@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Haystack.Amendments.Setup
+namespace Haystack.Diagnostics
 {
     public sealed class CrossDomainTextWriter : TextWriter
     {
         private readonly Encoding encoding;
-        private readonly AmendmentConsole console;
+        private readonly CrossDomainConsole console;
 
-        public CrossDomainTextWriter(AmendmentConsole console)
+        public CrossDomainTextWriter(CrossDomainConsole console)
         {
             encoding = Console.Out.Encoding;
             this.console = console;

@@ -18,7 +18,7 @@ namespace Haystack.Diagnostics.Tests.Configuration
             {
                 Amendments = new AmendmentConfiguration()
                 {
-                    Assemblies = new List<string>() { "Test.dll" }
+                    AssembliesToAmend = new List<string>() { "Test.dll" }
                 }
             }).ToString();
             test.GetHashCode();

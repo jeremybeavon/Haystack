@@ -4,6 +4,8 @@
     {
         string CodeCoverageFramework { get; }
 
+        string CodeCoverageProviderAssembly { get; }
+
         string CodeCoverageFilter { get; }
     }
 }

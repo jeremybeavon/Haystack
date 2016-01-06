@@ -4,7 +4,11 @@ namespace Haystack.Diagnostics.Configuration
 {
     public interface IHaystackConfiguration
     {
+        string OutputDirectory { get; }
+
         IAmendmentConfiguration Amendments { get; }
+
+        IEnumerable<ICodeCoverageConfiguration> CodeCoverage { get; }
 
         IEnumerable<IInterceptionConfiguration> Interception { get; }
 

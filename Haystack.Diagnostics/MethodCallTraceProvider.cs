@@ -97,6 +97,7 @@ namespace Haystack.Diagnostics
         public void Save(string fileName, string description)
         {
             MethodCallTrace methodCallTrace = BuildMethodCallTrace();
+            methodCallTrace.Description = description;
             using (Stream stream = File.Create(fileName))
             {
                 SerializationContext.Default.GetSerializer<MethodCallTrace>().Pack(stream, methodCallTrace);

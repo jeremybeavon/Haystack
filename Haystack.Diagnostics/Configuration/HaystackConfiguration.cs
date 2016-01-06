@@ -14,12 +14,17 @@ namespace Haystack.Diagnostics.Configuration
 
         public HaystackConfiguration()
         {
+            CodeCoverage = new List<CodeCoverageConfiguration>();
             Interception = new List<InterceptionConfiguration>();
             StaticAnalysis = new List<StaticAnalysisConfiguration>();
             SourceControl = new List<SourceControlConfiguration>();
         }
 
+        public string OutputDirectory { get; set; }
+
         public AmendmentConfiguration Amendments { get; set; }
+
+        public List<CodeCoverageConfiguration> CodeCoverage { get; set; }
 
         public List<InterceptionConfiguration> Interception { get; set; }
 
@@ -32,6 +37,11 @@ namespace Haystack.Diagnostics.Configuration
         IAmendmentConfiguration IHaystackConfiguration.Amendments
         {
             get { return Amendments; }
+        }
+
+        IEnumerable<ICodeCoverageConfiguration> IHaystackConfiguration.CodeCoverage
+        {
+            get { return CodeCoverage; }
         }
 
         IEnumerable<IInterceptionConfiguration> IHaystackConfiguration.Interception

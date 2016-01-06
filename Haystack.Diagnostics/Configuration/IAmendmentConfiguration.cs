@@ -5,7 +5,7 @@ namespace Haystack.Diagnostics.Configuration
 {
     public interface IAmendmentConfiguration
     {
-        IEnumerable<string> Assemblies { get; }
+        IEnumerable<string> AssembliesToAmend { get; }
 
         IEnumerable<IPropertyAmender> HaystackPropertyAmendments { get; }
 

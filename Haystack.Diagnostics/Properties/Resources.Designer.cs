@@ -61,13 +61,28 @@ namespace Haystack.Diagnostics.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;Project xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot; DefaultTargets=&quot;MakeAssemblyAmendments&quot;&gt;
+        ///	&lt;Target Name=&quot;MakeAssemblyAmendments&quot;&gt;
+        ///		&lt;Error Text=&quot;AssemblyPath property is not found.&quot; Condition=&quot;&apos;$(AssemblyPath)&apos; == &apos;&apos;&quot; /&gt;
+        ///    &lt;Error Text=&quot;StrongNameKey property is not found.&quot; Condition=&quot;&apos;$(StrongNameKey)&apos; == &apos;&apos;&quot; /&gt;
+        ///		&lt;PropertyGroup&gt;
+        ///			&lt;IldasmExe&gt;&amp;quot;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\ildasm.exe&amp;quot;&lt;/IldasmExe&gt;
+        ///			&lt;IlasmExe&gt;&amp;quot;C:\Windows [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AmendmentsStrongNameSetup {
+            get {
+                return ResourceManager.GetString("AmendmentsStrongNameSetup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;Project ToolsVersion=&quot;14.0&quot; DefaultTargets=&quot;RunCodeCoverage&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
-        ///  &lt;Target Name=&quot;RunCodeCoverage&quot;&gt;
-        ///    &lt;Error Text=&quot;PathToOpenCover property is not found&quot; Condition=&quot;&apos;$(PathToOpenCover)&apos; == &apos;&apos;&quot; /&gt;
-        ///    &lt;Error Text=&quot;PathToReportGenerator property is not found&quot; Condition=&quot;&apos;$(PathToReportGenerator)&apos; == &apos;&apos;&quot; /&gt;
-        ///    &lt;Error Text=&quot;PathToTestRunner property is not found&quot; Condition=&quot;&apos;$(PathToTestRunner)&apos; == &apos;&apos;&quot; /&gt;
-        ///   [rest of string was truncated]&quot;;.
+        ///&lt;Project DefaultTargets=&quot;ExecuteProcess&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+        ///  &lt;Target Name=&quot;ExecuteProcess&quot;&gt;
+        ///    &lt;Error Text=&quot;Command property is not found&quot; Condition=&quot;&apos;$(Command)&apos; == &apos;&apos;&quot; /&gt;
+        ///    &lt;Exec Command=&quot;$(Command)&quot; WorkingDirectory=&quot;$(WorkingDirectory)&quot; /&gt;
+        ///  &lt;/Target&gt;
+        ///&lt;/Project&gt;.
         /// </summary>
         internal static string ExecuteProcess {
             get {

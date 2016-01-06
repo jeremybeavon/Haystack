@@ -1,8 +1,6 @@
 ﻿using AppDomainCallbackExtensions;
-using Haystack.Amendments.Properties;
-using Haystack.Amendments.Setup;
-using Haystack.Diagnostics;
 using Haystack.Diagnostics.Configuration;
+using Haystack.Diagnostics.Properties;
 using Mono.Cecil;
 using System;
 using System.Collections.Generic;
@@ -11,29 +9,27 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Haystack.Amendments
+namespace Haystack.Diagnostics.Amendments
 {
-    public class AmendmentSetupProvider
+    public sealed class AmendmentSetupProvider
     {
         public const string ConfigurationKey = "haystackConfiguration";
         public const string AfterthoughtAmenderExeFileName = "Afterthought.Amender.exe";
         public const string AmendmentsDllFileName = "Haystack.Amendments.dll";
-
         
-
-        public AmendmentSetupProvider(string assemblyPath, HaystackConfiguration configuration, string strongNameKey = null)
+        public AmendmentSetupProvider(string assemblyToAmend, IHaystackConfiguration configuration, string strongNameKey = null)
         {
-            AssemblyPath = assemblyPath;
+            AssemblyToAmend = assemblyToAmend;
             Configuration = configuration;
             StrongNameKey = strongNameKey;
             string currentLocation = Assembly.GetExecutingAssembly().AssemblyBaseDirectory();
-            AfterthoughtAmenderExe = Path.Combine(currentLocation, AfterthoughtAmenderExeFileName);
-            AmendmentsDll = Path.Combine(currentLocation, AmendmentsDllFileName);
+            AfterthoughtAmenderExe = Path.Combine(currentLocation, "Amendments", AfterthoughtAmenderExeFileName);
+            AmendmentsDll = Path.Combine(currentLocation, "Amendments", AmendmentsDllFileName);
         }
 
-        public string AssemblyPath { get; set; }
+        public string AssemblyToAmend { get; set; }
 
-        public HaystackConfiguration Configuration { get; set; }
+        public IHaystackConfiguration Configuration { get; set; }
 
         public string StrongNameKey { get; set; }
 
@@ -41,20 +37,20 @@ namespace Haystack.Amendments
 
         public string AmendmentsDll { get; set; }
 
-        public static void SetupIfNecessary(string assemblyPath, HaystackConfiguration configuration, string strongNameKey = null)
+        public static void SetupIfNecessary(string assemblyToAmend, IHaystackConfiguration configuration, string strongNameKey = null)
         {
-            new AmendmentSetupProvider(assemblyPath, configuration, strongNameKey).SetupIfNecessary();
+            new AmendmentSetupProvider(assemblyToAmend, configuration, strongNameKey).SetupIfNecessary();
         }
 
         public void SetupIfNecessary()
         {
-            if (!File.Exists(AssemblyPath) || IsAssemblySetUp(AssemblyPath))
+            if (!File.Exists(AssemblyToAmend) || IsAssemblySetUp(AssemblyToAmend))
             {
                 return;
             }
 
-            string assemblyName = Path.GetFileNameWithoutExtension(AssemblyPath);
-            string baseDirectory = Path.GetDirectoryName(AssemblyPath);
+            string assemblyName = Path.GetFileNameWithoutExtension(AssemblyToAmend);
+            string baseDirectory = Path.GetDirectoryName(AssemblyToAmend);
             foreach (string file in Directory.GetFiles(baseDirectory, assemblyName + ".*"))
             {
                 string fileName = Path.GetFileName(file);
@@ -67,10 +63,10 @@ namespace Haystack.Amendments
             {
                 IDictionary<string, string> properties = new Dictionary<string, string>
                 {
-                    { "AssemblyPath", AssemblyPath },
+                    { "AssemblyPath", AssemblyToAmend },
                     { "StrongNameKey", StrongNameKey }
                 };
-                MsBuildRunner.RunMsBuildXml(Resources.HaystackAfterthoughtSetup, properties);
+                MsBuildRunner.RunMsBuildXml(Resources.AmendmentsStrongNameSetup, properties);
             }
         }
 
@@ -98,12 +94,11 @@ namespace Haystack.Amendments
                 ApplicationBase = Path.GetDirectoryName(AfterthoughtAmenderExe),
                 ConfigurationFile = AfterthoughtAmenderExe + ".config"
             };
-            AmendmentConsole console = new AmendmentConsole();
-            string[] args = new string[] { AssemblyPath, AmendmentsDll };
+            string[] args = new string[] { AssemblyToAmend, AmendmentsDll };
             using (DisposableAppDomain appDomain = new DisposableAppDomain("Amender", appDomainSetup))
             {
                 appDomain.AppDomain.SetData(ConfigurationKey, Configuration.ToString());
-                appDomain.AppDomain.CreateInstanceFromAndUnwrap<AmendmentConsoleProvider>().InitializeConsole(console);
+                appDomain.AppDomain.CreateInstanceFromAndUnwrap<CrossDomainConsoleProvider>().InitializeConsole(new CrossDomainConsole());
                 int result = appDomain.AppDomain.ExecuteAssembly(AfterthoughtAmenderExe, args);
                 if (result != 0)
                 {

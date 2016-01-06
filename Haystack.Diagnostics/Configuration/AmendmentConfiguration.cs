@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 using Haystack.Diagnostics.Amendments;
 
@@ -9,7 +8,7 @@ namespace Haystack.Diagnostics.Configuration
     {
         public AmendmentConfiguration()
         {
-            Assemblies = new List<string>();
+            AssembliesToAmend = new List<string>();
             HaystackPropertyAmendments = new List<string>();
             HaystackConstructorAmendments = new List<string>();
             HaystackMethodAmendments = new List<string>();
@@ -29,7 +28,7 @@ namespace Haystack.Diagnostics.Configuration
         }
 
         [XmlArrayItem("Assembly")]
-        public List<string> Assemblies { get; set; }
+        public List<string> AssembliesToAmend { get; set; }
 
         [XmlArrayItem("AmendmentType")]
         public List<string> HaystackPropertyAmendments { get; set; }
@@ -79,9 +78,9 @@ namespace Haystack.Diagnostics.Configuration
         [XmlArrayItem("AmendmentType")]
         public List<string> FinallyMethodAmendments { get; set; }
 
-        IEnumerable<string> IAmendmentConfiguration.Assemblies
+        IEnumerable<string> IAmendmentConfiguration.AssembliesToAmend
         {
-            get { return Assemblies; }
+            get { return AssembliesToAmend; }
         }
 
         IEnumerable<IPropertyAmender> IAmendmentConfiguration.HaystackPropertyAmendments

@@ -12,6 +12,8 @@ namespace Haystack.Diagnostics.Configuration
 
         public string RunnerExe { get; set; }
 
+        public string RunnerArguments { get; set; }
+
         [XmlArrayItem("Type")]
         public List<string> InitializeTestFramework { get; set; }
 
