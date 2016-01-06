@@ -16,8 +16,8 @@ namespace Haystack.Diagnostics.Configuration
         {
             CodeCoverage = new List<CodeCoverageConfiguration>();
             Interception = new List<InterceptionConfiguration>();
-            StaticAnalysis = new List<StaticAnalysisConfiguration>();
             SourceControl = new List<SourceControlConfiguration>();
+            StaticAnalysis = new List<StaticAnalysisConfiguration>();
         }
 
         public string OutputDirectory { get; set; }
@@ -28,9 +28,9 @@ namespace Haystack.Diagnostics.Configuration
 
         public List<InterceptionConfiguration> Interception { get; set; }
 
-        public List<StaticAnalysisConfiguration> StaticAnalysis { get; set; }
-
         public List<SourceControlConfiguration> SourceControl { get; set; }
+
+        public List<StaticAnalysisConfiguration> StaticAnalysis { get; set; }
 
         public RunnerConfiguration Runner { get; set; }
 

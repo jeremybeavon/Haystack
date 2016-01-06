@@ -4,7 +4,7 @@
     {
         string SourceControlFramework { get; }
 
-        string SourceControlFrameworkVersion { get; }
+        string SourceControlProviderAssembly { get; }
 
         string Url { get; }
     }

@@ -163,8 +163,14 @@
     <Compile Include="SourceControl\ILineChange.cs" />
     <Compile Include="SourceControl\ILineRange.cs" />
     <Compile Include="SourceControl\IPartialFile.cs" />
+    <Compile Include="SourceControl\IRevision.cs" />
     <Compile Include="SourceControl\ISourceControlProvider.cs" />
     <Compile Include="SourceControl\ISourceControlSelector.cs" />
+    <Compile Include="SourceControl\LineChange.cs" />
+    <Compile Include="SourceControl\LineRange.cs" />
+    <Compile Include="SourceControl\PartialFile.cs" />
+    <Compile Include="SourceControl\Revision.cs" />
+    <Compile Include="SourceControl\SourceControlProviderAttribute.cs" />
     <Compile Include="StaticAnalysisOutput.cs" />
     <Compile Include="TestIntegration\ICleanUpTestMethod.cs" />
     <Compile Include="TestIntegration\ICleanUpTestSuite.cs" />

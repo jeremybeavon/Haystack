@@ -44,6 +44,22 @@ namespace Haystack.Diagnostics
         {
             List<string> referencedDirectories = new List<string>();
             referencedDirectories.Add(Path.Combine(baseDirectory, "References"));
+            if (configuration.Interception != null)
+            {
+                foreach (IInterceptionConfiguration interception in configuration.Interception)
+                {
+                    referencedDirectories.Add(Path.Combine(baseDirectory, interception.InterceptionFramework, interception.InterceptionFrameworkVersion));
+                }
+            }
+
+            if (configuration.StaticAnalysis != null)
+            {
+                foreach (IStaticAnalysisConfiguration staticAnalysis in configuration.StaticAnalysis)
+                {
+                    referencedDirectories.Add(Path.Combine(baseDirectory, staticAnalysis.StaticAnalysisFramework));
+                }
+            }
+
             AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
             {
                 string assemblyFile = new AssemblyName(args.Name).Name + ".dll";

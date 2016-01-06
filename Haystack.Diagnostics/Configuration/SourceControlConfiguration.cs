@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Haystack.Diagnostics.Configuration
+﻿namespace Haystack.Diagnostics.Configuration
 {
-    public sealed class SourceControlConfiguration
+    public sealed class SourceControlConfiguration : ISourceControlConfiguration
     {
+        public string SourceControlFramework { get; set; }
+
+        public string SourceControlProviderAssembly { get; set; }
+
+        public string Url { get; set; }
     }
 }
