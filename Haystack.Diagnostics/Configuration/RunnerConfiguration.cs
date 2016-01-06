@@ -1,9 +1,6 @@
 ﻿using Haystack.Diagnostics.TestIntegration;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Haystack.Diagnostics.Configuration
 {
@@ -13,54 +10,46 @@ namespace Haystack.Diagnostics.Configuration
 
         public string RunnerFrameworkVersion { get; set; }
 
+        public string RunnerExe { get; set; }
+
+        [XmlArrayItem("Type")]
         public List<string> InitializeTestFramework { get; set; }
 
+        [XmlArrayItem("Type")]
         public List<string> InitializeTestSuite { get; set; }
 
+        [XmlArrayItem("Type")]
         public List<string> CleanUpTestSuite { get; set; }
 
+        [XmlArrayItem("Type")]
         public List<string> InitializeTestMethod { get; set; }
 
+        [XmlArrayItem("Type")]
         public List<string> CleanUpTestMethod { get; set; }
 
         IEnumerable<IInitializeTestFramework> IRunnerConfiguration.InitializeTestFramework
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return TypeResolver.CreateInstances<IInitializeTestFramework>(InitializeTestFramework); }
         }
 
         IEnumerable<IInitializeTestSuite> IRunnerConfiguration.InitializeTestSuite
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return TypeResolver.CreateInstances<IInitializeTestSuite>(InitializeTestSuite); }
         }
 
         IEnumerable<ICleanUpTestSuite> IRunnerConfiguration.CleanUpTestSuite
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return TypeResolver.CreateInstances<ICleanUpTestSuite>(CleanUpTestSuite); }
         }
 
         IEnumerable<IInitializeTestMethod> IRunnerConfiguration.InitializeTestMethod
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return TypeResolver.CreateInstances<IInitializeTestMethod>(InitializeTestMethod); }
         }
 
         IEnumerable<ICleanUpTestMethod> IRunnerConfiguration.CleanUpTestMethod
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return TypeResolver.CreateInstances<ICleanUpTestMethod>(CleanUpTestMethod); }
         }
     }
 }

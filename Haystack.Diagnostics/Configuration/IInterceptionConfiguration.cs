@@ -8,6 +8,6 @@ namespace Haystack.Diagnostics.Configuration
 
         string InterceptionFrameworkVersion { get; }
 
-        IEnumerable<IInitializeInterception> InitializeInterception { get; set; }
+        IEnumerable<IInitializeInterception> InitializeInterception { get; }
     }
 }

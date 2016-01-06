@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Haystack.Runner.Properties {
+namespace Haystack.Diagnostics.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Haystack.Runner.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Haystack.Runner.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Haystack.Diagnostics.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -69,9 +69,9 @@ namespace Haystack.Runner.Properties {
         ///    &lt;Error Text=&quot;PathToTestRunner property is not found&quot; Condition=&quot;&apos;$(PathToTestRunner)&apos; == &apos;&apos;&quot; /&gt;
         ///   [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string CodeCoverage {
+        internal static string ExecuteProcess {
             get {
-                return ResourceManager.GetString("CodeCoverage", resourceCulture);
+                return ResourceManager.GetString("ExecuteProcess", resourceCulture);
             }
         }
     }

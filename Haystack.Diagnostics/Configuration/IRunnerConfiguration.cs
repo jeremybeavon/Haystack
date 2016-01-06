@@ -9,6 +9,8 @@ namespace Haystack.Diagnostics.Configuration
 
         string RunnerFrameworkVersion { get; }
 
+        string RunnerExe { get; }
+
         IEnumerable<IInitializeTestFramework> InitializeTestFramework { get; }
 
         IEnumerable<IInitializeTestSuite> InitializeTestSuite { get; }

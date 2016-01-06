@@ -40,7 +40,7 @@
     <Reference Include="Microsoft.Build.Engine" />
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="MsgPack, Version=0.6.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
-      <HintPath>..\packages\MsgPack.Cli.0.6.6\lib\net45\MsgPack.dll</HintPath>
+      <HintPath>..\packages\MsgPack.Cli.0.6.7\lib\net45\MsgPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -76,6 +76,13 @@
     <Compile Include="Amendments\IPropertyAmender.cs" />
     <Compile Include="Amendments\MethodAmendments.cs" />
     <Compile Include="Amendments\PropertyAmendments.cs" />
+    <Compile Include="AssemblyExtensions.cs" />
+    <Compile Include="CodeCoverage\CodeCoverageContext.cs" />
+    <Compile Include="CodeCoverage\IAfterTestRun.cs" />
+    <Compile Include="CodeCoverage\IBeforeTestRun.cs" />
+    <Compile Include="CodeCoverage\ICodeCoverageContext.cs" />
+    <Compile Include="CodeCoverage\ITestRunContext.cs" />
+    <Compile Include="CodeCoverage\TestRunContext.cs" />
     <Compile Include="Configuration\AmendmentConfiguration.cs" />
     <Compile Include="Configuration\CodeCoverageConfiguration.cs" />
     <Compile Include="Configuration\HaystackConfiguration.cs" />
@@ -93,6 +100,7 @@
     <Compile Include="Configuration\TypeResolver.cs" />
     <Compile Include="CrossDomainObject.cs" />
     <Compile Include="DisposableAppDomain.cs" />
+    <Compile Include="HaystackRunner.cs" />
     <Compile Include="IInitializeInterception.cs" />
     <Compile Include="IO\DirectoryReader.cs" />
     <Compile Include="IO\FileReader.cs" />
@@ -112,8 +120,20 @@
     <Compile Include="ObjectModel\ParameterModifier.cs" />
     <Compile Include="ObjectModel\PropertyType.cs" />
     <Compile Include="ObjectModel\Value.cs" />
+    <Compile Include="ProcessRunner.cs" />
+    <Compile Include="ProcessStartInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PropertyDiagnostics.cs" />
+    <Compile Include="SourceControl\ILineChange.cs" />
+    <Compile Include="SourceControl\ILineRange.cs" />
+    <Compile Include="SourceControl\IPartialFile.cs" />
+    <Compile Include="SourceControl\ISourceControlProvider.cs" />
+    <Compile Include="SourceControl\ISourceControlSelector.cs" />
     <Compile Include="StaticAnalysisOutput.cs" />
     <Compile Include="TestIntegration\ICleanUpTestMethod.cs" />
     <Compile Include="TestIntegration\ICleanUpTestSuite.cs" />
@@ -123,10 +143,17 @@
     <Compile Include="TestIntegration\TestIntegrationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="execute_process.msbuild" />
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

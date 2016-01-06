@@ -56,15 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeCoverageRunner.cs" />
     <Compile Include="CommandLineOptions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\packages\NUnit.Console.3.0.0\tools\nunit-agent-x86.exe.config">
@@ -307,76 +301,9 @@
       <Link>NUnit\2.6.4\test.conf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\log4net.config">
-      <Link>OpenCover\log4net.config</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe.config">
-      <Link>OpenCover\OpenCover.Console.exe.config</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="App.config" />
-    <None Include="code_coverage.msbuild" />
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\OpenCover.4.6.166\tools\Autofac.Configuration.dll">
-      <Link>OpenCover\Autofac.Configuration.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\Autofac.dll">
-      <Link>OpenCover\Autofac.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\Gendarme.Framework.dll">
-      <Link>OpenCover\Gendarme.Framework.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\Gendarme.Rules.Maintainability.dll">
-      <Link>OpenCover\Gendarme.Rules.Maintainability.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\log4net.dll">
-      <Link>OpenCover\log4net.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\Mono.Cecil.dll">
-      <Link>OpenCover\Mono.Cecil.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\Mono.Cecil.Mdb.dll">
-      <Link>OpenCover\Mono.Cecil.Mdb.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\Mono.Cecil.Pdb.dll">
-      <Link>OpenCover\Mono.Cecil.Pdb.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe">
-      <Link>OpenCover\OpenCover.Console.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\OpenCover.Console.pdb">
-      <Link>OpenCover\OpenCover.Console.pdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\OpenCover.Extensions.dll">
-      <Link>OpenCover\OpenCover.Extensions.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\OpenCover.Extensions.pdb">
-      <Link>OpenCover\OpenCover.Extensions.pdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\OpenCover.Framework.dll">
-      <Link>OpenCover\OpenCover.Framework.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\OpenCover.4.6.166\tools\OpenCover.Framework.pdb">
-      <Link>OpenCover\OpenCover.Framework.pdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\packages\NUnit.Runners.2.6.1\tools\lib\log4net.dll">
@@ -457,44 +384,6 @@
     </None>
     <None Include="..\packages\NUnit.Runners.2.6.1\tools\pnunit.tests.dll">
       <Link>NUnit\2.6.1\pnunit.tests.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\OpenCover.4.6.166\tools\x64\OpenCover.Profiler.dll">
-      <Link>OpenCover\x64\OpenCover.Profiler.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\OpenCover.4.6.166\tools\x86\OpenCover.Profiler.dll">
-      <Link>OpenCover\x86\OpenCover.Profiler.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ICSharpCode.NRefactory.CSharp.dll">
-      <Link>ReportGenerator\ICSharpCode.NRefactory.CSharp.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ICSharpCode.NRefactory.dll">
-      <Link>ReportGenerator\ICSharpCode.NRefactory.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.exe">
-      <Link>ReportGenerator\ReportGenerator.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.Reporting.dll">
-      <Link>ReportGenerator\ReportGenerator.Reporting.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.Reporting.XML">
-      <Link>ReportGenerator\ReportGenerator.Reporting.XML</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.XML">
-      <Link>ReportGenerator\ReportGenerator.XML</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -861,15 +750,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

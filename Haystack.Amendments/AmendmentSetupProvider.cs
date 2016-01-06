@@ -19,14 +19,14 @@ namespace Haystack.Amendments
         public const string AfterthoughtAmenderExeFileName = "Afterthought.Amender.exe";
         public const string AmendmentsDllFileName = "Haystack.Amendments.dll";
 
-        private static readonly int codeBasePrefixLength = "file:///".Length;
+        
 
         public AmendmentSetupProvider(string assemblyPath, HaystackConfiguration configuration, string strongNameKey = null)
         {
             AssemblyPath = assemblyPath;
             Configuration = configuration;
             StrongNameKey = strongNameKey;
-            string currentLocation = Path.GetDirectoryName(GetAssemblyLocation(Assembly.GetExecutingAssembly()));
+            string currentLocation = Assembly.GetExecutingAssembly().AssemblyBaseDirectory();
             AfterthoughtAmenderExe = Path.Combine(currentLocation, AfterthoughtAmenderExeFileName);
             AmendmentsDll = Path.Combine(currentLocation, AmendmentsDllFileName);
         }
@@ -78,12 +78,7 @@ namespace Haystack.Amendments
         {
             return AssemblyDefinition.ReadAssembly(path).MainModule.AssemblyReferences.Any(assembly => assembly.Name == "Haystack.Diagnostics");
         }
-
-        private static string GetAssemblyLocation(Assembly assembly)
-        {
-            return assembly.CodeBase.Substring(codeBasePrefixLength).Replace('/', '\\');
-        }
-
+        
         private void AmendAssembly()
         {
             if (!File.Exists(AfterthoughtAmenderExe))
