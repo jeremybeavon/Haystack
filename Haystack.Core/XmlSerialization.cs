@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 #if HAYSTACK_BOOTSTRAP
 namespace Haystack.Bootstrap
 #else
-namespace Haystack.Diagnostics
+namespace Haystack.Core
 #endif
 {
     public static class XmlSerialization

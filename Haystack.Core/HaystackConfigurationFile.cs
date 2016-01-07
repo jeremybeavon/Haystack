@@ -4,7 +4,7 @@ using System.Reflection;
 #if HAYSTACK_BOOTSTRAP
 namespace Haystack.Bootstrap
 #else
-namespace Haystack.Diagnostics.Configuration
+namespace Haystack.Core
 #endif
 {
     public static class HaystackConfigurationFile

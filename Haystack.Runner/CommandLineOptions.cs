@@ -4,7 +4,7 @@ namespace Haystack.Runner
 {
     public sealed class CommandLineOptions
     {
-        [Option(Required = true)]
+        [Option("ConfigurationFile", Required = true)]
         public string ConfigurationFile { get; set; }
     }
 }

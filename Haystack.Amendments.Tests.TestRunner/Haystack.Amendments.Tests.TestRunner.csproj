@@ -51,6 +51,10 @@
       <Project>{e8e6bbd9-90db-4b75-aad7-48e54c061a9b}</Project>
       <Name>Haystack.Amendments.Tests.TestTarget</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Haystack.Bootstrap\Haystack.Bootstrap.csproj">
+      <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
+      <Name>Haystack.Bootstrap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>

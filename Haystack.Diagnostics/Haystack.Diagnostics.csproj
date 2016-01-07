@@ -78,7 +78,6 @@
   <ItemGroup>
     <Compile Include="CodeCoverage\CodeCoverageProvider.cs" />
     <Compile Include="CodeCoverage\CodeCoverageProviderAttribute.cs" />
-    <Compile Include="Configuration\HaystackConfigurationFile.cs" />
     <Compile Include="CrossDomainConsole.cs" />
     <Compile Include="CrossDomainConsoleProvider.cs" />
     <Compile Include="Amendments\AmendmentSetupProvider.cs" />
@@ -104,7 +103,6 @@
     <Compile Include="Amendments\IFinallyMethodAmender.cs" />
     <Compile Include="Amendments\IMethodAmender.cs" />
     <Compile Include="Amendments\IPropertyAmender.cs" />
-    <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="CodeCoverage\CodeCoverageContext.cs" />
     <Compile Include="CodeCoverage\IAfterTestRun.cs" />
     <Compile Include="CodeCoverage\IBeforeTestRun.cs" />
@@ -129,6 +127,7 @@
     <Compile Include="CrossDomainObject.cs" />
     <Compile Include="CrossDomainTextWriter.cs" />
     <Compile Include="DisposableAppDomain.cs" />
+    <Compile Include="HaystackInitializer.cs" />
     <Compile Include="HaystackRunner.cs" />
     <Compile Include="IInitializeInterception.cs" />
     <Compile Include="IO\DirectoryReader.cs" />
@@ -158,7 +157,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="PropertyDiagnostics.cs" />
-    <Compile Include="ResolveEventArgsExtensions.cs" />
     <Compile Include="SourceControl\ILineChange.cs" />
     <Compile Include="SourceControl\ILineRange.cs" />
     <Compile Include="SourceControl\IPartialFile.cs" />
@@ -177,7 +175,6 @@
     <Compile Include="TestIntegration\IInitializeTestMethod.cs" />
     <Compile Include="TestIntegration\IInitializeTestSuite.cs" />
     <Compile Include="TestIntegration\TestIntegrationRepository.cs" />
-    <Compile Include="XmlSerialization.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Amendments\StrongNameSetup.msbuild" />
@@ -185,12 +182,20 @@
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Core\Haystack.Core.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

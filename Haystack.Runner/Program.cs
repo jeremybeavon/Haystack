@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using Haystack.Core;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.Configuration;
 using System;
@@ -13,23 +14,14 @@ namespace Haystack.Runner
         {
             CommandLineOptions options = new CommandLineOptions();
             Parser.Default.ParseArgumentsStrict(args, options);
-            AppDomain.CurrentDomain.AssemblyResolve += DiagnosticsAssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, resolveArgs) =>
+                resolveArgs.ResolveDiagnosticsAssembly(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ".."));
             RunHaystackDiagnostics(options);
         }
-
-        private static Assembly DiagnosticsAssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            if (new AssemblyName(args.Name).Name == "Haystack.Diagnostics")
-            {
-                return Assembly.LoadFrom(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "Haystack.Diagnostics.dll"));
-            }
-
-            return null;
-        }
-
+        
         private static void RunHaystackDiagnostics(CommandLineOptions options)
         {
-            HaystackConfiguration configuration = HaystackConfiguration.LoadFile(options.ConfigurationFile);
+            IHaystackConfiguration configuration = HaystackInitializer.InitializeIfNecessary(options.ConfigurationFile);
             HaystackRunner.RunHaystackDiagnostics(configuration);
         }
     }

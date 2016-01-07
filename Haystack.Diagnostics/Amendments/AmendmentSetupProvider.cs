@@ -1,5 +1,6 @@
 ﻿using AppDomainCallbackExtensions;
 using Haystack.Diagnostics.Configuration;
+using Haystack.Core;
 using Haystack.Diagnostics.Properties;
 using Mono.Cecil;
 using System;

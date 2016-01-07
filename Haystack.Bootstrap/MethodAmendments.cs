@@ -8,13 +8,13 @@ namespace Haystack.Bootstrap
     {
         public static void BeforeMethod(TInstance instance, string methodName, object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             BeforeMethodInternal(instance, methodName, parameters);
         }
 
         public static void AfterVoidMethod(TInstance instance, string methodName, object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             AfterVoidMethod(instance, methodName, parameters);
         }
 
@@ -24,7 +24,7 @@ namespace Haystack.Bootstrap
             object[] parameters,
             TReturnValue returnValue)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             return AfterMethodInternal(instance, methodName, parameters, returnValue);
         }
 
@@ -34,7 +34,7 @@ namespace Haystack.Bootstrap
             TException exception,
             object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             CatchVoidMethodInternal(instance, methodName, exception, parameters);
         }
 
@@ -44,13 +44,13 @@ namespace Haystack.Bootstrap
             TException exception,
             object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             return CatchMethodInternal<TException, TReturnValue>(instance, methodName, exception, parameters);
         }
 
         public static void Finally(TInstance instance, string methodName, object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             FinallyInternal(instance, methodName, parameters);
         }
 

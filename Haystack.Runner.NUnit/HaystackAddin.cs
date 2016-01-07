@@ -1,4 +1,6 @@
-﻿using Haystack.Diagnostics.TestIntegration;
+﻿using Haystack.Core;
+using Haystack.Diagnostics;
+using Haystack.Diagnostics.TestIntegration;
 using NUnit.Core;
 using NUnit.Core.Builders;
 using NUnit.Core.Extensibility;
@@ -7,6 +9,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using HaystackBootstrapInitializer = Haystack.Bootstrap.HaystackBootstrapInitializer;
 
 namespace Haystack.Runner.NUnit
 {
@@ -29,7 +32,9 @@ namespace Haystack.Runner.NUnit
 
         public bool Install(IExtensionHost host)
         {
-            if (!File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Haystack.Diagnostics.dll")))
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string configurationFile = Path.Combine(baseDirectory, HaystackConfigurationFile.DefaultConfigurationFileName);
+            if (!File.Exists(configurationFile))
                 return true;
 
             InitializeTestFramework();
@@ -85,6 +90,32 @@ namespace Haystack.Runner.NUnit
                     action(@interface);
                 }
             }
+        }
+
+        private static void InitializeHaystack(string baseDirectory, string configurationFile)
+        {
+            string bootstrapFile = Path.Combine(baseDirectory, "Haystack.Bootstrap.dll");
+            if (File.Exists(bootstrapFile))
+            {
+                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) => args.ResolveAssembly(bootstrapFile);
+                InitializeHaystackUsingBootstrap();
+            }
+            else
+            {
+                string haystackBaseDirectory = BootstrapConfiguration.GetHaystackBaseDirectory(configurationFile);
+                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) => args.ResolveDiagnosticsAssembly(haystackBaseDirectory);
+                InitializeHaystackUsingDiagnostics(configurationFile);
+            }
+        }
+
+        private static void InitializeHaystackUsingBootstrap()
+        {
+            HaystackBootstrapInitializer.InitializeIfNecessary();
+        }
+
+        private static void InitializeHaystackUsingDiagnostics(string configurationFile)
+        {
+            HaystackInitializer.InitializeIfNecessary(configurationFile);
         }
 
         private static void InitializeTestFramework()

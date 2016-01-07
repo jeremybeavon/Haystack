@@ -1,6 +1,7 @@
 ﻿using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.CodeCoverage;
 using Haystack.Diagnostics.Configuration;
+using Haystack.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;

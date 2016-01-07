@@ -9,19 +9,19 @@ namespace Haystack.Bootstrap
     {
         public static void BeforeConstructor(TInstance instance, string constructor, object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             BeforeConstructor(instance, parameters);
         }
 
         public static void AfterConstructor(TInstance instance, string constructor, object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             AfterConstructor(instance, parameters);
         }
 
         public static void CatchConstructor(TInstance instance, string constructor, object[] parameters)
         {
-            HaystackInitializer.InitializeIfNecessary();
+            HaystackBootstrapInitializer.InitializeIfNecessary();
             CatchConstructor(instance, parameters);
         }
 
