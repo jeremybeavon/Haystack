@@ -72,7 +72,7 @@ namespace Haystack.Diagnostics.Amendments
 
         private static bool IsAssemblySetUp(string path)
         {
-            return AssemblyDefinition.ReadAssembly(path).MainModule.AssemblyReferences.Any(assembly => assembly.Name == "Haystack.Diagnostics");
+            return AssemblyDefinition.ReadAssembly(path).MainModule.AssemblyReferences.Any(assembly => assembly.Name == "Haystack.Bootstrap");
         }
         
         private void AmendAssembly()

@@ -1,11 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using Haystack.Diagnostics.Amendments;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace Haystack.Diagnostics.Amendments
+namespace Haystack.Bootstrap
 {
     public static class PropertyAmendments<TInstance>
     {
         public static void BeforePropertyGet(TInstance instance, string propertyName)
+        {
+            BeforePropertyGetInternal(instance, propertyName);
+        }
+
+        public static TProperty AfterPropertyGet<TProperty>(TInstance instance, string propertyName, TProperty value)
+        {
+            return AfterPropertyGetInternal(instance, propertyName, value);
+        }
+
+        public static TProperty BeforePropertySet<TProperty>(TInstance instance, string propertyName, TProperty oldValue, TProperty value)
+        {
+            return BeforePropertySet(instance, propertyName, value);
+        }
+
+        public static void AfterPropertySet<TProperty>(TInstance instance, string propertyName, TProperty oldValue,
+            TProperty value, TProperty newValue)
+        {
+            AfterPropertySet(instance, propertyName, value);
+        }
+
+        private static void BeforePropertyGetInternal(TInstance instance, string propertyName)
         {
             IEnumerable<IBeforePropertyGetAmender> amenders = AmendmentRepository.BeforePropertyGetAmenders;
             if (amenders != null)
@@ -17,20 +39,19 @@ namespace Haystack.Diagnostics.Amendments
             }
         }
 
-        public static TProperty AfterPropertyGet<TProperty>(TInstance instance, string propertyName, TProperty value)
+        private static TProperty AfterPropertyGetInternal<TProperty>(TInstance instance, string propertyName, TProperty value)
         {
             return GetAmenders(AmendmentRepository.AfterPropertyGetAmenders, propertyName)
                 .Aggregate(value, (returnValue, amender) => amender.AfterPropertyGet(instance, propertyName, returnValue));
         }
 
-        public static TProperty BeforePropertySet<TProperty>(TInstance instance, string propertyName, TProperty oldValue, TProperty value)
+        public static TProperty BeforePropertySet<TProperty>(TInstance instance, string propertyName, TProperty value)
         {
             return GetAmenders(AmendmentRepository.BeforePropertySetAmenders, propertyName)
                 .Aggregate(value, (returnValue, amender) => amender.BeforePropertySet(instance, propertyName, returnValue));
         }
 
-        public static void AfterPropertySet<TProperty>(TInstance instance, string propertyName, TProperty oldValue,
-            TProperty value, TProperty newValue)
+        public static void AfterPropertySet<TProperty>(TInstance instance, string propertyName, TProperty value)
         {
             IEnumerable<IAfterPropertySetAmender> amenders = AmendmentRepository.AfterPropertySetAmenders;
             if (amenders != null)

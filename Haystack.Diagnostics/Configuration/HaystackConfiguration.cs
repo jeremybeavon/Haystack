@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,8 +9,6 @@ namespace Haystack.Diagnostics.Configuration
 {
     public sealed class HaystackConfiguration : IHaystackConfiguration
     {
-        public const string DefaultConfigurationFileName = "haystack.config.xml";
-
         public HaystackConfiguration()
         {
             CodeCoverage = new List<CodeCoverageConfiguration>();
@@ -19,6 +16,8 @@ namespace Haystack.Diagnostics.Configuration
             SourceControl = new List<SourceControlConfiguration>();
             StaticAnalysis = new List<StaticAnalysisConfiguration>();
         }
+
+        public string HaystackBaseDirectory { get; set; }
 
         public string OutputDirectory { get; set; }
 
@@ -79,12 +78,7 @@ namespace Haystack.Diagnostics.Configuration
 
             return textBuilder.ToString();
         }
-
-        public static HaystackConfiguration LoadDefaultFile()
-        {
-            return LoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DefaultConfigurationFileName));
-        }
-
+        
         public static HaystackConfiguration LoadFile(string fileName)
         {
             return LoadText(File.ReadAllText(fileName));
@@ -94,7 +88,7 @@ namespace Haystack.Diagnostics.Configuration
         {
             using (TextReader reader = new StringReader(text))
             {
-                return (HaystackConfiguration)new XmlSerializer(typeof(HaystackConfiguration)).Deserialize(reader);
+                return XmlSerialization.Deserialize<HaystackConfiguration>(reader);
             }
         }
     }

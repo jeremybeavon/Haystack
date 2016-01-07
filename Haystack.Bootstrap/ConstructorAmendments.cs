@@ -1,12 +1,31 @@
-﻿using System;
+﻿using Haystack.Diagnostics.Amendments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Haystack.Diagnostics.Amendments
+namespace Haystack.Bootstrap
 {
     public static class ConstructorAmendments<TInstance>
     {
         public static void BeforeConstructor(TInstance instance, string constructor, object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            BeforeConstructor(instance, parameters);
+        }
+
+        public static void AfterConstructor(TInstance instance, string constructor, object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            AfterConstructor(instance, parameters);
+        }
+
+        public static void CatchConstructor(TInstance instance, string constructor, object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            CatchConstructor(instance, parameters);
+        }
+
+        private static void BeforeConstructor(TInstance instance, object[] parameters)
         {
             ProcessConstructor(
                 AmendmentRepository.BeforeConstructorAmenders,
@@ -14,7 +33,7 @@ namespace Haystack.Diagnostics.Amendments
                 amendment => amendment.BeforeConstructor(instance, parameters));
         }
 
-        public static void AfterConstructor(TInstance instance, string constructor, object[] parameters)
+        private static void AfterConstructor(TInstance instance, object[] parameters)
         {
             ProcessConstructor(
                 AmendmentRepository.AfterConstructorAmenders,
@@ -22,7 +41,7 @@ namespace Haystack.Diagnostics.Amendments
                 amendment => amendment.AfterConstructor(instance, parameters));
         }
 
-        public static void CatchConstructor(TInstance instance, string constructor, object[] parameters)
+        private static void CatchConstructor(TInstance instance, object[] parameters)
         {
             ProcessConstructor(
                 AmendmentRepository.CatchConstructorAmenders,

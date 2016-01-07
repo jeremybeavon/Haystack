@@ -62,7 +62,7 @@ namespace Haystack.Diagnostics
 
             AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
             {
-                string assemblyFile = new AssemblyName(args.Name).Name + ".dll";
+                string assemblyFile = args.AssemblyName() + ".dll";
                 string assemblyPath = referencedDirectories
                     .Select(referencedDirectory => Path.Combine(referencedDirectory, assemblyFile))
                     .FirstOrDefault(file => File.Exists(file));

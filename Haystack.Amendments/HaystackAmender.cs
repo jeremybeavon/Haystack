@@ -1,6 +1,6 @@
 ﻿using Afterthought;
+using Haystack.Bootstrap;
 using Haystack.Diagnostics.Amendments;
-using Haystack.Diagnostics.Configuration;
 using System;
 
 namespace Haystack.Amendments

@@ -78,10 +78,10 @@
   <ItemGroup>
     <Compile Include="CodeCoverage\CodeCoverageProvider.cs" />
     <Compile Include="CodeCoverage\CodeCoverageProviderAttribute.cs" />
+    <Compile Include="Configuration\HaystackConfigurationFile.cs" />
     <Compile Include="CrossDomainConsole.cs" />
     <Compile Include="CrossDomainConsoleProvider.cs" />
     <Compile Include="Amendments\AmendmentSetupProvider.cs" />
-    <Compile Include="Amendments\ConstructorAmendments.cs" />
     <Compile Include="Amendments\HaystackConstructorAmender.cs" />
     <Compile Include="Amendments\HaystackMethodAmender.cs" />
     <Compile Include="Amendments\HaystackNonVoidMethodAmender.cs" />
@@ -104,8 +104,6 @@
     <Compile Include="Amendments\IFinallyMethodAmender.cs" />
     <Compile Include="Amendments\IMethodAmender.cs" />
     <Compile Include="Amendments\IPropertyAmender.cs" />
-    <Compile Include="Amendments\MethodAmendments.cs" />
-    <Compile Include="Amendments\PropertyAmendments.cs" />
     <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="CodeCoverage\CodeCoverageContext.cs" />
     <Compile Include="CodeCoverage\IAfterTestRun.cs" />
@@ -160,6 +158,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="PropertyDiagnostics.cs" />
+    <Compile Include="ResolveEventArgsExtensions.cs" />
     <Compile Include="SourceControl\ILineChange.cs" />
     <Compile Include="SourceControl\ILineRange.cs" />
     <Compile Include="SourceControl\IPartialFile.cs" />
@@ -178,6 +177,7 @@
     <Compile Include="TestIntegration\IInitializeTestMethod.cs" />
     <Compile Include="TestIntegration\IInitializeTestSuite.cs" />
     <Compile Include="TestIntegration\TestIntegrationRepository.cs" />
+    <Compile Include="XmlSerialization.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Amendments\StrongNameSetup.msbuild" />

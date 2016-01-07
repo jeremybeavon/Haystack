@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCCA2D90-FC1C-4BC8-887D-16BCEE27AC27}</ProjectGuid>
+    <ProjectGuid>{C78E4BD0-5B9E-44A9-8DAF-4BE0731323FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Runner.NUnit</RootNamespace>
-    <AssemblyName>Haystack.Runner.NUnit</AssemblyName>
+    <RootNamespace>Haystack.Bootstrap</RootNamespace>
+    <AssemblyName>Haystack.Bootstrap</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,16 +16,16 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Runner\NUnit\2.6.4\addins\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>..\bin\Debug\Bootstrap\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;HAYSTACK_BOOTSTRAP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Runner\NUnit\2.6.4\addins\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>..\bin\Release\Bootstrap\</OutputPath>
+    <DefineConstants>TRACE;HAYSTACK_BOOTSTRAP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -36,14 +36,6 @@
     <AssemblyOriginatorKeyFile>Haystack.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.core">
-      <HintPath>..\packages\NUnit.Runners.2.6.4\tools\lib\nunit.core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\packages\NUnit.Runners.2.6.4\tools\lib\nunit.core.interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,23 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackAddin.cs">
-      <Link>HaystackAddin.cs</Link>
+    <Compile Include="..\Haystack.Diagnostics\AssemblyExtensions.cs">
+      <Link>AssemblyExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestMethod.cs">
-      <Link>HaystackTestMethod.cs</Link>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\HaystackConfigurationFile.cs">
+      <Link>HaystackConfigurationFile.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestSuite.cs">
-      <Link>HaystackTestSuite.cs</Link>
+    <Compile Include="..\Haystack.Diagnostics\XmlSerialization.cs">
+      <Link>XmlSerialization.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\MethodCallTraceManager.cs">
-      <Link>MethodCallTraceManager.cs</Link>
-    </Compile>
+    <Compile Include="BootstrapConfiguration.cs" />
+    <Compile Include="ConstructorAmendments.cs" />
+    <Compile Include="HaystackInitializer.cs" />
+    <Compile Include="MethodAmendments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Haystack.snk" />
-    <None Include="packages.config" />
+    <Compile Include="PropertyAmendments.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
@@ -78,6 +68,9 @@
       <Name>Haystack.Diagnostics</Name>
       <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Haystack.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

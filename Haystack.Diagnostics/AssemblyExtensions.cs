@@ -2,7 +2,11 @@
 using System.IO;
 using System.Reflection;
 
+#if HAYSTACK_BOOTSTRAP
+namespace Haystack.Bootstrap
+#else
 namespace Haystack.Diagnostics
+#endif
 {
     public static class AssemblyExtensions
     {

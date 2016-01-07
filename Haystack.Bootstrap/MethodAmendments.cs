@@ -1,11 +1,60 @@
-﻿using System.Collections.Generic;
+﻿using Haystack.Diagnostics.Amendments;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace Haystack.Diagnostics.Amendments
+namespace Haystack.Bootstrap
 {
     public static class MethodAmendments<TInstance>
     {
         public static void BeforeMethod(TInstance instance, string methodName, object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            BeforeMethodInternal(instance, methodName, parameters);
+        }
+
+        public static void AfterVoidMethod(TInstance instance, string methodName, object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            AfterVoidMethod(instance, methodName, parameters);
+        }
+
+        public static TReturnValue AfterMethod<TReturnValue>(
+            TInstance instance,
+            string methodName,
+            object[] parameters,
+            TReturnValue returnValue)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            return AfterMethodInternal(instance, methodName, parameters, returnValue);
+        }
+
+        public static void CatchVoidMethod<TException>(
+            TInstance instance,
+            string methodName,
+            TException exception,
+            object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            CatchVoidMethodInternal(instance, methodName, exception, parameters);
+        }
+
+        public static TReturnValue CatchMethod<TException, TReturnValue>(
+            TInstance instance,
+            string methodName,
+            TException exception,
+            object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            return CatchMethodInternal<TException, TReturnValue>(instance, methodName, exception, parameters);
+        }
+
+        public static void Finally(TInstance instance, string methodName, object[] parameters)
+        {
+            HaystackInitializer.InitializeIfNecessary();
+            FinallyInternal(instance, methodName, parameters);
+        }
+
+        private static void BeforeMethodInternal(TInstance instance, string methodName, object[] parameters)
         {
             IEnumerable<IBeforeMethodAmender> amenders = AmendmentRepository.BeforeMethodAmenders;
             if (amenders != null)
@@ -17,7 +66,7 @@ namespace Haystack.Diagnostics.Amendments
             }
         }
 
-        public static void AfterVoidMethod(TInstance instance, string methodName, object[] parameters)
+        private static void AfterVoidMethodInternal(TInstance instance, string methodName, object[] parameters)
         {
             IEnumerable<IAfterVoidMethodAmender> amenders = AmendmentRepository.AfterVoidMethodAmenders;
             if (amenders != null)
@@ -29,7 +78,7 @@ namespace Haystack.Diagnostics.Amendments
             }
         }
 
-        public static TReturnValue AfterMethod<TReturnValue>(
+        private static TReturnValue AfterMethodInternal<TReturnValue>(
             TInstance instance,
             string methodName,
             object[] parameters,
@@ -39,7 +88,7 @@ namespace Haystack.Diagnostics.Amendments
                 .Aggregate(returnValue, (value, amender) => amender.AfterMethod(instance, methodName, parameters, value));
         }
 
-        public static void CatchVoidMethod<TException>(
+        private static void CatchVoidMethodInternal<TException>(
             TInstance instance,
             string methodName,
             TException exception,
@@ -55,18 +104,18 @@ namespace Haystack.Diagnostics.Amendments
             }
         }
 
-        public static TReturnValue CatchMethod<TException, TReturnValue>(
+        private static TReturnValue CatchMethodInternal<TException, TReturnValue>(
             TInstance instance,
             string methodName,
             TException exception,
             object[] parameters)
         {
             return GetAmenders(AmendmentRepository.CatchMethodAmenders, methodName, parameters).Aggregate(
-                default(TReturnValue), 
+                default(TReturnValue),
                 (value, amender) => amender.CatchMethod<TInstance, TException, TReturnValue>(instance, methodName, exception, parameters));
         }
 
-        public static void Finally(TInstance instance, string methodName, object[] parameters)
+        private static void FinallyInternal(TInstance instance, string methodName, object[] parameters)
         {
             IEnumerable<IFinallyMethodAmender> amenders = AmendmentRepository.FinallyMethodAmenders;
             if (amenders != null)
