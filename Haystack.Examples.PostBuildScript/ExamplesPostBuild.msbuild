@@ -1,0 +1,13 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CopyBootstrap">
+	<Target Name="CopyBootstrap">
+		<Error Text="OutputDirectory property is not found." Condition="'$(OutputDirectory)' == ''" />
+    <PropertyGroup>
+      <ExamplesDirectory>$(OutputDirectory)Examples\</ExamplesDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <BootstrapFiles Include="$(OutputDirectory)Bootstrap\Haystack.Bootstrap.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(BootstrapFiles)" DestinationFolder="$(ExamplesDirectory)Amendments\SimpleProperty\Passing" />
+    <Copy SourceFiles="@(BootstrapFiles)" DestinationFolder="$(ExamplesDirectory)Amendments\SimpleProperty\Failing" />
+	</Target>
+</Project>

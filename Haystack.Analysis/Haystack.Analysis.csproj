@@ -38,6 +38,10 @@
     <AssemblyOriginatorKeyFile>Haystack.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppDomainCallbackExtensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b779ee9e6a5a3f4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppDomainCallbackExtensions.1.0.6\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
       <Private>True</Private>
@@ -48,18 +52,24 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TextSerialization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=048350c573d540a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\TextSerialization.1.0.0\lib\net45\TextSerialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeCoverage\CodeCoverageComparison.cs" />
     <Compile Include="CodeCoverage\FileDifferences.cs" />
     <Compile Include="CodeCoverage\Range.cs" />
     <Compile Include="CommandLineOptions.cs" />
+    <Compile Include="HaystackAnalysis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HaystackConfiguration>
+  <HaystackBaseDirectory>..\..\..\..</HaystackBaseDirectory>
+  <OutputDirectory>Output</OutputDirectory>
+  <Amendments>
+    <AssembliesToAmend>
+      <Assembly>Haystack.Examples.Amendments.SimpleProperty.dll</Assembly>
+    </AssembliesToAmend>
+    <HaystackPropertyAmendments>
+      <AmendmentType>Haystack.Diagnostics.Amendments.AllPropertiesAmender, Haystack.Diagnostics</AmendmentType>
+    </HaystackPropertyAmendments>
+  </Amendments>
+  <Runner>
+    <RunnerFramework>NUnit</RunnerFramework>
+    <RunnerFrameworkVersion>3.0.1</RunnerFrameworkVersion>
+    <RunnerExe>nunit3-console.exe</RunnerExe>
+    <RunnerArguments>&quot;$(CurrentDirectory(Haystack.Examples.Amendments.SimpleProperty.Tests.dll))&quot;</RunnerArguments>
+  </Runner>
+</HaystackConfiguration>

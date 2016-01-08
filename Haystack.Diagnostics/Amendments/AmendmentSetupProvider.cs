@@ -45,30 +45,21 @@ namespace Haystack.Diagnostics.Amendments
 
         public void SetupIfNecessary()
         {
-            if (!File.Exists(AssemblyToAmend) || IsAssemblySetUp(AssemblyToAmend))
+            if (!File.Exists(AssemblyToAmend))
             {
+                Trace.WriteLine("Skipping amendments because file not found: {0}", AssemblyToAmend);
                 return;
             }
 
-            string assemblyName = Path.GetFileNameWithoutExtension(AssemblyToAmend);
-            string baseDirectory = Path.GetDirectoryName(AssemblyToAmend);
-            foreach (string file in Directory.GetFiles(baseDirectory, assemblyName + ".*"))
+            if (IsAssemblySetUp(AssemblyToAmend))
             {
-                string fileName = Path.GetFileName(file);
-                if (fileName != assemblyName + ".dll" && fileName != assemblyName + ".pdb")
-                    File.Delete(file);
+                Trace.WriteLine("Skipping amendments because amendments are already applied: {0}", AssemblyToAmend);
+                return;
             }
 
+            CleanUpDirectory();
             AmendAssembly();
-            if (StrongNameKey != null)
-            {
-                IDictionary<string, string> properties = new Dictionary<string, string>
-                {
-                    { "AssemblyPath", AssemblyToAmend },
-                    { "StrongNameKey", StrongNameKey }
-                };
-                MsBuildRunner.RunMsBuildXml(Resources.AmendmentsStrongNameSetup, properties);
-            }
+            ReSignAssemblyIfNecessary();
         }
 
         private static bool IsAssemblySetUp(string path)
@@ -76,6 +67,22 @@ namespace Haystack.Diagnostics.Amendments
             return AssemblyDefinition.ReadAssembly(path).MainModule.AssemblyReferences.Any(assembly => assembly.Name == "Haystack.Bootstrap");
         }
         
+        private void CleanUpDirectory()
+        {
+            string assemblyName = Path.GetFileNameWithoutExtension(AssemblyToAmend);
+            string baseDirectory = Path.GetDirectoryName(AssemblyToAmend);
+            foreach (string file in Directory.GetFiles(baseDirectory, assemblyName + ".*"))
+            {
+                string fileName = Path.GetFileName(file);
+                if (Path.GetFileNameWithoutExtension(file) == assemblyName &&
+                    fileName != assemblyName + ".dll" &&
+                    fileName != assemblyName + ".pdb")
+                {
+                    File.Delete(file);
+                }
+            }
+        }
+
         private void AmendAssembly()
         {
             if (!File.Exists(AfterthoughtAmenderExe))
@@ -95,16 +102,28 @@ namespace Haystack.Diagnostics.Amendments
                 ApplicationBase = Path.GetDirectoryName(AfterthoughtAmenderExe),
                 ConfigurationFile = AfterthoughtAmenderExe + ".config"
             };
-            string[] args = new string[] { AssemblyToAmend, AmendmentsDll };
             using (DisposableAppDomain appDomain = new DisposableAppDomain("Amender", appDomainSetup))
             {
+                CrossDomainConsoleProvider.InitializeConsole(appDomain.AppDomain);
                 appDomain.AppDomain.SetData(ConfigurationKey, Configuration.ToString());
-                appDomain.AppDomain.CreateInstanceFromAndUnwrap<CrossDomainConsoleProvider>().InitializeConsole(new CrossDomainConsole());
-                int result = appDomain.AppDomain.ExecuteAssembly(AfterthoughtAmenderExe, args);
+                int result = appDomain.AppDomain.ExecuteAssembly(AfterthoughtAmenderExe, new string[] { AssemblyToAmend, AmendmentsDll });
                 if (result != 0)
                 {
                     throw new InvalidOperationException("Assembly amendment failed.");
                 }
+            }
+        }
+
+        private void ReSignAssemblyIfNecessary()
+        {
+            if (StrongNameKey != null)
+            {
+                IDictionary<string, string> properties = new Dictionary<string, string>
+                {
+                    { "AssemblyPath", AssemblyToAmend },
+                    { "StrongNameKey", StrongNameKey }
+                };
+                MsBuildRunner.RunMsBuildXml(Resources.AmendmentsStrongNameSetup, properties);
             }
         }
     }

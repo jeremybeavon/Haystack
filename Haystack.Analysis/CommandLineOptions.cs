@@ -4,10 +4,10 @@ namespace Haystack.Analysis
 {
     public sealed class CommandLineOptions
     {
-        [Option(Required = true)]
-        public string PathToPassingHaystackTestOutput { get; set; }
+        [Option("PassingConfigurationFile", Required = true)]
+        public string PassingConfigurationFile { get; set; }
 
-        [Option(Required = true)]
-        public string PathToFailingHaystackTestOutput { get; set; }
+        [Option("FailingConfigurationFile", Required = true)]
+        public string FailingConfigurationFile { get; set; }
     }
 }

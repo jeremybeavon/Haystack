@@ -33,7 +33,7 @@ namespace Haystack.Diagnostics.Amendments
 
         public static void Initialize(string configurationText)
         {
-            HaystackConfiguration configuration = HaystackConfiguration.LoadText(configurationText);
+            IHaystackConfiguration configuration = HaystackConfiguration.LoadText(configurationText);
             Initialize(configuration.Amendments);
         }
 

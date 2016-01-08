@@ -44,31 +44,27 @@ namespace Haystack.Diagnostics
         private void InitializeAssemblyResolution()
         {
             List<string> referencedDirectories = new List<string>();
-            referencedDirectories.Add(Path.Combine(baseDirectory, "References"));
-            if (configuration.Interception != null)
+            foreach (IInterceptionConfiguration interception in configuration.Interception ?? new IInterceptionConfiguration[0])
             {
-                foreach (IInterceptionConfiguration interception in configuration.Interception)
-                {
-                    referencedDirectories.Add(Path.Combine(baseDirectory, interception.InterceptionFramework, interception.InterceptionFrameworkVersion));
-                }
+                referencedDirectories.Add(Path.Combine(baseDirectory, interception.InterceptionFramework, interception.InterceptionFrameworkVersion));
             }
 
-            if (configuration.StaticAnalysis != null)
+            foreach (IStaticAnalysisConfiguration staticAnalysis in configuration.StaticAnalysis ?? new IStaticAnalysisConfiguration[0])
             {
-                foreach (IStaticAnalysisConfiguration staticAnalysis in configuration.StaticAnalysis)
-                {
-                    referencedDirectories.Add(Path.Combine(baseDirectory, staticAnalysis.StaticAnalysisFramework));
-                }
+                referencedDirectories.Add(Path.Combine(baseDirectory, staticAnalysis.StaticAnalysisFramework));
             }
 
-            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            if (referencedDirectories.Count != 0)
             {
-                string assemblyFile = args.AssemblyName() + ".dll";
-                string assemblyPath = referencedDirectories
-                    .Select(referencedDirectory => Path.Combine(referencedDirectory, assemblyFile))
-                    .FirstOrDefault(file => File.Exists(file));
-                return assemblyPath == null ? null : Assembly.LoadFrom(assemblyPath);
-            };
+                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+                {
+                    string assemblyFile = args.AssemblyName() + ".dll";
+                    string assemblyPath = referencedDirectories
+                        .Select(referencedDirectory => Path.Combine(referencedDirectory, assemblyFile))
+                        .FirstOrDefault(file => File.Exists(file));
+                    return assemblyPath == null ? null : Assembly.LoadFrom(assemblyPath);
+                };
+            }
         }
 
         private void InitializeAmendments()
@@ -92,7 +88,7 @@ namespace Haystack.Diagnostics
 
             return new TestRunContext()
             {
-                Exe = Path.Combine(baseDirectory, runner.RunnerFramework, runner.RunnerFrameworkVersion, runner.RunnerExe),
+                Exe = Path.Combine(baseDirectory, "Runner", runner.RunnerFramework, runner.RunnerFrameworkVersion, runner.RunnerExe),
                 Arguments = runner.RunnerArguments
             };
         }

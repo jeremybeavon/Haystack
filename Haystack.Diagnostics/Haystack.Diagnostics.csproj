@@ -38,18 +38,18 @@
   <ItemGroup>
     <Reference Include="AppDomainCallbackExtensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b779ee9e6a5a3f4f, processorArchitecture=MSIL">
       <HintPath>..\packages\AppDomainCallbackExtensions.1.0.6\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.Build.Engine" />
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
@@ -57,11 +57,11 @@
     </Reference>
     <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MsgPack, Version=0.6.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
       <HintPath>..\packages\MsgPack.Cli.0.6.7\lib\net45\MsgPack.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -72,10 +72,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="TextSerialization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=048350c573d540a5, processorArchitecture=MSIL">
       <HintPath>..\packages\TextSerialization.1.0.0\lib\net45\TextSerialization.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amendments\AllPropertiesAmender.cs" />
     <Compile Include="Amendments\AmendmentConfigurationBuilder.cs" />
     <Compile Include="Amendments\HaystackBeforeMethodAmender.cs" />
     <Compile Include="Amendments\HaystackConstructorAmender.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Configuration\AmendmentConfiguration.cs" />
     <Compile Include="Configuration\CodeCoverageConfiguration.cs" />
     <Compile Include="Configuration\HaystackConfiguration.cs" />
+    <Compile Include="Configuration\HaystackConfigurationRelativePathResolver.cs" />
     <Compile Include="Configuration\IAmendmentConfiguration.cs" />
     <Compile Include="Configuration\ICodeCoverageConfiguration.cs" />
     <Compile Include="Configuration\IHaystackConfiguration.cs" />

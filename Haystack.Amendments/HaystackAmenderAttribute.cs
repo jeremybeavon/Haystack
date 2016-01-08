@@ -8,6 +8,7 @@ namespace Haystack.Amendments
     {
         public IEnumerable<ITypeAmendment> GetAmendments(Type target)
         {
+            AmenderInitializer.InitializeIfNecessary();
             return CreateAmendment(typeof(HaystackAmender<>), target);
         }
 

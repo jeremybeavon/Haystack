@@ -3,6 +3,7 @@ using Haystack.Core;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.Configuration;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
@@ -16,6 +17,7 @@ namespace Haystack.Runner
             Parser.Default.ParseArgumentsStrict(args, options);
             AppDomain.CurrentDomain.AssemblyResolve += (sender, resolveArgs) =>
                 resolveArgs.ResolveDiagnosticsAssembly(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ".."));
+            Trace.Listeners.Add(new ConsoleTraceListener());
             RunHaystackDiagnostics(options);
         }
         

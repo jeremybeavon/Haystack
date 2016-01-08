@@ -17,7 +17,7 @@ namespace Haystack.Diagnostics.Configuration
             SourceControl = new List<SourceControlConfiguration>();
             StaticAnalysis = new List<StaticAnalysisConfiguration>();
         }
-
+        
         public string HaystackBaseDirectory { get; set; }
 
         public string OutputDirectory { get; set; }
@@ -80,9 +80,11 @@ namespace Haystack.Diagnostics.Configuration
             return textBuilder.ToString();
         }
         
-        public static HaystackConfiguration LoadFile(string fileName)
+        public static IHaystackConfiguration LoadFile(string fileName)
         {
-            return LoadText(File.ReadAllText(fileName));
+            HaystackConfiguration configuration = LoadText(File.ReadAllText(fileName));
+            HaystackConfigurationRelativePathResolver.ResolveRelativePaths(configuration, Path.GetDirectoryName(fileName));
+            return configuration;
         }
 
         public static HaystackConfiguration LoadText(string text)

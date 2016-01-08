@@ -1,0 +1,9 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CopyHaystack">
+	<Target Name="CopyHaystack">
+    <ItemGroup>
+      <HaystackFiles Include="$(ProjectDir)..\bin\$(Configuration)\**\*.*" />
+    </ItemGroup>
+    <RemoveDir Directories="$(ProjectDir)bin\$(Configuration)\Haystack" />
+    <Copy SourceFiles="@(HaystackFiles)" DestinationFolder="$(ProjectDir)bin\$(Configuration)\Haystack\%(RecursiveDir)" />
+	</Target>
+</Project>
