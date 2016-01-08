@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Haystack.Diagnostics.IO
+namespace Haystack.Core.IO
 {
     public sealed class DirectoryReader : IDirectoryReader
     {

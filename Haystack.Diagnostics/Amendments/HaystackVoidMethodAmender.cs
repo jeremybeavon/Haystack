@@ -3,9 +3,9 @@ using System.Reflection;
 
 namespace Haystack.Diagnostics.Amendments
 {
-    internal sealed class HaystackVoidMethodCall : HaystackMethodAmender, IAfterVoidMethodAmender, ICatchVoidMethodAmender
+    internal sealed class HaystackVoidMethodAmender : HaystackMethodAmender, IAfterVoidMethodAmender, ICatchVoidMethodAmender
     {
-        public HaystackVoidMethodCall(IMethodAmender amender)
+        public HaystackVoidMethodAmender(IMethodAmender amender)
             : base(amender)
         {
         }

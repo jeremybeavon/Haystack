@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Haystack.Diagnostics.IO
+namespace Haystack.Core.IO
 {
     public interface IDirectoryReader
     {

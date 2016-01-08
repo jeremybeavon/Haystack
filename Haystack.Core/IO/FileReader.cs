@@ -1,7 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
-namespace Haystack.Diagnostics.IO
+namespace Haystack.Core.IO
 {
     public sealed class FileReader : IFileReader
     {

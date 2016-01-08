@@ -1,4 +1,4 @@
-﻿namespace Haystack.Diagnostics.IO
+﻿namespace Haystack.Core.IO
 {
     public interface IFileReader
     {

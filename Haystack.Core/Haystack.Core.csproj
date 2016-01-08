@@ -48,9 +48,19 @@
   <ItemGroup>
     <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="BootstrapConfiguration.cs" />
+    <Compile Include="CrossDomainConsole.cs" />
+    <Compile Include="CrossDomainConsoleProvider.cs" />
+    <Compile Include="CrossDomainObject.cs" />
+    <Compile Include="CrossDomainTextWriter.cs" />
+    <Compile Include="DisposableAppDomain.cs" />
     <Compile Include="HaystackConfigurationFile.cs" />
+    <Compile Include="IO\DirectoryReader.cs" />
+    <Compile Include="IO\FileReader.cs" />
+    <Compile Include="IO\IDirectoryReader.cs" />
+    <Compile Include="IO\IFileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResolveEventArgsExtensions.cs" />
+    <Compile Include="TypeResolver.cs" />
     <Compile Include="XmlSerialization.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -63,6 +63,7 @@
     <Compile Include="BeforeMethodAmendment.cs" />
     <Compile Include="BeforeConstructorAmendment.cs" />
     <Compile Include="BeforePropertySetAmendment.cs" />
+    <Compile Include="HaystackPropertyAmendment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BeforePropertyGetAmendment.cs" />
     <Compile Include="TestCallback.cs" />

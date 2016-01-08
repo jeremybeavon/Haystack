@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Haystack.Diagnostics.Configuration
+namespace Haystack.Core
 {
-    internal static class TypeResolver
+    public static class TypeResolver
     {
         public static IEnumerable<T> CreateInstances<T>(IEnumerable<string> types)
             where T : class

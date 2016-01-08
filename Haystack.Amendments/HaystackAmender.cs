@@ -35,6 +35,7 @@ namespace Haystack.Amendments
             Properties
                 .Where(AmendmentRepository.AfterPropertySetAmenders)
                 .AfterSet(PropertyAmendments<T>.AfterPropertySet);
+
         }
 
         private void AmendConstructors()

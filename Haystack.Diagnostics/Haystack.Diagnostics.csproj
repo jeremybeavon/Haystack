@@ -76,17 +76,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeCoverage\CodeCoverageProvider.cs" />
-    <Compile Include="CodeCoverage\CodeCoverageProviderAttribute.cs" />
-    <Compile Include="CrossDomainConsole.cs" />
-    <Compile Include="CrossDomainConsoleProvider.cs" />
-    <Compile Include="Amendments\AmendmentSetupProvider.cs" />
+    <Compile Include="Amendments\AmendmentConfigurationBuilder.cs" />
+    <Compile Include="Amendments\HaystackBeforeMethodAmender.cs" />
     <Compile Include="Amendments\HaystackConstructorAmender.cs" />
     <Compile Include="Amendments\HaystackMethodAmender.cs" />
     <Compile Include="Amendments\HaystackNonVoidMethodAmender.cs" />
     <Compile Include="Amendments\HaystackPropertyAmender.cs" />
+    <Compile Include="Amendments\HaystackVoidMethodAmender.cs" />
+    <Compile Include="CodeCoverage\CodeCoverageProvider.cs" />
+    <Compile Include="CodeCoverage\CodeCoverageProviderAttribute.cs" />
+    <Compile Include="Amendments\AmendmentSetupProvider.cs" />
     <Compile Include="Amendments\AmendmentRepository.cs" />
-    <Compile Include="Amendments\HaystackVoidMethodCall.cs" />
     <Compile Include="Amendments\IAfterConstructorAmender.cs" />
     <Compile Include="Amendments\IAfterMethodAmender.cs" />
     <Compile Include="Amendments\IAfterVoidMethodAmender.cs" />
@@ -123,17 +123,9 @@
     <Compile Include="Configuration\RunnerConfiguration.cs" />
     <Compile Include="Configuration\SourceControlConfiguration.cs" />
     <Compile Include="Configuration\StaticAnalysisConfiguration.cs" />
-    <Compile Include="Configuration\TypeResolver.cs" />
-    <Compile Include="CrossDomainObject.cs" />
-    <Compile Include="CrossDomainTextWriter.cs" />
-    <Compile Include="DisposableAppDomain.cs" />
     <Compile Include="HaystackInitializer.cs" />
     <Compile Include="HaystackRunner.cs" />
     <Compile Include="IInitializeInterception.cs" />
-    <Compile Include="IO\DirectoryReader.cs" />
-    <Compile Include="IO\FileReader.cs" />
-    <Compile Include="IO\IDirectoryReader.cs" />
-    <Compile Include="IO\IFileReader.cs" />
     <Compile Include="IStaticAnalysis.cs" />
     <Compile Include="MethodCallTraceContext.cs" />
     <Compile Include="MethodCallTraceProvider.cs" />
@@ -156,7 +148,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PropertyDiagnostics.cs" />
     <Compile Include="SourceControl\ILineChange.cs" />
     <Compile Include="SourceControl\ILineRange.cs" />
     <Compile Include="SourceControl\IPartialFile.cs" />
@@ -182,9 +173,7 @@
     <None Include="Haystack.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

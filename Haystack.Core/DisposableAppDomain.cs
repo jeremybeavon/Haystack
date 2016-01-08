@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haystack.Diagnostics
+namespace Haystack.Core
 {
     public sealed class DisposableAppDomain : IDisposable
     {

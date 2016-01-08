@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Haystack.Core;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Haystack.Diagnostics.Configuration

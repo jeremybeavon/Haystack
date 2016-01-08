@@ -69,6 +69,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Haystack.Core\Haystack.Core.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>

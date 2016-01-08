@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using Haystack.Analysis.CodeCoverage;
-using Haystack.Diagnostics.IO;
+using Haystack.Core.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

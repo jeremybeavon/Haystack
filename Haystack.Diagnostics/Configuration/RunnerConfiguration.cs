@@ -1,4 +1,5 @@
-﻿using Haystack.Diagnostics.TestIntegration;
+﻿using Haystack.Core;
+using Haystack.Diagnostics.TestIntegration;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 

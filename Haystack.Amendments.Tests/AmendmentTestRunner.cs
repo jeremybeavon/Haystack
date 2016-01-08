@@ -1,6 +1,6 @@
 ﻿using AppDomainCallbackExtensions;
 using Haystack.Amendments.Tests.Amendments;
-using Haystack.Diagnostics;
+using Haystack.Core;
 using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.Configuration;
 using Microsoft.VisualBasic.FileIO;

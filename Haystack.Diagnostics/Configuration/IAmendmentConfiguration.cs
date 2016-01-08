@@ -6,13 +6,7 @@ namespace Haystack.Diagnostics.Configuration
     public interface IAmendmentConfiguration
     {
         IEnumerable<string> AssembliesToAmend { get; }
-
-        IEnumerable<IPropertyAmender> HaystackPropertyAmendments { get; }
-
-        IEnumerable<IConstructorAmender> HaystackConstructorAmendments { get; }
-
-        IEnumerable<IMethodAmender> HaystackMethodAmendments { get; }
-
+        
         IEnumerable<IBeforePropertyGetAmender> BeforePropertyGetAmendments { get; }
 
         IEnumerable<IAfterPropertyGetAmender> AfterPropertyGetAmendments { get; }

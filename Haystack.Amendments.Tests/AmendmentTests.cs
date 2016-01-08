@@ -248,5 +248,26 @@ namespace Haystack.Amendments.Tests
                 }
             }).RunTest().Should().Be(expectedResult);
         }
+
+        [TestMethod]
+        public void TestHaystackPropertyAmendment()
+        {
+            const string expectedResult = "Threads: 1, Calls: 2";
+            (new AmendmentTestRunner()
+            {
+                TestName = "HaystackProperty",
+                TestRunnerMethod = DefaultTestRunner.HaystackPropertyTest,
+                Configuration = new HaystackConfiguration()
+                {
+                    Amendments = new AmendmentConfiguration()
+                    {
+                        HaystackPropertyAmendments = new List<string>()
+                        {
+                            typeof(HaystackPropertyAmendment).AssemblyQualifiedName
+                        }
+                    }
+                }
+            }).RunTest().Should().Be(expectedResult);
+        }
     }
 }

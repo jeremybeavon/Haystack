@@ -6,8 +6,11 @@ namespace Haystack.Diagnostics.Configuration
 {
     public sealed class AmendmentConfiguration : IAmendmentConfiguration
     {
+        private readonly AmendmentConfigurationBuilder builder;
+
         public AmendmentConfiguration()
         {
+            builder = new AmendmentConfigurationBuilder(this);
             AssembliesToAmend = new List<string>();
             HaystackPropertyAmendments = new List<string>();
             HaystackConstructorAmendments = new List<string>();
@@ -82,85 +85,70 @@ namespace Haystack.Diagnostics.Configuration
         {
             get { return AssembliesToAmend; }
         }
-
-        IEnumerable<IPropertyAmender> IAmendmentConfiguration.HaystackPropertyAmendments
-        {
-            get { return TypeResolver.CreateInstances<IPropertyAmender>(HaystackPropertyAmendments); }
-        }
-
-        IEnumerable<IConstructorAmender> IAmendmentConfiguration.HaystackConstructorAmendments
-        {
-            get { return TypeResolver.CreateInstances<IConstructorAmender>(HaystackConstructorAmendments); }
-        }
-
-        IEnumerable<IMethodAmender> IAmendmentConfiguration.HaystackMethodAmendments
-        {
-            get { return TypeResolver.CreateInstances<IMethodAmender>(HaystackMethodAmendments); }
-        }
-
+        
         IEnumerable<IBeforePropertyGetAmender> IAmendmentConfiguration.BeforePropertyGetAmendments
         {
-            get { return TypeResolver.CreateInstances<IBeforePropertyGetAmender>(BeforePropertyGetAmendments); }
+            get { return builder.BuildBeforePropertyGetAmenders(); }
         }
 
         IEnumerable<IAfterPropertyGetAmender> IAmendmentConfiguration.AfterPropertyGetAmendments
         {
-            get { return TypeResolver.CreateInstances<IAfterPropertyGetAmender>(AfterPropertyGetAmendments); }
+            get { return builder.BuildAfterPropertyGetAmenders(); }
         }
 
         IEnumerable<IBeforePropertySetAmender> IAmendmentConfiguration.BeforePropertySetAmendments
         {
-            get { return TypeResolver.CreateInstances<IBeforePropertySetAmender>(BeforePropertySetAmendments); }
+            get { return builder.BuildBeforePropertySetAmenders(); }
         }
 
         IEnumerable<IAfterPropertySetAmender> IAmendmentConfiguration.AfterPropertySetAmendments
         {
-            get { return TypeResolver.CreateInstances<IAfterPropertySetAmender>(AfterPropertySetAmendments); }
+            get { return builder.BuildAfterPropertySetAmenders(); }
         }
 
         IEnumerable<IBeforeConstructorAmender> IAmendmentConfiguration.BeforeConstructorAmendments
         {
-            get { return TypeResolver.CreateInstances<IBeforeConstructorAmender>(BeforeConstructorAmendments); }
+            get { return builder.BuildBeforeConstructorAmenders(); }
         }
 
         IEnumerable<IAfterConstructorAmender> IAmendmentConfiguration.AfterConstructorAmendments
         {
-            get { return TypeResolver.CreateInstances<IAfterConstructorAmender>(AfterConstructorAmendments); }
+            get { return builder.BuildAfterConstructorAmenders(); }
         }
 
         IEnumerable<ICatchConstructorAmender> IAmendmentConfiguration.CatchConstructorAmendments
         {
-            get { return TypeResolver.CreateInstances<ICatchConstructorAmender>(CatchConstructorAmendments); }
+            get { return builder.BuildCatchConstructorAmenders(); }
         }
 
         IEnumerable<IBeforeMethodAmender> IAmendmentConfiguration.BeforeMethodAmendments
         {
-            get { return TypeResolver.CreateInstances<IBeforeMethodAmender>(BeforeMethodAmendments); }
+            get { return builder.BuildBeforeMethodAmenders(); }
         }
 
         IEnumerable<IAfterVoidMethodAmender> IAmendmentConfiguration.AfterVoidMethodAmendments
         {
-            get { return TypeResolver.CreateInstances<IAfterVoidMethodAmender>(AfterVoidMethodAmendments); }
+            get { return builder.BuildAfterVoidMethodAmenders(); }
         }
 
         IEnumerable<IAfterMethodAmender> IAmendmentConfiguration.AfterMethodAmendments
         {
-            get { return TypeResolver.CreateInstances<IAfterMethodAmender>(AfterMethodAmendments); }
+            get { return builder.BuildAfterMethodAmenders(); }
         }
 
         IEnumerable<ICatchVoidMethodAmender> IAmendmentConfiguration.CatchVoidMethodAmendments
         {
-            get { return TypeResolver.CreateInstances<ICatchVoidMethodAmender>(CatchVoidMethodAmendments); }
+            get { return builder.BuildCatchVoidMethodAmenders(); }
         }
 
         IEnumerable<ICatchMethodAmender> IAmendmentConfiguration.CatchMethodAmendments
         {
-            get { return TypeResolver.CreateInstances<ICatchMethodAmender>(CatchMethodAmendments); }
+            get { return builder.BuildCatchMethodAmenders(); }
         }
 
         IEnumerable<IFinallyMethodAmender> IAmendmentConfiguration.FinallyMethodAmendments
         {
-            get { return TypeResolver.CreateInstances<IFinallyMethodAmender>(FinallyMethodAmendments); }
+            get { return builder.BuildFinallyMethodAmenders(); }
         }
     }
 }

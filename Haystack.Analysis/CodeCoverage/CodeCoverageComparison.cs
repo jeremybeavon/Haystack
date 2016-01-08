@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using DiffPlex;
 using DiffPlex.DiffBuilder;
 using DiffPlex.DiffBuilder.Model;
-using Haystack.Diagnostics.IO;
+using Haystack.Core.IO;
 
 namespace Haystack.Analysis.CodeCoverage
 {
