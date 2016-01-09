@@ -52,9 +52,9 @@ namespace Haystack.Runner.TestRunner
                 HaystackBaseDirectory = HaystackBaseDirectory,
                 Runner = new RunnerConfiguration()
                 {
-                    RunnerFramework = "NUnit",
-                    RunnerFrameworkVersion = "2.6.1",
-                    RunnerExe = "nunit-console-x86.exe",
+                    RunnerFramework = RunnerFramework,
+                    RunnerFrameworkVersion = RunnerFrameworkVersion,
+                    RunnerExe = RunnerExe,
                     RunnerArguments = string.Format("\"{0}\"", AssemblyToTest),
                     RunnerInitializers = new List<string>()
                     {

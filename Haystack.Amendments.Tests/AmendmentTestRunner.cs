@@ -41,6 +41,8 @@ namespace Haystack.Amendments.Tests
 
         public string RunTest()
         {
+            Configuration.OutputDirectory = baseDirectory;
+            Configuration.HaystackBaseDirectory = baseDirectory;
             string testDirectory = Path.Combine(baseDirectory, TestName);
             SetUpTestRun(testDirectory);
             AppDomainSetup appDomainSetup = new AppDomainSetup()

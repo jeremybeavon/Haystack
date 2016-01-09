@@ -15,7 +15,7 @@ namespace Haystack.Bootstrap
         public static void AfterVoidMethod(TInstance instance, string methodName, object[] parameters)
         {
             HaystackBootstrapInitializer.InitializeIfNecessary();
-            AfterVoidMethod(instance, methodName, parameters);
+            AfterVoidMethodInternal(instance, methodName, parameters);
         }
 
         public static TReturnValue AfterMethod<TReturnValue>(
