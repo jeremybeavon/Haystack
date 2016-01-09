@@ -1,4 +1,5 @@
 ﻿using Haystack.Core;
+using Haystack.Diagnostics;
 using System;
 using System.IO;
 
@@ -6,7 +7,7 @@ namespace Haystack.Analysis.Tests
 {
     public static class HaystackAnalysisTestRunner
     {
-        private static readonly string haystackBaseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Haystack");
+        private static readonly string haystackBaseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Haystack");
 
         public static void RunHaystackAnalysis(string passingConfigurationFile, string failingConfigurationFile)
         {
@@ -30,15 +31,7 @@ namespace Haystack.Analysis.Tests
 
         private static void RunExecutable(string exe, params string[] args)
         {
-            AppDomainSetup setup = new AppDomainSetup()
-            {
-                ApplicationBase = Path.GetDirectoryName(exe)
-            };
-            using (DisposableAppDomain appDomain = new DisposableAppDomain(Path.GetFileNameWithoutExtension(exe), setup))
-            {
-                CrossDomainConsoleProvider.InitializeConsole(appDomain.AppDomain);
-                appDomain.AppDomain.ExecuteAssembly(exe, args);
-            }
+            ProcessRunner.ExecuteProcessInNewAppDomain(exe, args);
         }
     }
 }

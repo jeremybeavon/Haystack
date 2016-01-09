@@ -1,5 +1,6 @@
 ﻿using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.Configuration;
+using Haystack.Diagnostics.TestIntegration;
 
 namespace Haystack.Diagnostics
 {
@@ -32,7 +33,12 @@ namespace Haystack.Diagnostics
         private static void Initialize(string configurationFile)
         {
             configuration = HaystackConfiguration.LoadFile(configurationFile);
-            AmendmentRepository.Initialize(configuration.Amendments);
+            if (configuration.Amendments != null)
+            {
+                AmendmentRepository.Initialize(configuration.Amendments);
+            }
+
+            TestIntegrationRepository.Initialize(configuration.Runner);
         }
     }
 }

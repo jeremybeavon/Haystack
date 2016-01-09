@@ -1,19 +1,38 @@
 ﻿using Haystack.Core;
 using Haystack.Diagnostics.TestIntegration;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
 namespace Haystack.Diagnostics.Configuration
 {
     public sealed class RunnerConfiguration : IRunnerConfiguration
     {
+        public RunnerConfiguration()
+        {
+            RunnerInitializers = new List<string>();
+            InitializeTestFramework = new List<string>();
+            InitializeTestSuite = new List<string>();
+            CleanUpTestSuite = new List<string>();
+            InitializeTestMethod = new List<string>();
+            CleanUpTestMethod = new List<string>();
+        }
+
+        [Required]
         public string RunnerFramework { get; set; }
 
+        [Required]
         public string RunnerFrameworkVersion { get; set; }
 
+        [Required]
         public string RunnerExe { get; set; }
 
         public string RunnerArguments { get; set; }
+
+        public string RunnerArgumentsProvider { get; set; }
+
+        [XmlArrayItem("Type")]
+        public List<string> RunnerInitializers { get; set; }
 
         [XmlArrayItem("Type")]
         public List<string> InitializeTestFramework { get; set; }
@@ -29,6 +48,16 @@ namespace Haystack.Diagnostics.Configuration
 
         [XmlArrayItem("Type")]
         public List<string> CleanUpTestMethod { get; set; }
+
+        IRunnerArgumentsProvider IRunnerConfiguration.RunnerArgumentsProvider
+        {
+            get { return TypeResolver.CreateInstance<IRunnerArgumentsProvider>(RunnerArgumentsProvider); }
+        }
+
+        IEnumerable<IRunnerInitializer> IRunnerConfiguration.RunnerInitializers
+        {
+            get { return TypeResolver.CreateInstances<IRunnerInitializer>(RunnerInitializers); }
+        }
 
         IEnumerable<IInitializeTestFramework> IRunnerConfiguration.InitializeTestFramework
         {

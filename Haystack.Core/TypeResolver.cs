@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Haystack.Core
 {
@@ -26,13 +27,19 @@ namespace Haystack.Core
             if (invalidTypes.Count != 0)
             {
                 string errorMessage = string.Format(
-                    "The following type could not be converted to {0}: {1}",
+                    "The following types could not be converted to {0}: {1}",
                     typeof(T).FullName,
                     string.Join(",", invalidTypes));
                 throw new InvalidOperationException(errorMessage);
             }
 
             return instances;
+        }
+
+        public static T CreateInstance<T>(string type)
+            where T : class
+        {
+            return string.IsNullOrWhiteSpace(type) ? null : CreateInstances<T>(new string[] { type }).First();
         }
     }
 }

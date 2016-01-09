@@ -13,6 +13,10 @@ namespace Haystack.Diagnostics.Configuration
 
         string RunnerArguments { get; }
 
+        IRunnerArgumentsProvider RunnerArgumentsProvider { get; }
+
+        IEnumerable<IRunnerInitializer> RunnerInitializers { get; }
+
         IEnumerable<IInitializeTestFramework> InitializeTestFramework { get; }
 
         IEnumerable<IInitializeTestSuite> InitializeTestSuite { get; }

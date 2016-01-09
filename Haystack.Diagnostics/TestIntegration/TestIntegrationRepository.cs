@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Haystack.Diagnostics.Configuration;
+using System.Collections.Generic;
 
 namespace Haystack.Diagnostics.TestIntegration
 {
@@ -13,5 +14,14 @@ namespace Haystack.Diagnostics.TestIntegration
         public static IEnumerable<IInitializeTestMethod> InitializeTestMethodMethods { get; set; }
 
         public static IEnumerable<ICleanUpTestMethod> CleanUpTestMethodMethods { get; set; }
+
+        public static void Initialize(IRunnerConfiguration configuration)
+        {
+            IntitializeTestFrameworkMethods = configuration.InitializeTestFramework;
+            IntitializeTestSuiteMethods = configuration.InitializeTestSuite;
+            CleanUpTestSuiteMethods = configuration.CleanUpTestSuite;
+            InitializeTestMethodMethods = configuration.InitializeTestMethod;
+            CleanUpTestMethodMethods = configuration.CleanUpTestMethod;
+        }
     }
 }

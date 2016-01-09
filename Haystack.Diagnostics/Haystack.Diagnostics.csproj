@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -64,7 +64,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
@@ -108,8 +108,10 @@
     <Compile Include="CodeCoverage\IAfterTestRun.cs" />
     <Compile Include="CodeCoverage\IBeforeTestRun.cs" />
     <Compile Include="CodeCoverage\ICodeCoverageContext.cs" />
-    <Compile Include="CodeCoverage\ITestRunContext.cs" />
-    <Compile Include="CodeCoverage\TestRunContext.cs" />
+    <Compile Include="IRunnerArgumentsProvider.cs" />
+    <Compile Include="IRunnerInitializer.cs" />
+    <Compile Include="ITestRunContext.cs" />
+    <Compile Include="TestRunContext.cs" />
     <Compile Include="Configuration\AmendmentConfiguration.cs" />
     <Compile Include="Configuration\CodeCoverageConfiguration.cs" />
     <Compile Include="Configuration\HaystackConfiguration.cs" />

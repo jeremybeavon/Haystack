@@ -10,5 +10,7 @@
         public string Command { get; private set; }
 
         public string WorkingDirectory { get; set; }
+
+        public string StandardOutputFile { get; set; }
     }
 }

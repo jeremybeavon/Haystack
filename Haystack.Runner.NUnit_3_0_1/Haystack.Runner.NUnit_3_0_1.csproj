@@ -16,15 +16,15 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Runner\NUnit\3.0.1\addins\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <OutputPath>..\bin\Debug\Haystack\Runner\NUnit\3.0.1\addins\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Haystack\</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Runner\NUnit\3.0.1\addins\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\NUnit\3.0.1\addins\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

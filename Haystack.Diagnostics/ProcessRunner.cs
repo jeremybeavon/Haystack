@@ -1,5 +1,8 @@
-﻿using Haystack.Diagnostics.Properties;
+﻿using Haystack.Core;
+using Haystack.Diagnostics.Properties;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Haystack.Diagnostics
 {
@@ -13,6 +16,19 @@ namespace Haystack.Diagnostics
                 { "WorkingDirectory", processStartInfo.WorkingDirectory ?? string.Empty }
             };
             MsBuildRunner.RunMsBuildXml(Resources.ExecuteProcess, properties);
+        }
+
+        public static void ExecuteProcessInNewAppDomain(string exe, string[] args)
+        {
+            AppDomainSetup setup = new AppDomainSetup()
+            {
+                ApplicationBase = Path.GetDirectoryName(exe)
+            };
+            using (DisposableAppDomain appDomain = new DisposableAppDomain(Path.GetFileNameWithoutExtension(exe), setup))
+            {
+                CrossDomainConsoleProvider.InitializeConsole(appDomain.AppDomain);
+                appDomain.AppDomain.ExecuteAssembly(exe, args);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Haystack.Diagnostics.Configuration;
+using System;
 using System.Collections.Generic;
 
 namespace Haystack.Diagnostics.Amendments
@@ -39,6 +40,11 @@ namespace Haystack.Diagnostics.Amendments
 
         public static void Initialize(IAmendmentConfiguration configuration)
         {
+            if (configuration == null)
+            {
+                throw new ArgumentNullException("configuration");
+            }
+
             BeforePropertyGetAmenders = configuration.BeforePropertyGetAmendments;
             AfterPropertyGetAmenders = configuration.AfterPropertyGetAmendments;
             BeforePropertySetAmenders = configuration.BeforePropertySetAmendments;

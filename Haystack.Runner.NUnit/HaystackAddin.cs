@@ -32,21 +32,34 @@ namespace Haystack.Runner.NUnit
 
         public bool Install(IExtensionHost host)
         {
-            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string configurationFile = Path.Combine(baseDirectory, HaystackConfigurationFile.DefaultConfigurationFileName);
-            if (!File.Exists(configurationFile))
-                return true;
+            try
+            {
+                Trace.WriteLine("Initializing Haystack NUnit Addin");
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string configurationFile = Path.Combine(baseDirectory, HaystackConfigurationFile.DefaultConfigurationFileName);
+                if (!File.Exists(configurationFile))
+                {
+                    Trace.WriteLine(string.Format("Skipping Haystack NUnit Addin because configuration file was not found: {0}", configurationFile));
+                    return true;
+                }
 
-            InitializeTestFramework();
-            builders = new SuiteBuilderCollection(host);
-            builders.Install(new NUnitTestFixtureBuilder());
-            builders.Install(new SetUpFixtureBuilder());
-            testCaseBuilder = new NUnitTestCaseBuilder();
-            IExtensionPoint suiteBuilders = host.GetExtensionPoint("SuiteBuilders");
-            suiteBuilders.Install(this);
-            IExtensionPoint testCaseBuilders = host.GetExtensionPoint("TestCaseBuilders");
-            testCaseBuilders.Install(this);
-            return true;
+                InitializeHaystack(baseDirectory, configurationFile);
+                InitializeTestFramework();
+                builders = new SuiteBuilderCollection(host);
+                builders.Install(new NUnitTestFixtureBuilder());
+                builders.Install(new SetUpFixtureBuilder());
+                testCaseBuilder = new NUnitTestCaseBuilder();
+                IExtensionPoint suiteBuilders = host.GetExtensionPoint("SuiteBuilders");
+                suiteBuilders.Install(this);
+                IExtensionPoint testCaseBuilders = host.GetExtensionPoint("TestCaseBuilders");
+                testCaseBuilders.Install(this);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                Trace.WriteLine(string.Format("Could not initialize Haystack NUnit Addin because of an exception: {0}", exception));
+                return false;
+            }
         }
 
         public bool CanBuildFrom(Type type)

@@ -2,10 +2,10 @@
 {
     public sealed class CodeCoverageConfiguration : ICodeCoverageConfiguration
     {
-        public string CodeCoverageFramework { get; set; }
+        public string CodeCoverageFramework { get; }
 
-        public string CodeCoverageProviderAssembly { get; set; }
+        public string CodeCoverageProviderAssembly { get; }
 
-        public string CodeCoverageFilter { get; set; }
+        public string CodeCoverageFilter { get; }
     }
 }

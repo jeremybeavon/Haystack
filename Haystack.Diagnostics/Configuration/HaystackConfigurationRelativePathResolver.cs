@@ -26,7 +26,11 @@ namespace Haystack.Diagnostics.Configuration
         {
             ResolveIfNecessary(configuration.OutputDirectory, path => configuration.OutputDirectory = path);
             ResolveIfNecessary(configuration.HaystackBaseDirectory, path => configuration.HaystackBaseDirectory = path);
-            ResolveIfNecessary(configuration.Amendments.AssembliesToAmend);
+            if (configuration.Amendments != null)
+            {
+                ResolveIfNecessary(configuration.Amendments.AssembliesToAmend);
+            }
+
             if (configuration.Runner != null)
             {
                 RunnerConfiguration runner = configuration.Runner;

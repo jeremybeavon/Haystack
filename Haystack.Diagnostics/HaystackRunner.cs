@@ -13,19 +13,12 @@ namespace Haystack.Diagnostics
     public sealed class HaystackRunner
     {
         private readonly IHaystackConfiguration configuration;
-        private readonly string baseDirectory;
 
-        public HaystackRunner(IHaystackConfiguration configuration)
-            : this(configuration, Assembly.GetExecutingAssembly().AssemblyBaseDirectory())
-        {
-        }
-
-        public HaystackRunner(IHaystackConfiguration configuration, string baseDirectory)
+        private HaystackRunner(IHaystackConfiguration configuration)
         {
             this.configuration = configuration;
-            this.baseDirectory = baseDirectory;
         }
-
+        
         public static void RunHaystackDiagnostics(IHaystackConfiguration configuration)
         {
             new HaystackRunner(configuration).RunHaystackDiagnostics();
@@ -46,12 +39,16 @@ namespace Haystack.Diagnostics
             List<string> referencedDirectories = new List<string>();
             foreach (IInterceptionConfiguration interception in configuration.Interception ?? new IInterceptionConfiguration[0])
             {
-                referencedDirectories.Add(Path.Combine(baseDirectory, interception.InterceptionFramework, interception.InterceptionFrameworkVersion));
+                string interceptionDirectory = Path.Combine(
+                    configuration.HaystackBaseDirectory,
+                    interception.InterceptionFramework,
+                    interception.InterceptionFrameworkVersion);
+                referencedDirectories.Add(interceptionDirectory);
             }
 
             foreach (IStaticAnalysisConfiguration staticAnalysis in configuration.StaticAnalysis ?? new IStaticAnalysisConfiguration[0])
             {
-                referencedDirectories.Add(Path.Combine(baseDirectory, staticAnalysis.StaticAnalysisFramework));
+                referencedDirectories.Add(Path.Combine(configuration.HaystackBaseDirectory, staticAnalysis.StaticAnalysisFramework));
             }
 
             if (referencedDirectories.Count != 0)
@@ -86,10 +83,17 @@ namespace Haystack.Diagnostics
                 throw new InvalidOperationException("configuration.Runner cannot be null.");
             }
 
+            string exe = Path.Combine(
+                configuration.HaystackBaseDirectory,
+                "Runner",
+                runner.RunnerFramework,
+                runner.RunnerFrameworkVersion,
+                runner.RunnerExe);
+            IRunnerArgumentsProvider runnerArgumentsProvider = runner.RunnerArgumentsProvider;
             return new TestRunContext()
             {
-                Exe = Path.Combine(baseDirectory, "Runner", runner.RunnerFramework, runner.RunnerFrameworkVersion, runner.RunnerExe),
-                Arguments = runner.RunnerArguments
+                Exe = exe,
+                Arguments = runnerArgumentsProvider == null ? runner.RunnerArguments : runnerArgumentsProvider.BuildRunnerArguments()
             };
         }
 
@@ -104,7 +108,10 @@ namespace Haystack.Diagnostics
             string outputDirectory = configuration.OutputDirectory;
             foreach (ICodeCoverageConfiguration codeCoverage in configuration.CodeCoverage)
             {
-                string assemblyPath = Path.Combine(baseDirectory, codeCoverage.CodeCoverageFramework, codeCoverage.CodeCoverageProviderAssembly);
+                string assemblyPath = Path.Combine(
+                    configuration.HaystackBaseDirectory,
+                    codeCoverage.CodeCoverageFramework,
+                    codeCoverage.CodeCoverageProviderAssembly);
                 Assembly assembly = Assembly.LoadFrom(assemblyPath);
                 CodeCoverageProviderAttribute attribute = assembly.GetCustomAttribute<CodeCoverageProviderAttribute>();
                 if (attribute == null)
@@ -128,7 +135,18 @@ namespace Haystack.Diagnostics
 
         private void RunTests(ITestRunContext testRunContext)
         {
-            ProcessRunner.ExecuteProcess(new ProcessStartInfo(string.Format("\"{0}\" {1}", testRunContext.Exe, testRunContext.Arguments)));
+            foreach (IRunnerInitializer runnerInitializer in configuration.Runner.RunnerInitializers ?? new IRunnerInitializer[0])
+            {
+                runnerInitializer.InitializeRunner(testRunContext);
+            }
+
+            string runnerCommand = string.Format("\"{0}\" {1}", testRunContext.Exe, testRunContext.Arguments);
+            if (!string.IsNullOrWhiteSpace(testRunContext.StandardOutputFile))
+            {
+                runnerCommand = string.Format("{0} > \"{1}\"", runnerCommand, testRunContext.StandardOutputFile);
+            }
+
+            ProcessRunner.ExecuteProcess(new ProcessStartInfo(runnerCommand));
         }
 
         private void FinishCodeCoverage(IEnumerable<CodeCoverageProvider> codeCoverageProviders)

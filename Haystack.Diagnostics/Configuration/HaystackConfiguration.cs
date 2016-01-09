@@ -1,5 +1,6 @@
 ﻿using Haystack.Core;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,18 @@ namespace Haystack.Diagnostics.Configuration
     {
         public HaystackConfiguration()
         {
+            Amendments = new AmendmentConfiguration();
             CodeCoverage = new List<CodeCoverageConfiguration>();
             Interception = new List<InterceptionConfiguration>();
+            Runner = new RunnerConfiguration();
             SourceControl = new List<SourceControlConfiguration>();
             StaticAnalysis = new List<StaticAnalysisConfiguration>();
         }
         
+        [Required]
         public string HaystackBaseDirectory { get; set; }
 
+        [Required]
         public string OutputDirectory { get; set; }
 
         public AmendmentConfiguration Amendments { get; set; }
@@ -32,6 +37,7 @@ namespace Haystack.Diagnostics.Configuration
 
         public List<StaticAnalysisConfiguration> StaticAnalysis { get; set; }
 
+        [Required]
         public RunnerConfiguration Runner { get; set; }
 
         IAmendmentConfiguration IHaystackConfiguration.Amendments
@@ -63,6 +69,24 @@ namespace Haystack.Diagnostics.Configuration
         {
             get { return Runner; }
         }
+        
+        public static IHaystackConfiguration LoadFile(string fileName)
+        {
+            HaystackConfiguration configuration = LoadText(File.ReadAllText(fileName));
+            HaystackConfigurationRelativePathResolver.ResolveRelativePaths(configuration, Path.GetDirectoryName(fileName));
+            return configuration;
+        }
+
+        public static HaystackConfiguration LoadText(string text)
+        {
+            using (TextReader reader = new StringReader(text))
+            {
+                HaystackConfiguration configuration = XmlSerialization.Deserialize<HaystackConfiguration>(reader);
+                configuration.Validate();
+                configuration.Initialize();
+                return configuration;
+            }
+        }
 
         public override string ToString()
         {
@@ -79,20 +103,15 @@ namespace Haystack.Diagnostics.Configuration
 
             return textBuilder.ToString();
         }
-        
-        public static IHaystackConfiguration LoadFile(string fileName)
+
+        public void Validate()
         {
-            HaystackConfiguration configuration = LoadText(File.ReadAllText(fileName));
-            HaystackConfigurationRelativePathResolver.ResolveRelativePaths(configuration, Path.GetDirectoryName(fileName));
-            return configuration;
+            Validator.ValidateObject(this, new ValidationContext(this), true);
         }
 
-        public static HaystackConfiguration LoadText(string text)
+        public void Initialize()
         {
-            using (TextReader reader = new StringReader(text))
-            {
-                return XmlSerialization.Deserialize<HaystackConfiguration>(reader);
-            }
+            Directory.CreateDirectory(OutputDirectory);
         }
     }
 }
