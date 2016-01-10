@@ -110,8 +110,10 @@
     <Compile Include="CodeCoverage\IBeforeTestRun.cs" />
     <Compile Include="CodeCoverage\ICodeCoverageContext.cs" />
     <Compile Include="IRunnerArgumentsProvider.cs" />
+    <Compile Include="IRunnerFrameworkInitializer.cs" />
     <Compile Include="IRunnerInitializer.cs" />
     <Compile Include="ITestRunContext.cs" />
+    <Compile Include="RunnerFrameworkInitializerAttribute.cs" />
     <Compile Include="TestRunContext.cs" />
     <Compile Include="Configuration\AmendmentConfiguration.cs" />
     <Compile Include="Configuration\CodeCoverageConfiguration.cs" />

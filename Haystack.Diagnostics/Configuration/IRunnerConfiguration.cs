@@ -11,6 +11,8 @@ namespace Haystack.Diagnostics.Configuration
 
         string RunnerExe { get; }
 
+        string AssemblyToTest { get; }
+
         string RunnerArguments { get; }
 
         IRunnerArgumentsProvider RunnerArgumentsProvider { get; }
@@ -26,5 +28,7 @@ namespace Haystack.Diagnostics.Configuration
         IEnumerable<IInitializeTestMethod> InitializeTestMethod { get; }
 
         IEnumerable<ICleanUpTestMethod> CleanUpTestMethod { get; }
+
+        string HaystackAddinName { get; }
     }
 }

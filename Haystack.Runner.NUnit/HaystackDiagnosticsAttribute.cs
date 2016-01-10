@@ -4,6 +4,7 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Haystack.Runner.NUnit
 {
@@ -14,8 +15,15 @@ namespace Haystack.Runner.NUnit
 
         public HaystackDiagnosticsAttribute()
         {
-            HaystackBootstrapInitializer.InitializeIfNecessary();
-            InitializeTestFramework();
+            Trace.Listeners.Add(new ConsoleTraceListener());
+            try
+            {
+                Initialize();
+            }
+            catch (Exception exception)
+            {
+                Trace.WriteLine("Could not initialize HaystackDiagnostics: " + exception);
+            }
         }
 
         private MethodCallTraceManager MethodCallTraceManager
@@ -61,6 +69,12 @@ namespace Haystack.Runner.NUnit
                     TestIntegrationRepository.CleanUpTestMethodMethods,
                     method => method.CleanUpTestMethod(test.FullName));
             }
+        }
+
+        private static void Initialize()
+        {
+            HaystackBootstrapInitializer.InitializeIfNecessary();
+            InitializeTestFramework();
         }
 
         private static void InitializeTestFramework()

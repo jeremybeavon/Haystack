@@ -28,7 +28,19 @@ namespace Haystack.Diagnostics
         {
             InitializeAssemblyResolution();
             InitializeAmendments();
-            ITestRunContext testRunContext = InitializeTestRunner();
+            IRunnerConfiguration runner = configuration.Runner;
+            if (runner == null)
+            {
+                throw new InvalidOperationException("configuration.Runner cannot be null.");
+            }
+
+            string runnerDirectory = Path.Combine(
+                configuration.HaystackBaseDirectory,
+                "Runner",
+                runner.RunnerFramework,
+                runner.RunnerFrameworkVersion);
+            InitializeTestFramework(runner, runnerDirectory);
+            ITestRunContext testRunContext = InitializeTestRunner(runner, runnerDirectory);
             IEnumerable<CodeCoverageProvider> codeCoverageProviders = InitializeCodeCoverage(testRunContext);
             RunTests(testRunContext);
             FinishCodeCoverage(codeCoverageProviders);
@@ -75,20 +87,36 @@ namespace Haystack.Diagnostics
             }
         }
 
-        private ITestRunContext InitializeTestRunner()
+        private void InitializeTestFramework(IRunnerConfiguration runner, string runnerDirectory)
         {
-            IRunnerConfiguration runner = configuration.Runner;
-            if (runner == null)
+            string haystackAddinFile = string.IsNullOrWhiteSpace(runner.HaystackAddinName) ?
+                string.Format("Haystack.Runner.{0}.dll", runner.RunnerFramework) :
+                runner.HaystackAddinName;
+            string haystackAddin = Path.Combine(runnerDirectory, "HaystackAddin", haystackAddinFile);
+            if (File.Exists(haystackAddin))
             {
-                throw new InvalidOperationException("configuration.Runner cannot be null.");
-            }
+                Assembly assembly = Assembly.LoadFrom(haystackAddinFile);
+                RunnerFrameworkInitializerAttribute initializerAttribute = assembly.GetCustomAttribute<RunnerFrameworkInitializerAttribute>();
+                if (initializerAttribute != null)
+                {
+                    Type initializerType = initializerAttribute.RunnerFrameworkInitializerType;
+                    IRunnerFrameworkInitializer initializer = Activator.CreateInstance(initializerType) as IRunnerFrameworkInitializer;
+                    if (initializer == null)
+                    {
+                        string message = string.Format(
+                            "{0} does not implement IRunnerFrameworkInitializer",
+                            initializerType.FullName);
+                        throw new InvalidOperationException(message);
+                    }
 
-            string exe = Path.Combine(
-                configuration.HaystackBaseDirectory,
-                "Runner",
-                runner.RunnerFramework,
-                runner.RunnerFrameworkVersion,
-                runner.RunnerExe);
+                    initializer.InitializeRunnerFramework(runner.AssemblyToTest);
+                }
+            } 
+        }
+
+        private ITestRunContext InitializeTestRunner(IRunnerConfiguration runner, string runnerDirectory)
+        {
+            string exe = Path.Combine(runnerDirectory, runner.RunnerExe);
             IRunnerArgumentsProvider runnerArgumentsProvider = runner.RunnerArgumentsProvider;
             return new TestRunContext()
             {

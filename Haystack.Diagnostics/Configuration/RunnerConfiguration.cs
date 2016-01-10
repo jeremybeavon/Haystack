@@ -27,12 +27,16 @@ namespace Haystack.Diagnostics.Configuration
         [Required]
         public string RunnerExe { get; set; }
 
+        public string AssemblyToTest { get; set; }
+
         public string RunnerArguments { get; set; }
 
         public string RunnerArgumentsProvider { get; set; }
 
         [XmlArrayItem("Type")]
         public List<string> RunnerInitializers { get; set; }
+
+        public string HaystackAddinName { get; set; }
 
         [XmlArrayItem("Type")]
         public List<string> InitializeTestFramework { get; set; }

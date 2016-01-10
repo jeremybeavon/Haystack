@@ -56,6 +56,7 @@ namespace Haystack.Runner.TestRunner
                     RunnerFrameworkVersion = RunnerFrameworkVersion,
                     RunnerExe = RunnerExe,
                     RunnerArguments = string.Format("\"{0}\"", AssemblyToTest),
+                    AssemblyToTest = AssemblyToTest,
                     RunnerInitializers = new List<string>()
                     {
                         typeof(TestRunnerInitializer<TTestIntegrationImplementation>).AssemblyQualifiedName

@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Haystack.Runner.NUnit;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Haystack.Runner.NUnit.Tests")]
+[assembly: AssemblyTitle("Haystack.Examples.Interception.Autofac_3_5_2.Simple")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Haystack.Runner.NUnit.Tests")]
+[assembly: AssemblyProduct("Haystack.Examples.Interception.Autofac_3_5_2.Simple")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using Haystack.Runner.NUnit;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("52bd8515-8121-4bed-917e-f9f86288418b")]
+[assembly: Guid("9454d03d-df97-4ffd-b329-67a024582c59")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -35,5 +34,3 @@ using Haystack.Runner.NUnit;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: HaystackDiagnostics]
