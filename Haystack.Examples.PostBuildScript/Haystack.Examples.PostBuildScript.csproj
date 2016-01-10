@@ -67,6 +67,6 @@
   <Target Name="BeforeBuild">
   </Target>-->
   <Target Name="AfterBuild">
-    <MSBuild Projects="$(ProjectDir)ExamplesPostBuild.msbuild" Properties="OutputDirectory=$(ProjectDir)..\bin\$(Configuration)\" />
+    <MSBuild Projects="$(ProjectDir)ExamplesPostBuild.msbuild" Properties="OutputDirectory=$(ProjectDir)..\bin\$(Configuration)\Haystack\" />
   </Target>
 </Project>

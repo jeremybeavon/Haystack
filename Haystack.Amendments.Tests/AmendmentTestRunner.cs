@@ -1,9 +1,9 @@
 ﻿using AppDomainCallbackExtensions;
 using Haystack.Amendments.Tests.Amendments;
 using Haystack.Core;
+using Haystack.Core.IO;
 using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.Configuration;
-using Microsoft.VisualBasic.FileIO;
 using System;
 using System.IO;
 using TextSerialization;
@@ -59,12 +59,7 @@ namespace Haystack.Amendments.Tests
         
         private void SetUpTestRun(string testDirectory)
         {
-            if (Directory.Exists(testDirectory))
-            {
-                Directory.Delete(testDirectory, true);
-            }
-
-            FileSystem.CopyDirectory(Path.GetDirectoryName(TargetDll), testDirectory);
+            DirectoryCopy.CopyDirectory(Path.GetDirectoryName(TargetDll), testDirectory);
             string assemblyName = Path.GetFileNameWithoutExtension(TargetDll);
             (new AmendmentSetupProvider(Path.Combine(testDirectory, Path.GetFileName(TargetDll)), Configuration, StrongNameKey)
             {

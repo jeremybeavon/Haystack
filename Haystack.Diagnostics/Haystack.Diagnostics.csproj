@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Amendments\AllPropertiesAmender.cs" />
     <Compile Include="Amendments\AmendmentConfigurationBuilder.cs" />
+    <Compile Include="Amendments\AssemblyAmender.cs" />
     <Compile Include="Amendments\HaystackBeforeMethodAmender.cs" />
     <Compile Include="Amendments\HaystackConstructorAmender.cs" />
     <Compile Include="Amendments\HaystackMethodAmender.cs" />
@@ -129,7 +130,6 @@
     <Compile Include="Configuration\StaticAnalysisConfiguration.cs" />
     <Compile Include="HaystackInitializer.cs" />
     <Compile Include="HaystackRunner.cs" />
-    <Compile Include="IInitializeInterception.cs" />
     <Compile Include="IStaticAnalysis.cs" />
     <Compile Include="MethodCallTraceContext.cs" />
     <Compile Include="MethodCallTraceProvider.cs" />

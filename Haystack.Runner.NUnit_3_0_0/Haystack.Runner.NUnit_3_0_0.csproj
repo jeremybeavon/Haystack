@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\Runner\NUnit\3.0.0\addins\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\NUnit\3.0.0\HaystackAddin\</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\Runner\NUnit\3.0.0\addins\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\NUnit\3.0.0\HaystackAddin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -36,13 +36,9 @@
     <AssemblyOriginatorKeyFile>Haystack.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.core">
-      <HintPath>..\packages\NUnit.Console.3.0.0\tools\addins\nunit.core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\packages\NUnit.Console.3.0.0\tools\addins\nunit.core.interfaces.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="nunit.framework, Version=3.0.5797.27534, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,14 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackAddin.cs">
-      <Link>HaystackAddin.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestMethod.cs">
-      <Link>HaystackTestMethod.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestSuite.cs">
-      <Link>HaystackTestSuite.cs</Link>
+    <Compile Include="..\Haystack.Runner.NUnit\HaystackDiagnosticsAttribute.cs">
+      <Link>HaystackDiagnosticsAttribute.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Runner.NUnit\MethodCallTraceManager.cs">
       <Link>MethodCallTraceManager.cs</Link>
