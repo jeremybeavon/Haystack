@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9454D03D-DF97-4FFD-B329-67A024582C59}</ProjectGuid>
+    <ProjectGuid>{054678D4-5620-4AAA-AA4D-AE8793EF28AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Examples.Interception.Autofac.Simple</RootNamespace>
-    <AssemblyName>Haystack.Examples.Interception.Autofac.Simple</AssemblyName>
+    <RootNamespace>Haystack.Examples.Interception.Castle.Windsor.Simple.Setup</RootNamespace>
+    <AssemblyName>Haystack.Examples.Interception.Castle.Windsor.Simple.Setup</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Examples\Interception\Castle.Windsor\3.3.0\Simple\Setup\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,14 +24,18 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Examples\Interception\Castle.Windsor\3.3.0\Simple\Setup\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -44,10 +48,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyManager.cs" />
-    <Compile Include="ISimpleService.cs" />
+    <Compile Include="BeforeMethodAmendment.cs" />
+    <Compile Include="InitializeTestMethodSetup.cs" />
+    <Compile Include="InitializeTestSuiteSetup.cs" />
+    <Compile Include="InitializeTestFrameworkSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.csproj">
+      <Project>{7d543861-4844-4f4f-a857-1aac0a98ee1d}</Project>
+      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Interception.Castle.Windsor_3_3_0\Haystack.Interception.Castle.Windsor_3_3_0.csproj">
+      <Project>{007fd10a-be64-4afd-a500-6e3724253171}</Project>
+      <Name>Haystack.Interception.Castle.Windsor_3_3_0</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

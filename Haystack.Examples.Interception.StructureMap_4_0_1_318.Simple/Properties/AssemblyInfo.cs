@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Haystack.Examples.Interception.Autofac.Simple")]
+[assembly: AssemblyTitle("Haystack.Examples.Interception.StructureMap.Simple")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Haystack.Examples.Interception.Autofac.Simple")]
+[assembly: AssemblyProduct("Haystack.Examples.Interception.StructureMap.Simple")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
