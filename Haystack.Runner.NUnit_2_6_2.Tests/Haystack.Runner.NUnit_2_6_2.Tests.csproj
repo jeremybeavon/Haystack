@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Tests\Runner\NUnit\2.6.2\</OutputPath>
+    <OutputPath>..\bin\Debug\Tests\net45\Runner\NUnit\2.6.2\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Tests\Runner\NUnit\2.6.2\</OutputPath>
+    <OutputPath>..\bin\Release\Tests\net45\Runner\NUnit\2.6.2\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -79,6 +79,10 @@
     <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Runner.NUnit.TestRunner\Haystack.Runner.NUnit.TestRunner.csproj">
+      <Project>{32e6a7da-b5df-47c6-a81f-dffe29daaaab}</Project>
+      <Name>Haystack.Runner.NUnit.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit.Tests.TestIntegrations\Haystack.Runner.NUnit.Tests.TestIntegrations.csproj">
       <Project>{a097a417-6025-4d6c-9f16-287150fc243d}</Project>

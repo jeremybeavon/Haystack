@@ -15,7 +15,10 @@ namespace Haystack.Runner.TestRunner
     public abstract class AbstractTestIntegrationRunner<TTestIntegrationInterface, TTestIntegrationImplementation>
         where TTestIntegrationImplementation : TTestIntegrationInterface
     {
-        protected abstract string AssemblyToTest { get; }
+        protected virtual string AssemblyToTest
+        {
+            get { return GetType().Assembly.AssemblyFilePath(); }
+        }
 
         protected abstract string HaystackBaseDirectory { get; }
 

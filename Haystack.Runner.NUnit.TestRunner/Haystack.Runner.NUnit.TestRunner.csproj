@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7FF30D3-AA8C-4DF9-AA03-B39B5A63A11B}</ProjectGuid>
+    <ProjectGuid>{32E6A7DA-B5DF-47C6-A81F-DFFE29DAAAAB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Haystack.Interception.Castle.Core</RootNamespace>
-    <AssemblyName>Haystack.Interception.Castle.Core</AssemblyName>
+    <RootNamespace>Haystack.Runner.NUnit.TestRunner</RootNamespace>
+    <AssemblyName>Haystack.Runner.NUnit.TestRunner</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Interception\Castle.Core\3.3.3\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,22 +24,12 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Interception\Castle.Core\3.3.3\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Haystack.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,18 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InstanceInterceptor.cs" />
+    <Compile Include="AbstractNUnitTestIntegrationRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Haystack.snk" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
-      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
-      <Private>False</Private>
+    <ProjectReference Include="..\Haystack.Core\Haystack.Core.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Runner.TestRunner\Haystack.Runner.TestRunner.csproj">
+      <Project>{bd9398fa-033b-4fe0-90fe-e787524e1d6c}</Project>
+      <Name>Haystack.Runner.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

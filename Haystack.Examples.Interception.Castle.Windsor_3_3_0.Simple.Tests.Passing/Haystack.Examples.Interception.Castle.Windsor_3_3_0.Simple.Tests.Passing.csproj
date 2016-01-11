@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\Examples\Interception\Castle.Windsor\3.3.0\Simple\Passing\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\net45\Examples\Interception\Castle.Windsor\3.3.0\Simple\Passing\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\Examples\Interception\Castle.Windsor\3.3.0\Simple\Passing\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\net45\Examples\Interception\Castle.Windsor\3.3.0\Simple\Passing\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

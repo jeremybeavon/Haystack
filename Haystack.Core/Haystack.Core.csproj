@@ -60,6 +60,7 @@
     <Compile Include="BootstrapConfiguration.cs" />
     <Compile Include="CrossDomainConsoleProvider.cs" />
     <Compile Include="DisposableAppDomain.cs" />
+    <Compile Include="FrameworkVersion.cs" />
     <Compile Include="HaystackConfigurationFile.cs" />
     <Compile Include="IO\DirectoryCopy.cs" />
     <Compile Include="IO\DirectoryReader.cs" />

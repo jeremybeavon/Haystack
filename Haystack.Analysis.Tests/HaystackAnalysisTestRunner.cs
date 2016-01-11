@@ -7,7 +7,8 @@ namespace Haystack.Analysis.Tests
 {
     public static class HaystackAnalysisTestRunner
     {
-        private static readonly string haystackBaseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Haystack");
+        private static readonly string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private static readonly string haystackBaseDirectory = Path.Combine(baseDirectory, @"..\..\Haystack", FrameworkVersion.Current);
 
         public static void RunHaystackAnalysis(string passingConfigurationFile, string failingConfigurationFile)
         {
