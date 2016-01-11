@@ -9,7 +9,7 @@ using DiffPlex.DiffBuilder;
 using DiffPlex.DiffBuilder.Model;
 using Haystack.Core.IO;
 
-namespace Haystack.Analysis.CodeCoverage
+namespace Haystack.Analysis
 {
     public sealed class CodeCoverageComparison
     {
@@ -56,6 +56,8 @@ namespace Haystack.Analysis.CodeCoverage
 
         public IEnumerable<FileDifferences> CompareFiles(string oldFile, string newFile)
         {
+            Trace.WriteLine(string.Empty);
+            Trace.WriteLine(string.Format("Comparing {0} and {1}"));
             return CompareFileContent(fileReader.ReadAllText(oldFile), fileReader.ReadAllText(newFile));
         }
 

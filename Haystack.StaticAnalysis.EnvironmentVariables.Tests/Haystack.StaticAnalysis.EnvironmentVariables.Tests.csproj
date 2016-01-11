@@ -35,7 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentAssertions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.1.1\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.1.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.1.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,7 +60,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="EnvironmentVariablesStaticAnalysisTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Diagnostics\Haystack.Diagnostics.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.StaticAnalysis.EnvironmentVariables\Haystack.StaticAnalysis.EnvironmentVariables.csproj">
+      <Project>{837bd2f8-9525-4f73-9eb4-a821684bff11}</Project>
+      <Name>Haystack.StaticAnalysis.EnvironmentVariables</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

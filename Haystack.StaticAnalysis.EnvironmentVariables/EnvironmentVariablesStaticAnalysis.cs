@@ -22,7 +22,8 @@ namespace Haystack.StaticAnalysis.EnvironmentVariables
 
         private static List<string> GetEnvironmentVariables(IEnumerable<string> includedItems)
         {
-            return includedItems.Select(item => item + " = " + Environment.GetEnvironmentVariable(item)).ToList();
+            return includedItems == null ? new List<string>() :
+                includedItems.Select(item => item + " = " + Environment.GetEnvironmentVariable(item)).ToList();
         }
     }
 }

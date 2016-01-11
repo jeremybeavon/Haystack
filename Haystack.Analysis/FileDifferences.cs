@@ -1,6 +1,6 @@
 ﻿using DiffPlex.DiffBuilder.Model;
 
-namespace Haystack.Analysis.CodeCoverage
+namespace Haystack.Analysis
 {
     public sealed class FileDifferences
     {

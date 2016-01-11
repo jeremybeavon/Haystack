@@ -169,7 +169,10 @@ namespace Haystack.Diagnostics
             }
 
             foreach (MethodCall childMethodCall in methodCall.MethodCalls)
+            {
+                childMethodCall.CalledBy = methodCall;
                 Load(methodCallTrace, childMethodCall);
+            }
         }
         
         private void Load(MethodCallTrace methodCallTrace, Value value)

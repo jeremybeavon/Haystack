@@ -1,4 +1,4 @@
-﻿namespace Haystack.Analysis.CodeCoverage
+﻿namespace Haystack.Analysis
 {
     internal sealed class Range
     {
