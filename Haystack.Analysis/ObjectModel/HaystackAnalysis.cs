@@ -1,23 +1,27 @@
-﻿using Haystack.Analysis.ObjectModel;
-using Haystack.Diagnostics.Configuration;
-using Haystack.Diagnostics.ObjectModel;
-using System;
+﻿using Haystack.Diagnostics.Configuration;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Haystack.Analysis
+namespace Haystack.Analysis.ObjectModel
 {
     public sealed class HaystackAnalysis
     {
         public HaystackAnalysis()
         {
+            CodeCoverageAnalysis = new List<CodeCoverageAnalysis>();
+            MethodCallTraceFiles = new List<MethodCallTraceFileAnalysis>();
+            SourceControlRevisions = new List<SourceControlRevision>();
+            HaystackMethods = new List<HaystackMethod>();
+            HaystackMethodsWithRefactoring = new HaystackMethodsWithRefactoring();
         }
 
         public HaystackAnalysis(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+            : this()
         {
-
+            LoadCodeCoverageAnalysis(passingConfiguration, failingConfiguration);
+            LoadMethodCallFileAnalysis(passingConfiguration, failingConfiguration);
+            LoadSourceControlRevisions(passingConfiguration, failingConfiguration);
+            LoadHaystackMethods(passingConfiguration, failingConfiguration);
+            LoadHaystackMethodsWithRefactoring(passingConfiguration, failingConfiguration);
         }
 
         public List<CodeCoverageAnalysis> CodeCoverageAnalysis { get; set; }
@@ -36,6 +40,27 @@ namespace Haystack.Analysis
             new CodeCoverageAnalyzer().Analyze(passingConfiguration, failingConfiguration);
             new StaticAnalyzer().Analyze(passingConfiguration, failingConfiguration);
             new SourceControlAnalyzer().Analyze(passingConfiguration, failingConfiguration);
+        }
+
+        private void LoadCodeCoverageAnalysis(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+        {
+            new CodeCoverageAnalysisBuilder().LoadCodeCoverageAnalysis(passingConfiguration, failingConfiguration);
+        }
+
+        private void LoadMethodCallFileAnalysis(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+        {
+        }
+
+        private void LoadSourceControlRevisions(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+        {
+        }
+
+        private void LoadHaystackMethods(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+        {
+        }
+
+        private void LoadHaystackMethodsWithRefactoring(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+        {
         }
     }
 }

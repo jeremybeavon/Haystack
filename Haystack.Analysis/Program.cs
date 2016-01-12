@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using Haystack.Analysis.ObjectModel;
 using Haystack.Core;
 using Haystack.Diagnostics.Configuration;
 using System;
@@ -23,7 +24,7 @@ namespace Haystack.Analysis
         {
             IHaystackConfiguration passingConfiguration = HaystackConfiguration.LoadFile(options.PassingConfigurationFile);
             IHaystackConfiguration failingConfiguration = HaystackConfiguration.LoadFile(options.FailingConfigurationFile);
-            HaystackAnalysis.RunHaystackAnalysis(passingConfiguration, failingConfiguration);
+            new HaystackAnalysis(passingConfiguration, failingConfiguration);
         }
     }
 }

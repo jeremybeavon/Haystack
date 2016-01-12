@@ -5,14 +5,21 @@ namespace Haystack.Analysis.ObjectModel
 {
     public sealed class CodeCoverageNestedClass
     {
+        public CodeCoverageNestedClass()
+        {
+            Methods = new List<CodeCoverageMethod>();
+            NestedClasses = new List<CodeCoverageNestedClass>();
+        }
+
         [MessagePackMember(0)]
         public string ClassName { get; set; }
 
         [MessagePackMember(1)]
         public List<CodeCoverageMethod> Methods { get; set; }
 
-        public CodeCoverageClass Class { get; set; }
+        [MessagePackMember(2)]
+        public List<CodeCoverageNestedClass> NestedClasses { get; set; }
 
-        public CodeCoverageNestedClass NestedClass { get; set; }
+        public CodeCoverageClass Class { get; set; }
     }
 }

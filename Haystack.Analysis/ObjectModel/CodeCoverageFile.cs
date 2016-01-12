@@ -6,11 +6,11 @@ namespace Haystack.Analysis.ObjectModel
     {
         public CodeCoverageFile()
         {
-            Classes = new List<CodeCoverageClass>();
+            ClassFiles = new List<CodeCoverageClassFile>();
         }
 
         public string FileName { get; set; }
 
-        public List<CodeCoverageClass> Classes { get; set; }
+        public List<CodeCoverageClassFile> ClassFiles { get; set; }
     }
 }

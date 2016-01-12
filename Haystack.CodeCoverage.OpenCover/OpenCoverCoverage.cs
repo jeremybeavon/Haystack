@@ -9,6 +9,8 @@ namespace Haystack.CodeCoverage.OpenCover
 {
     public sealed class OpenCoverCoverage : IBeforeTestRun, IAfterTestRun
     {
+        public const string OutputDirectoryName = "coverage.opencover";
+
         private string outputXmlFile;
         private string assemblyDirectory;
 
