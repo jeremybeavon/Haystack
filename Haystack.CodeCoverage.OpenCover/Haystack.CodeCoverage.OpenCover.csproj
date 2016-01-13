@@ -156,42 +156,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\packages\reportgenerator.2.3.5.0\tools\ICSharpCode.NRefactory.CSharp.dll">
-      <Link>OpenCover\ReportGenerator\ICSharpCode.NRefactory.CSharp.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\reportgenerator.2.3.5.0\tools\ICSharpCode.NRefactory.dll">
-      <Link>OpenCover\ReportGenerator\ICSharpCode.NRefactory.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\reportgenerator.2.3.5.0\tools\ReportGenerator.exe">
-      <Link>OpenCover\ReportGenerator\ReportGenerator.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\reportgenerator.2.3.5.0\tools\ReportGenerator.Reporting.dll">
-      <Link>OpenCover\ReportGenerator\ReportGenerator.Reporting.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\reportgenerator.2.3.5.0\tools\ReportGenerator.Reporting.XML">
-      <Link>OpenCover\ReportGenerator\ReportGenerator.Reporting.XML</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\packages\reportgenerator.2.3.5.0\tools\ReportGenerator.XML">
-      <Link>OpenCover\ReportGenerator\ReportGenerator.XML</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\packages\opencover.4.6.166\tools\x64\OpenCover.Profiler.dll">
       <Link>OpenCover\x64\OpenCover.Profiler.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -200,6 +164,32 @@
   <ItemGroup>
     <None Include="..\packages\opencover.4.6.166\tools\x86\OpenCover.Profiler.dll">
       <Link>OpenCover\x86\OpenCover.Profiler.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ICSharpCode.NRefactory.CSharp.dll">
+      <Link>ReportGenerator\ICSharpCode.NRefactory.CSharp.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ICSharpCode.NRefactory.dll">
+      <Link>ReportGenerator\ICSharpCode.NRefactory.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.exe">
+      <Link>ReportGenerator\ReportGenerator.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.Reporting.dll">
+      <Link>ReportGenerator\ReportGenerator.Reporting.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.Reporting.XML">
+      <Link>ReportGenerator\ReportGenerator.Reporting.XML</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.XML">
+      <Link>ReportGenerator\ReportGenerator.XML</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
