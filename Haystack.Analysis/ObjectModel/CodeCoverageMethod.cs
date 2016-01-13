@@ -1,10 +1,11 @@
 ﻿using MsgPack.Serialization;
 using System.Collections.Generic;
 using System.Threading;
+using System;
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class CodeCoverageMethod
+    public sealed class CodeCoverageMethod : ICodeCoverageMethod
     {
         private static int nextCodeCoverageMethodId;
 
@@ -34,5 +35,25 @@ namespace Haystack.Analysis.ObjectModel
         public CodeCoverageClass Class { get; set; }
 
         public CodeCoverageNestedClass NestedClass { get; set; }
+
+        IEnumerable<ICodeCoverageMethodParameter> ICodeCoverageMethod.MethodParameters
+        {
+            get { return MethodParameters; }
+        }
+
+        IEnumerable<ICodeCoverageLine> ICodeCoverageMethod.Lines
+        {
+            get { return Lines; }
+        }
+
+        ICodeCoverageClass ICodeCoverageMethod.Class
+        {
+            get { return Class; }
+        }
+
+        ICodeCoverageNestedClass ICodeCoverageMethod.NestedClass
+        {
+            get { return NestedClass; }
+        }
     }
 }

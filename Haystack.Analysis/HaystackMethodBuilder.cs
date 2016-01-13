@@ -82,12 +82,12 @@ namespace Haystack.Analysis
 
                 if (isProcessingPassingCodeCoverage)
                 {
-                    haystackMethod.PassingMethodCoverageMethod = codeCoverageMethod;
+                    haystackMethod.PassingCodeCoverageMethod = codeCoverageMethod;
                     haystackMethod.PassingMethodCoverageMethodId = codeCoverageMethod.CodeCoverageMethodId;
                 }
                 else
                 {
-                    haystackMethod.FailingMethodCoverageMethod = codeCoverageMethod;
+                    haystackMethod.FailingCodeCoverageMethod = codeCoverageMethod;
                     haystackMethod.FailingMethodCoverageMethodId = codeCoverageMethod.CodeCoverageMethodId;
                 }
             }

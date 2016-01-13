@@ -2,7 +2,7 @@
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class HaystackMethodParameter
+    public sealed class HaystackMethodParameter : IHaystackMethodParameter
     {
         public ParameterModifier Modifier { get; set; }
 

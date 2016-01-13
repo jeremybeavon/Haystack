@@ -2,7 +2,7 @@
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class CodeCoverageMethodParameter
+    public sealed class CodeCoverageMethodParameter : ICodeCoverageMethodParameter
     {
         public ParameterModifier Modifier { get; set; }
 

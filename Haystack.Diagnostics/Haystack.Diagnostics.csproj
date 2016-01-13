@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
     <SGenUseProxyTypes>false</SGenUseProxyTypes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
     <SGenUseProxyTypes>false</SGenUseProxyTypes>
   </PropertyGroup>
   <PropertyGroup>
@@ -117,6 +117,13 @@
     <Compile Include="IRunnerFrameworkInitializer.cs" />
     <Compile Include="IRunnerInitializer.cs" />
     <Compile Include="ITestRunContext.cs" />
+    <Compile Include="ObjectModel\IMethodCall.cs" />
+    <Compile Include="ObjectModel\IMethodCallThreadTrace.cs" />
+    <Compile Include="ObjectModel\IMethodCallTrace.cs" />
+    <Compile Include="ObjectModel\IMethodParameter.cs" />
+    <Compile Include="ObjectModel\IObjectInstance.cs" />
+    <Compile Include="ObjectModel\IObjectType.cs" />
+    <Compile Include="ObjectModel\IValue.cs" />
     <Compile Include="RunnerFrameworkInitializerAttribute.cs" />
     <Compile Include="TestRunContext.cs" />
     <Compile Include="Configuration\AmendmentConfiguration.cs" />

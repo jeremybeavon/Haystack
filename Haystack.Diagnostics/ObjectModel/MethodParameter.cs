@@ -1,8 +1,9 @@
-﻿using MsgPack.Serialization;
+﻿using System;
+using MsgPack.Serialization;
 
 namespace Haystack.Diagnostics.ObjectModel
 {
-    public sealed class MethodParameter
+    public sealed class MethodParameter : IMethodParameter
     {
         [MessagePackMember(0)]
         public int ParameterTypeIndex { get; set; }
@@ -20,5 +21,20 @@ namespace Haystack.Diagnostics.ObjectModel
 
         [MessagePackMember(4)]
         public Value OutputValue { get; set; }
+
+        IObjectType IMethodParameter.ParameterType
+        {
+            get { return ParameterType; }
+        }
+
+        IValue IMethodParameter.Value
+        {
+            get { return Value; }
+        }
+
+        IValue IMethodParameter.OutputValue
+        {
+            get { return OutputValue; }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class CodeCoverageLine
+    public sealed class CodeCoverageLine : ICodeCoverageLine
     {
         public string Line { get; set; }
 

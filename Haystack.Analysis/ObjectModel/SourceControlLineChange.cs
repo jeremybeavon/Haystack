@@ -1,13 +1,9 @@
-﻿using MsgPack.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using MsgPack.Serialization;
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class SourceControlLineChange
+    public sealed class SourceControlLineChange : ISourceControlLineChange
     {
         [MessagePackMember(0)]
         public int Line { get; set; }
@@ -16,5 +12,10 @@ namespace Haystack.Analysis.ObjectModel
         public int RevisionIndex { get; set; }
 
         public SourceControlRevision Revision { get; set; }
+
+        ISourceControlRevision ISourceControlLineChange.Revision
+        {
+            get { return Revision; }
+        }
     }
 }

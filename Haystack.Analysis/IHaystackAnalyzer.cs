@@ -1,9 +1,9 @@
-﻿using Haystack.Diagnostics.Configuration;
+﻿using Haystack.Analysis.ObjectModel;
 
 namespace Haystack.Analysis
 {
     public interface IHaystackAnalyzer
     {
-        void Analyze(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration);
+        void Analyze(IHaystackAnalysis haystackAnalysis);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class SourceControlRevision
+    public sealed class SourceControlRevision : ISourceControlRevision
     {
         public string Revision { get; set; }
 

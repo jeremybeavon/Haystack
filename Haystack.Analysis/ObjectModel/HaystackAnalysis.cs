@@ -3,10 +3,11 @@ using Haystack.Diagnostics.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class HaystackAnalysis
+    public sealed class HaystackAnalysis : IHaystackAnalysis
     {
         public HaystackAnalysis()
         {
@@ -36,7 +37,32 @@ namespace Haystack.Analysis.ObjectModel
         public List<HaystackMethod> HaystackMethods { get; set; }
 
         public HaystackMethodsWithRefactoring HaystackMethodsWithRefactoring { get; set; }
-        
+
+        IEnumerable<ICodeCoverageAnalysis> IHaystackAnalysis.CodeCoverageAnalysis
+        {
+            get { return CodeCoverageAnalysis; }
+        }
+
+        public IEnumerable<IMethodCallTraceFileAnalysis> MethodCallTraceFileAnalysis
+        {
+            get { return MethodCallTraceFileAnalysis; }
+        }
+
+        IEnumerable<ISourceControlRevision> IHaystackAnalysis.SourceControlRevisions
+        {
+            get { return SourceControlRevisions; }
+        }
+
+        IEnumerable<IHaystackMethod> IHaystackAnalysis.HaystackMethods
+        {
+            get { return HaystackMethods; }
+        }
+
+        IHaystackMethodsWithRefactoring IHaystackAnalysis.HaystackMethodsWithRefactoring
+        {
+            get { return HaystackMethodsWithRefactoring; }
+        }
+
         private void LoadCodeCoverageAnalysis(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
         {
             new CodeCoverageAnalysisBuilder().LoadCodeCoverageAnalysis(passingConfiguration, failingConfiguration);

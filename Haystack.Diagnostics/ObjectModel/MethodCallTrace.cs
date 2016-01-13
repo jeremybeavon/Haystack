@@ -2,7 +2,7 @@
 
 namespace Haystack.Diagnostics.ObjectModel
 {
-    public sealed class MethodCallTrace
+    public sealed class MethodCallTrace : IMethodCallTrace
     {
         public MethodCallTrace()
         {
@@ -18,5 +18,20 @@ namespace Haystack.Diagnostics.ObjectModel
         public List<ObjectInstance> Objects { get; set; }
 
         public List<ObjectType> Types { get; set; }
+
+        IEnumerable<IMethodCallThreadTrace> IMethodCallTrace.MethodCallThreads
+        {
+            get { return MethodCallThreads; }
+        }
+
+        IEnumerable<IObjectInstance> IMethodCallTrace.Objects
+        {
+            get { return Objects; }
+        }
+
+        IEnumerable<IObjectType> IMethodCallTrace.Types
+        {
+            get { return Types; }
+        }
     }
 }

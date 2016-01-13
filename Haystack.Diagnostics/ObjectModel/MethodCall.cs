@@ -1,10 +1,11 @@
 ﻿using MsgPack.Serialization;
 using System.Collections.Generic;
 using System.Threading;
+using System;
 
 namespace Haystack.Diagnostics.ObjectModel
 {
-    public sealed class MethodCall
+    public sealed class MethodCall : IMethodCall
     {
         private static int nextMethodCallId;
 
@@ -49,5 +50,45 @@ namespace Haystack.Diagnostics.ObjectModel
         public List<MethodCall> MethodCalls { get; set; }
 
         public MethodCall CalledBy { get; set; }
+
+        IObjectType IMethodCall.DeclaringType
+        {
+            get { return DeclaringType; }
+        }
+
+        IObjectInstance IMethodCall.Instance
+        {
+            get { return Instance; }
+        }
+
+        IEnumerable<IMethodParameter> IMethodCall.Parameters
+        {
+            get { return Parameters; }
+        }
+
+        IObjectType IMethodCall.ReturnType
+        {
+            get { return ReturnType; }
+        }
+
+        IValue IMethodCall.ReturnValue
+        {
+            get { return ReturnValue; }
+        }
+
+        IEnumerable<IMethodCall> IMethodCall.MethodCalls
+        {
+            get { return MethodCalls; }
+        }
+
+        IMethodCall IMethodCall.CalledBy
+        {
+            get { return CalledBy; }
+        }
+
+        public MethodCall ToMethodCall()
+        {
+            return this;
+        }
     }
 }

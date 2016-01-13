@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Haystack.Diagnostics.ObjectModel
 {
-    public sealed class MethodCallThreadTrace
+    public sealed class MethodCallThreadTrace : IMethodCallThreadTrace
     {
         public MethodCallThreadTrace()
         {
@@ -18,5 +19,10 @@ namespace Haystack.Diagnostics.ObjectModel
         public int ThreadId { get; set; }
 
         public List<MethodCall> MethodCalls { get; set; }
+
+        IEnumerable<IMethodCall> IMethodCallThreadTrace.MethodCalls
+        {
+            get { return MethodCalls; }
+        }
     }
 }

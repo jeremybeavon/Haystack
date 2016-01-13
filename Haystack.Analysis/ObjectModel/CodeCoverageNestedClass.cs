@@ -1,9 +1,10 @@
 ﻿using MsgPack.Serialization;
 using System.Collections.Generic;
+using System;
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class CodeCoverageNestedClass
+    public sealed class CodeCoverageNestedClass : ICodeCoverageNestedClass
     {
         public CodeCoverageNestedClass()
         {
@@ -21,5 +22,20 @@ namespace Haystack.Analysis.ObjectModel
         public List<CodeCoverageNestedClass> NestedClasses { get; set; }
 
         public CodeCoverageClass Class { get; set; }
+
+        IEnumerable<ICodeCoverageMethod> ICodeCoverageNestedClass.Methods
+        {
+            get { return Methods; }
+        }
+
+        IEnumerable<ICodeCoverageNestedClass> ICodeCoverageNestedClass.NestedClasses
+        {
+            get { return NestedClasses; }
+        }
+
+        ICodeCoverageClass ICodeCoverageNestedClass.Class
+        {
+            get { return Class; }
+        }
     }
 }

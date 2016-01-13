@@ -2,7 +2,7 @@
 
 namespace Haystack.Diagnostics.ObjectModel
 {
-    public sealed class ObjectType : IEquatable<ObjectType>
+    public sealed class ObjectType : IObjectType, IEquatable<ObjectType>
     {
         public ObjectType()
         {

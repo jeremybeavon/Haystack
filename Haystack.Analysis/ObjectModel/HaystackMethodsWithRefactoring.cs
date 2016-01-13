@@ -1,13 +1,9 @@
 ﻿using MsgPack.Serialization;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class HaystackMethodsWithRefactoring
+    public sealed class HaystackMethodsWithRefactoring : IHaystackMethodsWithRefactoring
     {
         [MessagePackMember(0)]
         public List<RefactoredMethod> RefactoredMethods { get; set; }
@@ -16,5 +12,15 @@ namespace Haystack.Analysis.ObjectModel
         public List<int> NonRefactoredMethodIndexes { get; set; }
 
         public List<HaystackMethod> NonRefactoredMethods { get; set; }
+
+        IEnumerable<IRefactoredMethod> IHaystackMethodsWithRefactoring.RefactoredMethods
+        {
+            get { return RefactoredMethods; }
+        }
+
+        IEnumerable<IHaystackMethod> IHaystackMethodsWithRefactoring.NonRefactoredMethods
+        {
+            get { return NonRefactoredMethods; }
+        }
     }
 }

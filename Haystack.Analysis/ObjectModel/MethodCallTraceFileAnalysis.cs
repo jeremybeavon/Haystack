@@ -1,13 +1,24 @@
-﻿using Haystack.Diagnostics.ObjectModel;
+﻿using System;
+using Haystack.Diagnostics.ObjectModel;
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public sealed class MethodCallTraceFileAnalysis
+    public sealed class MethodCallTraceFileAnalysis : IMethodCallTraceFileAnalysis
     {
         public string FileName { get; set; }
 
         public MethodCallTrace PassingMethodCallTrace { get; set; }
 
         public MethodCallTrace FailingMethodCallTrace { get; set; }
+
+        IMethodCallTrace IMethodCallTraceFileAnalysis.PassingMethodCallTrace
+        {
+            get { return PassingMethodCallTrace; }
+        }
+
+        IMethodCallTrace IMethodCallTraceFileAnalysis.FailingMethodCallTrace
+        {
+            get { return FailingMethodCallTrace; }
+        }
     }
 }

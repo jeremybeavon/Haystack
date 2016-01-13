@@ -1,10 +1,11 @@
 ﻿using Haystack.Diagnostics.ObjectModel;
 using MsgPack.Serialization;
 using System.Collections.Generic;
+using System;
 
 namespace Haystack.Analysis.ObjectModel
 {
-    public class HaystackMethod
+    public class HaystackMethod : IHaystackMethod
     {
         public HaystackMethod()
         {
@@ -33,12 +34,12 @@ namespace Haystack.Analysis.ObjectModel
         [MessagePackMember(5)]
         public int PassingMethodCoverageMethodId { get; set; }
 
-        public CodeCoverageMethod PassingMethodCoverageMethod { get; set; }
+        public CodeCoverageMethod PassingCodeCoverageMethod { get; set; }
 
         [MessagePackMember(6)]
         public int FailingMethodCoverageMethodId { get; set; }
 
-        public CodeCoverageMethod FailingMethodCoverageMethod { get; set; }
+        public CodeCoverageMethod FailingCodeCoverageMethod { get; set; }
 
         [MessagePackMember(7)]
         public List<int> PassingMethodCallIds { get; set; }
@@ -52,5 +53,35 @@ namespace Haystack.Analysis.ObjectModel
 
         [MessagePackMember(9)]
         public List<SourceControlLineChange> SourceControlChanges { get; set; }
+
+        IEnumerable<IHaystackMethodParameter> IHaystackMethod.MethodParameters
+        {
+            get { return MethodParameters; }
+        }
+        
+        ICodeCoverageMethod IHaystackMethod.PassingCodeCoverageMethod
+        {
+            get { return PassingCodeCoverageMethod; }
+        }
+
+        ICodeCoverageMethod IHaystackMethod.FailingCodeCoverageMethod
+        {
+            get { return FailingCodeCoverageMethod; }
+        }
+
+        IEnumerable<IMethodCall> IHaystackMethod.PassingMethodCalls
+        {
+            get { return PassingMethodCalls; }
+        }
+
+        IEnumerable<IMethodCall> IHaystackMethod.FailingMethodCalls
+        {
+            get { return FailingMethodCalls; }
+        }
+
+        public IEnumerable<ISourceControlLineChange> SourceControlLineChanges
+        {
+            get { return SourceControlChanges; }
+        }
     }
 }
