@@ -2,6 +2,7 @@
 using Haystack.Analysis.ObjectModel;
 using Haystack.CodeCoverage.OpenCover;
 using Haystack.Diagnostics.Configuration;
+using Haystack.Diagnostics.ObjectModel;
 using HtmlAgilityPack;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -172,15 +173,133 @@ namespace Haystack.Analysis
 
         private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, TypeWithSyntax type)
         {
-            foreach (MethodWithSyntax method in type.Methods)
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Methods);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Constructors);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Properties);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Indexers);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.OperatorOverloads);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.ConversionOperators);
+        }
+
+        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<MethodWithSyntax> methods)
+        {
+            foreach (MethodWithSyntax method in methods)
             {
                 CodeCoverageMethod codeCoverageMethod = new CodeCoverageMethod()
                 {
                     MethodName = method.Name,
                     ReturnType = method.Declaration.ReturnType.ToString()
                 };
+                codeCoverageMethods.Add(codeCoverageMethod);
                 LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, method.Declaration.ParameterList);
-                LoadCodeCoverageLines(codeCoverageMethod.Lines, method.Declaration);
+                LoadCodeCoverageLines(codeCoverageMethod.Lines, method.StartLine, method.EndLine);
+            }
+        }
+
+        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<ConstructorWithSyntax> constructors)
+        {
+            foreach (ConstructorWithSyntax constructor in constructors)
+            {
+                bool isStatic = constructor.Declaration.Modifiers.Any(modifier => modifier.Kind() == SyntaxKind.StaticKeyword);
+                CodeCoverageMethod codeCoverageMethod = new CodeCoverageMethod()
+                {
+                    MethodName = isStatic ? "cctor" : "ctor"
+                };
+                codeCoverageMethods.Add(codeCoverageMethod);
+                LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, constructor.Declaration.ParameterList);
+                LoadCodeCoverageLines(codeCoverageMethod.Lines, constructor.StartLine, constructor.EndLine);
+            }
+        }
+
+        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<PropertyWithSyntax> properties)
+        {
+            foreach (PropertyWithSyntax property in properties)
+            {
+                PropertyDeclarationSyntax propertyDeclaration = property.Declaration;
+                foreach (AccessorDeclarationSyntax accessor in property.Declaration.AccessorList.Accessors)
+                {
+                    bool isGet = accessor.Keyword.Kind() == SyntaxKind.GetKeyword;
+                    CodeCoverageMethod codeCoverageMethod = new CodeCoverageMethod()
+                    {
+                        MethodName = (isGet ? "get_" : "set_") + property.Name,
+                        ReturnType = isGet ? propertyDeclaration.Type.ToString() : "void"
+                    };
+                    if (!isGet)
+                    {
+                        CodeCoverageMethodParameter methodParameter = new CodeCoverageMethodParameter()
+                        {
+                            ParameterName = "value",
+                            ParameterType = propertyDeclaration.Type.ToString()
+                        };
+                        codeCoverageMethod.MethodParameters.Add(methodParameter);
+                    }
+                    codeCoverageMethods.Add(codeCoverageMethod);
+                    FileLinePositionSpan lineSpan = accessor.GetLocation().GetLineSpan();
+                    LoadCodeCoverageLines(codeCoverageMethod.Lines, lineSpan.StartLinePosition.Line, lineSpan.StartLinePosition.Line);
+                }
+            }
+        }
+
+        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<IndexerWithSyntax> indexers)
+        {
+            foreach (IndexerWithSyntax indexer in indexers)
+            {
+                IndexerDeclarationSyntax indexerDeclaration = indexer.Declaration;
+                foreach (AccessorDeclarationSyntax accessor in indexer.Declaration.AccessorList.Accessors)
+                {
+                    bool isGet = accessor.Keyword.Kind() == SyntaxKind.GetKeyword;
+                    CodeCoverageMethod codeCoverageMethod = new CodeCoverageMethod()
+                    {
+                        MethodName = isGet ? "get_Item" : "set_Item",
+                        ReturnType = isGet ? indexerDeclaration.Type.ToString() : "void"
+                    };
+                    if (!isGet)
+                    {
+                        CodeCoverageMethodParameter methodParameter = new CodeCoverageMethodParameter()
+                        {
+                            ParameterName = "value",
+                            ParameterType = indexerDeclaration.Type.ToString()
+                        };
+                        codeCoverageMethod.MethodParameters.Add(methodParameter);
+                    }
+
+                    LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, indexerDeclaration.ParameterList.Parameters);
+                    codeCoverageMethods.Add(codeCoverageMethod);
+                    FileLinePositionSpan lineSpan = accessor.GetLocation().GetLineSpan();
+                    LoadCodeCoverageLines(codeCoverageMethod.Lines, lineSpan.StartLinePosition.Line, lineSpan.StartLinePosition.Line);
+                }
+            }
+        }
+
+        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<OperatorOverloadWithSyntax> operators)
+        {
+            foreach (OperatorOverloadWithSyntax @operator in operators)
+            {
+                CodeCoverageMethod codeCoverageMethod = new CodeCoverageMethod()
+                {
+                    MethodName = @operator.Declaration.OperatorToken.ToString(),
+                    ReturnType = @operator.Declaration.ReturnType.ToString()
+                };
+                codeCoverageMethods.Add(codeCoverageMethod);
+                LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, @operator.Declaration.ParameterList);
+                LoadCodeCoverageLines(codeCoverageMethod.Lines, @operator.StartLine, @operator.EndLine);
+            }
+        }
+
+        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<ConversionOperatorWithSyntax> operators)
+        {
+            foreach (ConversionOperatorWithSyntax @operator in operators)
+            {
+                ConversionOperatorDeclarationSyntax operatorDeclaration = @operator.Declaration;
+                bool isImplicit = operatorDeclaration.ImplicitOrExplicitKeyword.Kind() == SyntaxKind.ImplicitKeyword;
+                CodeCoverageMethod codeCoverageMethod = new CodeCoverageMethod()
+                {
+                    MethodName = isImplicit ? "op_Implicit" : "op_Explicit",
+                    ReturnType = operatorDeclaration.Type.ToString()
+                };
+                codeCoverageMethods.Add(codeCoverageMethod);
+                LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, @operatorDeclaration.ParameterList);
+                LoadCodeCoverageLines(codeCoverageMethod.Lines, @operator.StartLine, @operator.EndLine);
             }
         }
 
@@ -188,13 +307,34 @@ namespace Haystack.Analysis
             List<CodeCoverageMethodParameter> codeCoverageMethodParameters,
             ParameterListSyntax parameters)
         {
+            LoadCodeCoverageMethodParameters(codeCoverageMethodParameters, parameters.Parameters);
         }
 
-        private void LoadCodeCoverageLines(List<CodeCoverageLine> lines, CSharpSyntaxNode node)
+        private void LoadCodeCoverageMethodParameters(
+            List<CodeCoverageMethodParameter> codeCoverageMethodParameters,
+            SeparatedSyntaxList<ParameterSyntax> parameters)
         {
-            FileLinePositionSpan position = node.GetLocation().GetLineSpan();
-            int startLine = position.StartLinePosition.Line;
-            int endLine = position.EndLinePosition.Line;
+            foreach (ParameterSyntax parameter in parameters)
+            {
+                CodeCoverageMethodParameter codeCoverageMethodParameter = new CodeCoverageMethodParameter()
+                {
+                    ParameterName = parameter.Identifier.ValueText,
+                    ParameterType = parameter.Type.ToString()
+                };
+                codeCoverageMethodParameters.Add(codeCoverageMethodParameter);
+                if (parameter.Modifiers.Any(modifier => modifier.Kind() == SyntaxKind.RefKeyword))
+                {
+                    codeCoverageMethodParameter.Modifier = ParameterModifier.Ref;
+                }
+                else if (parameter.Modifiers.Any(modifier => modifier.Kind() == SyntaxKind.OutKeyword))
+                {
+                    codeCoverageMethodParameter.Modifier = ParameterModifier.Out;
+                }
+            }
+        }
+
+        private void LoadCodeCoverageLines(List<CodeCoverageLine> lines, int startLine, int endLine)
+        {
             for (int index = startLine; index <= endLine; index++)
             {
                 lines.Add(currentClassLines.Lines[index]);

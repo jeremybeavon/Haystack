@@ -65,19 +65,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Amendments\SimplePropertyTests.cs" />
-    <Compile Include="CodeCoverage\CodeCoverageComparisonTestResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CodeCoverageComparisonTestResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CodeCoverage\CodeCoverageComparisonTests.cs" />
     <Compile Include="HaystackAnalysisTestRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="CodeCoverage\CodeCoverageComparisonTestResources\RestSharp_RestClient_New.htm" />
-    <None Include="CodeCoverage\CodeCoverageComparisonTestResources\RestSharp_RestClient_Old.htm" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -224,12 +216,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CodeCoverage\CodeCoverageComparisonTestResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CodeCoverageComparisonTestResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Folder Include="CodeCoverage\CodeCoverageComparisonTestResources\" />
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

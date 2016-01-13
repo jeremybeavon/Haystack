@@ -1,15 +1,18 @@
-﻿using System;
+﻿using MsgPack.Serialization;
 using System.Collections.Generic;
-using MsgPack.Serialization;
+using System.Threading;
 
 namespace Haystack.Diagnostics.ObjectModel
 {
     public sealed class MethodCall
     {
+        private static int nextMethodCallId;
+
         public MethodCall()
         {
             Parameters = new List<MethodParameter>();
             MethodCalls = new List<MethodCall>();
+            MethodCallId = Interlocked.Increment(ref nextMethodCallId);
         }
 
         [MessagePackMember(0)]

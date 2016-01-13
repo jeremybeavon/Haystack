@@ -1,10 +1,18 @@
 ﻿using MsgPack.Serialization;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Haystack.Analysis.ObjectModel
 {
     public sealed class CodeCoverageMethod
     {
+        private static int nextCodeCoverageMethodId;
+
+        public CodeCoverageMethod()
+        {
+            CodeCoverageMethodId = Interlocked.Increment(ref nextCodeCoverageMethodId);
+        }
+
         [MessagePackMember(0)]
         public int CodeCoverageMethodId { get; set; }
 

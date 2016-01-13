@@ -16,10 +16,10 @@ namespace Haystack.Analysis.ObjectModel
         }
 
         [MessagePackMember(0)]
-        public string MethodName { get; set; }
+        public string ClassName { get; set; }
 
         [MessagePackMember(1)]
-        public string TypeName { get; set; }
+        public string MethodName { get; set; }
 
         [MessagePackMember(2)]
         public List<HaystackMethodParameter> MethodParameters { get; set; }

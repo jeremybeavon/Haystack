@@ -1,5 +1,8 @@
-﻿using Haystack.Diagnostics.Configuration;
+﻿using Haystack.Diagnostics;
+using Haystack.Diagnostics.Configuration;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Haystack.Analysis.ObjectModel
 {
@@ -20,8 +23,8 @@ namespace Haystack.Analysis.ObjectModel
             LoadCodeCoverageAnalysis(passingConfiguration, failingConfiguration);
             LoadMethodCallFileAnalysis(passingConfiguration, failingConfiguration);
             LoadSourceControlRevisions(passingConfiguration, failingConfiguration);
-            LoadHaystackMethods(passingConfiguration, failingConfiguration);
-            LoadHaystackMethodsWithRefactoring(passingConfiguration, failingConfiguration);
+            LoadHaystackMethods();
+            LoadHaystackMethodsWithRefactoring();
         }
 
         public List<CodeCoverageAnalysis> CodeCoverageAnalysis { get; set; }
@@ -33,15 +36,7 @@ namespace Haystack.Analysis.ObjectModel
         public List<HaystackMethod> HaystackMethods { get; set; }
 
         public HaystackMethodsWithRefactoring HaystackMethodsWithRefactoring { get; set; }
-
-        public static void RunHaystackAnalysis(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
-        {
-            new MethodCallTraceAnalyzer().Analyze(passingConfiguration, failingConfiguration);
-            new CodeCoverageAnalyzer().Analyze(passingConfiguration, failingConfiguration);
-            new StaticAnalyzer().Analyze(passingConfiguration, failingConfiguration);
-            new SourceControlAnalyzer().Analyze(passingConfiguration, failingConfiguration);
-        }
-
+        
         private void LoadCodeCoverageAnalysis(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
         {
             new CodeCoverageAnalysisBuilder().LoadCodeCoverageAnalysis(passingConfiguration, failingConfiguration);
@@ -49,18 +44,58 @@ namespace Haystack.Analysis.ObjectModel
 
         private void LoadMethodCallFileAnalysis(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
         {
+            List<string> failingMethodCallTraceFiles = GetMethodCallTraceFiles(failingConfiguration).ToList();
+            foreach (string passingMethodCallTraceFile in GetMethodCallTraceFiles(passingConfiguration))
+            {
+                string fileName = Path.GetFileName(passingMethodCallTraceFile);
+                MethodCallTraceFileAnalysis methodCallTraceFileAnalysis = new MethodCallTraceFileAnalysis()
+                {
+                    FileName = fileName,
+                    PassingMethodCallTrace = new MethodCallTraceProvider().Load(passingMethodCallTraceFile)
+                };
+                MethodCallTraceFiles.Add(methodCallTraceFileAnalysis);
+                string failingMethodCallTraceFile = Path.Combine(failingConfiguration.OutputDirectory, fileName);
+                if (File.Exists(failingMethodCallTraceFile))
+                {
+                    methodCallTraceFileAnalysis.FailingMethodCallTrace = new MethodCallTraceProvider().Load(failingMethodCallTraceFile);
+                    failingMethodCallTraceFiles.Remove(failingMethodCallTraceFile);
+                }
+            }
+
+            foreach (string failingMethodCallTraceFile in failingMethodCallTraceFiles)
+            {
+                MethodCallTraceFileAnalysis methodCallTraceFileAnalysis = new MethodCallTraceFileAnalysis()
+                {
+                    FileName = Path.Combine(failingMethodCallTraceFile),
+                    PassingMethodCallTrace = new MethodCallTraceProvider().Load(failingMethodCallTraceFile)
+                };
+                MethodCallTraceFiles.Add(methodCallTraceFileAnalysis);
+            }
         }
 
         private void LoadSourceControlRevisions(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
         {
         }
 
-        private void LoadHaystackMethods(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+        private void LoadHaystackMethods()
         {
+            new HaystackMethodBuilder().LoadHaystackMethods(this); 
         }
 
-        private void LoadHaystackMethodsWithRefactoring(IHaystackConfiguration passingConfiguration, IHaystackConfiguration failingConfiguration)
+        private void LoadHaystackMethodsWithRefactoring()
         {
+            int index = 0;
+            foreach (HaystackMethod method in HaystackMethods)
+            {
+                HaystackMethodsWithRefactoring.NonRefactoredMethodIndexes.Add(index);
+                HaystackMethodsWithRefactoring.NonRefactoredMethods.Add(method);
+                index++;
+            }
+        }
+        
+        private static string[] GetMethodCallTraceFiles(IHaystackConfiguration configuration)
+        {
+            return Directory.GetFiles(configuration.OutputDirectory, "haystack.callTrace.*");
         }
     }
 }
