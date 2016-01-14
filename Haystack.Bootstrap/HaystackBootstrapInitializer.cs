@@ -40,7 +40,7 @@ namespace Haystack.Bootstrap
             string haystackBaseDirectory = FindHaystackBaseDirectory(configurationFile);
             if (haystackBaseDirectory != null)
             {
-                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) => args.ResolveDiagnosticsAssembly(haystackBaseDirectory);
+                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackBaseDirectory);
             }
 
             InitializeDiagnostics(configurationFile);

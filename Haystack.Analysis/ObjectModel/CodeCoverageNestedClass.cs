@@ -23,6 +23,8 @@ namespace Haystack.Analysis.ObjectModel
 
         public CodeCoverageClass Class { get; set; }
 
+        public CodeCoverageNestedClass NestedClass { get; set; }
+
         IEnumerable<ICodeCoverageMethod> ICodeCoverageNestedClass.Methods
         {
             get { return Methods; }

@@ -110,13 +110,12 @@ namespace Haystack.Runner.NUnit
             string bootstrapFile = Path.Combine(baseDirectory, "Haystack.Bootstrap.dll");
             if (File.Exists(bootstrapFile))
             {
-                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) => args.ResolveAssembly(bootstrapFile);
                 InitializeHaystackUsingBootstrap();
             }
             else
             {
                 string haystackBaseDirectory = BootstrapConfiguration.GetHaystackBaseDirectory(configurationFile);
-                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) => args.ResolveDiagnosticsAssembly(haystackBaseDirectory);
+                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackBaseDirectory);
                 InitializeHaystackUsingDiagnostics(configurationFile);
             }
         }

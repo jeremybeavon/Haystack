@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppDomainExtensions.cs" />
     <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="BootstrapConfiguration.cs" />
     <Compile Include="CrossDomainConsoleProvider.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="IO\IFileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelativePathResolver.cs" />
-    <Compile Include="ResolveEventArgsExtensions.cs" />
     <Compile Include="TypeResolver.cs" />
     <Compile Include="XmlSerialization.cs" />
   </ItemGroup>

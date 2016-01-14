@@ -65,14 +65,7 @@ namespace Haystack.Diagnostics
 
             if (referencedDirectories.Count != 0)
             {
-                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
-                {
-                    string assemblyFile = args.AssemblyName() + ".dll";
-                    string assemblyPath = referencedDirectories
-                        .Select(referencedDirectory => Path.Combine(referencedDirectory, assemblyFile))
-                        .FirstOrDefault(file => File.Exists(file));
-                    return assemblyPath == null ? null : Assembly.LoadFrom(assemblyPath);
-                };
+                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(referencedDirectories.ToArray());
             }
         }
 
@@ -95,7 +88,8 @@ namespace Haystack.Diagnostics
             string haystackAddin = Path.Combine(runnerDirectory, "HaystackAddin", haystackAddinFile);
             if (File.Exists(haystackAddin))
             {
-                Assembly assembly = Assembly.LoadFrom(haystackAddinFile);
+                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(runnerDirectory);
+                Assembly assembly = Assembly.LoadFrom(haystackAddin);
                 RunnerFrameworkInitializerAttribute initializerAttribute = assembly.GetCustomAttribute<RunnerFrameworkInitializerAttribute>();
                 if (initializerAttribute != null)
                 {

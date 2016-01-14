@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <DontImportPostSharp>True</DontImportPostSharp>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Haystack.snk</AssemblyOriginatorKeyFile>
@@ -142,6 +143,7 @@
     <Compile Include="CodeCoverageAnalysisBuilder.cs" />
     <Compile Include="CodeCoverageDifferenceType.cs" />
     <Compile Include="FileDifferences.cs" />
+    <Compile Include="HaystackAnalysisProvider.cs" />
     <Compile Include="HaystackMethodBuilder.cs" />
     <Compile Include="HtmlNodeExtensions.cs" />
     <Compile Include="ObjectModel\CodeCoverageAnalysis.cs" />

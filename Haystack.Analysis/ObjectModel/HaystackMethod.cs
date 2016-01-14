@@ -32,12 +32,12 @@ namespace Haystack.Analysis.ObjectModel
         public CodeCoverageMethodDifferenceType CodeCoverageDifference { get; set; }
 
         [MessagePackMember(5)]
-        public int PassingMethodCoverageMethodId { get; set; }
+        public int? PassingMethodCoverageMethodId { get; set; }
 
         public CodeCoverageMethod PassingCodeCoverageMethod { get; set; }
 
         [MessagePackMember(6)]
-        public int FailingMethodCoverageMethodId { get; set; }
+        public int? FailingMethodCoverageMethodId { get; set; }
 
         public CodeCoverageMethod FailingCodeCoverageMethod { get; set; }
 

@@ -98,13 +98,18 @@ namespace Haystack.Diagnostics
         {
             MethodCallTrace methodCallTrace = BuildMethodCallTrace();
             methodCallTrace.Description = description;
+            Save(fileName, methodCallTrace);
+        }
+
+        public static void Save(string fileName, MethodCallTrace methodCallTrace)
+        {
             using (Stream stream = File.Create(fileName))
             {
                 SerializationContext.Default.GetSerializer<MethodCallTrace>().Pack(stream, methodCallTrace);
             }
         }
 
-        public MethodCallTrace Load(string fileName)
+        public static MethodCallTrace Load(string fileName)
         {
             MethodCallTrace methodCallTrace;
             using (Stream stream = File.OpenRead(fileName))
@@ -112,13 +117,17 @@ namespace Haystack.Diagnostics
                 methodCallTrace = SerializationContext.Default.GetSerializer<MethodCallTrace>().Unpack(stream);
             }
 
+            Initialize(methodCallTrace);
+            return methodCallTrace;
+        }
+
+        public static void Initialize(MethodCallTrace methodCallTrace)
+        {
             foreach (ObjectInstance @object in methodCallTrace.Objects)
                 @object.Type = methodCallTrace.Types[@object.TypeIndex];
 
             foreach (MethodCall methodCall in methodCallTrace.MethodCallThreads.SelectMany(thread => thread.MethodCalls))
-                Load(methodCallTrace, methodCall);
-
-            return methodCallTrace;
+                Initialize(methodCallTrace, methodCall);
         }
 
         public Value GetValue(object value)
@@ -155,27 +164,27 @@ namespace Haystack.Diagnostics
             }).ToList();
         }
 
-        private void Load(MethodCallTrace methodCallTrace, MethodCall methodCall)
+        private static void Initialize(MethodCallTrace methodCallTrace, MethodCall methodCall)
         {
             methodCall.DeclaringType = methodCallTrace.Types[methodCall.DeclaringTypeIndex];
             methodCall.Instance = methodCallTrace.Objects[methodCall.InstanceIndex];
             methodCall.ReturnType = methodCallTrace.Types[methodCall.ReturnTypeIndex];
-            Load(methodCallTrace, methodCall.ReturnValue);
+            Initialize(methodCallTrace, methodCall.ReturnValue);
             foreach (MethodParameter parameter in methodCall.Parameters)
             {
                 parameter.ParameterType = methodCallTrace.Types[parameter.ParameterTypeIndex];
-                Load(methodCallTrace, parameter.Value);
-                Load(methodCallTrace, parameter.OutputValue);
+                Initialize(methodCallTrace, parameter.Value);
+                Initialize(methodCallTrace, parameter.OutputValue);
             }
 
             foreach (MethodCall childMethodCall in methodCall.MethodCalls)
             {
                 childMethodCall.CalledBy = methodCall;
-                Load(methodCallTrace, childMethodCall);
+                Initialize(methodCallTrace, childMethodCall);
             }
         }
         
-        private void Load(MethodCallTrace methodCallTrace, Value value)
+        private static void Initialize(MethodCallTrace methodCallTrace, Value value)
         {
             if (value != null && value.ObjectIndex != NullValue)
                 value.Object = methodCallTrace.Objects[value.ObjectIndex];

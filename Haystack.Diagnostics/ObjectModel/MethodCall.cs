@@ -1,7 +1,6 @@
 ﻿using MsgPack.Serialization;
 using System.Collections.Generic;
 using System.Threading;
-using System;
 
 namespace Haystack.Diagnostics.ObjectModel
 {
@@ -13,7 +12,7 @@ namespace Haystack.Diagnostics.ObjectModel
         {
             Parameters = new List<MethodParameter>();
             MethodCalls = new List<MethodCall>();
-            MethodCallId = Interlocked.Increment(ref nextMethodCallId);
+            ResetMethodCallId();
         }
 
         [MessagePackMember(0)]
@@ -89,6 +88,11 @@ namespace Haystack.Diagnostics.ObjectModel
         public MethodCall ToMethodCall()
         {
             return this;
+        }
+
+        public void ResetMethodCallId()
+        {
+            MethodCallId = Interlocked.Increment(ref nextMethodCallId);
         }
     }
 }

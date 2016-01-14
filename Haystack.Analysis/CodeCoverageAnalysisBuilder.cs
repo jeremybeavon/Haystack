@@ -7,6 +7,7 @@ using HtmlAgilityPack;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -54,7 +55,13 @@ namespace Haystack.Analysis
                 codeCoverageAnalysisList.Add(codeCoverageAnalysis);
             }
 
+            InitializeCodeCoverageAnalysis(codeCoverageAnalysisList);
             return codeCoverageAnalysisList;
+        }
+
+        public void InitializeCodeCoverageAnalysis(List<CodeCoverageAnalysis> codeCoverageAnalysis)
+        {
+
         }
 
         private CodeCoverageFile LoadCodeCoverageFile(string codeCoverageFile)
@@ -125,7 +132,7 @@ namespace Haystack.Analysis
             IEnumerable<ClassWithSyntax> classes,
             string namespaceName = null)
         {
-            classFile.Classes.AddRange(classes.Select(@class => LoadCodeCoverageClass(@class, namespaceName)));
+            classFile.Classes.AddRange(classes.Select(@class => LoadCodeCoverageClass(classFile, @class, namespaceName)));
         }
 
         private void LoadCodeCoverageClasses(CodeCoverageClassFile classFile, IEnumerable<NamespaceWithSyntax> namespaces)
@@ -144,44 +151,55 @@ namespace Haystack.Analysis
         {
             foreach (StructWithSyntax @struct in structs)
             {
-                classFile.Classes.Add(LoadCodeCoverageClass(@struct, namespaceName));
+                classFile.Classes.Add(LoadCodeCoverageClass(classFile, @struct, namespaceName));
             }
         }
 
-        private CodeCoverageClass LoadCodeCoverageClass(ClassWithSyntax @class, string namespaceName)
+        private CodeCoverageClass LoadCodeCoverageClass(CodeCoverageClassFile classFile, ClassWithSyntax @class, string namespaceName)
         {
-            return LoadCodeCoverageClass(@class, namespaceName, @class.Name);
+            return LoadCodeCoverageClass(classFile, @class, namespaceName, @class.Name);
         }
 
-        private CodeCoverageClass LoadCodeCoverageClass(StructWithSyntax @struct, string namespaceName)
+        private CodeCoverageClass LoadCodeCoverageClass(CodeCoverageClassFile classFile, StructWithSyntax @struct, string namespaceName)
         {
-            return LoadCodeCoverageClass(@struct, namespaceName, @struct.Name);
+            return LoadCodeCoverageClass(classFile, @struct, namespaceName, @struct.Name);
         }
 
-        private CodeCoverageClass LoadCodeCoverageClass(TypeWithSyntax type, string namespaceName, string typeName)
+        private CodeCoverageClass LoadCodeCoverageClass(
+            CodeCoverageClassFile classFile,
+            TypeWithSyntax type,
+            string namespaceName,
+            string typeName)
         {
             CodeCoverageClass codeCoverageClass = new CodeCoverageClass()
             {
                 NamespaceName = namespaceName,
-                ClassName = typeName
+                ClassName = typeName,
+                File = classFile
             };
-            LoadCodeCoverageMethods(codeCoverageClass.Methods, type);
-            codeCoverageClass.NestedClasses.AddRange(type.Classes.Select(LoadCodeCoverageNestedClass));
-            codeCoverageClass.NestedClasses.AddRange(type.Structs.Select(LoadCodeCoverageNestedClass));
+            LoadCodeCoverageMethods(codeCoverageClass.Methods, type, method => method.Class = codeCoverageClass);
+            codeCoverageClass.NestedClasses.AddRange(LoadCodeCoverageNestedClasses(codeCoverageClass, type.Classes));
+            codeCoverageClass.NestedClasses.AddRange(LoadCodeCoverageNestedClasses(codeCoverageClass, type.Structs));
             return codeCoverageClass;
         }
 
-        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, TypeWithSyntax type)
+        private void LoadCodeCoverageMethods(
+            List<CodeCoverageMethod> codeCoverageMethods,
+            TypeWithSyntax type,
+            Action<CodeCoverageMethod> initializeAction)
         {
-            LoadCodeCoverageMethods(codeCoverageMethods, type.Methods);
-            LoadCodeCoverageMethods(codeCoverageMethods, type.Constructors);
-            LoadCodeCoverageMethods(codeCoverageMethods, type.Properties);
-            LoadCodeCoverageMethods(codeCoverageMethods, type.Indexers);
-            LoadCodeCoverageMethods(codeCoverageMethods, type.OperatorOverloads);
-            LoadCodeCoverageMethods(codeCoverageMethods, type.ConversionOperators);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Methods, initializeAction);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Constructors, initializeAction);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Properties, initializeAction);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.Indexers, initializeAction);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.OperatorOverloads, initializeAction);
+            LoadCodeCoverageMethods(codeCoverageMethods, type.ConversionOperators, initializeAction);
         }
 
-        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<MethodWithSyntax> methods)
+        private void LoadCodeCoverageMethods(
+            List<CodeCoverageMethod> codeCoverageMethods,
+            IEnumerable<MethodWithSyntax> methods,
+            Action<CodeCoverageMethod> initializeAction)
         {
             foreach (MethodWithSyntax method in methods)
             {
@@ -191,12 +209,16 @@ namespace Haystack.Analysis
                     ReturnType = method.Declaration.ReturnType.ToString()
                 };
                 codeCoverageMethods.Add(codeCoverageMethod);
+                initializeAction(codeCoverageMethod);
                 LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, method.Declaration.ParameterList);
                 LoadCodeCoverageLines(codeCoverageMethod.Lines, method.StartLine, method.EndLine);
             }
         }
 
-        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<ConstructorWithSyntax> constructors)
+        private void LoadCodeCoverageMethods(
+            List<CodeCoverageMethod> codeCoverageMethods,
+            IEnumerable<ConstructorWithSyntax> constructors,
+            Action<CodeCoverageMethod> initializeAction)
         {
             foreach (ConstructorWithSyntax constructor in constructors)
             {
@@ -206,12 +228,16 @@ namespace Haystack.Analysis
                     MethodName = isStatic ? "cctor" : "ctor"
                 };
                 codeCoverageMethods.Add(codeCoverageMethod);
+                initializeAction(codeCoverageMethod);
                 LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, constructor.Declaration.ParameterList);
                 LoadCodeCoverageLines(codeCoverageMethod.Lines, constructor.StartLine, constructor.EndLine);
             }
         }
 
-        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<PropertyWithSyntax> properties)
+        private void LoadCodeCoverageMethods(
+            List<CodeCoverageMethod> codeCoverageMethods,
+            IEnumerable<PropertyWithSyntax> properties,
+            Action<CodeCoverageMethod> initializeAction)
         {
             foreach (PropertyWithSyntax property in properties)
             {
@@ -234,13 +260,17 @@ namespace Haystack.Analysis
                         codeCoverageMethod.MethodParameters.Add(methodParameter);
                     }
                     codeCoverageMethods.Add(codeCoverageMethod);
+                    initializeAction(codeCoverageMethod);
                     FileLinePositionSpan lineSpan = accessor.GetLocation().GetLineSpan();
                     LoadCodeCoverageLines(codeCoverageMethod.Lines, lineSpan.StartLinePosition.Line, lineSpan.StartLinePosition.Line);
                 }
             }
         }
 
-        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<IndexerWithSyntax> indexers)
+        private void LoadCodeCoverageMethods(
+            List<CodeCoverageMethod> codeCoverageMethods,
+            IEnumerable<IndexerWithSyntax> indexers,
+            Action<CodeCoverageMethod> initializeAction)
         {
             foreach (IndexerWithSyntax indexer in indexers)
             {
@@ -265,13 +295,17 @@ namespace Haystack.Analysis
 
                     LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, indexerDeclaration.ParameterList.Parameters);
                     codeCoverageMethods.Add(codeCoverageMethod);
+                    initializeAction(codeCoverageMethod);
                     FileLinePositionSpan lineSpan = accessor.GetLocation().GetLineSpan();
                     LoadCodeCoverageLines(codeCoverageMethod.Lines, lineSpan.StartLinePosition.Line, lineSpan.StartLinePosition.Line);
                 }
             }
         }
 
-        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<OperatorOverloadWithSyntax> operators)
+        private void LoadCodeCoverageMethods(
+            List<CodeCoverageMethod> codeCoverageMethods,
+            IEnumerable<OperatorOverloadWithSyntax> operators,
+            Action<CodeCoverageMethod> initializeAction)
         {
             foreach (OperatorOverloadWithSyntax @operator in operators)
             {
@@ -281,12 +315,16 @@ namespace Haystack.Analysis
                     ReturnType = @operator.Declaration.ReturnType.ToString()
                 };
                 codeCoverageMethods.Add(codeCoverageMethod);
+                initializeAction(codeCoverageMethod);
                 LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, @operator.Declaration.ParameterList);
                 LoadCodeCoverageLines(codeCoverageMethod.Lines, @operator.StartLine, @operator.EndLine);
             }
         }
 
-        private void LoadCodeCoverageMethods(List<CodeCoverageMethod> codeCoverageMethods, IEnumerable<ConversionOperatorWithSyntax> operators)
+        private void LoadCodeCoverageMethods(
+            List<CodeCoverageMethod> codeCoverageMethods,
+            IEnumerable<ConversionOperatorWithSyntax> operators,
+            Action<CodeCoverageMethod> initializeAction)
         {
             foreach (ConversionOperatorWithSyntax @operator in operators)
             {
@@ -298,6 +336,7 @@ namespace Haystack.Analysis
                     ReturnType = operatorDeclaration.Type.ToString()
                 };
                 codeCoverageMethods.Add(codeCoverageMethod);
+                initializeAction(codeCoverageMethod);
                 LoadCodeCoverageMethodParameters(codeCoverageMethod.MethodParameters, @operatorDeclaration.ParameterList);
                 LoadCodeCoverageLines(codeCoverageMethod.Lines, @operator.StartLine, @operator.EndLine);
             }
@@ -340,15 +379,69 @@ namespace Haystack.Analysis
                 lines.Add(currentClassLines.Lines[index]);
             }
         }
-
-        private CodeCoverageNestedClass LoadCodeCoverageNestedClass(NestedClassWithSyntax nestedClass)
+        
+        private IEnumerable<CodeCoverageNestedClass> LoadCodeCoverageNestedClasses(
+            CodeCoverageClass codeCoverageClass,
+            IEnumerable<NestedClassWithSyntax> nestedClasses)
         {
-            return LoadCodeCoverageNestedClass(nestedClass, nestedClass.Name);
+            return nestedClasses.Select(nestedClass => LoadCodeCoverageNestedClass(codeCoverageClass, nestedClass));
         }
 
-        private CodeCoverageNestedClass LoadCodeCoverageNestedClass(NestedStructWithSyntax nestedStruct)
+        private IEnumerable<CodeCoverageNestedClass> LoadCodeCoverageNestedClasses(
+            CodeCoverageClass codeCoverageClass,
+            IEnumerable<NestedStructWithSyntax> nestedClasses)
         {
-            return LoadCodeCoverageNestedClass(nestedStruct, nestedStruct.Name);
+            return nestedClasses.Select(nestedClass => LoadCodeCoverageNestedClass(codeCoverageClass, nestedClass));
+        }
+
+        private IEnumerable<CodeCoverageNestedClass> LoadCodeCoverageNestedClasses(
+            CodeCoverageNestedClass codeCoverageClass,
+            IEnumerable<NestedClassWithSyntax> nestedClasses)
+        {
+            return nestedClasses.Select(nestedClass => LoadCodeCoverageNestedClass(codeCoverageClass, nestedClass));
+        }
+
+        private IEnumerable<CodeCoverageNestedClass> LoadCodeCoverageNestedClasses(
+            CodeCoverageNestedClass codeCoverageClass,
+            IEnumerable<NestedStructWithSyntax> nestedClasses)
+        {
+            return nestedClasses.Select(nestedClass => LoadCodeCoverageNestedClass(codeCoverageClass, nestedClass));
+        }
+
+        private CodeCoverageNestedClass LoadCodeCoverageNestedClass(
+            CodeCoverageClass codeCoverageClass,
+            NestedClassWithSyntax nestedClass)
+        {
+            CodeCoverageNestedClass codeCoverageNestedClass = LoadCodeCoverageNestedClass(nestedClass, nestedClass.Name);
+            codeCoverageNestedClass.Class = codeCoverageClass;
+            return codeCoverageNestedClass;
+        }
+
+        private CodeCoverageNestedClass LoadCodeCoverageNestedClass(
+            CodeCoverageClass codeCoverageClass,
+            NestedStructWithSyntax nestedStruct)
+        {
+            CodeCoverageNestedClass codeCoverageNestedClass = LoadCodeCoverageNestedClass(nestedStruct, nestedStruct.Name);
+            codeCoverageNestedClass.Class = codeCoverageClass;
+            return codeCoverageNestedClass;
+        }
+
+        private CodeCoverageNestedClass LoadCodeCoverageNestedClass(
+            CodeCoverageNestedClass codeCoverageNestedClass,
+            NestedClassWithSyntax nestedClass)
+        {
+            CodeCoverageNestedClass nestedCodeCoverageNestedClass = LoadCodeCoverageNestedClass(nestedClass, nestedClass.Name);
+            nestedCodeCoverageNestedClass.NestedClass = codeCoverageNestedClass;
+            return nestedCodeCoverageNestedClass;
+        }
+
+        private CodeCoverageNestedClass LoadCodeCoverageNestedClass(
+            CodeCoverageNestedClass codeCoverageNestedClass,
+            NestedStructWithSyntax nestedStruct)
+        {
+            CodeCoverageNestedClass nestedCodeCoverageNestedClass = LoadCodeCoverageNestedClass(nestedStruct, nestedStruct.Name);
+            nestedCodeCoverageNestedClass.NestedClass = codeCoverageNestedClass;
+            return nestedCodeCoverageNestedClass;
         }
 
         private CodeCoverageNestedClass LoadCodeCoverageNestedClass(TypeWithSyntax type, string typeName)
@@ -357,9 +450,9 @@ namespace Haystack.Analysis
             {
                 ClassName = typeName
             };
-            LoadCodeCoverageMethods(codeCoverageNestedClass.Methods, type);
-            codeCoverageNestedClass.NestedClasses.AddRange(type.Classes.Select(LoadCodeCoverageNestedClass));
-            codeCoverageNestedClass.NestedClasses.AddRange(type.Structs.Select(LoadCodeCoverageNestedClass));
+            LoadCodeCoverageMethods(codeCoverageNestedClass.Methods, type, method => method.NestedClass = codeCoverageNestedClass);
+            codeCoverageNestedClass.NestedClasses.AddRange(LoadCodeCoverageNestedClasses(codeCoverageNestedClass, type.Classes));
+            codeCoverageNestedClass.NestedClasses.AddRange(LoadCodeCoverageNestedClasses(codeCoverageNestedClass, type.Structs));
             return codeCoverageNestedClass;
         }
 

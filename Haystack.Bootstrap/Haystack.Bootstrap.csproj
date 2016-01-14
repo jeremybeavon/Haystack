@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Haystack.Core\AppDomainExtensions.cs">
+      <Link>AppDomainExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Haystack.Core\AssemblyExtensions.cs">
       <Link>AssemblyExtensions.cs</Link>
     </Compile>
@@ -54,9 +57,6 @@
     </Compile>
     <Compile Include="..\Haystack.Core\HaystackConfigurationFile.cs">
       <Link>HaystackConfigurationFile.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Core\ResolveEventArgsExtensions.cs">
-      <Link>ResolveEventArgsExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Core\XmlSerialization.cs">
       <Link>XmlSerialization.cs</Link>

@@ -77,13 +77,13 @@ namespace Haystack.Analysis.ObjectModel
                 MethodCallTraceFileAnalysis methodCallTraceFileAnalysis = new MethodCallTraceFileAnalysis()
                 {
                     FileName = fileName,
-                    PassingMethodCallTrace = new MethodCallTraceProvider().Load(passingMethodCallTraceFile)
+                    PassingMethodCallTrace = MethodCallTraceProvider.Load(passingMethodCallTraceFile)
                 };
                 MethodCallTraceFiles.Add(methodCallTraceFileAnalysis);
                 string failingMethodCallTraceFile = Path.Combine(failingConfiguration.OutputDirectory, fileName);
                 if (File.Exists(failingMethodCallTraceFile))
                 {
-                    methodCallTraceFileAnalysis.FailingMethodCallTrace = new MethodCallTraceProvider().Load(failingMethodCallTraceFile);
+                    methodCallTraceFileAnalysis.FailingMethodCallTrace = MethodCallTraceProvider.Load(failingMethodCallTraceFile);
                     failingMethodCallTraceFiles.Remove(failingMethodCallTraceFile);
                 }
             }
@@ -93,7 +93,7 @@ namespace Haystack.Analysis.ObjectModel
                 MethodCallTraceFileAnalysis methodCallTraceFileAnalysis = new MethodCallTraceFileAnalysis()
                 {
                     FileName = Path.Combine(failingMethodCallTraceFile),
-                    PassingMethodCallTrace = new MethodCallTraceProvider().Load(failingMethodCallTraceFile)
+                    PassingMethodCallTrace = MethodCallTraceProvider.Load(failingMethodCallTraceFile)
                 };
                 MethodCallTraceFiles.Add(methodCallTraceFileAnalysis);
             }

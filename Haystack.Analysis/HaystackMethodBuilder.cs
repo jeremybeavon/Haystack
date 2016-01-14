@@ -120,6 +120,7 @@ namespace Haystack.Analysis
                     CreateAndAddHaystackMethod(haystackMethodKey);
                 }
 
+                methodCall.ResetMethodCallId();
                 if (isPassingMethodCallTrace)
                 {
                     haystackMethod.PassingMethodCalls.Add(methodCall);

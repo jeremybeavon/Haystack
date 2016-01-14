@@ -9,10 +9,10 @@ namespace Haystack.Analysis.Tests.Amendments
         [TestMethod]
         public void TestSimpleProperty()
         {
-            const string baseDirectory = @"Examples\Amendments\SimpleProperty";
             HaystackAnalysisTestRunner.RunHaystackAnalysis(
-                Path.Combine(baseDirectory, @"Passing\haystack.config.xml"),
-                Path.Combine(baseDirectory, @"Failing\haystack.config.xml"));
+                @"Examples\Amendments\SimpleProperty",
+                @"Passing\haystack.config.xml",
+                @"Failing\haystack.config.xml");
         }
     }
 }

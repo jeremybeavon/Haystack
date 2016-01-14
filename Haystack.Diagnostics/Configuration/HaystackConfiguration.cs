@@ -87,7 +87,7 @@ namespace Haystack.Diagnostics.Configuration
                 return configuration;
             }
         }
-
+        
         public override string ToString()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(HaystackConfiguration));
