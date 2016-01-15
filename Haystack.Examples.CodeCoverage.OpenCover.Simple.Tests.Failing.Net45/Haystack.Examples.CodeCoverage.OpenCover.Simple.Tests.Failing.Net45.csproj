@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Examples\CodeCoverage\OpenCover\Simple\Failing\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Examples\net45\CodeCoverage\OpenCover\Simple\Failing\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\b1907492-672a-4a1e-acd2-c167b7d00422</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Examples\CodeCoverage\OpenCover\Simple\Failing\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Examples\net45\CodeCoverage\OpenCover\Simple\Failing\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\f2c712ec-2129-4936-b00f-213938ff7e70</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

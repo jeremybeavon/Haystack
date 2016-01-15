@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Tests\net45\Amendments\StrongNamedTestTarget\</OutputPath>
+    <OutputPath>..\bin\Debug\Tests\Runner\net45\Diagnostics\Amendments\StrongNamedTestTarget\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\a893270e-eb26-4170-8497-38735559f67b</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Tests\net45\Amendments\StrongNamedTestTarget\</OutputPath>
+    <OutputPath>..\bin\Release\Tests\Runner\net45\Diagnostics\Amendments\StrongNamedTestTarget\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\69fa476b-cd15-4851-87a4-6e1b99bc8e04</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

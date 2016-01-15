@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Tests\net45\Interception\Unity\4.0.1\</OutputPath>
+    <OutputPath>..\bin\Debug\Tests\Runner\net45\Diagnostics\Interception\Unity\4.0.1\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\b3bef0f4-73dd-4a3d-a737-287f401dfd25</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Tests\net45\Interception\Unity\4.0.1\</OutputPath>
+    <OutputPath>..\bin\Release\Tests\Runner\net45\Diagnostics\Interception\Unity\4.0.1\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\a3d24778-14f6-4368-b0dd-15602cf13870</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

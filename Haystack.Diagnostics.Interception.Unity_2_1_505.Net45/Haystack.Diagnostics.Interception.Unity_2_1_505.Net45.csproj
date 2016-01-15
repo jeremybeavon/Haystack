@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Interception\Unity\2.1.505\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\net45\Diagnostics\Interception\Unity\2.1.505\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\2ca8e627-3cd1-482e-8339-b97f2ea16980</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Interception\Unity\2.1.505\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\net45\Diagnostics\Interception\Unity\2.1.505\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\2685fabe-2538-4739-8ef0-d0a79871be35</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

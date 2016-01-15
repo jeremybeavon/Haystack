@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Tests\net45\Amendments\TestTarget\</OutputPath>
+    <OutputPath>..\bin\Debug\Tests\Runner\net45\Diagnostics\Amendments\TestTarget\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\d09da762-7db6-4601-8fc5-b8e442b7a7c8</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Tests\net45\Amendments\TestTarget\</OutputPath>
+    <OutputPath>..\bin\Release\Tests\Runner\net45\Diagnostics\Amendments\TestTarget\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\a510bc2f-4108-4f7b-983b-eda23b43e988</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -43,16 +43,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\Properties\AssemblyInfo.cs">
-        <Link>Properties\AssemblyInfo.cs</Link>
+      <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\SimpleMethod.cs">
-        <Link>SimpleMethod.cs</Link>
+      <Link>SimpleMethod.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\SimpleProperty.cs">
-        <Link>SimpleProperty.cs</Link>
+      <Link>SimpleProperty.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\SimpleVoidMethod.cs">
-        <Link>SimpleVoidMethod.cs</Link>
+      <Link>SimpleVoidMethod.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

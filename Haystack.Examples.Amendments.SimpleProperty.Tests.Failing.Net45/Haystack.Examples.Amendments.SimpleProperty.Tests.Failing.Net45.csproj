@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Examples\Amendments\SimpleProperty\Failing\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Examples\net45\Amendments\SimpleProperty\Failing\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\57abc3d2-3056-406e-95f2-20fc98fd9e64</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Examples\Amendments\SimpleProperty\Failing\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Examples\net45\Amendments\SimpleProperty\Failing\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\fe8ba7a9-471c-49db-bcf4-2ea3c7c88cbd</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Interception\Castle.Core\3.3.3\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\net45\Diagnostics\Interception\Castle.Core\3.3.3\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\7447e19c-4827-40e1-a8fe-92fbd28de354</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Interception\Castle.Core\3.3.3\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\net45\Diagnostics\Interception\Castle.Core\3.3.3\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\70e6e21e-15c1-442d-9d66-9890f20f8702</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

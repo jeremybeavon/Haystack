@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\StaticAnalysis\Reflection\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\net45\Diagnostics\StaticAnalysis\Reflection\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\09c980db-29ed-4fc3-a3c9-452c69d3a844</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\StaticAnalysis\Reflection\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\net45\Diagnostics\StaticAnalysis\Reflection\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\be80a8e6-7009-4d05-99bd-353eb1eaac03</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

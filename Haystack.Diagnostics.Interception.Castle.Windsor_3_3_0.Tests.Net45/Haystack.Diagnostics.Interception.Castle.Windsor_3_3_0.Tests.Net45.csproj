@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Tests\net45\Interception\Castle.Windsor\3.3.0\</OutputPath>
+    <OutputPath>..\bin\Debug\Tests\Runner\net45\Diagnostics\Interception\Castle.Windsor\3.3.0\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\7d59dabb-86e3-4bc4-a4dc-fe4948b955c8</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Tests\net45\Interception\Castle.Windsor\3.3.0\</OutputPath>
+    <OutputPath>..\bin\Release\Tests\Runner\net45\Diagnostics\Interception\Castle.Windsor\3.3.0\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\d47b9be1-2db9-4c83-8310-ce4295bd2a5a</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

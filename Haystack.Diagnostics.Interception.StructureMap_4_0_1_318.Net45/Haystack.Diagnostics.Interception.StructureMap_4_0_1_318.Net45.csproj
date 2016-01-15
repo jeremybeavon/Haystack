@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Interception\StructureMap\4.0.1.318\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\net45\Diagnostics\Interception\StructureMap\4.0.1.318\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\285c10f7-276c-4e64-8f17-c7845fbc3808</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Interception\StructureMap\4.0.1.318\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\net45\Diagnostics\Interception\StructureMap\4.0.1.318\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\5e142a0b-044f-42bc-b2b0-7bcd83fa8988</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

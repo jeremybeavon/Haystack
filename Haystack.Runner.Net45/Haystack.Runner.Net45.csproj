@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Runner\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\net45\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\3f28a4b4-e650-4ea4-a4e9-349bd73b4b6f</BaseIntermediateOutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -29,7 +29,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Runner\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\net45\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\7458a596-c9c6-46ae-a18a-c1e945d3673f</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

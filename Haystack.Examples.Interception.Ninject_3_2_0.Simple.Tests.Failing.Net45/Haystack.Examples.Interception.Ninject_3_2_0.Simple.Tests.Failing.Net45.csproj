@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Examples\Interception\Ninject\3.2.0\Simple\Failing\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Examples\net45\Interception\Ninject\3.2.0\Simple\Failing\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\d2dc4ad0-37bf-4d3a-92e6-58013d324c51</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Examples\Interception\Ninject\3.2.0\Simple\Failing\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Examples\net45\Interception\Ninject\3.2.0\Simple\Failing\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\e7559630-94b6-4b4c-be96-bb23cde956bd</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

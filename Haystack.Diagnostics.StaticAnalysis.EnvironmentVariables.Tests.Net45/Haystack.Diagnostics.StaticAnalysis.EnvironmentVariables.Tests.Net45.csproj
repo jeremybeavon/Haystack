@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Tests\net45\StaticAnalysis\EnvironmentVariables\</OutputPath>
+    <OutputPath>..\bin\Debug\Tests\Runner\net45\Diagnostics\StaticAnalysis\EnvironmentVariables\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\80fff730-c230-4f15-9c0a-b8af447b9f03</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Tests\net45\StaticAnalysis\EnvironmentVariables\</OutputPath>
+    <OutputPath>..\bin\Release\Tests\Runner\net45\Diagnostics\StaticAnalysis\EnvironmentVariables\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\c711165b-c671-4f6a-92aa-fea5f8247474</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

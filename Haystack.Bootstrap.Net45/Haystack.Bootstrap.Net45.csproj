@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Bootstrap\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Bootstrap\net45\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\f8cefc6f-e6e1-4bd9-9f49-2785abf8dae9</BaseIntermediateOutputPath>
     <DefineConstants>TRACE;DEBUG;HAYSTACK_BOOTSTRAP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Bootstrap\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Bootstrap\net45\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\02be7df1-425a-41d6-9dde-57d91aa492dc</BaseIntermediateOutputPath>
     <DefineConstants>TRACE;HAYSTACK_BOOTSTRAP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

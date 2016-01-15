@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Haystack\net45\Runner\NUnit\2.6.1\addins\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\net45\NUnit\2.6.1\addins\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\e3a5e5d2-7dd2-4973-9986-8ae0029798b7</BaseIntermediateOutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Haystack\net45\Runner\NUnit\2.6.1\addins\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\net45\NUnit\2.6.1\addins\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\628f5530-8a9f-4233-988f-182d17c96503</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

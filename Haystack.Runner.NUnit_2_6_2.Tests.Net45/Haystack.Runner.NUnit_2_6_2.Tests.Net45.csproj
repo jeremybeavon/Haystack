@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Tests\net45\Runner\NUnit\2.6.2\</OutputPath>
+    <OutputPath>..\bin\Debug\Tests\Runner\net45\NUnit\2.6.2\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\cae46033-ca2c-4418-ad4f-c884a1e7f770</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Tests\net45\Runner\NUnit\2.6.2\</OutputPath>
+    <OutputPath>..\bin\Release\Tests\Runner\net45\NUnit\2.6.2\</OutputPath>
     <BaseIntermediateOutputPath>..\obj\7aed19ab-5220-4eb7-9cf8-c70262bb8091</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
