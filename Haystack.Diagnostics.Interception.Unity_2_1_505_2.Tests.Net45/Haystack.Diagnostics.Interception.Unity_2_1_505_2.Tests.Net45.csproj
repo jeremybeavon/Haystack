@@ -77,8 +77,12 @@
     <Compile Include="..\Haystack.Diagnostics.Interception.Unity.Tests\DependencyManager.cs">
       <Link>DependencyManager.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unity_2_1_505_2_InterceptionTests.cs" />
+    <Compile Include="..\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Tests\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Tests\Unity_2_1_505_2_InterceptionTests.cs">
+      <Link>Unity_2_1_505_2_InterceptionTests.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -86,15 +90,15 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Tests.Net45\Haystack.Diagnostics.Interception.Tests.Net45.csproj">
       <Project>{77e43fb4-ca70-45d0-a968-6aea3719ab4a}</Project>
-      <Name>Haystack.Diagnostics.Interception.Tests</Name>
+      <Name>Haystack.Diagnostics.Interception.Tests.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45.csproj">
       <Project>{be57247c-c2b9-4af5-b2d7-b9072a3ef70f}</Project>
-      <Name>Haystack.Diagnostics.Interception.Unity_2_1_505_2</Name>
+      <Name>Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

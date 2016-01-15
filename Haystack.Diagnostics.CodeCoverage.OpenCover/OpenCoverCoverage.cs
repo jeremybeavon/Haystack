@@ -5,7 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Haystack.CodeCoverage.OpenCover
+namespace Haystack.Diagnostics.CodeCoverage.OpenCover
 {
     public sealed class OpenCoverCoverage : IBeforeTestRun, IAfterTestRun
     {

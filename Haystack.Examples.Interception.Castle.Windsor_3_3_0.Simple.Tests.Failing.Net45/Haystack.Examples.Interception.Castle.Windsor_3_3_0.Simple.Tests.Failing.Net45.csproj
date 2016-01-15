@@ -54,8 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleServiceTest.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing\SimpleServiceTest.cs">
+      <Link>SimpleServiceTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -63,7 +67,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45.csproj">
       <Project>{7d543861-4844-4f4f-a857-1aac0a98ee1d}</Project>
-      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple</Name>
+      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

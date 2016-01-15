@@ -1,10 +1,9 @@
 ﻿using Afterthought;
-using Haystack.Diagnostics.Amendments;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Haystack.Amendments
+namespace Haystack.Diagnostics.Amendments
 {
     public static class AmendmentExtensions
     {

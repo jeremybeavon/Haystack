@@ -42,10 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleMethod.cs" />
-    <Compile Include="SimpleProperty.cs" />
-    <Compile Include="SimpleVoidMethod.cs" />
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\Properties\AssemblyInfo.cs">
+        <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\SimpleMethod.cs">
+        <Link>SimpleMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\SimpleProperty.cs">
+        <Link>SimpleProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget\SimpleVoidMethod.cs">
+        <Link>SimpleVoidMethod.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
-﻿using Haystack.Interception.Tests;
+﻿using Haystack.Diagnostics.Interception.Tests;
 using Microsoft.Practices.Unity;
 
-namespace Haystack.Interception.Unity.Tests
+namespace Haystack.Diagnostics.Interception.Unity.Tests
 {
     public static class DependencyManager
     {

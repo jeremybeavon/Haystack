@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haystack.Interception.Tests
+namespace Haystack.Diagnostics.Interception.Tests
 {
     public sealed class SimpleService : ISimpleService
     {

@@ -50,24 +50,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BeforeMethodAmendment.cs" />
-    <Compile Include="InitializeTestMethodSetup.cs" />
-    <Compile Include="InitializeTestSuiteSetup.cs" />
-    <Compile Include="InitializeTestFrameworkSetup.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup\BeforeMethodAmendment.cs">
+      <Link>BeforeMethodAmendment.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup\InitializeTestMethodSetup.cs">
+      <Link>InitializeTestMethodSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup\InitializeTestSuiteSetup.cs">
+      <Link>InitializeTestSuiteSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup\InitializeTestFrameworkSetup.cs">
+      <Link>InitializeTestFrameworkSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45.csproj">
       <Project>{7d543861-4844-4f4f-a857-1aac0a98ee1d}</Project>
-      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple</Name>
+      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45\Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45.csproj">
       <Project>{007fd10a-be64-4afd-a500-6e3724253171}</Project>
-      <Name>Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0</Name>
+      <Name>Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -54,8 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimplePropertyTests.cs" />
+    <Compile Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing\SimplePropertyTests.cs">
+      <Link>SimplePropertyTests.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -63,7 +67,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Net45\Haystack.Examples.Amendments.SimpleProperty.Net45.csproj">
       <Project>{f37356db-39d5-48e2-ac5f-14235fd749b0}</Project>
-      <Name>Haystack.Examples.Amendments.SimpleProperty</Name>
+      <Name>Haystack.Examples.Amendments.SimpleProperty.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

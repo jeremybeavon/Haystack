@@ -58,24 +58,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AfterConstructorAmendment.cs" />
-    <Compile Include="InitializeTestMethodSetup.cs" />
-    <Compile Include="InitializeTestSuiteSetup.cs" />
-    <Compile Include="InitializeTestFrameworkSetup.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup\AfterConstructorAmendment.cs">
+      <Link>AfterConstructorAmendment.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup\InitializeTestMethodSetup.cs">
+      <Link>InitializeTestMethodSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup\InitializeTestSuiteSetup.cs">
+      <Link>InitializeTestSuiteSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup\InitializeTestFrameworkSetup.cs">
+      <Link>InitializeTestFrameworkSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45.csproj">
       <Project>{fdaf9374-e51f-4389-854a-f486218d21d5}</Project>
-      <Name>Haystack.Examples.Interception.Unity_3_0_1304.Simple</Name>
+      <Name>Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45\Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45.csproj">
       <Project>{41939f1e-f9de-442c-bcd1-1a75c8e864a3}</Project>
-      <Name>Haystack.Diagnostics.Interception.Unity_3_0_1304</Name>
+      <Name>Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

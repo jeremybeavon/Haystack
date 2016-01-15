@@ -1,8 +1,8 @@
-﻿using Haystack.Interception.Castle.Core;
+﻿using Haystack.Diagnostics.Interception.Castle.Core;
 using Microsoft.Practices.ObjectBuilder2;
 using System;
 
-namespace Haystack.Interception.Unity
+namespace Haystack.Diagnostics.Interception.Unity
 {
     public sealed class HaystackInterceptionBuilderStrategy : BuilderStrategy
     {

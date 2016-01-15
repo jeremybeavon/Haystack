@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace Haystack.Amendments.Tests.Amendments
+namespace Haystack.Diagnostics.Amendments.Tests.Amendments
 {
     public sealed class HaystackPropertyAmendment : IPropertyAmender
     {

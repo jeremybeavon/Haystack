@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics", "Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj", "{8F094168-2764-495B-AF6E-9C135AF04CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Net45", "Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj", "{8F094168-2764-495B-AF6E-9C135AF04CDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Castle.Core.Net45", "Haystack.Diagnostics.Interception.Castle.Core.Net45\Haystack.Diagnostics.Interception.Castle.Core.Net45.csproj", "{F7FF30D3-AA8C-4DF9-AA03-B39B5A63A11B}"
 EndProject
@@ -97,7 +97,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45", "Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45\Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45.csproj", "{E8E6BBD9-90DB-4B75-AAD7-48E54C061A9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.Diagnostics.Net45", "Haystack.Diagnostics.Amendments.Tests.Amendments.Net45\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45.csproj", "{D8E9C6C2-E585-44FB-BBF6-05187682AE67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.Amendments.Net45", "Haystack.Diagnostics.Amendments.Tests.Amendments.Net45\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45.csproj", "{D8E9C6C2-E585-44FB-BBF6-05187682AE67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.TestRunner.Net45", "Haystack.Diagnostics.Amendments.Tests.TestRunner.Net45\Haystack.Diagnostics.Amendments.Tests.TestRunner.Net45.csproj", "{3BDAC78A-2092-42E0-A22D-7340894884AD}"
 EndProject
@@ -109,9 +109,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.CodeCo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runner", "Runner", "{23DEEA47-538C-4AB3-986B-785C218622DF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceControl", "SourceControl", "{BC5CA7B6-E8A5-43FC-8D17-93902AA784E7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics.StaticAnalysis", "Diagnostics.StaticAnalysis", "{6861720B-3E38-462F-8BEE-33412006E469}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaticAnalysis", "StaticAnalysis", "{6861720B-3E38-462F-8BEE-33412006E469}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analysis", "Analysis", "{0C774BAD-6A1D-4030-B18A-1E2764A62DCE}"
 EndProject
@@ -804,7 +802,6 @@ Global
 		{C77A196C-A800-4225-A58C-B5D8A99E8D3E} = {D2E56CAE-A7DF-45FE-B5BF-81608E1696D8}
 		{99709CEA-FE34-4E63-9E24-B5C361699E12} = {401516F1-0BE7-4EA4-9AC8-00EF979FE187}
 		{23DEEA47-538C-4AB3-986B-785C218622DF} = {EB72044C-0E8D-47B0-8B98-37E42AFCBE14}
-		{BC5CA7B6-E8A5-43FC-8D17-93902AA784E7} = {EB72044C-0E8D-47B0-8B98-37E42AFCBE14}
 		{6861720B-3E38-462F-8BEE-33412006E469} = {929090B6-CB8D-47FA-ACE8-2390CC03C4D4}
 		{0C774BAD-6A1D-4030-B18A-1E2764A62DCE} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
 		{1956BEA6-BE0B-4AE2-AB0E-59FBBE19619C} = {189AD125-963E-4E5A-B763-7F28E88856EE}

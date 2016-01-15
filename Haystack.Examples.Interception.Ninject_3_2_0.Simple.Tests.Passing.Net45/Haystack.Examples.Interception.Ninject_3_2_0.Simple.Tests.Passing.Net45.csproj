@@ -50,8 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleServiceTest.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing\SimpleServiceTest.cs">
+      <Link>SimpleServiceTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -59,7 +63,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45.csproj">
       <Project>{bcf8228a-3d26-4b11-9823-31822a1e3b69}</Project>
-      <Name>Haystack.Examples.Interception.Ninject_3_2_0.Simple</Name>
+      <Name>Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

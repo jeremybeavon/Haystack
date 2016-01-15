@@ -1,12 +1,12 @@
 ﻿using FluentAssertions;
-using Haystack.Amendments.Tests.Amendments;
-using Haystack.Amendments.Tests.StrongNamedTestRunner;
-using Haystack.Amendments.Tests.TestRunner;
+using Haystack.Diagnostics.Amendments.Tests.Amendments;
+using Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner;
+using Haystack.Diagnostics.Amendments.Tests.TestRunner;
 using Haystack.Diagnostics.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace Haystack.Amendments.Tests
+namespace Haystack.Diagnostics.Amendments.Tests
 {
     [TestClass]
     public sealed class AmendmentTests
@@ -15,7 +15,7 @@ namespace Haystack.Amendments.Tests
         public void TestBeforePropertyGetAmendment()
         {
             const string expectedResult = "BeforePropertyGet(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleProperty, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleProperty, " +
                 "propertyName = TestProperty)";
             (new AmendmentTestRunner()
             {
@@ -38,7 +38,7 @@ namespace Haystack.Amendments.Tests
         public void TestAfterPropertyGetAmendment()
         {
             const string expectedResult = "AfterPropertyGet(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleProperty, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleProperty, " +
                 "propertyName = TestProperty, " +
                 "value = Instance2)";
             (new AmendmentTestRunner()
@@ -62,7 +62,7 @@ namespace Haystack.Amendments.Tests
         public void TestBeforePropertySetAmendment()
         {
             const string expectedResult = "BeforePropertySet(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleProperty, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleProperty, " +
                 "propertyName = TestProperty, " +
                 "value = Instance2)";
             (new AmendmentTestRunner()
@@ -86,7 +86,7 @@ namespace Haystack.Amendments.Tests
         public void TestAfterPropertySetAmendment()
         {
             const string expectedResult = "AfterPropertySet(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleProperty, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleProperty, " +
                 "propertyName = TestProperty, " +
                 "value = Instance2)";
             (new AmendmentTestRunner()
@@ -110,7 +110,7 @@ namespace Haystack.Amendments.Tests
         public void TestBeforeConstructorAmendment()
         {
             const string expectedResult = "BeforeConstructor(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleProperty, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleProperty, " +
                 "parameters = Instance1)";
             (new AmendmentTestRunner()
             {
@@ -133,7 +133,7 @@ namespace Haystack.Amendments.Tests
         public void TestAfterConstructorAmendment()
         {
             const string expectedResult = "AfterConstructor(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleProperty, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleProperty, " +
                 "parameters = Instance1)";
             (new AmendmentTestRunner()
             {
@@ -156,7 +156,7 @@ namespace Haystack.Amendments.Tests
         public void TestBeforeMethodAmendment()
         {
             const string expectedResult = "BeforeMethod(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleVoidMethod, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleVoidMethod, " +
                 "methodName = TestMethod, " +
                 "parameters = )";
             (new AmendmentTestRunner()
@@ -180,7 +180,7 @@ namespace Haystack.Amendments.Tests
         public void TestAfterVoidMethodAmendment()
         {
             const string expectedResult = "AfterVoidMethod(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleVoidMethod, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleVoidMethod, " +
                 "methodName = TestMethod, " +
                 "parameters = )";
             (new AmendmentTestRunner()
@@ -205,7 +205,7 @@ namespace Haystack.Amendments.Tests
         public void TestAfterMethodAmendment()
         {
             const string expectedResult = "AfterMethod(" +
-                "instance = Haystack.Amendments.Tests.TestTarget.SimpleVoidMethod, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.TestTarget.SimpleVoidMethod, " +
                 "methodName = TestMethod, " +
                 "parameters = , " +
                 "returnValue = 1)";
@@ -230,7 +230,7 @@ namespace Haystack.Amendments.Tests
         public void TestBeforeStrongNamedPropertyGetAmendment()
         {
             const string expectedResult = "BeforePropertyGet(" +
-                "instance = Haystack.Amendments.Tests.StrongNamedTestTarget.SimpleProperty, " +
+                "instance = Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.SimpleProperty, " +
                 "propertyName = TestProperty)";
             (new StrongNamedAmendmentTestRunner()
             {

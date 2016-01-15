@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace Haystack.Amendments
+namespace Haystack.Diagnostics.Amendments
 {
     public static class AmenderInitializer
     {

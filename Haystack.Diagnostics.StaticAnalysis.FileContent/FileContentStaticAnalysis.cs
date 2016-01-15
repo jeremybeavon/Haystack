@@ -4,7 +4,7 @@ using Haystack.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace Haystack.StaticAnalysis.FileContent
+namespace Haystack.Diagnostics.StaticAnalysis.FileContent
 {
     public sealed class FileContentStaticAnalysis : IStaticAnalysis
     {

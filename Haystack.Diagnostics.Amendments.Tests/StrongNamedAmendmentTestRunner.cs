@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Haystack.Amendments.Tests
+namespace Haystack.Diagnostics.Amendments.Tests
 {
     public sealed class StrongNamedAmendmentTestRunner : AmendmentTestRunner
     {
@@ -8,8 +8,8 @@ namespace Haystack.Amendments.Tests
         {
             string testTargetDirectory = Path.Combine(BaseDirectory, "StrongNamedTestTarget");
             StrongNameKey = Path.Combine(testTargetDirectory, "Haystack.snk");
-            TargetDll = Path.Combine(testTargetDirectory, "Haystack.Amendments.Tests.StrongNamedTestTarget.dll");
-            TestRunnerDll = Path.Combine(testTargetDirectory, "Haystack.Amendments.Tests.StrongNamedTestRunner.dll");
+            TargetDll = Path.Combine(testTargetDirectory, "Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.dll");
+            TestRunnerDll = Path.Combine(testTargetDirectory, "Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner.dll");
         }
     }
 }

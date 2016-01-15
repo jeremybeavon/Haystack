@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Haystack.Amendments
+namespace Haystack.Diagnostics.Amendments
 {
     public sealed class HaystackAmenderAttribute : Attribute, IAmendmentAttribute
     {

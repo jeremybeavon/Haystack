@@ -1,5 +1,5 @@
 ﻿using Haystack.Diagnostics.TestIntegration;
-using Haystack.Interception.StructureMap;
+using Haystack.Diagnostics.Interception.StructureMap;
 
 namespace Haystack.Examples.Interception.StructureMap.Simple.Setup
 {

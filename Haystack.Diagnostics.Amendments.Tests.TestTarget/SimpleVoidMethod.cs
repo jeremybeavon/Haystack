@@ -1,4 +1,4 @@
-﻿namespace Haystack.Amendments.Tests.TestTarget
+﻿namespace Haystack.Diagnostics.Amendments.Tests.TestTarget
 {
     public sealed class SimpleVoidMethod
     {

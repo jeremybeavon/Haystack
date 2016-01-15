@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using ParameterModifier = Haystack.Diagnostics.ObjectModel.ParameterModifier;
 
-namespace Haystack.Interception.Ninject
+namespace Haystack.Diagnostics.Interception.Ninject
 {
     public class HaystackInterceptor : IInterceptor
     {

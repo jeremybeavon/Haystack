@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Haystack.Diagnostics;
-using Haystack.StaticAnalysis.FileSystem.Properties;
+using Haystack.Diagnostics.StaticAnalysis.FileSystem.Properties;
 using Microsoft.Build.Execution;
 
-namespace Haystack.StaticAnalysis.FileSystem
+namespace Haystack.Diagnostics.StaticAnalysis.FileSystem
 {
     public sealed class FileSystemStaticAnalysis : IStaticAnalysis
     {

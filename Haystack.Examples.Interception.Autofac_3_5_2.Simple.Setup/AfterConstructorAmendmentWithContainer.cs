@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Haystack.Diagnostics.Amendments;
-using Haystack.Interception.Autofac;
+using Haystack.Diagnostics.Interception.Autofac;
 
 namespace Haystack.Examples.Interception.Autofac.Simple.Setup
 {

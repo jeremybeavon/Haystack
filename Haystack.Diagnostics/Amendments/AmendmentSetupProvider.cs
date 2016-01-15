@@ -16,7 +16,7 @@ namespace Haystack.Diagnostics.Amendments
     {
         public const string ConfigurationKey = "haystackConfiguration";
         public const string AfterthoughtAmenderExeFileName = "Afterthought.Amender.exe";
-        public const string AmendmentsDllFileName = "Haystack.Amendments.dll";
+        public const string AmendmentsDllFileName = "Haystack.Diagnostics.Amendments.dll";
         
         public AmendmentSetupProvider(string assemblyToAmend, IHaystackConfiguration configuration, string strongNameKey = null)
         {

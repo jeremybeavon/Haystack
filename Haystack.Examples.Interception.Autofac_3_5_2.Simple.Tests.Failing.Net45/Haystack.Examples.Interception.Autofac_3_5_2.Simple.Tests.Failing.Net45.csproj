@@ -50,8 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleServiceTest.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing\SimpleServiceTest.cs">
+      <Link>SimpleServiceTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -59,7 +63,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45.csproj">
       <Project>{9454d03d-df97-4ffd-b329-67a024582c59}</Project>
-      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple</Name>
+      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

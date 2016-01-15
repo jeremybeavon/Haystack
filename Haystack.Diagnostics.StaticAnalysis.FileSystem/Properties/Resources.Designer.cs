@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Haystack.StaticAnalysis.FileSystem.Properties {
+namespace Haystack.Diagnostics.StaticAnalysis.FileSystem.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Haystack.StaticAnalysis.FileSystem.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Haystack.StaticAnalysis.FileSystem.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Haystack.Diagnostics.StaticAnalysis.FileSystem.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

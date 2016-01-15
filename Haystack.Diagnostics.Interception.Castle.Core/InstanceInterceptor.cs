@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using ParameterModifier = Haystack.Diagnostics.ObjectModel.ParameterModifier;
 
-namespace Haystack.Interception.Castle.Core
+namespace Haystack.Diagnostics.Interception.Castle.Core
 {
     public sealed class InstanceInterceptor : IInterceptor
     {

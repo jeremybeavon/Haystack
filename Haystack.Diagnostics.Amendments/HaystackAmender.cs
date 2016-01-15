@@ -3,7 +3,7 @@ using Haystack.Bootstrap;
 using Haystack.Diagnostics.Amendments;
 using System;
 
-namespace Haystack.Amendments
+namespace Haystack.Diagnostics.Amendments
 {
     public class HaystackAmender<T> : Amendment<T, T>
     {

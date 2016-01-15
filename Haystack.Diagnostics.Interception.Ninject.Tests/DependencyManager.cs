@@ -1,7 +1,7 @@
 ﻿using Ninject;
-using Haystack.Interception.Tests;
+using Haystack.Diagnostics.Interception.Tests;
 
-namespace Haystack.Interception.Ninject.Tests
+namespace Haystack.Diagnostics.Interception.Ninject.Tests
 {
     public static class DependencyManager
     {

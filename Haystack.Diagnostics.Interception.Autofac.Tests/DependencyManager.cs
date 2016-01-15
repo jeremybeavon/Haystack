@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using Haystack.Interception.Tests;
+using Haystack.Diagnostics.Interception.Tests;
 
-namespace Haystack.Interception.Autofac.Tests
+namespace Haystack.Diagnostics.Interception.Autofac.Tests
 {
     public static class DependencyManager
     {

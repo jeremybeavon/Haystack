@@ -1,4 +1,4 @@
-﻿namespace Haystack.Amendments.Tests.StrongNamedTestTarget
+﻿namespace Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget
 {
     public sealed class SimpleProperty
     {

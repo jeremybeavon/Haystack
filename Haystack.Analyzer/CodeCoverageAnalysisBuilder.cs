@@ -1,6 +1,6 @@
 ﻿using CSharpDom.WithSyntax;
 using Haystack.Analyzer.ObjectModel;
-using Haystack.CodeCoverage.OpenCover;
+using Haystack.Diagnostics.CodeCoverage.OpenCover;
 using Haystack.Diagnostics.Configuration;
 using Haystack.Diagnostics.ObjectModel;
 using HtmlAgilityPack;

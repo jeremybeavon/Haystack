@@ -73,8 +73,12 @@
     <Compile Include="..\Haystack.Diagnostics.Interception.StructureMap.Tests\DependencyManager.cs">
       <Link>DependencyManager.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StructureMap_4_0_1_318_InterceptionTests.cs" />
+    <Compile Include="..\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Tests\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Tests\StructureMap_4_0_1_318_InterceptionTests.cs">
+      <Link>StructureMap_4_0_1_318_InterceptionTests.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -82,15 +86,15 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45.csproj">
       <Project>{090faccc-1715-44e4-947d-200099767a8b}</Project>
-      <Name>Haystack.Diagnostics.Interception.StructureMap_4_0_1_318</Name>
+      <Name>Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Tests.Net45\Haystack.Diagnostics.Interception.Tests.Net45.csproj">
       <Project>{77e43fb4-ca70-45d0-a968-6aea3719ab4a}</Project>
-      <Name>Haystack.Diagnostics.Interception.Tests</Name>
+      <Name>Haystack.Diagnostics.Interception.Tests.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleCodeCoverageTest.cs" />
+    <Compile Include="..\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing\Properties\AssemblyInfo.cs">
+        <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing\SimpleCodeCoverageTest.cs">
+        <Link>SimpleCodeCoverageTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -48,31 +48,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DefaultStrongNamedTestRunner.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Haystack.snk">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner\DefaultStrongNamedTestRunner.cs">
+      <Link>DefaultStrongNamedTestRunner.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45.csproj">
       <Project>{d8e9c6c2-e585-44fb-bbf6-05187682ae67}</Project>
-      <Name>Haystack.Diagnostics.Amendments.Tests.Amendments</Name>
+      <Name>Haystack.Diagnostics.Amendments.Tests.Amendments.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.Net45\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.Net45.csproj">
       <Project>{1d923b6e-6301-4baa-8f0c-cd775ada4135}</Project>
-      <Name>Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget</Name>
+      <Name>Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
       <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
-      <Name>Haystack.Bootstrap</Name>
+      <Name>Haystack.Bootstrap.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Haystack.snk">
+      <Link>Haystack.snk</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

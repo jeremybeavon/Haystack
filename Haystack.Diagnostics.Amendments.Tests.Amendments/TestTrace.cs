@@ -1,4 +1,4 @@
-﻿namespace Haystack.Amendments.Tests.Amendments
+﻿namespace Haystack.Diagnostics.Amendments.Tests.Amendments
 {
     public static class TestTrace
     {

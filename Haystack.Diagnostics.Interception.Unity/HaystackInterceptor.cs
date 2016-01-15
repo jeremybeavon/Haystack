@@ -1,7 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.ObjectBuilder;
 
-namespace Haystack.Interception.Unity
+namespace Haystack.Diagnostics.Interception.Unity
 {
     public sealed class HaystackInterceptor : UnityContainerExtension
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Haystack.StaticAnalysis.Reflection
+namespace Haystack.Diagnostics.StaticAnalysis.Reflection
 {
     public sealed class ReflectionStaticAnalysis : IStaticAnalysis
     {

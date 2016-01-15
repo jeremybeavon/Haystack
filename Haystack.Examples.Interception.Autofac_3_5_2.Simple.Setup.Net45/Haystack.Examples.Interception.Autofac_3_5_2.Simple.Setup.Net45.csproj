@@ -46,28 +46,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AfterConstructorAmendmentWithContainer.cs" />
-    <Compile Include="AfterConstructorAmendmentWithContainerBuilder.cs" />
-    <Compile Include="InitializeTestMethodSetupWithContainer.cs" />
-    <Compile Include="InitializeTestSuiteSetupWithContainer.cs" />
-    <Compile Include="InitializeTestFrameworkSetupWithContainer.cs" />
-    <Compile Include="InitializeTestMethodSetupWithContainerBuilder.cs" />
-    <Compile Include="InitializeTestSuiteSetupWithContainerBuilder.cs" />
-    <Compile Include="InitializeTestFrameworkSetupWithContainerBuilder.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\AfterConstructorAmendmentWithContainer.cs">
+      <Link>AfterConstructorAmendmentWithContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\AfterConstructorAmendmentWithContainerBuilder.cs">
+      <Link>AfterConstructorAmendmentWithContainerBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\InitializeTestMethodSetupWithContainer.cs">
+      <Link>InitializeTestMethodSetupWithContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\InitializeTestSuiteSetupWithContainer.cs">
+      <Link>InitializeTestSuiteSetupWithContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\InitializeTestFrameworkSetupWithContainer.cs">
+      <Link>InitializeTestFrameworkSetupWithContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\InitializeTestMethodSetupWithContainerBuilder.cs">
+      <Link>InitializeTestMethodSetupWithContainerBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\InitializeTestSuiteSetupWithContainerBuilder.cs">
+      <Link>InitializeTestSuiteSetupWithContainerBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\InitializeTestFrameworkSetupWithContainerBuilder.cs">
+      <Link>InitializeTestFrameworkSetupWithContainerBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45.csproj">
       <Project>{9454d03d-df97-4ffd-b329-67a024582c59}</Project>
-      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple</Name>
+      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45\Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45.csproj">
       <Project>{afdb6143-a0c6-473e-911b-a2718c8f7d3e}</Project>
-      <Name>Haystack.Diagnostics.Interception.Autofac_3_5_2</Name>
+      <Name>Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

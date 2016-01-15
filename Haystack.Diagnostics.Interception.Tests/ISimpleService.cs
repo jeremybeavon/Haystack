@@ -1,4 +1,4 @@
-﻿namespace Haystack.Interception.Tests
+﻿namespace Haystack.Diagnostics.Interception.Tests
 {
     public interface ISimpleService
     {

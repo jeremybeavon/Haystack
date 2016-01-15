@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haystack.Interception.Castle.Core.Tests
+namespace Haystack.Diagnostics.Interception.Castle.Core.Tests
 {
     public sealed class DefaultServiceFactory : IServiceFactory
     {

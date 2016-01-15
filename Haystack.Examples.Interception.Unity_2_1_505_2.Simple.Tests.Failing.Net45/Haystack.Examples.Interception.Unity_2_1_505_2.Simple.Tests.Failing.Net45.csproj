@@ -58,8 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleServiceTest.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing\SimpleServiceTest.cs">
+      <Link>SimpleServiceTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -67,7 +71,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45.csproj">
       <Project>{27a0b503-ce9b-4c9c-9277-50e39e1d6a60}</Project>
-      <Name>Haystack.Examples.Interception.Unity_2_1_505_2.Simple</Name>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

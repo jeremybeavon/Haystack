@@ -47,15 +47,15 @@
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
       <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
-      <Name>Haystack.Bootstrap</Name>
+      <Name>Haystack.Bootstrap.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45.csproj">
       <Project>{960ed9fd-0dd6-45db-9987-43bd7fc6cd32}</Project>
-      <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Failing</Name>
+      <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45.csproj">
       <Project>{8e5cc1d6-2696-4492-b77a-afdf53850e35}</Project>
-      <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Passing</Name>
+      <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

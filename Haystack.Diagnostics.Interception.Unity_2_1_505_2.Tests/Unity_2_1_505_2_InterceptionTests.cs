@@ -1,11 +1,11 @@
 ﻿using FluentAssertions;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.ObjectModel;
-using Haystack.Interception.Tests;
+using Haystack.Diagnostics.Interception.Tests;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Haystack.Interception.Unity.Tests
+namespace Haystack.Diagnostics.Interception.Unity.Tests
 {
     [TestClass]
     public class Unity_2_1_505_2_InterceptionTests

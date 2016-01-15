@@ -1,5 +1,5 @@
 ﻿using Haystack.Diagnostics.TestIntegration;
-using Haystack.Interception.Autofac;
+using Haystack.Diagnostics.Interception.Autofac;
 
 namespace Haystack.Examples.Interception.Autofac.Simple.Setup
 {

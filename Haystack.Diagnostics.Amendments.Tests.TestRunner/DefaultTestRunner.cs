@@ -1,10 +1,10 @@
-﻿using Haystack.Amendments.Tests.Amendments;
-using Haystack.Amendments.Tests.TestTarget;
+﻿using Haystack.Diagnostics.Amendments.Tests.Amendments;
+using Haystack.Diagnostics.Amendments.Tests.TestTarget;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.ObjectModel;
 
-namespace Haystack.Amendments.Tests.TestRunner
+namespace Haystack.Diagnostics.Amendments.Tests.TestRunner
 {
     public static class DefaultTestRunner
     {

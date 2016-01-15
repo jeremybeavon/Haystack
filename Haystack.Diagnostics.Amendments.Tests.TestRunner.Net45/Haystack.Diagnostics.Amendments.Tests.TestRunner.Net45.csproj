@@ -41,25 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefaultTestRunner.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestRunner\DefaultTestRunner.cs">
+      <Link>DefaultTestRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.TestRunner\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45.csproj">
       <Project>{d8e9c6c2-e585-44fb-bbf6-05187682ae67}</Project>
-      <Name>Haystack.Diagnostics.Amendments.Tests.Amendments</Name>
+      <Name>Haystack.Diagnostics.Amendments.Tests.Amendments.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45\Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45.csproj">
       <Project>{e8e6bbd9-90db-4b75-aad7-48e54c061a9b}</Project>
-      <Name>Haystack.Diagnostics.Amendments.Tests.TestTarget</Name>
+      <Name>Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
       <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
-      <Name>Haystack.Bootstrap</Name>
+      <Name>Haystack.Bootstrap.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

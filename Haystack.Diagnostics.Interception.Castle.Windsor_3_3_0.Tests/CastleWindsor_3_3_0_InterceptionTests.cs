@@ -3,11 +3,11 @@ using Castle.Windsor;
 using FluentAssertions;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.ObjectModel;
-using Haystack.Interception.Tests;
+using Haystack.Diagnostics.Interception.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Castle.MicroKernel.Registration;
 
-namespace Haystack.Interception.Castle.Windsor.Tests
+namespace Haystack.Diagnostics.Interception.Castle.Windsor.Tests
 {
     [TestClass]
     public class CastleWindsor_3_3_0_InterceptionTests

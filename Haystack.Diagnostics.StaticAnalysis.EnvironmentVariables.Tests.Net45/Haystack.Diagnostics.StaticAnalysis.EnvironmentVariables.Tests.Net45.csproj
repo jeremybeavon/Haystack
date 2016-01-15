@@ -62,17 +62,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="EnvironmentVariablesStaticAnalysisTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Tests\EnvironmentVariablesStaticAnalysisTests.cs">
+      <Link>EnvironmentVariablesStaticAnalysisTests.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Tests\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45.csproj">
       <Project>{837bd2f8-9525-4f73-9eb4-a821684bff11}</Project>
-      <Name>Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables</Name>
+      <Name>Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -74,31 +74,31 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Haystack.Analyzer\Haystack.Analyzer.csproj">
+      <Project>{0562e031-3587-4d9a-9ef8-e7fba20aec0c}</Project>
+      <Name>Haystack.Analyzer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Net45\Haystack.Diagnostics.Amendments.Net45.csproj">
       <Project>{ff76e013-1f51-4972-95a7-2cbb1cc27269}</Project>
-      <Name>Haystack.Amendments</Name>
+      <Name>Haystack.Diagnostics.Amendments.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Haystack.Analysis\Haystack.Analysis.csproj">
-      <Project>{4a7b0200-7a29-44d2-85ce-de48fcb47d6a}</Project>
-      <Name>Haystack.Analysis</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
       <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
-      <Name>Haystack.Bootstrap</Name>
+      <Name>Haystack.Bootstrap.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.CodeCoverage.OpenCover.Net45\Haystack.Diagnostics.CodeCoverage.OpenCover.Net45.csproj">
       <Project>{99709cea-fe34-4e63-9e24-b5c361699e12}</Project>
-      <Name>Haystack.CodeCoverage.OpenCover</Name>
+      <Name>Haystack.Diagnostics.CodeCoverage.OpenCover.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
       <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
-      <Name>Haystack.Core</Name>
+      <Name>Haystack.Core.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
-      <Name>Haystack.Diagnostics</Name>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Examples.PostBuildScript\Haystack.Examples.PostBuildScript.csproj">
       <Project>{1766454c-3482-4010-86f8-c611aaa9b3d1}</Project>
@@ -107,112 +107,112 @@
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45\Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45.csproj">
       <Project>{afdb6143-a0c6-473e-911b-a2718c8f7d3e}</Project>
-      <Name>Haystack.Interception.Autofac_3_5_2</Name>
+      <Name>Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Castle.Core.Net45\Haystack.Diagnostics.Interception.Castle.Core.Net45.csproj">
       <Project>{f7ff30d3-aa8c-4df9-aa03-b39b5a63a11b}</Project>
-      <Name>Haystack.Interception.Castle.Core</Name>
+      <Name>Haystack.Diagnostics.Interception.Castle.Core.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45\Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45.csproj">
       <Project>{007fd10a-be64-4afd-a500-6e3724253171}</Project>
-      <Name>Haystack.Interception.Castle.Windsor_3_3_0</Name>
+      <Name>Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Ninject_3_2_0.Net45\Haystack.Diagnostics.Interception.Ninject_3_2_0.Net45.csproj">
       <Project>{796f4f40-6c51-4f61-9ba9-ed4b42a9e0af}</Project>
-      <Name>Haystack.Interception.Ninject_3_2_0</Name>
+      <Name>Haystack.Diagnostics.Interception.Ninject_3_2_0.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45.csproj">
       <Project>{090faccc-1715-44e4-947d-200099767a8b}</Project>
-      <Name>Haystack.Interception.StructureMap_4_0_1_318</Name>
+      <Name>Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Unity_2_1_505.Net45\Haystack.Diagnostics.Interception.Unity_2_1_505.Net45.csproj">
       <Project>{94a29685-73d8-43a4-9ebd-50805e83622c}</Project>
-      <Name>Haystack.Interception.Unity_2_1_505</Name>
+      <Name>Haystack.Diagnostics.Interception.Unity_2_1_505.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45.csproj">
       <Project>{be57247c-c2b9-4af5-b2d7-b9072a3ef70f}</Project>
-      <Name>Haystack.Interception.Unity_2_1_505_2</Name>
+      <Name>Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45\Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45.csproj">
       <Project>{41939f1e-f9de-442c-bcd1-1a75c8e864a3}</Project>
-      <Name>Haystack.Interception.Unity_3_0_1304</Name>
+      <Name>Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Unity_3_5_1304.Net45\Haystack.Diagnostics.Interception.Unity_3_5_1304.Net45.csproj">
       <Project>{b48b9501-360e-4da9-bf47-a2a7ad0d8448}</Project>
-      <Name>Haystack.Interception.Unity_3_5_1304</Name>
+      <Name>Haystack.Diagnostics.Interception.Unity_3_5_1304.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Unity_4_0_1.Net45\Haystack.Diagnostics.Interception.Unity_4_0_1.Net45.csproj">
       <Project>{da39fc2d-747e-46f6-a16e-5f279c30ce42}</Project>
-      <Name>Haystack.Interception.Unity_4_0_1</Name>
+      <Name>Haystack.Diagnostics.Interception.Unity_4_0_1.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_2_6_1.Net45\Haystack.Runner.NUnit_2_6_1.Net45.csproj">
       <Project>{4d5cffa8-c4bc-451e-82b9-47ad4647400d}</Project>
-      <Name>Haystack.Runner.NUnit_2_6_1</Name>
+      <Name>Haystack.Runner.NUnit_2_6_1.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_2_6_2.Net45\Haystack.Runner.NUnit_2_6_2.Net45.csproj">
       <Project>{3c85eb48-e6d9-4df4-8c83-4f95f44b586b}</Project>
-      <Name>Haystack.Runner.NUnit_2_6_2</Name>
+      <Name>Haystack.Runner.NUnit_2_6_2.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_2_6_3.Net45\Haystack.Runner.NUnit_2_6_3.Net45.csproj">
       <Project>{d4100ce8-e803-4ef3-bd0b-86c8abece9f5}</Project>
-      <Name>Haystack.Runner.NUnit_2_6_3</Name>
+      <Name>Haystack.Runner.NUnit_2_6_3.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_2_6_4.Net45\Haystack.Runner.NUnit_2_6_4.Net45.csproj">
       <Project>{bcca2d90-fc1c-4bc8-887d-16bcee27ac27}</Project>
-      <Name>Haystack.Runner.NUnit_2_6_4</Name>
+      <Name>Haystack.Runner.NUnit_2_6_4.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_0.Net45\Haystack.Runner.NUnit_3_0_0.Net45.csproj">
       <Project>{36ff2646-7a6d-4436-a76a-7e3618dea2aa}</Project>
-      <Name>Haystack.Runner.NUnit_3_0_0</Name>
+      <Name>Haystack.Runner.NUnit_3_0_0.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_1.Net45\Haystack.Runner.NUnit_3_0_1.Net45.csproj">
       <Project>{9b69d2bf-f18d-4fa4-aeb0-e245bb26c2a1}</Project>
-      <Name>Haystack.Runner.NUnit_3_0_1</Name>
+      <Name>Haystack.Runner.NUnit_3_0_1.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.Net45\Haystack.Runner.Net45.csproj">
       <Project>{c2bf20b9-50fa-4ef9-b014-d825039d3018}</Project>
-      <Name>Haystack.Runner</Name>
+      <Name>Haystack.Runner.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Analysis.SourceControl.Git\Haystack.Analysis.SourceControl.Git.csproj">
       <Project>{1956bea6-be0b-4ae2-ab0e-59fbbe19619c}</Project>
-      <Name>Haystack.SourceControl.Git</Name>
+      <Name>Haystack.Analysis.SourceControl.Git</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45.csproj">
       <Project>{837bd2f8-9525-4f73-9eb4-a821684bff11}</Project>
-      <Name>Haystack.StaticAnalysis.EnvironmentVariables</Name>
+      <Name>Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.StaticAnalysis.FileContent.Net45\Haystack.Diagnostics.StaticAnalysis.FileContent.Net45.csproj">
       <Project>{d4ddb95d-f957-479b-a6b2-970e943fc944}</Project>
-      <Name>Haystack.StaticAnalysis.FileContent</Name>
+      <Name>Haystack.Diagnostics.StaticAnalysis.FileContent.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45\Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45.csproj">
       <Project>{b55fcc18-90f1-47f8-b2e5-8b9cf0008b5a}</Project>
-      <Name>Haystack.StaticAnalysis.FileSystem</Name>
+      <Name>Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.StaticAnalysis.Reflection.Net45\Haystack.Diagnostics.StaticAnalysis.Reflection.Net45.csproj">
       <Project>{dc6b62e8-52a4-4559-be44-2ca8e819e3b2}</Project>
-      <Name>Haystack.StaticAnalysis.Reflection</Name>
+      <Name>Haystack.Diagnostics.StaticAnalysis.Reflection.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

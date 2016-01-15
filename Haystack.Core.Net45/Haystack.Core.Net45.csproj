@@ -58,22 +58,54 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppDomainExtensions.cs" />
-    <Compile Include="AssemblyExtensions.cs" />
-    <Compile Include="BootstrapConfiguration.cs" />
-    <Compile Include="CrossDomainConsoleProvider.cs" />
-    <Compile Include="DisposableAppDomain.cs" />
-    <Compile Include="FrameworkVersion.cs" />
-    <Compile Include="HaystackConfigurationFile.cs" />
-    <Compile Include="IO\DirectoryCopy.cs" />
-    <Compile Include="IO\DirectoryReader.cs" />
-    <Compile Include="IO\FileReader.cs" />
-    <Compile Include="IO\IDirectoryReader.cs" />
-    <Compile Include="IO\IFileReader.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RelativePathResolver.cs" />
-    <Compile Include="TypeResolver.cs" />
-    <Compile Include="XmlSerialization.cs" />
+    <Compile Include="..\Haystack.Core\AppDomainExtensions.cs">
+        <Link>AppDomainExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\AssemblyExtensions.cs">
+        <Link>AssemblyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\BootstrapConfiguration.cs">
+        <Link>BootstrapConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\CrossDomainConsoleProvider.cs">
+        <Link>CrossDomainConsoleProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\DisposableAppDomain.cs">
+        <Link>DisposableAppDomain.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\FrameworkVersion.cs">
+        <Link>FrameworkVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\HaystackConfigurationFile.cs">
+        <Link>HaystackConfigurationFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\IO\DirectoryCopy.cs">
+        <Link>IO\DirectoryCopy.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\IO\DirectoryReader.cs">
+        <Link>IO\DirectoryReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\IO\FileReader.cs">
+        <Link>IO\FileReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\IO\IDirectoryReader.cs">
+        <Link>IO\IDirectoryReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\IO\IFileReader.cs">
+        <Link>IO\IFileReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\Properties\AssemblyInfo.cs">
+        <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\RelativePathResolver.cs">
+        <Link>RelativePathResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\TypeResolver.cs">
+        <Link>TypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\XmlSerialization.cs">
+        <Link>XmlSerialization.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

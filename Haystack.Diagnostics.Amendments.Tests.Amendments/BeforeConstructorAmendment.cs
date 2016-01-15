@@ -2,7 +2,7 @@
 using System.Reflection;
 using Haystack.Diagnostics.Amendments;
 
-namespace Haystack.Amendments.Tests.Amendments
+namespace Haystack.Diagnostics.Amendments.Tests.Amendments
 {
     public sealed class BeforeConstructorAmendment : IBeforeConstructorAmender
     {

@@ -3,11 +3,11 @@ using Castle.MicroKernel;
 using Castle.MicroKernel.Facilities;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using Haystack.Interception.Castle.Core;
+using Haystack.Diagnostics.Interception.Castle.Core;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Haystack.Interception.Castle.Windsor
+namespace Haystack.Diagnostics.Interception.Castle.Windsor
 {
     public sealed class HaystackInterceptor : AbstractFacility
     {

@@ -1,7 +1,7 @@
 ﻿using StructureMap;
-using Haystack.Interception.Tests;
+using Haystack.Diagnostics.Interception.Tests;
 
-namespace Haystack.Interception.StructureMap.Tests
+namespace Haystack.Diagnostics.Interception.StructureMap.Tests
 {
     public static class DependencyManager
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Haystack.Diagnostics.Amendments;
-using Haystack.Interception.Ninject;
+using Haystack.Diagnostics.Interception.Ninject;
 
 namespace Haystack.Examples.Interception.Ninject.Simple.Setup
 {

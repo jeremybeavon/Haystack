@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Haystack.StaticAnalysis.EnvironmentVariables.Tests
+namespace Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Tests
 {
     [TestClass]
     public sealed class EnvironmentVariablesStaticAnalysisTests

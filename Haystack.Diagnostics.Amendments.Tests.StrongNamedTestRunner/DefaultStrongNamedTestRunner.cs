@@ -1,8 +1,8 @@
-﻿using Haystack.Amendments.Tests.Amendments;
-using Haystack.Amendments.Tests.StrongNamedTestTarget;
+﻿using Haystack.Diagnostics.Amendments.Tests.Amendments;
+using Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget;
 using Haystack.Diagnostics.Amendments;
 
-namespace Haystack.Amendments.Tests.StrongNamedTestRunner
+namespace Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner
 {
     public static class DefaultStrongNamedTestRunner
     {

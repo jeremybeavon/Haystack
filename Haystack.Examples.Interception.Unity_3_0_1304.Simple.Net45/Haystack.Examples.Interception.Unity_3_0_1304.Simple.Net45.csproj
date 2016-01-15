@@ -50,10 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyManager.cs" />
-    <Compile Include="ISimpleService.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleService.cs" />
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple\DependencyManager.cs">
+        <Link>DependencyManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple\ISimpleService.cs">
+        <Link>ISimpleService.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple\Properties\AssemblyInfo.cs">
+        <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple\SimpleService.cs">
+        <Link>SimpleService.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

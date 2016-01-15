@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Haystack.Diagnostics.Amendments;
-using Haystack.Interception.Castle.Windsor;
+using Haystack.Diagnostics.Interception.Castle.Windsor;
 
 namespace Haystack.Examples.Interception.Castle.Windsor.Simple.Setup
 {

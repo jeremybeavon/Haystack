@@ -1,5 +1,5 @@
 ﻿using Haystack.Diagnostics.TestIntegration;
-using Haystack.Interception.Castle.Windsor;
+using Haystack.Diagnostics.Interception.Castle.Windsor;
 
 namespace Haystack.Examples.Interception.Castle.Windsor.Simple.Setup
 {

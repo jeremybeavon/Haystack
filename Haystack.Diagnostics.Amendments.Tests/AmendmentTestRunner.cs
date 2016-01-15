@@ -1,5 +1,5 @@
 ﻿using AppDomainCallbackExtensions;
-using Haystack.Amendments.Tests.Amendments;
+using Haystack.Diagnostics.Amendments.Tests.Amendments;
 using Haystack.Core;
 using Haystack.Core.IO;
 using Haystack.Diagnostics.Amendments;
@@ -8,7 +8,7 @@ using System;
 using System.IO;
 using TextSerialization;
 
-namespace Haystack.Amendments.Tests
+namespace Haystack.Diagnostics.Amendments.Tests
 {
     public class AmendmentTestRunner
     {
@@ -18,8 +18,8 @@ namespace Haystack.Amendments.Tests
         {
             baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string testTargetDirectory = Path.Combine(baseDirectory, "TestTarget");
-            TargetDll = Path.Combine(testTargetDirectory, "Haystack.Amendments.Tests.TestTarget.dll");
-            TestRunnerDll = Path.Combine(testTargetDirectory, "Haystack.Amendments.Tests.TestRunner.dll");
+            TargetDll = Path.Combine(testTargetDirectory, "Haystack.Diagnostics.Amendments.Tests.TestTarget.dll");
+            TestRunnerDll = Path.Combine(testTargetDirectory, "Haystack.Diagnostics.Amendments.Tests.TestRunner.dll");
         }
 
         public string TestName { get; set; }

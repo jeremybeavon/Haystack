@@ -1,10 +1,10 @@
 ﻿using Autofac;
 using Autofac.Core;
-using Haystack.Interception.Castle.Core;
+using Haystack.Diagnostics.Interception.Castle.Core;
 using System;
 using System.Linq;
 
-namespace Haystack.Interception.Autofac
+namespace Haystack.Diagnostics.Interception.Autofac
 {
     public static class HaystackInterceptor
     {

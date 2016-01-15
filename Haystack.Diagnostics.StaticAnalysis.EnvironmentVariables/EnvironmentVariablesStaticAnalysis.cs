@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Haystack.StaticAnalysis.EnvironmentVariables
+namespace Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables
 {
     public sealed class EnvironmentVariablesStaticAnalysis : IStaticAnalysis
     {

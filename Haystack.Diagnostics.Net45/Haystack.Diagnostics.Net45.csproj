@@ -82,126 +82,328 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Amendments\AllPropertiesAmender.cs" />
-    <Compile Include="Amendments\AmendmentConfigurationBuilder.cs" />
-    <Compile Include="Amendments\AssemblyAmender.cs" />
-    <Compile Include="Amendments\HaystackBeforeMethodAmender.cs" />
-    <Compile Include="Amendments\HaystackConstructorAmender.cs" />
-    <Compile Include="Amendments\HaystackMethodAmender.cs" />
-    <Compile Include="Amendments\HaystackNonVoidMethodAmender.cs" />
-    <Compile Include="Amendments\HaystackPropertyAmender.cs" />
-    <Compile Include="Amendments\HaystackVoidMethodAmender.cs" />
-    <Compile Include="CodeCoverage\CodeCoverageProvider.cs" />
-    <Compile Include="CodeCoverage\CodeCoverageProviderAttribute.cs" />
-    <Compile Include="Amendments\AmendmentSetupProvider.cs" />
-    <Compile Include="Amendments\AmendmentRepository.cs" />
-    <Compile Include="Amendments\IAfterConstructorAmender.cs" />
-    <Compile Include="Amendments\IAfterMethodAmender.cs" />
-    <Compile Include="Amendments\IAfterVoidMethodAmender.cs" />
-    <Compile Include="Amendments\IAfterPropertyGetAmender.cs" />
-    <Compile Include="Amendments\IAfterPropertySetAmender.cs" />
-    <Compile Include="Amendments\IBeforeConstructorAmender.cs" />
-    <Compile Include="Amendments\IBeforeMethodAmender.cs" />
-    <Compile Include="Amendments\IBeforePropertyGetAmender.cs" />
-    <Compile Include="Amendments\IBeforePropertySetAmender.cs" />
-    <Compile Include="Amendments\ICatchConstructorAmender.cs" />
-    <Compile Include="Amendments\ICatchMethodAmender.cs" />
-    <Compile Include="Amendments\ICatchVoidMethodAmender.cs" />
-    <Compile Include="Amendments\IConstructorAmender.cs" />
-    <Compile Include="Amendments\IFinallyMethodAmender.cs" />
-    <Compile Include="Amendments\IMethodAmender.cs" />
-    <Compile Include="Amendments\IPropertyAmender.cs" />
-    <Compile Include="CodeCoverage\CodeCoverageContext.cs" />
-    <Compile Include="CodeCoverage\IAfterTestRun.cs" />
-    <Compile Include="CodeCoverage\IBeforeTestRun.cs" />
-    <Compile Include="CodeCoverage\ICodeCoverageContext.cs" />
-    <Compile Include="IRunnerArgumentsProvider.cs" />
-    <Compile Include="IRunnerFrameworkInitializer.cs" />
-    <Compile Include="IRunnerInitializer.cs" />
-    <Compile Include="ITestRunContext.cs" />
-    <Compile Include="ObjectModel\IMethodCall.cs" />
-    <Compile Include="ObjectModel\IMethodCallThreadTrace.cs" />
-    <Compile Include="ObjectModel\IMethodCallTrace.cs" />
-    <Compile Include="ObjectModel\IMethodParameter.cs" />
-    <Compile Include="ObjectModel\IObjectInstance.cs" />
-    <Compile Include="ObjectModel\IObjectType.cs" />
-    <Compile Include="ObjectModel\IValue.cs" />
-    <Compile Include="RunnerFrameworkInitializerAttribute.cs" />
-    <Compile Include="TestRunContext.cs" />
-    <Compile Include="Configuration\AmendmentConfiguration.cs" />
-    <Compile Include="Configuration\CodeCoverageConfiguration.cs" />
-    <Compile Include="Configuration\HaystackConfiguration.cs" />
-    <Compile Include="Configuration\HaystackConfigurationRelativePathResolver.cs" />
-    <Compile Include="Configuration\IAmendmentConfiguration.cs" />
-    <Compile Include="Configuration\ICodeCoverageConfiguration.cs" />
-    <Compile Include="Configuration\IHaystackConfiguration.cs" />
-    <Compile Include="Configuration\IInterceptionConfiguration.cs" />
-    <Compile Include="Configuration\InterceptionConfiguration.cs" />
-    <Compile Include="Configuration\IRunnerConfiguration.cs" />
-    <Compile Include="Configuration\ISourceControlConfiguration.cs" />
-    <Compile Include="Configuration\IStaticAnalysisConfiguration.cs" />
-    <Compile Include="Configuration\RunnerConfiguration.cs" />
-    <Compile Include="Configuration\SourceControlConfiguration.cs" />
-    <Compile Include="Configuration\StaticAnalysisConfiguration.cs" />
-    <Compile Include="HaystackInitializer.cs" />
-    <Compile Include="HaystackRunner.cs" />
-    <Compile Include="IStaticAnalysis.cs" />
-    <Compile Include="MethodCallTraceContext.cs" />
-    <Compile Include="MethodCallTraceProvider.cs" />
-    <Compile Include="MsBuildRunner.cs" />
-    <Compile Include="ObjectModel\IndexedObject.cs" />
-    <Compile Include="ObjectModel\MethodCall.cs" />
-    <Compile Include="ObjectModel\MethodCallThreadTrace.cs" />
-    <Compile Include="ObjectModel\MethodCallTrace.cs" />
-    <Compile Include="ObjectModel\MethodParameter.cs" />
-    <Compile Include="ObjectModel\ObjectInstance.cs" />
-    <Compile Include="ObjectModel\ObjectType.cs" />
-    <Compile Include="ObjectModel\ParameterModifier.cs" />
-    <Compile Include="ObjectModel\PropertyType.cs" />
-    <Compile Include="ObjectModel\Value.cs" />
-    <Compile Include="ProcessRunner.cs" />
-    <Compile Include="ProcessStartInfo.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AllPropertiesAmender.cs">
+      <Link>Amendments\AllPropertiesAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AmendmentConfigurationBuilder.cs">
+      <Link>Amendments\AmendmentConfigurationBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AssemblyAmender.cs">
+      <Link>Amendments\AssemblyAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\HaystackBeforeMethodAmender.cs">
+      <Link>Amendments\HaystackBeforeMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\HaystackConstructorAmender.cs">
+      <Link>Amendments\HaystackConstructorAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\HaystackMethodAmender.cs">
+      <Link>Amendments\HaystackMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\HaystackNonVoidMethodAmender.cs">
+      <Link>Amendments\HaystackNonVoidMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\HaystackPropertyAmender.cs">
+      <Link>Amendments\HaystackPropertyAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\HaystackVoidMethodAmender.cs">
+      <Link>Amendments\HaystackVoidMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\CodeCoverage\CodeCoverageProvider.cs">
+      <Link>CodeCoverage\CodeCoverageProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\CodeCoverage\CodeCoverageProviderAttribute.cs">
+      <Link>CodeCoverage\CodeCoverageProviderAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AmendmentSetupProvider.cs">
+      <Link>Amendments\AmendmentSetupProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AmendmentRepository.cs">
+      <Link>Amendments\AmendmentRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IAfterConstructorAmender.cs">
+      <Link>Amendments\IAfterConstructorAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IAfterMethodAmender.cs">
+      <Link>Amendments\IAfterMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IAfterVoidMethodAmender.cs">
+      <Link>Amendments\IAfterVoidMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IAfterPropertyGetAmender.cs">
+      <Link>Amendments\IAfterPropertyGetAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IAfterPropertySetAmender.cs">
+      <Link>Amendments\IAfterPropertySetAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IBeforeConstructorAmender.cs">
+      <Link>Amendments\IBeforeConstructorAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IBeforeMethodAmender.cs">
+      <Link>Amendments\IBeforeMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IBeforePropertyGetAmender.cs">
+      <Link>Amendments\IBeforePropertyGetAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IBeforePropertySetAmender.cs">
+      <Link>Amendments\IBeforePropertySetAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\ICatchConstructorAmender.cs">
+      <Link>Amendments\ICatchConstructorAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\ICatchMethodAmender.cs">
+      <Link>Amendments\ICatchMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\ICatchVoidMethodAmender.cs">
+      <Link>Amendments\ICatchVoidMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IConstructorAmender.cs">
+      <Link>Amendments\IConstructorAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IFinallyMethodAmender.cs">
+      <Link>Amendments\IFinallyMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IMethodAmender.cs">
+      <Link>Amendments\IMethodAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\IPropertyAmender.cs">
+      <Link>Amendments\IPropertyAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\CodeCoverage\CodeCoverageContext.cs">
+      <Link>CodeCoverage\CodeCoverageContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\CodeCoverage\IAfterTestRun.cs">
+      <Link>CodeCoverage\IAfterTestRun.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\CodeCoverage\IBeforeTestRun.cs">
+      <Link>CodeCoverage\IBeforeTestRun.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\CodeCoverage\ICodeCoverageContext.cs">
+      <Link>CodeCoverage\ICodeCoverageContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\IRunnerArgumentsProvider.cs">
+      <Link>IRunnerArgumentsProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\IRunnerFrameworkInitializer.cs">
+      <Link>IRunnerFrameworkInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\IRunnerInitializer.cs">
+      <Link>IRunnerInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ITestRunContext.cs">
+      <Link>ITestRunContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IMethodCall.cs">
+      <Link>ObjectModel\IMethodCall.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IMethodCallThreadTrace.cs">
+      <Link>ObjectModel\IMethodCallThreadTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IMethodCallTrace.cs">
+      <Link>ObjectModel\IMethodCallTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IMethodParameter.cs">
+      <Link>ObjectModel\IMethodParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IObjectInstance.cs">
+      <Link>ObjectModel\IObjectInstance.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IObjectType.cs">
+      <Link>ObjectModel\IObjectType.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IValue.cs">
+      <Link>ObjectModel\IValue.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\RunnerFrameworkInitializerAttribute.cs">
+      <Link>RunnerFrameworkInitializerAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TestRunContext.cs">
+      <Link>TestRunContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\AmendmentConfiguration.cs">
+      <Link>Configuration\AmendmentConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\CodeCoverageConfiguration.cs">
+      <Link>Configuration\CodeCoverageConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\HaystackConfiguration.cs">
+      <Link>Configuration\HaystackConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\HaystackConfigurationRelativePathResolver.cs">
+      <Link>Configuration\HaystackConfigurationRelativePathResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\IAmendmentConfiguration.cs">
+      <Link>Configuration\IAmendmentConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\ICodeCoverageConfiguration.cs">
+      <Link>Configuration\ICodeCoverageConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\IHaystackConfiguration.cs">
+      <Link>Configuration\IHaystackConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\IInterceptionConfiguration.cs">
+      <Link>Configuration\IInterceptionConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\InterceptionConfiguration.cs">
+      <Link>Configuration\InterceptionConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\IRunnerConfiguration.cs">
+      <Link>Configuration\IRunnerConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\ISourceControlConfiguration.cs">
+      <Link>Configuration\ISourceControlConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\IStaticAnalysisConfiguration.cs">
+      <Link>Configuration\IStaticAnalysisConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\RunnerConfiguration.cs">
+      <Link>Configuration\RunnerConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\SourceControlConfiguration.cs">
+      <Link>Configuration\SourceControlConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\StaticAnalysisConfiguration.cs">
+      <Link>Configuration\StaticAnalysisConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\HaystackInitializer.cs">
+      <Link>HaystackInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\HaystackRunner.cs">
+      <Link>HaystackRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\IStaticAnalysis.cs">
+      <Link>IStaticAnalysis.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\MethodCallTraceContext.cs">
+      <Link>MethodCallTraceContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\MethodCallTraceProvider.cs">
+      <Link>MethodCallTraceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\MsBuildRunner.cs">
+      <Link>MsBuildRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IndexedObject.cs">
+      <Link>ObjectModel\IndexedObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\MethodCall.cs">
+      <Link>ObjectModel\MethodCall.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\MethodCallThreadTrace.cs">
+      <Link>ObjectModel\MethodCallThreadTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\MethodCallTrace.cs">
+      <Link>ObjectModel\MethodCallTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\MethodParameter.cs">
+      <Link>ObjectModel\MethodParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\ObjectInstance.cs">
+      <Link>ObjectModel\ObjectInstance.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\ObjectType.cs">
+      <Link>ObjectModel\ObjectType.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\ParameterModifier.cs">
+      <Link>ObjectModel\ParameterModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\PropertyType.cs">
+      <Link>ObjectModel\PropertyType.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ObjectModel\Value.cs">
+      <Link>ObjectModel\Value.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ProcessRunner.cs">
+      <Link>ProcessRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\ProcessStartInfo.cs">
+      <Link>ProcessStartInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>Properties\Resources.resx</DependentUpon>
+      <Link>Properties\Resources.Designer.cs</Link>
     </Compile>
-    <Compile Include="SourceControl\ILineChange.cs" />
-    <Compile Include="SourceControl\ILineRange.cs" />
-    <Compile Include="SourceControl\IPartialFile.cs" />
-    <Compile Include="SourceControl\IRevision.cs" />
-    <Compile Include="SourceControl\ISourceControlProvider.cs" />
-    <Compile Include="SourceControl\ISourceControlSelector.cs" />
-    <Compile Include="SourceControl\LineChange.cs" />
-    <Compile Include="SourceControl\LineRange.cs" />
-    <Compile Include="SourceControl\PartialFile.cs" />
-    <Compile Include="SourceControl\Revision.cs" />
-    <Compile Include="SourceControl\SourceControlProviderAttribute.cs" />
-    <Compile Include="StaticAnalysisOutput.cs" />
-    <Compile Include="TestIntegration\ICleanUpTestMethod.cs" />
-    <Compile Include="TestIntegration\ICleanUpTestSuite.cs" />
-    <Compile Include="TestIntegration\IInitializeTestFramework.cs" />
-    <Compile Include="TestIntegration\IInitializeTestMethod.cs" />
-    <Compile Include="TestIntegration\IInitializeTestSuite.cs" />
-    <Compile Include="TestIntegration\TestIntegrationRepository.cs" />
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\ILineChange.cs">
+      <Link>SourceControl\ILineChange.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\ILineRange.cs">
+      <Link>SourceControl\ILineRange.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\IPartialFile.cs">
+      <Link>SourceControl\IPartialFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\IRevision.cs">
+      <Link>SourceControl\IRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\ISourceControlProvider.cs">
+      <Link>SourceControl\ISourceControlProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\ISourceControlSelector.cs">
+      <Link>SourceControl\ISourceControlSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\LineChange.cs">
+      <Link>SourceControl\LineChange.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\LineRange.cs">
+      <Link>SourceControl\LineRange.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\PartialFile.cs">
+      <Link>SourceControl\PartialFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\Revision.cs">
+      <Link>SourceControl\Revision.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\SourceControl\SourceControlProviderAttribute.cs">
+      <Link>SourceControl\SourceControlProviderAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\StaticAnalysisOutput.cs">
+      <Link>StaticAnalysisOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TestIntegration\ICleanUpTestMethod.cs">
+      <Link>TestIntegration\ICleanUpTestMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TestIntegration\ICleanUpTestSuite.cs">
+      <Link>TestIntegration\ICleanUpTestSuite.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TestIntegration\IInitializeTestFramework.cs">
+      <Link>TestIntegration\IInitializeTestFramework.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TestIntegration\IInitializeTestMethod.cs">
+      <Link>TestIntegration\IInitializeTestMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TestIntegration\IInitializeTestSuite.cs">
+      <Link>TestIntegration\IInitializeTestSuite.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TestIntegration\TestIntegrationRepository.cs">
+      <Link>TestIntegration\TestIntegrationRepository.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Amendments\StrongNameSetup.msbuild" />
-    <None Include="execute_process.msbuild" />
+    <None Include="..\Haystack.Diagnostics\Amendments\StrongNameSetup.msbuild">
+      <Link>Amendments\StrongNameSetup.msbuild</Link>
+    </None>
+    <None Include="..\Haystack.Diagnostics\execute_process.msbuild">
+      <Link>execute_process.msbuild</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Include="..\Haystack.Diagnostics\Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Link>Properties\Resources.resx</Link>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
       <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
-      <Name>Haystack.Core</Name>
+      <Name>Haystack.Core.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

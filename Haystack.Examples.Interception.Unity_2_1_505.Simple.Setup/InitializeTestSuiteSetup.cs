@@ -1,5 +1,5 @@
 ﻿using Haystack.Diagnostics.TestIntegration;
-using Haystack.Interception.Unity;
+using Haystack.Diagnostics.Interception.Unity;
 
 namespace Haystack.Examples.Interception.Unity.Simple.Setup
 {

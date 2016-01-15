@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Haystack.Amendments.Tests.StrongNamedTestTarget")]
+[assembly: AssemblyTitle("Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Haystack.Amendments.Tests.StrongNamedTestTarget")]
+[assembly: AssemblyProduct("Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

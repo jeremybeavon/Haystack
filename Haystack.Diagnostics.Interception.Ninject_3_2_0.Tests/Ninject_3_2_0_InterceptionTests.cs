@@ -1,11 +1,11 @@
 ﻿using FluentAssertions;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.ObjectModel;
-using Haystack.Interception.Tests;
+using Haystack.Diagnostics.Interception.Tests;
 using Ninject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Haystack.Interception.Ninject.Tests
+namespace Haystack.Diagnostics.Interception.Ninject.Tests
 {
     [TestClass]
     public class Ninject_3_2_0_InterceptionTests

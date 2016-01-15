@@ -3,7 +3,7 @@ using Haystack.Diagnostics.Configuration;
 using System;
 using System.Runtime.Serialization;
 
-namespace Haystack.Amendments.Tests.Amendments
+namespace Haystack.Diagnostics.Amendments.Tests.Amendments
 {
     [DataContract]
     public sealed class TestCallback : CrossAppDomainFuncCallback<string, string>

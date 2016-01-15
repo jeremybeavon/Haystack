@@ -1,4 +1,4 @@
-﻿using Haystack.Interception.Castle.Core;
+﻿using Haystack.Diagnostics.Interception.Castle.Core;
 using StructureMap;
 using StructureMap.Building.Interception;
 using StructureMap.Pipeline;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Haystack.Interception.StructureMap
+namespace Haystack.Diagnostics.Interception.StructureMap
 {
     public class HaystackInterceptionPolicy : IInterceptorPolicy
     {

@@ -48,8 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleProperty.cs" />
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget\Properties\AssemblyInfo.cs">
+        <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget\SimpleProperty.cs">
+        <Link>SimpleProperty.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

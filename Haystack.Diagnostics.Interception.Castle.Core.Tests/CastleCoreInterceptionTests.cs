@@ -1,10 +1,10 @@
 ﻿using FluentAssertions;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.ObjectModel;
-using Haystack.Interception.Tests;
+using Haystack.Diagnostics.Interception.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Haystack.Interception.Castle.Core.Tests
+namespace Haystack.Diagnostics.Interception.Castle.Core.Tests
 {
     [TestClass]
     public class AutofacInterceptionTests
