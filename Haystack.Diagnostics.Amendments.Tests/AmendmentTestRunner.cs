@@ -42,7 +42,7 @@ namespace Haystack.Diagnostics.Amendments.Tests
         public string RunTest()
         {
             Configuration.OutputDirectory = baseDirectory;
-            Configuration.HaystackBaseDirectory = baseDirectory;
+            Configuration.HaystackDiagnosticsDirectory = baseDirectory;
             string testDirectory = Path.Combine(baseDirectory, TestName);
             SetUpTestRun(testDirectory);
             AppDomainSetup appDomainSetup = new AppDomainSetup()

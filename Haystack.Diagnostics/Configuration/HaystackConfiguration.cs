@@ -22,7 +22,7 @@ namespace Haystack.Diagnostics.Configuration
         }
         
         [Required]
-        public string HaystackBaseDirectory { get; set; }
+        public string HaystackDiagnosticsDirectory { get; set; }
 
         [Required]
         public string OutputDirectory { get; set; }

@@ -35,7 +35,7 @@ namespace Haystack.Diagnostics
             }
 
             string runnerDirectory = Path.Combine(
-                configuration.HaystackBaseDirectory,
+                configuration.HaystackDiagnosticsDirectory,
                 "Runner",
                 runner.RunnerFramework,
                 runner.RunnerFrameworkVersion);
@@ -52,7 +52,7 @@ namespace Haystack.Diagnostics
             foreach (IInterceptionConfiguration interception in configuration.Interception ?? new IInterceptionConfiguration[0])
             {
                 string interceptionDirectory = Path.Combine(
-                    configuration.HaystackBaseDirectory,
+                    configuration.HaystackDiagnosticsDirectory,
                     interception.InterceptionFramework,
                     interception.InterceptionFrameworkVersion);
                 referencedDirectories.Add(interceptionDirectory);
@@ -60,7 +60,7 @@ namespace Haystack.Diagnostics
 
             foreach (IStaticAnalysisConfiguration staticAnalysis in configuration.StaticAnalysis ?? new IStaticAnalysisConfiguration[0])
             {
-                referencedDirectories.Add(Path.Combine(configuration.HaystackBaseDirectory, staticAnalysis.StaticAnalysisFramework));
+                referencedDirectories.Add(Path.Combine(configuration.HaystackDiagnosticsDirectory, staticAnalysis.StaticAnalysisFramework));
             }
 
             if (referencedDirectories.Count != 0)
@@ -131,7 +131,7 @@ namespace Haystack.Diagnostics
             foreach (ICodeCoverageConfiguration codeCoverage in configuration.CodeCoverage)
             {
                 string assemblyPath = Path.Combine(
-                    configuration.HaystackBaseDirectory,
+                    configuration.HaystackDiagnosticsDirectory,
                     codeCoverage.CodeCoverageFramework,
                     codeCoverage.CodeCoverageProviderAssembly);
                 Assembly assembly = Assembly.LoadFrom(assemblyPath);

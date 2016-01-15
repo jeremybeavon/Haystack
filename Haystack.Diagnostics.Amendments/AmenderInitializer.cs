@@ -30,10 +30,10 @@ namespace Haystack.Diagnostics.Amendments
 
         private static void Initialize()
         {
-            string haystackBaseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..");
-            if (File.Exists(Path.Combine(haystackBaseDirectory, "Haystack.Diagnostics.dll")))
+            string haystackDiagnosticsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..");
+            if (File.Exists(Path.Combine(haystackDiagnosticsDirectory, "Haystack.Diagnostics.dll")))
             {
-                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackBaseDirectory);
+                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackDiagnosticsDirectory);
             }
         }
     }

@@ -9,7 +9,7 @@ namespace Haystack.Runner.NUnit.TestRunner
         AbstractTestIntegrationRunner<TTestIntegrationInterface, TTestIntegrationImplementation>
         where TTestIntegrationImplementation : TTestIntegrationInterface
     {
-        protected sealed override string HaystackBaseDirectory
+        protected sealed override string HaystackDiagnosticsDirectory
         {
             get
             {

@@ -114,8 +114,8 @@ namespace Haystack.Runner.NUnit
             }
             else
             {
-                string haystackBaseDirectory = BootstrapConfiguration.GetHaystackBaseDirectory(configurationFile);
-                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackBaseDirectory);
+                string haystackDiagnosticsDirectory = BootstrapConfiguration.GetHaystackBaseDirectory(configurationFile);
+                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackDiagnosticsDirectory);
                 InitializeHaystackUsingDiagnostics(configurationFile);
             }
         }

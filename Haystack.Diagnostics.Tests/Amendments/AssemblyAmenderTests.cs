@@ -15,11 +15,11 @@ namespace Haystack.Diagnostics.Tests.Amendments
         public void TestAssemblyAmenderOnSimplePropertyAmendmentExample()
         {
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string haystackBaseDirectory = Path.Combine(baseDirectory, @"..\Haystack");
-            string sourceDirectory = Path.Combine(haystackBaseDirectory, @"Examples\Amendments\SimpleProperty\Passing");
+            string haystackDiagnosticsDirectory = Path.Combine(baseDirectory, @"..\Haystack");
+            string sourceDirectory = Path.Combine(haystackDiagnosticsDirectory, @"Examples\Amendments\SimpleProperty\Passing");
             string destinationDirectory = Path.Combine(baseDirectory, @"DiagnosticsTests\AssemblyAmender");
             string testAssembly = Path.Combine(destinationDirectory, "Haystack.Examples.Amendments.SimpleProperty.Tests.dll");
-            string attributeAssembly = Path.Combine(haystackBaseDirectory, @"Runner\NUnit\3.0.1\HaystackAddin\Haystack.Runner.NUnit.dll");
+            string attributeAssembly = Path.Combine(haystackDiagnosticsDirectory, @"Runner\NUnit\3.0.1\HaystackAddin\Haystack.Runner.NUnit.dll");
             DirectoryCopy.CopyDirectory(sourceDirectory, destinationDirectory);
             Assembly assembly = Assembly.LoadFrom(attributeAssembly);
             Type attributeType = assembly.GetType("Haystack.Runner.NUnit.HaystackDiagnosticsAttribute");

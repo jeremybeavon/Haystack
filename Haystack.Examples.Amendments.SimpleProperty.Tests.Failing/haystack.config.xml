@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <HaystackConfiguration>
-  <HaystackBaseDirectory>..\..\..\..</HaystackBaseDirectory>
+  <HaystackDiagnosticsDirectory>..\..\..\..</HaystackDiagnosticsDirectory>
   <OutputDirectory>Output</OutputDirectory>
   <Amendments>
     <AssembliesToAmend>

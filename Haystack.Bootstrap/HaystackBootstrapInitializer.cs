@@ -37,10 +37,10 @@ namespace Haystack.Bootstrap
                 return;
             }
 
-            string haystackBaseDirectory = FindHaystackBaseDirectory(configurationFile);
-            if (haystackBaseDirectory != null)
+            string haystackDiagnosticsDirectory = FindHaystackBaseDirectory(configurationFile);
+            if (haystackDiagnosticsDirectory != null)
             {
-                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackBaseDirectory);
+                AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackDiagnosticsDirectory);
             }
 
             InitializeDiagnostics(configurationFile);
@@ -55,7 +55,7 @@ namespace Haystack.Bootstrap
         {
             using (TextReader reader = new StreamReader(configurationFile))
             {
-                return XmlSerialization.Deserialize<BootstrapConfiguration>(reader).HaystackBaseDirectory;
+                return XmlSerialization.Deserialize<BootstrapConfiguration>(reader).HaystackDiagnosticsDirectory;
             }
         }
     }

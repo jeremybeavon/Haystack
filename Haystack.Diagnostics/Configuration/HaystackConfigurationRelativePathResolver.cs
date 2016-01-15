@@ -25,7 +25,7 @@ namespace Haystack.Diagnostics.Configuration
         private void ResolveRelativePaths(HaystackConfiguration configuration)
         {
             ResolveIfNecessary(configuration.OutputDirectory, path => configuration.OutputDirectory = path);
-            ResolveIfNecessary(configuration.HaystackBaseDirectory, path => configuration.HaystackBaseDirectory = path);
+            ResolveIfNecessary(configuration.HaystackDiagnosticsDirectory, path => configuration.HaystackDiagnosticsDirectory = path);
             if (configuration.Amendments != null)
             {
                 ResolveIfNecessary(configuration.Amendments.AssembliesToAmend);

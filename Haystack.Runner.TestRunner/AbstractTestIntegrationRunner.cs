@@ -20,7 +20,7 @@ namespace Haystack.Runner.TestRunner
             get { return GetType().Assembly.AssemblyFilePath(); }
         }
 
-        protected abstract string HaystackBaseDirectory { get; }
+        protected abstract string HaystackDiagnosticsDirectory { get; }
 
         protected abstract string RunnerFramework { get; }
 
@@ -52,7 +52,7 @@ namespace Haystack.Runner.TestRunner
             return new HaystackConfiguration()
             {
                 OutputDirectory = OutputDirectory,
-                HaystackBaseDirectory = HaystackBaseDirectory,
+                HaystackDiagnosticsDirectory = HaystackDiagnosticsDirectory,
                 Runner = new RunnerConfiguration()
                 {
                     RunnerFramework = RunnerFramework,

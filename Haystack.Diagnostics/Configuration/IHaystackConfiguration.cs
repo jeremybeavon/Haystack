@@ -4,7 +4,7 @@ namespace Haystack.Diagnostics.Configuration
 {
     public interface IHaystackConfiguration
     {
-        string HaystackBaseDirectory { get; }
+        string HaystackDiagnosticsDirectory { get; }
 
         string OutputDirectory { get; }
 
