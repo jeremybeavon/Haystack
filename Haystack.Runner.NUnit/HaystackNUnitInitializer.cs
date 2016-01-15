@@ -1,5 +1,8 @@
 ﻿using Haystack.Diagnostics;
 using Haystack.Diagnostics.Amendments;
+using Haystack.Runner.NUnit.Initializer;
+
+[assembly: RunnerFrameworkInitializer(typeof(HaystackNUnitInitializer))]
 
 namespace Haystack.Runner.NUnit.Initializer
 {

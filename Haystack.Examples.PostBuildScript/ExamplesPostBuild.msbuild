@@ -7,7 +7,7 @@
     <ItemGroup>
       <BootstrapFiles Include="$(OutputDirectory)Bootstrap\Haystack.Bootstrap.*" />
     </ItemGroup>
-    <Copy SourceFiles="@(BootstrapFiles)" DestinationFolder="$(ExamplesDirectory)Amendments\SimpleProperty\Passing" />
-    <Copy SourceFiles="@(BootstrapFiles)" DestinationFolder="$(ExamplesDirectory)Amendments\SimpleProperty\Failing" />
+    <Copy SourceFiles="@(BootstrapFiles)" DestinationFolder="$(ExamplesDirectory)net45\Amendments\SimpleProperty\Passing" />
+    <Copy SourceFiles="@(BootstrapFiles)" DestinationFolder="$(ExamplesDirectory)net45\Amendments\SimpleProperty\Failing" />
 	</Target>
 </Project>

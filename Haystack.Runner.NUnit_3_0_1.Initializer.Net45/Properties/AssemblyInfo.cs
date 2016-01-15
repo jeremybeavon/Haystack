@@ -1,6 +1,4 @@
-﻿using Haystack.Diagnostics;
-using Haystack.Runner.NUnit.Initializer;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -22,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d9f08aae-8749-4f4c-973a-4b89c40ec09c")]
+[assembly: Guid("60d01bbf-8e85-4925-a7cf-c94dcf00544d")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -36,5 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: RunnerFrameworkInitializer(typeof(HaystackNUnitInitializer))]

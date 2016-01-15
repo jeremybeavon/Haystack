@@ -55,9 +55,6 @@
     <Compile Include="..\Haystack.Runner.NUnit\HaystackDiagnosticsAttribute.cs">
       <Link>HaystackDiagnosticsAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Runner.NUnit\HaystackNUnitInitializer.cs">
-      <Link>HaystackNUnitInitializer.cs</Link>
-    </Compile>
     <Compile Include="..\Haystack.Runner.NUnit\MethodCallTraceManager.cs">
       <Link>MethodCallTraceManager.cs</Link>
     </Compile>

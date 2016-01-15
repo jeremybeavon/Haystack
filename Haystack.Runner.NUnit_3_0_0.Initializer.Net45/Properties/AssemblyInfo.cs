@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Haystack.Runner.NUnit_3_0_0.Initializer")]
+[assembly: AssemblyTitle("Haystack.Runner.NUnit.Initializer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Haystack.Runner.NUnit_3_0_0.Initializer")]
+[assembly: AssemblyProduct("Haystack.Runner.NUnit.Initializer")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2b78cae6-7b52-4cae-a5da-3d057de35a9b")]
+[assembly: Guid("be65b1f2-39b0-4846-97d3-ec07dad6303e")]
 
 // Version information for an assembly consists of the following four values:
 //
