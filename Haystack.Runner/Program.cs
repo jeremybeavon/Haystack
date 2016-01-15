@@ -15,7 +15,8 @@ namespace Haystack.Runner
         {
             CommandLineOptions options = new CommandLineOptions();
             Parser.Default.ParseArgumentsStrict(args, options);
-            string haystackDiagnosticsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..");
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string haystackDiagnosticsDirectory = Path.Combine(baseDirectory, FrameworkVersion.Current, "Diagnostics");
             AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackDiagnosticsDirectory);
             Trace.Listeners.Add(new ConsoleTraceListener());
             RunHaystackDiagnostics(options);

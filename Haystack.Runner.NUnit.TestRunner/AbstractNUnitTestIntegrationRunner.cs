@@ -14,7 +14,7 @@ namespace Haystack.Runner.NUnit.TestRunner
             get
             {
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                return Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\..\..\Haystack", FrameworkVersion.Current));
+                return Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\..\..\Haystack\Runner", FrameworkVersion.Current, "Diagnostics"));
             }
         }
 

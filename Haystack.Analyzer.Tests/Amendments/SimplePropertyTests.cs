@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 
-namespace Haystack.Analysis.Tests.Amendments
+namespace Haystack.Analyzer.Tests.Amendments
 {
     [TestClass]
     public class SimplePropertyTests
@@ -9,7 +9,7 @@ namespace Haystack.Analysis.Tests.Amendments
         [TestMethod]
         public void TestSimpleProperty()
         {
-            HaystackAnalysisTestRunner.RunHaystackAnalysis(
+            HaystackAnalyzerTestRunner.RunHaystackAnalyzer(
                 @"Examples\Amendments\SimpleProperty",
                 @"Passing\haystack.config.xml",
                 @"Failing\haystack.config.xml");

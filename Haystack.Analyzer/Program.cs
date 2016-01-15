@@ -1,10 +1,7 @@
 ﻿using CommandLine;
 using Haystack.Analyzer.ObjectModel;
-using Haystack.Core;
 using Haystack.Diagnostics.Configuration;
-using System;
 using System.Diagnostics;
-using System.IO;
 
 namespace Haystack.Analyzer
 {
@@ -14,8 +11,6 @@ namespace Haystack.Analyzer
         {
             CommandLineOptions options = new CommandLineOptions();
             Parser.Default.ParseArgumentsStrict(args, options);
-            string haystackDiagnosticsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..");
-            AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackDiagnosticsDirectory);
             Trace.Listeners.Add(new ConsoleTraceListener());
             RunHaystackAnalysis(options);
         }
