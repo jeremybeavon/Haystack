@@ -9,12 +9,12 @@ namespace Haystack.Runner.NUnit.TestRunner
         AbstractTestIntegrationRunner<TTestIntegrationInterface, TTestIntegrationImplementation>
         where TTestIntegrationImplementation : TTestIntegrationInterface
     {
-        protected sealed override string HaystackDiagnosticsDirectory
+        protected sealed override string HaystackBaseDirectory
         {
             get
             {
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                return Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\..\..\Haystack\Runner", FrameworkVersion.Current, "Diagnostics"));
+                return Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\..\..\Haystack"));
             }
         }
 

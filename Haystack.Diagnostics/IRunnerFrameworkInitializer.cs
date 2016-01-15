@@ -1,7 +1,9 @@
-﻿namespace Haystack.Diagnostics
+﻿using Haystack.Diagnostics.Configuration;
+
+namespace Haystack.Diagnostics
 {
     public interface IRunnerFrameworkInitializer
     {
-        void InitializeRunnerFramework(string assemblyToTest);
+        void InitializeRunnerFramework(IHaystackConfiguration configuration);
     }
 }

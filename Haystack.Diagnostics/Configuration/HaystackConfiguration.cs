@@ -20,9 +20,19 @@ namespace Haystack.Diagnostics.Configuration
             SourceControl = new List<SourceControlConfiguration>();
             StaticAnalysis = new List<StaticAnalysisConfiguration>();
         }
-        
+
         [Required]
-        public string HaystackDiagnosticsDirectory { get; set; }
+        public string HaystackBaseDirectory { get; set; }
+
+        public string HaystackRunnerDirectory
+        {
+            get { return Path.Combine(HaystackBaseDirectory, "Runner", FrameworkVersion.Current); }
+        }
+
+        public string HaystackDiagnosticsDirectory
+        {
+            get { return Path.Combine(HaystackRunnerDirectory, "Diagnostics"); }
+        }
 
         [Required]
         public string OutputDirectory { get; set; }

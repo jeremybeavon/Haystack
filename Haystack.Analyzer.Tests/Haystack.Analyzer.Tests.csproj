@@ -175,10 +175,20 @@
       <Name>Haystack.Runner.NUnit_2_6_4.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_0.Initializer.Net45\Haystack.Runner.NUnit_3_0_0.Initializer.Net45.csproj">
+      <Project>{be65b1f2-39b0-4846-97d3-ec07dad6303e}</Project>
+      <Name>Haystack.Runner.NUnit_3_0_0.Initializer.Net45</Name>
+	  <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_0.Net45\Haystack.Runner.NUnit_3_0_0.Net45.csproj">
       <Project>{36ff2646-7a6d-4436-a76a-7e3618dea2aa}</Project>
       <Name>Haystack.Runner.NUnit_3_0_0.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_1.Initializer.Net45\Haystack.Runner.NUnit_3_0_1.Initializer.Net45.csproj">
+      <Project>{60d01bbf-8e85-4925-a7cf-c94dcf00544d}</Project>
+      <Name>Haystack.Runner.NUnit_3_0_1.Initializer.Net45</Name>
+	  <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_1.Net45\Haystack.Runner.NUnit_3_0_1.Net45.csproj">
       <Project>{9b69d2bf-f18d-4fa4-aeb0-e245bb26c2a1}</Project>

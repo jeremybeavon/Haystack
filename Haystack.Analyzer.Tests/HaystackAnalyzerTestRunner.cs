@@ -9,16 +9,19 @@ namespace Haystack.Analyzer.Tests
 {
     public static class HaystackAnalyzerTestRunner
     {
+        private const string DefaultConfigurationFileName = HaystackConfigurationFile.DefaultConfigurationFileName;
         private static readonly string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
         private static readonly string haystackBaseDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\Haystack"));
-        private static readonly string haystackDiagnosticsDirectory = 
-            Path.Combine(haystackBaseDirectory, "Runner", FrameworkVersion.Current, "Diagnostics");
+        private static readonly string haystackRunnerDirectory =
+            Path.Combine(haystackBaseDirectory, "Runner", FrameworkVersion.Current);
+        private static readonly string haystackExamplesDirectory =
+            Path.Combine(haystackBaseDirectory, "Examples", FrameworkVersion.Current);
 
-        public static void RunHaystackAnalyzer(string exampleDirectory, string passingConfigurationFile, string failingConfigurationFile)
+        public static void RunHaystackAnalyzer(string exampleDirectory)
         {
             string testDirectory = InitializeTestDirectory(exampleDirectory);
-            passingConfigurationFile = InitializeConfigurationFile(testDirectory, passingConfigurationFile);
-            failingConfigurationFile = InitializeConfigurationFile(testDirectory, failingConfigurationFile);
+            string passingConfigurationFile = InitializeConfigurationFile(testDirectory, true);
+            string failingConfigurationFile = InitializeConfigurationFile(testDirectory, false);
             RunHaystackRunner(passingConfigurationFile);
             RunHaystackRunner(failingConfigurationFile);
             RunHaystackAnalyzer(passingConfigurationFile, failingConfigurationFile);
@@ -26,24 +29,25 @@ namespace Haystack.Analyzer.Tests
 
         private static string InitializeTestDirectory(string exampleDirectory)
         {
-            string originalDirectory = Path.Combine(haystackDiagnosticsDirectory, exampleDirectory);
-            string testDirectory = Path.Combine(baseDirectory, exampleDirectory);
-            DirectoryCopy.CopyDirectory(originalDirectory, exampleDirectory);
+            string originalDirectory = Path.Combine(haystackExamplesDirectory, exampleDirectory);
+            string testDirectory = Path.Combine(baseDirectory, "Examples", exampleDirectory);
+            DirectoryCopy.CopyDirectory(originalDirectory, testDirectory);
             return testDirectory;
         }
 
-        private static string InitializeConfigurationFile(string testDirectory, string configurationFile)
+        private static string InitializeConfigurationFile(string testDirectory, bool isPassing)
         {
-            configurationFile = Path.Combine(testDirectory, configurationFile);
+            string configurationFile = Path.Combine(testDirectory, isPassing ? "Passing" : "Failing", DefaultConfigurationFileName);
             HaystackConfiguration haystackConfiguration = HaystackConfiguration.LoadText(File.ReadAllText(configurationFile));
-            haystackConfiguration.HaystackDiagnosticsDirectory = haystackDiagnosticsDirectory;
+            haystackConfiguration.HaystackBaseDirectory = haystackBaseDirectory;
             File.WriteAllText(configurationFile, haystackConfiguration.ToString());
             return configurationFile;
         }
 
         private static void RunHaystackRunner(string configurationFile)
         {
-            RunExecutable(Path.Combine(haystackDiagnosticsDirectory, @"Runner\Haystack.Runner.exe"), "--ConfigurationFile", configurationFile);
+            string[] args = new string[] { "--ConfigurationFile", configurationFile };
+            RunExecutable(Path.Combine(haystackRunnerDirectory, @"Haystack.Runner.exe"), args);
         }
 
         private static void RunHaystackAnalyzer(string passingConfigurationFile, string failingConfigurationFile)

@@ -25,7 +25,7 @@ namespace Haystack.Diagnostics.Configuration
         private void ResolveRelativePaths(HaystackConfiguration configuration)
         {
             ResolveIfNecessary(configuration.OutputDirectory, path => configuration.OutputDirectory = path);
-            ResolveIfNecessary(configuration.HaystackDiagnosticsDirectory, path => configuration.HaystackDiagnosticsDirectory = path);
+            ResolveIfNecessary(configuration.HaystackBaseDirectory, path => configuration.HaystackBaseDirectory = path);
             if (configuration.Amendments != null)
             {
                 ResolveIfNecessary(configuration.Amendments.AssembliesToAmend);
@@ -35,6 +35,7 @@ namespace Haystack.Diagnostics.Configuration
             {
                 RunnerConfiguration runner = configuration.Runner;
                 ResolveUsingFunctionIfNecessary(runner.RunnerArguments, path => runner.RunnerArguments = path);
+                ResolveUsingFunctionIfNecessary(runner.AssemblyToTest, path => runner.AssemblyToTest = path);
             }
         }
 

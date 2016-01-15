@@ -37,7 +37,7 @@ namespace Haystack.Bootstrap
                 return;
             }
 
-            string haystackDiagnosticsDirectory = FindHaystackBaseDirectory(configurationFile);
+            string haystackDiagnosticsDirectory = FindHaystackDiagnosticsDirectory(configurationFile);
             if (haystackDiagnosticsDirectory != null)
             {
                 AppDomain.CurrentDomain.AddAssemblyResolveDirectory(haystackDiagnosticsDirectory);
@@ -51,7 +51,7 @@ namespace Haystack.Bootstrap
             HaystackInitializer.InitializeIfNecessary(configurationFile);
         }
 
-        private static string FindHaystackBaseDirectory(string configurationFile)
+        private static string FindHaystackDiagnosticsDirectory(string configurationFile)
         {
             using (TextReader reader = new StreamReader(configurationFile))
             {

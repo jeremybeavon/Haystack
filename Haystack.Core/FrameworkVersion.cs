@@ -1,4 +1,8 @@
-﻿namespace Haystack.Core
+﻿#if HAYSTACK_BOOTSTRAP
+namespace Haystack.Bootstrap
+#else
+namespace Haystack.Core
+#endif
 {
     public static class FrameworkVersion
     {

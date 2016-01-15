@@ -57,6 +57,9 @@
     <Compile Include="..\Haystack.Core\BootstrapConfiguration.cs">
       <Link>BootstrapConfiguration.cs</Link>
     </Compile>
+    <Compile Include="..\Haystack.Core\FrameworkVersion.cs">
+      <Link>FrameworkVersion.cs</Link>
+    </Compile>
     <Compile Include="..\Haystack.Core\HaystackConfigurationFile.cs">
       <Link>HaystackConfigurationFile.cs</Link>
     </Compile>

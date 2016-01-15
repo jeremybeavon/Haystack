@@ -10,13 +10,18 @@ namespace Haystack.Core
     [XmlRoot("HaystackConfiguration")]
     public sealed class BootstrapConfiguration
     {
-        public string HaystackDiagnosticsDirectory { get; set; }
+        public string HaystackBaseDirectory { get; set; }
+
+        public string HaystackDiagnosticsDirectory
+        {
+            get { return Path.Combine(HaystackBaseDirectory, "Runner", FrameworkVersion.Current, "Diagnostics"); }
+        }
 
         public static string GetHaystackBaseDirectory(string configurationFile)
         {
             using (TextReader reader = new StreamReader(configurationFile))
             {
-                return XmlSerialization.Deserialize<BootstrapConfiguration>(reader).HaystackDiagnosticsDirectory;
+                return XmlSerialization.Deserialize<BootstrapConfiguration>(reader).HaystackBaseDirectory;
             }
         }
     }

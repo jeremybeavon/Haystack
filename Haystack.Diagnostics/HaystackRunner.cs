@@ -35,11 +35,11 @@ namespace Haystack.Diagnostics
             }
 
             string runnerDirectory = Path.Combine(
-                configuration.HaystackDiagnosticsDirectory,
-                "Runner",
+                configuration.HaystackRunnerDirectory,
                 runner.RunnerFramework,
                 runner.RunnerFrameworkVersion);
-            InitializeTestFramework(runner, runnerDirectory);
+            runnerDirectory = Path.GetFullPath(runnerDirectory);
+            InitializeTestFramework(configuration, runnerDirectory);
             ITestRunContext testRunContext = InitializeTestRunner(runner, runnerDirectory);
             IEnumerable<CodeCoverageProvider> codeCoverageProviders = InitializeCodeCoverage(testRunContext);
             RunTests(testRunContext);
@@ -80,12 +80,13 @@ namespace Haystack.Diagnostics
             }
         }
 
-        private void InitializeTestFramework(IRunnerConfiguration runner, string runnerDirectory)
+        private void InitializeTestFramework(IHaystackConfiguration configuration, string runnerDirectory)
         {
+            IRunnerConfiguration runner = configuration.Runner;
             string haystackAddinFile = string.IsNullOrWhiteSpace(runner.HaystackAddinName) ?
-                string.Format("Haystack.Runner.{0}.dll", runner.RunnerFramework) :
+                string.Format("Haystack.Runner.{0}.Initializer.dll", runner.RunnerFramework) :
                 runner.HaystackAddinName;
-            string haystackAddin = Path.Combine(runnerDirectory, "HaystackAddin", haystackAddinFile);
+            string haystackAddin = Path.Combine(runnerDirectory, "HaystackAddinInitializer", haystackAddinFile);
             if (File.Exists(haystackAddin))
             {
                 AppDomain.CurrentDomain.AddAssemblyResolveDirectory(runnerDirectory);
@@ -103,7 +104,7 @@ namespace Haystack.Diagnostics
                         throw new InvalidOperationException(message);
                     }
 
-                    initializer.InitializeRunnerFramework(runner.AssemblyToTest);
+                    initializer.InitializeRunnerFramework(configuration);
                 }
             } 
         }

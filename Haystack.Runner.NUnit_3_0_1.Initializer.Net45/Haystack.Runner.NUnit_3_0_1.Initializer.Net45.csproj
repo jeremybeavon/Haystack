@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Runner\net45\NUnit\3.0.1\HaystackAddinInitializer\</OutputPath>
+    <OutputPath>..\bin\Debug\Haystack\Runner\net45\NUnit\3.0.1\HaystackAddinInitializer\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Runner\net45\NUnit\3.0.1\HaystackAddinInitializer\</OutputPath>
+    <OutputPath>..\bin\Release\Haystack\Runner\net45\NUnit\3.0.1\HaystackAddinInitializer\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -50,6 +50,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics.Net45</Name>
