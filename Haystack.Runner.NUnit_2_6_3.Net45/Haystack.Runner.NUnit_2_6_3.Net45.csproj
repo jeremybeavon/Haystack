@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4100CE8-E803-4EF3-BD0B-86C8ABECE9F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Haystack.Runner.NUnit</RootNamespace>
+    <AssemblyName>Haystack.Runner.NUnit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Haystack\net45\Runner\NUnit\2.6.3\addins\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\30fb6927-65de-4486-8bc4-72c36768c64f</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Haystack\net45\Runner\NUnit\2.6.3\addins\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\ff6476ba-0788-4802-869b-7c046e668ef7</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Haystack.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnit.Runners.2.6.3\tools\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnit.Runners.2.6.3\tools\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Haystack.Runner.NUnit\HaystackAddin.cs">
+      <Link>HaystackAddin.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestMethod.cs">
+      <Link>HaystackTestMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Runner.NUnit\HaystackTestSuite.cs">
+      <Link>HaystackTestSuite.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Runner.NUnit\MethodCallTraceManager.cs">
+      <Link>MethodCallTraceManager.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
+      <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
+      <Name>Haystack.Bootstrap</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

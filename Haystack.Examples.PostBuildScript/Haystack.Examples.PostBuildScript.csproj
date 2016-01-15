@@ -17,6 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\55acb7bf-0dba-48e3-9e2b-c9eeb270d19b</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,6 +26,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\2e338b7a-0669-422f-a19e-0ee48b46cce3</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,15 +45,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Haystack.Bootstrap\Haystack.Bootstrap.csproj">
+    <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
       <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
       <Name>Haystack.Bootstrap</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.csproj">
+    <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45.csproj">
       <Project>{960ed9fd-0dd6-45db-9987-43bd7fc6cd32}</Project>
       <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Failing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.csproj">
+    <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45.csproj">
       <Project>{8e5cc1d6-2696-4492-b77a-afdf53850e35}</Project>
       <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Passing</Name>
     </ProjectReference>

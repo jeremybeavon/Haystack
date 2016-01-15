@@ -1,7 +1,7 @@
 ﻿using Haystack.Diagnostics;
 using Haystack.Diagnostics.Amendments;
 
-namespace Haystack.Runner.NUnit
+namespace Haystack.Runner.NUnit.Initializer
 {
     public sealed class HaystackNUnitInitializer : IRunnerFrameworkInitializer
     {

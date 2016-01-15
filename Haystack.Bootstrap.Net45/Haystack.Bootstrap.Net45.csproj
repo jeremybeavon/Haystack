@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C78E4BD0-5B9E-44A9-8DAF-4BE0731323FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Haystack.Bootstrap</RootNamespace>
+    <AssemblyName>Haystack.Bootstrap</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Haystack\net45\Bootstrap\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\f8cefc6f-e6e1-4bd9-9f49-2785abf8dae9</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;DEBUG;HAYSTACK_BOOTSTRAP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Haystack\net45\Bootstrap\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\02be7df1-425a-41d6-9dde-57d91aa492dc</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;HAYSTACK_BOOTSTRAP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Haystack.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Haystack.Core\AppDomainExtensions.cs">
+      <Link>AppDomainExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\AssemblyExtensions.cs">
+      <Link>AssemblyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\BootstrapConfiguration.cs">
+      <Link>BootstrapConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\HaystackConfigurationFile.cs">
+      <Link>HaystackConfigurationFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\XmlSerialization.cs">
+      <Link>XmlSerialization.cs</Link>
+    </Compile>
+    <Compile Include="ConstructorAmendments.cs" />
+    <Compile Include="HaystackBootstrapInitializer.cs" />
+    <Compile Include="MethodAmendments.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyAmendments.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

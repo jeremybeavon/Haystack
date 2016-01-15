@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F094168-2764-495B-AF6E-9C135AF04CDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Haystack.Diagnostics</RootNamespace>
+    <AssemblyName>Haystack.Diagnostics</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Haystack\net45\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\f4a0212d-0a94-49f0-b7ea-e6564cff73c7</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <SGenUseProxyTypes>false</SGenUseProxyTypes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Haystack\net45\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\0e0b0f42-8006-4c85-9d7f-e2e581c08803</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <SGenUseProxyTypes>false</SGenUseProxyTypes>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Haystack.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppDomainCallbackExtensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b779ee9e6a5a3f4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppDomainCallbackExtensions.1.0.6\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MsgPack, Version=0.6.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsgPack.Cli.0.6.7\lib\net45\MsgPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TextSerialization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=048350c573d540a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\TextSerialization.1.0.0\lib\net45\TextSerialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Amendments\AllPropertiesAmender.cs" />
+    <Compile Include="Amendments\AmendmentConfigurationBuilder.cs" />
+    <Compile Include="Amendments\AssemblyAmender.cs" />
+    <Compile Include="Amendments\HaystackBeforeMethodAmender.cs" />
+    <Compile Include="Amendments\HaystackConstructorAmender.cs" />
+    <Compile Include="Amendments\HaystackMethodAmender.cs" />
+    <Compile Include="Amendments\HaystackNonVoidMethodAmender.cs" />
+    <Compile Include="Amendments\HaystackPropertyAmender.cs" />
+    <Compile Include="Amendments\HaystackVoidMethodAmender.cs" />
+    <Compile Include="CodeCoverage\CodeCoverageProvider.cs" />
+    <Compile Include="CodeCoverage\CodeCoverageProviderAttribute.cs" />
+    <Compile Include="Amendments\AmendmentSetupProvider.cs" />
+    <Compile Include="Amendments\AmendmentRepository.cs" />
+    <Compile Include="Amendments\IAfterConstructorAmender.cs" />
+    <Compile Include="Amendments\IAfterMethodAmender.cs" />
+    <Compile Include="Amendments\IAfterVoidMethodAmender.cs" />
+    <Compile Include="Amendments\IAfterPropertyGetAmender.cs" />
+    <Compile Include="Amendments\IAfterPropertySetAmender.cs" />
+    <Compile Include="Amendments\IBeforeConstructorAmender.cs" />
+    <Compile Include="Amendments\IBeforeMethodAmender.cs" />
+    <Compile Include="Amendments\IBeforePropertyGetAmender.cs" />
+    <Compile Include="Amendments\IBeforePropertySetAmender.cs" />
+    <Compile Include="Amendments\ICatchConstructorAmender.cs" />
+    <Compile Include="Amendments\ICatchMethodAmender.cs" />
+    <Compile Include="Amendments\ICatchVoidMethodAmender.cs" />
+    <Compile Include="Amendments\IConstructorAmender.cs" />
+    <Compile Include="Amendments\IFinallyMethodAmender.cs" />
+    <Compile Include="Amendments\IMethodAmender.cs" />
+    <Compile Include="Amendments\IPropertyAmender.cs" />
+    <Compile Include="CodeCoverage\CodeCoverageContext.cs" />
+    <Compile Include="CodeCoverage\IAfterTestRun.cs" />
+    <Compile Include="CodeCoverage\IBeforeTestRun.cs" />
+    <Compile Include="CodeCoverage\ICodeCoverageContext.cs" />
+    <Compile Include="IRunnerArgumentsProvider.cs" />
+    <Compile Include="IRunnerFrameworkInitializer.cs" />
+    <Compile Include="IRunnerInitializer.cs" />
+    <Compile Include="ITestRunContext.cs" />
+    <Compile Include="ObjectModel\IMethodCall.cs" />
+    <Compile Include="ObjectModel\IMethodCallThreadTrace.cs" />
+    <Compile Include="ObjectModel\IMethodCallTrace.cs" />
+    <Compile Include="ObjectModel\IMethodParameter.cs" />
+    <Compile Include="ObjectModel\IObjectInstance.cs" />
+    <Compile Include="ObjectModel\IObjectType.cs" />
+    <Compile Include="ObjectModel\IValue.cs" />
+    <Compile Include="RunnerFrameworkInitializerAttribute.cs" />
+    <Compile Include="TestRunContext.cs" />
+    <Compile Include="Configuration\AmendmentConfiguration.cs" />
+    <Compile Include="Configuration\CodeCoverageConfiguration.cs" />
+    <Compile Include="Configuration\HaystackConfiguration.cs" />
+    <Compile Include="Configuration\HaystackConfigurationRelativePathResolver.cs" />
+    <Compile Include="Configuration\IAmendmentConfiguration.cs" />
+    <Compile Include="Configuration\ICodeCoverageConfiguration.cs" />
+    <Compile Include="Configuration\IHaystackConfiguration.cs" />
+    <Compile Include="Configuration\IInterceptionConfiguration.cs" />
+    <Compile Include="Configuration\InterceptionConfiguration.cs" />
+    <Compile Include="Configuration\IRunnerConfiguration.cs" />
+    <Compile Include="Configuration\ISourceControlConfiguration.cs" />
+    <Compile Include="Configuration\IStaticAnalysisConfiguration.cs" />
+    <Compile Include="Configuration\RunnerConfiguration.cs" />
+    <Compile Include="Configuration\SourceControlConfiguration.cs" />
+    <Compile Include="Configuration\StaticAnalysisConfiguration.cs" />
+    <Compile Include="HaystackInitializer.cs" />
+    <Compile Include="HaystackRunner.cs" />
+    <Compile Include="IStaticAnalysis.cs" />
+    <Compile Include="MethodCallTraceContext.cs" />
+    <Compile Include="MethodCallTraceProvider.cs" />
+    <Compile Include="MsBuildRunner.cs" />
+    <Compile Include="ObjectModel\IndexedObject.cs" />
+    <Compile Include="ObjectModel\MethodCall.cs" />
+    <Compile Include="ObjectModel\MethodCallThreadTrace.cs" />
+    <Compile Include="ObjectModel\MethodCallTrace.cs" />
+    <Compile Include="ObjectModel\MethodParameter.cs" />
+    <Compile Include="ObjectModel\ObjectInstance.cs" />
+    <Compile Include="ObjectModel\ObjectType.cs" />
+    <Compile Include="ObjectModel\ParameterModifier.cs" />
+    <Compile Include="ObjectModel\PropertyType.cs" />
+    <Compile Include="ObjectModel\Value.cs" />
+    <Compile Include="ProcessRunner.cs" />
+    <Compile Include="ProcessStartInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SourceControl\ILineChange.cs" />
+    <Compile Include="SourceControl\ILineRange.cs" />
+    <Compile Include="SourceControl\IPartialFile.cs" />
+    <Compile Include="SourceControl\IRevision.cs" />
+    <Compile Include="SourceControl\ISourceControlProvider.cs" />
+    <Compile Include="SourceControl\ISourceControlSelector.cs" />
+    <Compile Include="SourceControl\LineChange.cs" />
+    <Compile Include="SourceControl\LineRange.cs" />
+    <Compile Include="SourceControl\PartialFile.cs" />
+    <Compile Include="SourceControl\Revision.cs" />
+    <Compile Include="SourceControl\SourceControlProviderAttribute.cs" />
+    <Compile Include="StaticAnalysisOutput.cs" />
+    <Compile Include="TestIntegration\ICleanUpTestMethod.cs" />
+    <Compile Include="TestIntegration\ICleanUpTestSuite.cs" />
+    <Compile Include="TestIntegration\IInitializeTestFramework.cs" />
+    <Compile Include="TestIntegration\IInitializeTestMethod.cs" />
+    <Compile Include="TestIntegration\IInitializeTestSuite.cs" />
+    <Compile Include="TestIntegration\TestIntegrationRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Amendments\StrongNameSetup.msbuild" />
+    <None Include="execute_process.msbuild" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

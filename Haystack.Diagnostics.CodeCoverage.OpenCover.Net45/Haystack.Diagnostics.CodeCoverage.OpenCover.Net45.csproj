@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99709CEA-FE34-4E63-9E24-B5C361699E12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Haystack.Diagnostics.CodeCoverage.OpenCover</RootNamespace>
+    <AssemblyName>Haystack.Diagnostics.CodeCoverage.OpenCover</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Haystack\net45\CodeCoverage\OpenCover\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\b05e9f27-1453-4157-baee-a3d45f83c3cb</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Haystack\net45\CodeCoverage\OpenCover\</OutputPath>
+    <BaseIntermediateOutputPath>..\obj\10abb20a-e053-4275-b7ea-214e798f6447</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Haystack.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OpenCoverCoverage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\log4net.config">
+      <Link>OpenCover\log4net.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\opencover.4.6.166\tools\OpenCover.Console.exe.config">
+      <Link>OpenCover\OpenCover.Console.exe.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\Autofac.Configuration.dll">
+      <Link>OpenCover\Autofac.Configuration.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\Autofac.dll">
+      <Link>OpenCover\Autofac.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\Gendarme.Framework.dll">
+      <Link>OpenCover\Gendarme.Framework.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\Gendarme.Rules.Maintainability.dll">
+      <Link>OpenCover\Gendarme.Rules.Maintainability.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\log4net.dll">
+      <Link>OpenCover\log4net.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\Mono.Cecil.dll">
+      <Link>OpenCover\Mono.Cecil.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\Mono.Cecil.Mdb.dll">
+      <Link>OpenCover\Mono.Cecil.Mdb.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\Mono.Cecil.Pdb.dll">
+      <Link>OpenCover\Mono.Cecil.Pdb.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\OpenCover.Console.exe">
+      <Link>OpenCover\OpenCover.Console.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\OpenCover.Console.pdb">
+      <Link>OpenCover\OpenCover.Console.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\OpenCover.Extensions.dll">
+      <Link>OpenCover\OpenCover.Extensions.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\OpenCover.Extensions.pdb">
+      <Link>OpenCover\OpenCover.Extensions.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\OpenCover.Framework.dll">
+      <Link>OpenCover\OpenCover.Framework.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\OpenCover.Framework.pdb">
+      <Link>OpenCover\OpenCover.Framework.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\x64\OpenCover.Profiler.dll">
+      <Link>OpenCover\x64\OpenCover.Profiler.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\opencover.4.6.166\tools\x86\OpenCover.Profiler.dll">
+      <Link>OpenCover\x86\OpenCover.Profiler.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ICSharpCode.NRefactory.CSharp.dll">
+      <Link>ReportGenerator\ICSharpCode.NRefactory.CSharp.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ICSharpCode.NRefactory.dll">
+      <Link>ReportGenerator\ICSharpCode.NRefactory.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.exe">
+      <Link>ReportGenerator\ReportGenerator.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.Reporting.dll">
+      <Link>ReportGenerator\ReportGenerator.Reporting.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.Reporting.XML">
+      <Link>ReportGenerator\ReportGenerator.Reporting.XML</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\packages\ReportGenerator.2.3.5.0\tools\ReportGenerator.XML">
+      <Link>ReportGenerator\ReportGenerator.XML</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

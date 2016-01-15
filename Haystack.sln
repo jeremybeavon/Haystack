@@ -3,55 +3,55 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics", "Haystack.Diagnostics\Haystack.Diagnostics.csproj", "{8F094168-2764-495B-AF6E-9C135AF04CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics", "Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj", "{8F094168-2764-495B-AF6E-9C135AF04CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Castle.Core", "Haystack.Interception.Castle.Core\Haystack.Interception.Castle.Core.csproj", "{F7FF30D3-AA8C-4DF9-AA03-B39B5A63A11B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Castle.Core.Net45", "Haystack.Diagnostics.Interception.Castle.Core.Net45\Haystack.Diagnostics.Interception.Castle.Core.Net45.csproj", "{F7FF30D3-AA8C-4DF9-AA03-B39B5A63A11B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interception", "Interception", "{87B13A0D-F857-4925-B05C-BE5D4D1D297C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_2_1_505", "Haystack.Interception.Unity_2_1_505\Haystack.Interception.Unity_2_1_505.csproj", "{94A29685-73D8-43A4-9EBD-50805E83622C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_2_1_505.Net45", "Haystack.Diagnostics.Interception.Unity_2_1_505.Net45\Haystack.Diagnostics.Interception.Unity_2_1_505.Net45.csproj", "{94A29685-73D8-43A4-9EBD-50805E83622C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_2_1_505_2", "Haystack.Interception.Unity_2_1_505_2\Haystack.Interception.Unity_2_1_505_2.csproj", "{BE57247C-C2B9-4AF5-B2D7-B9072A3EF70F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45", "Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Net45.csproj", "{BE57247C-C2B9-4AF5-B2D7-B9072A3EF70F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_3_0_1304", "Haystack.Interception.Unity_3_0_1304\Haystack.Interception.Unity_3_0_1304.csproj", "{41939F1E-F9DE-442C-BCD1-1A75C8E864A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45", "Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45\Haystack.Diagnostics.Interception.Unity_3_0_1304.Net45.csproj", "{41939F1E-F9DE-442C-BCD1-1A75C8E864A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_3_5_1304", "Haystack.Interception.Unity_3_5_1304\Haystack.Interception.Unity_3_5_1304.csproj", "{B48B9501-360E-4DA9-BF47-A2A7AD0D8448}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_3_5_1304.Net45", "Haystack.Diagnostics.Interception.Unity_3_5_1304.Net45\Haystack.Diagnostics.Interception.Unity_3_5_1304.Net45.csproj", "{B48B9501-360E-4DA9-BF47-A2A7AD0D8448}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_4_0_1", "Haystack.Interception.Unity_4_0_1\Haystack.Interception.Unity_4_0_1.csproj", "{DA39FC2D-747E-46F6-A16E-5F279C30CE42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_4_0_1.Net45", "Haystack.Diagnostics.Interception.Unity_4_0_1.Net45\Haystack.Diagnostics.Interception.Unity_4_0_1.Net45.csproj", "{DA39FC2D-747E-46F6-A16E-5F279C30CE42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runner", "Runner", "{F960922A-513D-4931-B94D-1AC20AD530D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner", "Haystack.Runner\Haystack.Runner.csproj", "{C2BF20B9-50FA-4EF9-B014-D825039D3018}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.Net45", "Haystack.Runner.Net45\Haystack.Runner.Net45.csproj", "{C2BF20B9-50FA-4EF9-B014-D825039D3018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_2", "Haystack.Runner.NUnit_2_6_2\Haystack.Runner.NUnit_2_6_2.csproj", "{3C85EB48-E6D9-4DF4-8C83-4F95F44B586B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_2.Net45", "Haystack.Runner.NUnit_2_6_2.Net45\Haystack.Runner.NUnit_2_6_2.Net45.csproj", "{3C85EB48-E6D9-4DF4-8C83-4F95F44B586B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_3", "Haystack.Runner.NUnit_2_6_3\Haystack.Runner.NUnit_2_6_3.csproj", "{D4100CE8-E803-4EF3-BD0B-86C8ABECE9F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_3.Net45", "Haystack.Runner.NUnit_2_6_3.Net45\Haystack.Runner.NUnit_2_6_3.Net45.csproj", "{D4100CE8-E803-4EF3-BD0B-86C8ABECE9F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_4", "Haystack.Runner.NUnit_2_6_4\Haystack.Runner.NUnit_2_6_4.csproj", "{BCCA2D90-FC1C-4BC8-887D-16BCEE27AC27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_4.Net45", "Haystack.Runner.NUnit_2_6_4.Net45\Haystack.Runner.NUnit_2_6_4.Net45.csproj", "{BCCA2D90-FC1C-4BC8-887D-16BCEE27AC27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_1", "Haystack.Runner.NUnit_2_6_1\Haystack.Runner.NUnit_2_6_1.csproj", "{4D5CFFA8-C4BC-451E-82B9-47AD4647400D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_1.Net45", "Haystack.Runner.NUnit_2_6_1.Net45\Haystack.Runner.NUnit_2_6_1.Net45.csproj", "{4D5CFFA8-C4BC-451E-82B9-47AD4647400D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_0", "Haystack.Runner.NUnit_3_0_0\Haystack.Runner.NUnit_3_0_0.csproj", "{36FF2646-7A6D-4436-A76A-7E3618DEA2AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_0.Net45", "Haystack.Runner.NUnit_3_0_0.Net45\Haystack.Runner.NUnit_3_0_0.Net45.csproj", "{36FF2646-7A6D-4436-A76A-7E3618DEA2AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_1", "Haystack.Runner.NUnit_3_0_1\Haystack.Runner.NUnit_3_0_1.csproj", "{9B69D2BF-F18D-4FA4-AEB0-E245BB26C2A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_1.Net45", "Haystack.Runner.NUnit_3_0_1.Net45\Haystack.Runner.NUnit_3_0_1.Net45.csproj", "{9B69D2BF-F18D-4FA4-AEB0-E245BB26C2A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interception", "Interception", "{157E85A4-36D9-4796-9334-77DB19C3C084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Castle.Core.Tests", "Haystack.Interception.Castle.Core.Tests\Haystack.Interception.Castle.Core.Tests.csproj", "{318A1BD6-2BEE-47CB-9357-ED99F8954FEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Castle.Core.Tests.Net45", "Haystack.Diagnostics.Interception.Castle.Core.Tests.Net45\Haystack.Diagnostics.Interception.Castle.Core.Tests.Net45.csproj", "{318A1BD6-2BEE-47CB-9357-ED99F8954FEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_2_1_505.Tests", "Haystack.Interception.Unity_2_1_505.Tests\Haystack.Interception.Unity_2_1_505.Tests.csproj", "{0196165C-EFD0-4431-B9E7-0A491F6DC478}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_2_1_505.Tests.Net45", "Haystack.Diagnostics.Interception.Unity_2_1_505.Tests.Net45\Haystack.Diagnostics.Interception.Unity_2_1_505.Tests.Net45.csproj", "{0196165C-EFD0-4431-B9E7-0A491F6DC478}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_2_1_505_2.Tests", "Haystack.Interception.Unity_2_1_505_2.Tests\Haystack.Interception.Unity_2_1_505_2.Tests.csproj", "{519AAF4E-B646-4747-AE06-F00439E353F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_2_1_505_2.Tests.Net45", "Haystack.Diagnostics.Interception.Unity_2_1_505_2.Tests.Net45\Haystack.Diagnostics.Interception.Unity_2_1_505_2.Tests.Net45.csproj", "{519AAF4E-B646-4747-AE06-F00439E353F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_3_0_1304.Tests", "Haystack.Interception.Unity_3_0_1304.Tests\Haystack.Interception.Unity_3_0_1304.Tests.csproj", "{194FA15C-D996-4F63-B577-DE3C4E78EEF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_3_0_1304.Tests.Net45", "Haystack.Diagnostics.Interception.Unity_3_0_1304.Tests.Net45\Haystack.Diagnostics.Interception.Unity_3_0_1304.Tests.Net45.csproj", "{194FA15C-D996-4F63-B577-DE3C4E78EEF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_3_5_1304.Tests", "Haystack.Interception.Unity_3_5_1304.Tests\Haystack.Interception.Unity_3_5_1304.Tests.csproj", "{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_3_5_1304.Tests.Net45", "Haystack.Diagnostics.Interception.Unity_3_5_1304.Tests.Net45\Haystack.Diagnostics.Interception.Unity_3_5_1304.Tests.Net45.csproj", "{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Unity_4_0_1.Tests", "Haystack.Interception.Unity_4_0_1.Tests\Haystack.Interception.Unity_4_0_1.Tests.csproj", "{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Unity_4_0_1.Tests.Net45", "Haystack.Diagnostics.Interception.Unity_4_0_1.Tests.Net45\Haystack.Diagnostics.Interception.Unity_4_0_1.Tests.Net45.csproj", "{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Tests", "Haystack.Interception.Tests\Haystack.Interception.Tests.csproj", "{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Tests.Net45", "Haystack.Diagnostics.Interception.Tests.Net45\Haystack.Diagnostics.Interception.Tests.Net45.csproj", "{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaticAnalysis", "StaticAnalysis", "{D8B70B77-EC66-4DB5-87B2-9454B699B579}"
 EndProject
@@ -59,73 +59,69 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceControl", "SourceCont
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCoverage", "CodeCoverage", "{401516F1-0BE7-4EA4-9AC8-00EF979FE187}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analysis", "Haystack.Analysis\Haystack.Analysis.csproj", "{4A7B0200-7A29-44D2-85CE-DE48FCB47D6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Net45", "Haystack.Diagnostics.Amendments.Net45\Haystack.Diagnostics.Amendments.Net45.csproj", "{FF76E013-1F51-4972-95A7-2CBB1CC27269}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analysis.Tests", "Haystack.Analysis.Tests\Haystack.Analysis.Tests.csproj", "{F9A8B021-5E78-42B1-A1D7-D89330786721}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45", "Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45\Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45.csproj", "{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments", "Haystack.Amendments\Haystack.Amendments.csproj", "{FF76E013-1F51-4972-95A7-2CBB1CC27269}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.FileContent.Net45", "Haystack.Diagnostics.StaticAnalysis.FileContent.Net45\Haystack.Diagnostics.StaticAnalysis.FileContent.Net45.csproj", "{D4DDB95D-F957-479B-A6B2-970E943FC944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.FileSystem", "Haystack.StaticAnalysis.FileSystem\Haystack.StaticAnalysis.FileSystem.csproj", "{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45", "Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Net45.csproj", "{837BD2F8-9525-4F73-9EB4-A821684BFF11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.FileContent", "Haystack.StaticAnalysis.FileContent\Haystack.StaticAnalysis.FileContent.csproj", "{D4DDB95D-F957-479B-A6B2-970E943FC944}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.Reflection.Net45", "Haystack.Diagnostics.StaticAnalysis.Reflection.Net45\Haystack.Diagnostics.StaticAnalysis.Reflection.Net45.csproj", "{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.EnvironmentVariables", "Haystack.StaticAnalysis.EnvironmentVariables\Haystack.StaticAnalysis.EnvironmentVariables.csproj", "{837BD2F8-9525-4F73-9EB4-A821684BFF11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.Net45", "Haystack.Diagnostics.Amendments.Tests.Net45\Haystack.Diagnostics.Amendments.Tests.Net45.csproj", "{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.Reflection", "Haystack.StaticAnalysis.Reflection\Haystack.StaticAnalysis.Reflection.csproj", "{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments.Tests", "Haystack.Amendments.Tests\Haystack.Amendments.Tests.csproj", "{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Tests", "Haystack.Diagnostics.Tests\Haystack.Diagnostics.Tests.csproj", "{2DD4DBED-891F-465D-855E-B5ABFCD24603}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Tests.Net45", "Haystack.Diagnostics.Tests.Net45\Haystack.Diagnostics.Tests.Net45.csproj", "{2DD4DBED-891F-465D-855E-B5ABFCD24603}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Amendments", "Amendments", "{DBAF8655-4B80-44B5-AFA4-C4959CE016FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Castle.Windsor_3_3_0", "Haystack.Interception.Castle.Windsor_3_3_0\Haystack.Interception.Castle.Windsor_3_3_0.csproj", "{007FD10A-BE64-4AFD-A500-6E3724253171}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45", "Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45\Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Net45.csproj", "{007FD10A-BE64-4AFD-A500-6E3724253171}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Autofac_3_5_2", "Haystack.Interception.Autofac_3_5_2\Haystack.Interception.Autofac_3_5_2.csproj", "{AFDB6143-A0C6-473E-911B-A2718C8F7D3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45", "Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45\Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45.csproj", "{AFDB6143-A0C6-473E-911B-A2718C8F7D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Autofac_3_5_2.Tests", "Haystack.Interception.Autofac_3_5_2.Tests\Haystack.Interception.Autofac_3_5_2.Tests.csproj", "{6A1BD004-65CE-404B-8D30-3CF14AF9054E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Autofac_3_5_2.Tests.Net45", "Haystack.Diagnostics.Interception.Autofac_3_5_2.Tests.Net45\Haystack.Diagnostics.Interception.Autofac_3_5_2.Tests.Net45.csproj", "{6A1BD004-65CE-404B-8D30-3CF14AF9054E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Ninject_3_2_0", "Haystack.Interception.Ninject_3_2_0\Haystack.Interception.Ninject_3_2_0.csproj", "{796F4F40-6C51-4F61-9BA9-ED4B42A9E0AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Ninject_3_2_0.Net45", "Haystack.Diagnostics.Interception.Ninject_3_2_0.Net45\Haystack.Diagnostics.Interception.Ninject_3_2_0.Net45.csproj", "{796F4F40-6C51-4F61-9BA9-ED4B42A9E0AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Ninject_3_2_0.Tests", "Haystack.Interception.Ninject_3_2_0.Tests\Haystack.Interception.Ninject_3_2_0.Tests.csproj", "{67DDC6A6-1C2E-48A1-A8E3-3F6C96082397}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Ninject_3_2_0.Tests.Net45", "Haystack.Diagnostics.Interception.Ninject_3_2_0.Tests.Net45\Haystack.Diagnostics.Interception.Ninject_3_2_0.Tests.Net45.csproj", "{67DDC6A6-1C2E-48A1-A8E3-3F6C96082397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.StructureMap_4_0_1_318", "Haystack.Interception.StructureMap_4_0_1_318\Haystack.Interception.StructureMap_4_0_1_318.csproj", "{090FACCC-1715-44E4-947D-200099767A8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45", "Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Net45.csproj", "{090FACCC-1715-44E4-947D-200099767A8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.StructureMap_4_0_1_318.Tests", "Haystack.Interception.StructureMap_4_0_1_318.Tests\Haystack.Interception.StructureMap_4_0_1_318.Tests.csproj", "{58F97F8F-7E6C-4441-A126-0B709D2B6635}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Tests.Net45", "Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Tests.Net45\Haystack.Diagnostics.Interception.StructureMap_4_0_1_318.Tests.Net45.csproj", "{58F97F8F-7E6C-4441-A126-0B709D2B6635}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Amendments", "Amendments", "{D2E56CAE-A7DF-45FE-B5BF-81608E1696D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analysis", "Analysis", "{E2BA4CAD-9914-4CC2-9273-F90C44238218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Interception.Castle.Windsor_3_3_0.Tests", "Haystack.Interception.Castle.Windsor_3_3_0.Tests\Haystack.Interception.Castle.Windsor_3_3_0.Tests.csproj", "{9ABBDA86-4D28-4E5D-9A2B-8C26DDB1DA0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Tests.Net45", "Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Tests.Net45\Haystack.Diagnostics.Interception.Castle.Windsor_3_3_0.Tests.Net45.csproj", "{9ABBDA86-4D28-4E5D-9A2B-8C26DDB1DA0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments.Tests.TestTarget", "Haystack.Amendments.Tests.TestTarget\Haystack.Amendments.Tests.TestTarget.csproj", "{E8E6BBD9-90DB-4B75-AAD7-48E54C061A9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45", "Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45\Haystack.Diagnostics.Amendments.Tests.TestTarget.Net45.csproj", "{E8E6BBD9-90DB-4B75-AAD7-48E54C061A9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments.Tests.Amendments", "Haystack.Amendments.Tests.Amendments\Haystack.Amendments.Tests.Amendments.csproj", "{D8E9C6C2-E585-44FB-BBF6-05187682AE67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.Diagnostics.Net45", "Haystack.Diagnostics.Amendments.Tests.Amendments.Net45\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45.csproj", "{D8E9C6C2-E585-44FB-BBF6-05187682AE67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments.Tests.TestRunner", "Haystack.Amendments.Tests.TestRunner\Haystack.Amendments.Tests.TestRunner.csproj", "{3BDAC78A-2092-42E0-A22D-7340894884AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.TestRunner.Net45", "Haystack.Diagnostics.Amendments.Tests.TestRunner.Net45\Haystack.Diagnostics.Amendments.Tests.TestRunner.Net45.csproj", "{3BDAC78A-2092-42E0-A22D-7340894884AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments.Tests.StrongNamedTestTarget", "Haystack.Amendments.Tests.StrongNamedTestTarget\Haystack.Amendments.Tests.StrongNamedTestTarget.csproj", "{1D923B6E-6301-4BAA-8F0C-CD775ADA4135}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.Net45", "Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.Net45\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestTarget.Net45.csproj", "{1D923B6E-6301-4BAA-8F0C-CD775ADA4135}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Amendments.Tests.StrongNamedTestRunner", "Haystack.Amendments.Tests.StrongNamedTestRunner\Haystack.Amendments.Tests.StrongNamedTestRunner.csproj", "{C77A196C-A800-4225-A58C-B5D8A99E8D3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner.Net45", "Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner.Net45\Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner.Net45.csproj", "{C77A196C-A800-4225-A58C-B5D8A99E8D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.CodeCoverage.OpenCover", "Haystack.CodeCoverage.OpenCover\Haystack.CodeCoverage.OpenCover.csproj", "{99709CEA-FE34-4E63-9E24-B5C361699E12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.CodeCoverage.OpenCover.Net45", "Haystack.Diagnostics.CodeCoverage.OpenCover.Net45\Haystack.Diagnostics.CodeCoverage.OpenCover.Net45.csproj", "{99709CEA-FE34-4E63-9E24-B5C361699E12}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runner", "Runner", "{23DEEA47-538C-4AB3-986B-785C218622DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceControl", "SourceControl", "{BC5CA7B6-E8A5-43FC-8D17-93902AA784E7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaticAnalysis", "StaticAnalysis", "{6861720B-3E38-462F-8BEE-33412006E469}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics.StaticAnalysis", "Diagnostics.StaticAnalysis", "{6861720B-3E38-462F-8BEE-33412006E469}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analysis", "Analysis", "{0C774BAD-6A1D-4030-B18A-1E2764A62DCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.SourceControl.Git", "Haystack.SourceControl.Git\Haystack.SourceControl.Git.csproj", "{1956BEA6-BE0B-4AE2-AB0E-59FBBE19619C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analysis.SourceControl.Git", "Haystack.Analysis.SourceControl.Git\Haystack.Analysis.SourceControl.Git.csproj", "{1956BEA6-BE0B-4AE2-AB0E-59FBBE19619C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Bootstrap", "Haystack.Bootstrap\Haystack.Bootstrap.csproj", "{C78E4BD0-5B9E-44A9-8DAF-4BE0731323FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Bootstrap.Net45", "Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj", "{C78E4BD0-5B9E-44A9-8DAF-4BE0731323FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{971DC597-B85F-48FD-A55F-F2915E4B23DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Core", "Haystack.Core\Haystack.Core.csproj", "{17D9BBD3-9567-45C7-84C1-3BA0A512F488}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Core.Net45", "Haystack.Core.Net45\Haystack.Core.Net45.csproj", "{17D9BBD3-9567-45C7-84C1-3BA0A512F488}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{A6EE4FA3-5112-42B0-8323-07474D0EB196}"
 EndProject
@@ -135,11 +131,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleProperty", "SimplePro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.PostBuildScript", "Haystack.Examples.PostBuildScript\Haystack.Examples.PostBuildScript.csproj", "{1766454C-3482-4010-86F8-C611AAA9B3D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Amendments.SimpleProperty", "Haystack.Examples.Amendments.SimpleProperty\Haystack.Examples.Amendments.SimpleProperty.csproj", "{F37356DB-39D5-48E2-AC5F-14235FD749B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Amendments.SimpleProperty.Net45", "Haystack.Examples.Amendments.SimpleProperty.Net45\Haystack.Examples.Amendments.SimpleProperty.Net45.csproj", "{F37356DB-39D5-48E2-AC5F-14235FD749B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Amendments.SimpleProperty.Tests.Passing", "Haystack.Examples.Amendments.SimpleProperty.Tests.Passing\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.csproj", "{8E5CC1D6-2696-4492-B77A-AFDF53850E35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45", "Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45.csproj", "{8E5CC1D6-2696-4492-B77A-AFDF53850E35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Amendments.SimpleProperty.Tests.Failing", "Haystack.Examples.Amendments.SimpleProperty.Tests.Failing\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.csproj", "{960ED9FD-0DD6-45DB-9987-43BD7FC6CD32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45", "Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45.csproj", "{960ED9FD-0DD6-45DB-9987-43BD7FC6CD32}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interception", "Interception", "{F77CEFD7-9231-495E-9CBA-7242F882B7C8}"
 EndProject
@@ -149,21 +145,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceControl", "SourceCont
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaticAnalysis", "StaticAnalysis", "{82FA6F4B-4103-45B8-AD50-BFA1C04AB622}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_1.Tests", "Haystack.Runner.NUnit_2_6_1.Tests\Haystack.Runner.NUnit_2_6_1.Tests.csproj", "{DCE8BE9F-39C9-4C9D-82DA-EF5CC547F122}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_1.Tests.Net45", "Haystack.Runner.NUnit_2_6_1.Tests.Net45\Haystack.Runner.NUnit_2_6_1.Tests.Net45.csproj", "{DCE8BE9F-39C9-4C9D-82DA-EF5CC547F122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit.Tests.TestIntegrations", "Haystack.Runner.NUnit.Tests.TestIntegrations\Haystack.Runner.NUnit.Tests.TestIntegrations.csproj", "{A097A417-6025-4D6C-9F16-287150FC243D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit.Tests.TestIntegrations.Net45", "Haystack.Runner.NUnit.Tests.TestIntegrations.Net45\Haystack.Runner.NUnit.Tests.TestIntegrations.Net45.csproj", "{A097A417-6025-4D6C-9F16-287150FC243D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.TestRunner", "Haystack.Runner.TestRunner\Haystack.Runner.TestRunner.csproj", "{BD9398FA-033B-4FE0-90FE-E787524E1D6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.TestRunner.Net45", "Haystack.Runner.TestRunner.Net45\Haystack.Runner.TestRunner.Net45.csproj", "{BD9398FA-033B-4FE0-90FE-E787524E1D6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_2.Tests", "Haystack.Runner.NUnit_2_6_2.Tests\Haystack.Runner.NUnit_2_6_2.Tests.csproj", "{B4E857A7-ECF5-426D-90EA-0AB6F2E8CC11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_2.Tests.Net45", "Haystack.Runner.NUnit_2_6_2.Tests.Net45\Haystack.Runner.NUnit_2_6_2.Tests.Net45.csproj", "{B4E857A7-ECF5-426D-90EA-0AB6F2E8CC11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_3.Tests", "Haystack.Runner.NUnit_2_6_3.Tests\Haystack.Runner.NUnit_2_6_3.Tests.csproj", "{BD366F3A-0E33-4DF4-866F-A037EF78A95B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_3.Tests.Net45", "Haystack.Runner.NUnit_2_6_3.Tests.Net45\Haystack.Runner.NUnit_2_6_3.Tests.Net45.csproj", "{BD366F3A-0E33-4DF4-866F-A037EF78A95B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_4.Tests", "Haystack.Runner.NUnit_2_6_4.Tests\Haystack.Runner.NUnit_2_6_4.Tests.csproj", "{4BA277B3-BEE3-4C01-ACA0-DF9AF68991AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_2_6_4.Tests.Net45", "Haystack.Runner.NUnit_2_6_4.Tests.Net45\Haystack.Runner.NUnit_2_6_4.Tests.Net45.csproj", "{4BA277B3-BEE3-4C01-ACA0-DF9AF68991AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_0.Tests", "Haystack.Runner.NUnit_3_0_0.Tests\Haystack.Runner.NUnit_3_0_0.Tests.csproj", "{52BD8515-8121-4BED-917E-F9F86288418B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_0.Tests.Net45", "Haystack.Runner.NUnit_3_0_0.Tests.Net45\Haystack.Runner.NUnit_3_0_0.Tests.Net45.csproj", "{52BD8515-8121-4BED-917E-F9F86288418B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_1.Tests", "Haystack.Runner.NUnit_3_0_1.Tests\Haystack.Runner.NUnit_3_0_1.Tests.csproj", "{B05EF27C-C178-4491-BEC8-3E9C07D16455}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_1.Tests.Net45", "Haystack.Runner.NUnit_3_0_1.Tests.Net45\Haystack.Runner.NUnit_3_0_1.Tests.Net45.csproj", "{B05EF27C-C178-4491-BEC8-3E9C07D16455}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{ADAFDBF0-4464-492A-9FE5-29B1C05E0454}"
 EndProject
@@ -211,85 +207,85 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple", "Simple", "{750283
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple", "Simple", "{162BFCF1-C550-4DBB-B5FF-299BAA261F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple", "Haystack.Examples.Interception.Autofac_3_5_2.Simple\Haystack.Examples.Interception.Autofac_3_5_2.Simple.csproj", "{9454D03D-DF97-4FFD-B329-67A024582C59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45", "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45.csproj", "{9454D03D-DF97-4FFD-B329-67A024582C59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing", "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing.csproj", "{A664DFBE-8BB6-44B3-9F75-91FB4ED3DBE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing.Net45.csproj", "{A664DFBE-8BB6-44B3-9F75-91FB4ED3DBE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing", "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing.csproj", "{99FDFF94-3EB9-419E-93CC-F7B30D65FBC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing.Net45.csproj", "{99FDFF94-3EB9-419E-93CC-F7B30D65FBC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.csproj", "{7D543861-4844-4F4F-A857-1AAC0A98EE1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45.csproj", "{7D543861-4844-4F4F-A857-1AAC0A98EE1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing.csproj", "{9777F3F4-CC4A-4DE1-8359-B35DB3565F84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing.Net45.csproj", "{9777F3F4-CC4A-4DE1-8359-B35DB3565F84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing.csproj", "{096835ED-9A7F-4B7A-8833-7712844943B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing.Net45.csproj", "{096835ED-9A7F-4B7A-8833-7712844943B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple", "Haystack.Examples.Interception.Ninject_3_2_0.Simple\Haystack.Examples.Interception.Ninject_3_2_0.Simple.csproj", "{BCF8228A-3D26-4B11-9823-31822A1E3B69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45", "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45.csproj", "{BCF8228A-3D26-4B11-9823-31822A1E3B69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing", "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing.csproj", "{B80AFD60-7C93-4873-AEB4-DF14E71676F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing.Net45.csproj", "{B80AFD60-7C93-4873-AEB4-DF14E71676F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing", "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing.csproj", "{E02F71FA-876D-4261-B87C-7D40DCE8A614}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing.Net45.csproj", "{E02F71FA-876D-4261-B87C-7D40DCE8A614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.csproj", "{478911F6-81DC-46DD-B18F-A41D269B186D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Net45", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Net45.csproj", "{478911F6-81DC-46DD-B18F-A41D269B186D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing.csproj", "{AE8E161E-CC1D-4F25-9EC9-C5C55FB321D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing.Net45.csproj", "{AE8E161E-CC1D-4F25-9EC9-C5C55FB321D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing.csproj", "{677F3077-D0F1-406C-9451-9CE8B5E94301}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing.Net45.csproj", "{677F3077-D0F1-406C-9451-9CE8B5E94301}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple", "Haystack.Examples.Interception.Unity_2_1_505.Simple\Haystack.Examples.Interception.Unity_2_1_505.Simple.csproj", "{F6DD50A0-40EE-4AFB-920B-DA5542DF4DCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple.Net45", "Haystack.Examples.Interception.Unity_2_1_505.Simple.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Net45.csproj", "{F6DD50A0-40EE-4AFB-920B-DA5542DF4DCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing", "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing.csproj", "{C3DC3D36-38F4-48B6-A9CF-54A59A710015}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing.Net45.csproj", "{C3DC3D36-38F4-48B6-A9CF-54A59A710015}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing", "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing.csproj", "{8995A977-BBA3-40A9-B875-56A8D2B33DC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing.Net45.csproj", "{8995A977-BBA3-40A9-B875-56A8D2B33DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.csproj", "{27A0B503-CE9B-4C9C-9277-50E39E1D6A60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45.csproj", "{27A0B503-CE9B-4C9C-9277-50E39E1D6A60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing.csproj", "{7525DB1D-7FC5-4EB7-B05D-DC6987CC8162}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing.Net45.csproj", "{7525DB1D-7FC5-4EB7-B05D-DC6987CC8162}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing.csproj", "{0824B579-4701-4671-800B-8FF06E9FC39E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing.Net45.csproj", "{0824B579-4701-4671-800B-8FF06E9FC39E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple", "Haystack.Examples.Interception.Unity_3_0_1304.Simple\Haystack.Examples.Interception.Unity_3_0_1304.Simple.csproj", "{FDAF9374-E51F-4389-854A-F486218D21D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45", "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45.csproj", "{FDAF9374-E51F-4389-854A-F486218D21D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing", "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing.csproj", "{D0DA0B80-CA01-47D0-BE46-678C90292C59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing.Net45.csproj", "{D0DA0B80-CA01-47D0-BE46-678C90292C59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing", "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing.csproj", "{A853C80D-E307-4709-8E96-DFF50EC5E243}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing.Net45.csproj", "{A853C80D-E307-4709-8E96-DFF50EC5E243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple", "Haystack.Examples.Interception.Unity_3_5_1304.Simple\Haystack.Examples.Interception.Unity_3_5_1304.Simple.csproj", "{E8CB0807-BC05-4A06-AD09-4EBCE9D325A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Net45", "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Net45.csproj", "{E8CB0807-BC05-4A06-AD09-4EBCE9D325A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing", "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing.csproj", "{2B2007D5-491B-45B8-885D-F2BDA4883F10}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing.Net45.csproj", "{2B2007D5-491B-45B8-885D-F2BDA4883F10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing", "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing.csproj", "{7E0387BB-68CC-49AA-9BB6-5893F8D7F96F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing.Net45.csproj", "{7E0387BB-68CC-49AA-9BB6-5893F8D7F96F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple", "Haystack.Examples.Interception.Unity_4_0_1.Simple\Haystack.Examples.Interception.Unity_4_0_1.Simple.csproj", "{57343909-503E-431A-A6E4-018D28ED7746}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple.Net45", "Haystack.Examples.Interception.Unity_4_0_1.Simple.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Net45.csproj", "{57343909-503E-431A-A6E4-018D28ED7746}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing", "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing.csproj", "{B9E1B04C-B3A0-481A-A16C-C91588D30EA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing.Net45", "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing.Net45.csproj", "{B9E1B04C-B3A0-481A-A16C-C91588D30EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing", "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing.csproj", "{DA913B2E-2627-4B82-8A89-5C88868BCD97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing.Net45", "Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing.Net45.csproj", "{DA913B2E-2627-4B82-8A89-5C88868BCD97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup", "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup.csproj", "{6B200F3D-E52A-41D0-A758-1C1E120F940D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup.Net45", "Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup.Net45.csproj", "{6B200F3D-E52A-41D0-A758-1C1E120F940D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup.csproj", "{054678D4-5620-4AAA-AA4D-AE8793EF28AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup.Net45", "Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup.Net45.csproj", "{054678D4-5620-4AAA-AA4D-AE8793EF28AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup", "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup.csproj", "{1CA72FB1-0518-4AD0-AA1C-F9D4C2A32B96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup.Net45", "Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup.Net45.csproj", "{1CA72FB1-0518-4AD0-AA1C-F9D4C2A32B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup.csproj", "{5357F020-B335-48B1-AC0A-E1F901457F1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup.Net45", "Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup.Net45.csproj", "{5357F020-B335-48B1-AC0A-E1F901457F1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup", "Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup\Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup.csproj", "{DC70B484-3FA3-487A-A733-3ECD811D5215}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup.Net45", "Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup.Net45.csproj", "{DC70B484-3FA3-487A-A733-3ECD811D5215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup.csproj", "{3577DCC7-3CCE-4B03-B585-B46CA02210CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup.Net45", "Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup.Net45.csproj", "{3577DCC7-3CCE-4B03-B585-B46CA02210CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup", "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup.csproj", "{8D8F8E08-0A1E-4684-9ECF-DECE822D36A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup.Net45", "Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup.Net45.csproj", "{8D8F8E08-0A1E-4684-9ECF-DECE822D36A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup", "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup.csproj", "{9A4B7715-D6D6-4859-A11C-577CD37DAB98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup.Net45", "Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup.Net45.csproj", "{9A4B7715-D6D6-4859-A11C-577CD37DAB98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup", "Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup\Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup.csproj", "{C9A7555A-C4EF-4E36-88FB-90F73F47C75E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup.Net45", "Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup.Net45.csproj", "{C9A7555A-C4EF-4E36-88FB-90F73F47C75E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenCover", "OpenCover", "{CE8614C1-4DCF-4D5E-A048-08DB435B1B5D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple", "Simple", "{AABFBC2B-D87D-481D-B52D-1FD8F6ECC6FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing", "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing.csproj", "{5AEF7E2F-A8DF-45FD-87AF-FDAECA1CB096}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing.Net45", "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing.Net45\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing.Net45.csproj", "{5AEF7E2F-A8DF-45FD-87AF-FDAECA1CB096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing", "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing.csproj", "{2761604F-CA50-4F88-8960-DE53CA297820}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing.Net45", "Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing.Net45\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing.Net45.csproj", "{2761604F-CA50-4F88-8960-DE53CA297820}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnvironmentVariables", "EnvironmentVariables", "{64A18677-FE5F-4F74-B0EA-A33698C63512}"
 EndProject
@@ -303,13 +299,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileSystem", "FileSystem", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple", "Simple", "{C47E6DB8-9B64-40CA-9EDB-00F3C40806EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.EnvironmentVariables.Tests", "Haystack.StaticAnalysis.EnvironmentVariables.Tests\Haystack.StaticAnalysis.EnvironmentVariables.Tests.csproj", "{27752370-7385-4960-B6AC-BA1DC65C2EFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Tests.Net45", "Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Tests.Net45\Haystack.Diagnostics.StaticAnalysis.EnvironmentVariables.Tests.Net45.csproj", "{27752370-7385-4960-B6AC-BA1DC65C2EFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.FileContent.Tests", "Haystack.StaticAnalysis.FileContent.Tests\Haystack.StaticAnalysis.FileContent.Tests.csproj", "{BA345C12-19C2-413A-B7DD-F5917CF91BC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.FileContent.Tests.Net45", "Haystack.Diagnostics.StaticAnalysis.FileContent.Tests.Net45\Haystack.Diagnostics.StaticAnalysis.FileContent.Tests.Net45.csproj", "{BA345C12-19C2-413A-B7DD-F5917CF91BC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.StaticAnalysis.FileSystem.Tests", "Haystack.StaticAnalysis.FileSystem.Tests\Haystack.StaticAnalysis.FileSystem.Tests.csproj", "{EC9D26D3-5E30-41ED-8BC4-E5093D798354}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.FileSystem.Tests.Net45", "Haystack.Diagnostics.StaticAnalysis.FileSystem.Tests.Net45\Haystack.Diagnostics.StaticAnalysis.FileSystem.Tests.Net45.csproj", "{EC9D26D3-5E30-41ED-8BC4-E5093D798354}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit.TestRunner", "Haystack.Runner.NUnit.TestRunner\Haystack.Runner.NUnit.TestRunner.csproj", "{32E6A7DA-B5DF-47C6-A81F-DFFE29DAAAAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit.TestRunner.Net45", "Haystack.Runner.NUnit.TestRunner.Net45\Haystack.Runner.NUnit.TestRunner.Net45.csproj", "{32E6A7DA-B5DF-47C6-A81F-DFFE29DAAAAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_0.Initializer.Net45", "Haystack.Runner.NUnit_3_0_0.Initializer.Net45\Haystack.Runner.NUnit_3_0_0.Initializer.Net45.csproj", "{2CCADB46-51C7-48B8-A58D-1890DA7AD77D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_1.Initializer.Net45", "Haystack.Runner.NUnit_3_0_1.Initializer.Net45\Haystack.Runner.NUnit_3_0_1.Initializer.Net45.csproj", "{D9F08AAE-8749-4F4C-973A-4B89C40EC09C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analyzer", "Haystack.Analyzer\Haystack.Analyzer.csproj", "{0562E031-3587-4D9A-9EF8-E7FBA20AEC0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analyzer.Tests", "Haystack.Analyzer.Tests\Haystack.Analyzer.Tests.csproj", "{379A6747-BC49-4635-AD76-AEC31DBC9705}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit", "NUnit", "{31E3EA5C-B404-4772-8303-5A799D4136A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{84CF310C-3C75-44A0-930F-72EED7A50600}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net45", "net45", "{AD8D8687-DA62-4EF1-A040-4CE6F7DE36F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net45", "net45", "{3BE9A55A-693A-4AA0-8E1D-E1897A395A97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net45", "net45", "{63C8BA5A-EF00-45F4-AD42-119C74F37BBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net45", "net45", "{EB72044C-0E8D-47B0-8B98-37E42AFCBE14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{929090B6-CB8D-47FA-ACE8-2390CC03C4D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runner", "Runner", "{58C27876-1A7E-4F02-ACDE-64D6E59AE8C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -401,14 +421,6 @@ Global
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A7B0200-7A29-44D2-85CE-DE48FCB47D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A7B0200-7A29-44D2-85CE-DE48FCB47D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A7B0200-7A29-44D2-85CE-DE48FCB47D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A7B0200-7A29-44D2-85CE-DE48FCB47D6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9A8B021-5E78-42B1-A1D7-D89330786721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9A8B021-5E78-42B1-A1D7-D89330786721}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9A8B021-5E78-42B1-A1D7-D89330786721}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9A8B021-5E78-42B1-A1D7-D89330786721}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -721,25 +733,43 @@ Global
 		{32E6A7DA-B5DF-47C6-A81F-DFFE29DAAAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32E6A7DA-B5DF-47C6-A81F-DFFE29DAAAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32E6A7DA-B5DF-47C6-A81F-DFFE29DAAAAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCADB46-51C7-48B8-A58D-1890DA7AD77D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCADB46-51C7-48B8-A58D-1890DA7AD77D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCADB46-51C7-48B8-A58D-1890DA7AD77D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCADB46-51C7-48B8-A58D-1890DA7AD77D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9F08AAE-8749-4F4C-973A-4B89C40EC09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F08AAE-8749-4F4C-973A-4B89C40EC09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F08AAE-8749-4F4C-973A-4B89C40EC09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F08AAE-8749-4F4C-973A-4B89C40EC09C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0562E031-3587-4D9A-9EF8-E7FBA20AEC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0562E031-3587-4D9A-9EF8-E7FBA20AEC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0562E031-3587-4D9A-9EF8-E7FBA20AEC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0562E031-3587-4D9A-9EF8-E7FBA20AEC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379A6747-BC49-4635-AD76-AEC31DBC9705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379A6747-BC49-4635-AD76-AEC31DBC9705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379A6747-BC49-4635-AD76-AEC31DBC9705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379A6747-BC49-4635-AD76-AEC31DBC9705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{8F094168-2764-495B-AF6E-9C135AF04CDA} = {84CF310C-3C75-44A0-930F-72EED7A50600}
 		{F7FF30D3-AA8C-4DF9-AA03-B39B5A63A11B} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
+		{87B13A0D-F857-4925-B05C-BE5D4D1D297C} = {84CF310C-3C75-44A0-930F-72EED7A50600}
 		{94A29685-73D8-43A4-9EBD-50805E83622C} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{BE57247C-C2B9-4AF5-B2D7-B9072A3EF70F} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{41939F1E-F9DE-442C-BCD1-1A75C8E864A3} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{B48B9501-360E-4DA9-BF47-A2A7AD0D8448} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{DA39FC2D-747E-46F6-A16E-5F279C30CE42} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
-		{C2BF20B9-50FA-4EF9-B014-D825039D3018} = {F960922A-513D-4931-B94D-1AC20AD530D8}
-		{3C85EB48-E6D9-4DF4-8C83-4F95F44B586B} = {F960922A-513D-4931-B94D-1AC20AD530D8}
-		{D4100CE8-E803-4EF3-BD0B-86C8ABECE9F5} = {F960922A-513D-4931-B94D-1AC20AD530D8}
-		{BCCA2D90-FC1C-4BC8-887D-16BCEE27AC27} = {F960922A-513D-4931-B94D-1AC20AD530D8}
-		{4D5CFFA8-C4BC-451E-82B9-47AD4647400D} = {F960922A-513D-4931-B94D-1AC20AD530D8}
-		{36FF2646-7A6D-4436-A76A-7E3618DEA2AA} = {F960922A-513D-4931-B94D-1AC20AD530D8}
-		{9B69D2BF-F18D-4FA4-AEB0-E245BB26C2A1} = {F960922A-513D-4931-B94D-1AC20AD530D8}
-		{157E85A4-36D9-4796-9334-77DB19C3C084} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{C2BF20B9-50FA-4EF9-B014-D825039D3018} = {3BE9A55A-693A-4AA0-8E1D-E1897A395A97}
+		{3C85EB48-E6D9-4DF4-8C83-4F95F44B586B} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{D4100CE8-E803-4EF3-BD0B-86C8ABECE9F5} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{BCCA2D90-FC1C-4BC8-887D-16BCEE27AC27} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{4D5CFFA8-C4BC-451E-82B9-47AD4647400D} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{36FF2646-7A6D-4436-A76A-7E3618DEA2AA} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{9B69D2BF-F18D-4FA4-AEB0-E245BB26C2A1} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{157E85A4-36D9-4796-9334-77DB19C3C084} = {929090B6-CB8D-47FA-ACE8-2390CC03C4D4}
 		{318A1BD6-2BEE-47CB-9357-ED99F8954FEF} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{0196165C-EFD0-4431-B9E7-0A491F6DC478} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{519AAF4E-B646-4747-AE06-F00439E353F8} = {157E85A4-36D9-4796-9334-77DB19C3C084}
@@ -747,15 +777,17 @@ Global
 		{6FC45A7E-7A64-4A4C-9466-79B7FD8E218A} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{7DF5EC1F-0719-4CF9-95F9-9D29A48B9CC1} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A} = {157E85A4-36D9-4796-9334-77DB19C3C084}
-		{4A7B0200-7A29-44D2-85CE-DE48FCB47D6A} = {E2BA4CAD-9914-4CC2-9273-F90C44238218}
-		{F9A8B021-5E78-42B1-A1D7-D89330786721} = {0C774BAD-6A1D-4030-B18A-1E2764A62DCE}
+		{D8B70B77-EC66-4DB5-87B2-9454B699B579} = {84CF310C-3C75-44A0-930F-72EED7A50600}
+		{189AD125-963E-4E5A-B763-7F28E88856EE} = {E2BA4CAD-9914-4CC2-9273-F90C44238218}
+		{401516F1-0BE7-4EA4-9AC8-00EF979FE187} = {84CF310C-3C75-44A0-930F-72EED7A50600}
 		{FF76E013-1F51-4972-95A7-2CBB1CC27269} = {DBAF8655-4B80-44B5-AFA4-C4959CE016FB}
 		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
 		{D4DDB95D-F957-479B-A6B2-970E943FC944} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
 		{837BD2F8-9525-4F73-9EB4-A821684BFF11} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
 		{DC6B62E8-52A4-4559-BE44-2CA8E819E3B2} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
 		{2A260DA6-7A43-43F9-B488-E17E0C0DEDF3} = {D2E56CAE-A7DF-45FE-B5BF-81608E1696D8}
-		{2DD4DBED-891F-465D-855E-B5ABFCD24603} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{2DD4DBED-891F-465D-855E-B5ABFCD24603} = {EB72044C-0E8D-47B0-8B98-37E42AFCBE14}
+		{DBAF8655-4B80-44B5-AFA4-C4959CE016FB} = {84CF310C-3C75-44A0-930F-72EED7A50600}
 		{007FD10A-BE64-4AFD-A500-6E3724253171} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{AFDB6143-A0C6-473E-911B-A2718C8F7D3E} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{6A1BD004-65CE-404B-8D30-3CF14AF9054E} = {157E85A4-36D9-4796-9334-77DB19C3C084}
@@ -763,7 +795,7 @@ Global
 		{67DDC6A6-1C2E-48A1-A8E3-3F6C96082397} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{090FACCC-1715-44E4-947D-200099767A8B} = {87B13A0D-F857-4925-B05C-BE5D4D1D297C}
 		{58F97F8F-7E6C-4441-A126-0B709D2B6635} = {157E85A4-36D9-4796-9334-77DB19C3C084}
-		{D2E56CAE-A7DF-45FE-B5BF-81608E1696D8} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{D2E56CAE-A7DF-45FE-B5BF-81608E1696D8} = {929090B6-CB8D-47FA-ACE8-2390CC03C4D4}
 		{9ABBDA86-4D28-4E5D-9A2B-8C26DDB1DA0B} = {157E85A4-36D9-4796-9334-77DB19C3C084}
 		{E8E6BBD9-90DB-4B75-AAD7-48E54C061A9B} = {D2E56CAE-A7DF-45FE-B5BF-81608E1696D8}
 		{D8E9C6C2-E585-44FB-BBF6-05187682AE67} = {D2E56CAE-A7DF-45FE-B5BF-81608E1696D8}
@@ -771,22 +803,22 @@ Global
 		{1D923B6E-6301-4BAA-8F0C-CD775ADA4135} = {D2E56CAE-A7DF-45FE-B5BF-81608E1696D8}
 		{C77A196C-A800-4225-A58C-B5D8A99E8D3E} = {D2E56CAE-A7DF-45FE-B5BF-81608E1696D8}
 		{99709CEA-FE34-4E63-9E24-B5C361699E12} = {401516F1-0BE7-4EA4-9AC8-00EF979FE187}
-		{23DEEA47-538C-4AB3-986B-785C218622DF} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
-		{BC5CA7B6-E8A5-43FC-8D17-93902AA784E7} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
-		{6861720B-3E38-462F-8BEE-33412006E469} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{23DEEA47-538C-4AB3-986B-785C218622DF} = {EB72044C-0E8D-47B0-8B98-37E42AFCBE14}
+		{BC5CA7B6-E8A5-43FC-8D17-93902AA784E7} = {EB72044C-0E8D-47B0-8B98-37E42AFCBE14}
+		{6861720B-3E38-462F-8BEE-33412006E469} = {929090B6-CB8D-47FA-ACE8-2390CC03C4D4}
 		{0C774BAD-6A1D-4030-B18A-1E2764A62DCE} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
 		{1956BEA6-BE0B-4AE2-AB0E-59FBBE19619C} = {189AD125-963E-4E5A-B763-7F28E88856EE}
-		{C78E4BD0-5B9E-44A9-8DAF-4BE0731323FE} = {971DC597-B85F-48FD-A55F-F2915E4B23DF}
-		{D2873630-2589-4EC6-B2EB-8F46B1D8CD9B} = {A6EE4FA3-5112-42B0-8323-07474D0EB196}
+		{C78E4BD0-5B9E-44A9-8DAF-4BE0731323FE} = {63C8BA5A-EF00-45F4-AD42-119C74F37BBB}
+		{D2873630-2589-4EC6-B2EB-8F46B1D8CD9B} = {AD8D8687-DA62-4EF1-A040-4CE6F7DE36F5}
 		{BBBB4FF0-BF2F-4515-A812-E7C0B7CB7C9F} = {D2873630-2589-4EC6-B2EB-8F46B1D8CD9B}
 		{1766454C-3482-4010-86F8-C611AAA9B3D1} = {A6EE4FA3-5112-42B0-8323-07474D0EB196}
 		{F37356DB-39D5-48E2-AC5F-14235FD749B0} = {BBBB4FF0-BF2F-4515-A812-E7C0B7CB7C9F}
 		{8E5CC1D6-2696-4492-B77A-AFDF53850E35} = {BBBB4FF0-BF2F-4515-A812-E7C0B7CB7C9F}
 		{960ED9FD-0DD6-45DB-9987-43BD7FC6CD32} = {BBBB4FF0-BF2F-4515-A812-E7C0B7CB7C9F}
-		{F77CEFD7-9231-495E-9CBA-7242F882B7C8} = {A6EE4FA3-5112-42B0-8323-07474D0EB196}
-		{D42665EA-FA48-49CA-BC25-998ED9D960D3} = {A6EE4FA3-5112-42B0-8323-07474D0EB196}
-		{00A0C030-0B65-4861-AB53-98EF02A47BD9} = {A6EE4FA3-5112-42B0-8323-07474D0EB196}
-		{82FA6F4B-4103-45B8-AD50-BFA1C04AB622} = {A6EE4FA3-5112-42B0-8323-07474D0EB196}
+		{F77CEFD7-9231-495E-9CBA-7242F882B7C8} = {AD8D8687-DA62-4EF1-A040-4CE6F7DE36F5}
+		{D42665EA-FA48-49CA-BC25-998ED9D960D3} = {AD8D8687-DA62-4EF1-A040-4CE6F7DE36F5}
+		{00A0C030-0B65-4861-AB53-98EF02A47BD9} = {AD8D8687-DA62-4EF1-A040-4CE6F7DE36F5}
+		{82FA6F4B-4103-45B8-AD50-BFA1C04AB622} = {AD8D8687-DA62-4EF1-A040-4CE6F7DE36F5}
 		{DCE8BE9F-39C9-4C9D-82DA-EF5CC547F122} = {23DEEA47-538C-4AB3-986B-785C218622DF}
 		{A097A417-6025-4D6C-9F16-287150FC243D} = {23DEEA47-538C-4AB3-986B-785C218622DF}
 		{BD9398FA-033B-4FE0-90FE-E787524E1D6C} = {23DEEA47-538C-4AB3-986B-785C218622DF}
@@ -865,11 +897,23 @@ Global
 		{8E43C291-8C89-4585-B288-7D75629745EE} = {82FA6F4B-4103-45B8-AD50-BFA1C04AB622}
 		{C47E6DB8-9B64-40CA-9EDB-00F3C40806EE} = {8E43C291-8C89-4585-B288-7D75629745EE}
 		{27752370-7385-4960-B6AC-BA1DC65C2EFC} = {6861720B-3E38-462F-8BEE-33412006E469}
-		{BA345C12-19C2-413A-B7DD-F5917CF91BC8} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
+		{BA345C12-19C2-413A-B7DD-F5917CF91BC8} = {6861720B-3E38-462F-8BEE-33412006E469}
 		{EC9D26D3-5E30-41ED-8BC4-E5093D798354} = {6861720B-3E38-462F-8BEE-33412006E469}
 		{32E6A7DA-B5DF-47C6-A81F-DFFE29DAAAAB} = {23DEEA47-538C-4AB3-986B-785C218622DF}
+		{2CCADB46-51C7-48B8-A58D-1890DA7AD77D} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{D9F08AAE-8749-4F4C-973A-4B89C40EC09C} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{0562E031-3587-4D9A-9EF8-E7FBA20AEC0C} = {E2BA4CAD-9914-4CC2-9273-F90C44238218}
+		{379A6747-BC49-4635-AD76-AEC31DBC9705} = {0C774BAD-6A1D-4030-B18A-1E2764A62DCE}
+		{31E3EA5C-B404-4772-8303-5A799D4136A8} = {3BE9A55A-693A-4AA0-8E1D-E1897A395A97}
+		{84CF310C-3C75-44A0-930F-72EED7A50600} = {3BE9A55A-693A-4AA0-8E1D-E1897A395A97}
+		{AD8D8687-DA62-4EF1-A040-4CE6F7DE36F5} = {A6EE4FA3-5112-42B0-8323-07474D0EB196}
+		{3BE9A55A-693A-4AA0-8E1D-E1897A395A97} = {F960922A-513D-4931-B94D-1AC20AD530D8}
+		{63C8BA5A-EF00-45F4-AD42-119C74F37BBB} = {971DC597-B85F-48FD-A55F-F2915E4B23DF}
+		{EB72044C-0E8D-47B0-8B98-37E42AFCBE14} = {58C27876-1A7E-4F02-ACDE-64D6E59AE8C1}
+		{929090B6-CB8D-47FA-ACE8-2390CC03C4D4} = {EB72044C-0E8D-47B0-8B98-37E42AFCBE14}
+		{58C27876-1A7E-4F02-ACDE-64D6E59AE8C1} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\Unity.2.1.505.2\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Diagnostics.Interception.2.1.505.0\lib\NET35;packages\Unity.Diagnostics.Interception.2.1.505.2\lib\NET35;packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal
