@@ -46,6 +46,10 @@
       <HintPath>..\packages\AppDomainCallbackExtensions.1.0.6\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ClrTest.Reflection.ILReader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=73cdf07c5f38cab5, processorArchitecture=MSIL">
+      <HintPath>..\packages\ILReader.1.0.0\lib\ClrTest.Reflection.ILReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.Build.Engine" />
     <Reference Include="Microsoft.Build.Framework" />
@@ -88,8 +92,8 @@
     <Compile Include="..\Haystack.Diagnostics\Amendments\AmendmentConfigurationBuilder.cs">
       <Link>Amendments\AmendmentConfigurationBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Diagnostics\Amendments\AssemblyAmender.cs">
-      <Link>Amendments\AssemblyAmender.cs</Link>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AssemblyAttributeAmender.cs">
+      <Link>Amendments\AssemblyAttributeAmender.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\Amendments\HaystackBeforeMethodAmender.cs">
       <Link>Amendments\HaystackBeforeMethodAmender.cs</Link>
@@ -382,6 +386,23 @@
     <Compile Include="..\Haystack.Diagnostics\TestIntegration\TestIntegrationRepository.cs">
       <Link>TestIntegration\TestIntegrationRepository.cs</Link>
     </Compile>
+    <Compile Include="Amendments\Amender\ExpressionBuilder.cs" />
+    <Compile Include="Amendments\Amender\ExpressionRewriter.cs" />
+    <Compile Include="Amendments\Amender\PropertyAmendment.cs" />
+    <Compile Include="Amendments\Amender\TypeAmender.cs" />
+    <Compile Include="Amendments\Amender\TypeAmendment.cs" />
+    <Compile Include="Amendments\AssemblyAmender.cs" />
+    <Compile Include="Amendments\Builder\AmendmentBuilder.cs" />
+    <Compile Include="Amendments\Builder\IPropertyAmendmentBuilder.generic2.cs" />
+    <Compile Include="Amendments\Builder\IPropertyAmendmentBuilder.generic1.cs" />
+    <Compile Include="Amendments\Builder\IPropertyAmendmentBuilderList.generic2.cs" />
+    <Compile Include="Amendments\Builder\IPropertyAmendmentBuilderList.generic1.cs" />
+    <Compile Include="Amendments\Builder\ITypeAmendmentBuilder.cs" />
+    <Compile Include="Amendments\Builder\PropertyAmendmentBuilder.generic1.cs" />
+    <Compile Include="Amendments\Builder\PropertyAmendmentBuilder.generic2.cs" />
+    <Compile Include="Amendments\Builder\PropertyAmendmentBuilderList.generic1.cs" />
+    <Compile Include="Amendments\Builder\TypeAmendmentBuilder.cs" />
+    <Compile Include="Amendments\Amender\InstructionBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Haystack.Diagnostics\Amendments\StrongNameSetup.msbuild">
@@ -390,7 +411,10 @@
     <None Include="..\Haystack.Diagnostics\execute_process.msbuild">
       <Link>execute_process.msbuild</Link>
     </None>
-    <None Include="packages.config" />
+    <Compile Include="Amendments\Builder\PropertyAmendmentBuilderList.generic2.cs" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -24,7 +24,7 @@ namespace Haystack.Diagnostics.Tests.Amendments
             DirectoryCopy.CopyDirectory(sourceDirectory, destinationDirectory);
             Assembly assembly = Assembly.LoadFrom(attributeAssembly);
             Type attributeType = assembly.GetType("Haystack.Runner.NUnit.HaystackDiagnosticsAttribute");
-            AssemblyAmender.AddAssemblyAttribute(testAssembly, attributeType);
+            AssemblyAttributeAmender.AddAssemblyAttribute(testAssembly, attributeType);
             Assembly.LoadFrom(testAssembly).IsDefined(attributeType).Should().BeTrue();
         }
     }

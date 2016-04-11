@@ -15,7 +15,7 @@ namespace Haystack.Runner.NUnit.Initializer
         public void InitializeRunnerFramework(IHaystackConfiguration haystackConfiguration)
         {
             string assemblyToTest = haystackConfiguration.Runner.AssemblyToTest;
-            AssemblyAmender.AddAssemblyAttribute(assemblyToTest, typeof(HaystackDiagnosticsAttribute));
+            AssemblyAttributeAmender.AddAssemblyAttribute(assemblyToTest, typeof(HaystackDiagnosticsAttribute));
             string assemblyDirectory = Path.GetDirectoryName(assemblyToTest);
             if (!File.Exists(Path.Combine(assemblyToTest, "Haystack.Bootstrap.dll")))
             {
