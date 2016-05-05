@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Net45", "Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj", "{8F094168-2764-495B-AF6E-9C135AF04CDA}"
 EndProject
@@ -58,8 +58,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceControl", "SourceControl", "{189AD125-963E-4E5A-B763-7F28E88856EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCoverage", "CodeCoverage", "{401516F1-0BE7-4EA4-9AC8-00EF979FE187}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Net45", "Haystack.Diagnostics.Amendments.Net45\Haystack.Diagnostics.Amendments.Net45.csproj", "{FF76E013-1F51-4972-95A7-2CBB1CC27269}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45", "Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45\Haystack.Diagnostics.StaticAnalysis.FileSystem.Net45.csproj", "{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}"
 EndProject
@@ -329,6 +327,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Runner.NUnit_3_0_0.Initializer.Net45", "Haystack.Runner.NUnit_3_0_0.Initializer.Net45\Haystack.Runner.NUnit_3_0_0.Initializer.Net45.csproj", "{BE65B1F2-39B0-4846-97D3-EC07DAD6303E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.PostSharp.Net45", "Haystack.Diagnostics.Amendments.PostSharp.Net45\Haystack.Diagnostics.Amendments.PostSharp.Net45.csproj", "{EC677F72-6BD9-404C-9099-8C7121AC6D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Diagnostics.Amendments.Afterthought.Net45", "Haystack.Diagnostics.Amendments.Afterthought.Net45\Haystack.Diagnostics.Amendments.Afterthought.Net45.csproj", "{C564503C-A5C5-468C-B6BB-24066CBCEDD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -419,10 +421,6 @@ Global
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77E43FB4-CA70-45D0-A968-6AEA3719AB4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF76E013-1F51-4972-95A7-2CBB1CC27269}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -747,6 +745,14 @@ Global
 		{BE65B1F2-39B0-4846-97D3-EC07DAD6303E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE65B1F2-39B0-4846-97D3-EC07DAD6303E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE65B1F2-39B0-4846-97D3-EC07DAD6303E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC677F72-6BD9-404C-9099-8C7121AC6D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC677F72-6BD9-404C-9099-8C7121AC6D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC677F72-6BD9-404C-9099-8C7121AC6D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC677F72-6BD9-404C-9099-8C7121AC6D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C564503C-A5C5-468C-B6BB-24066CBCEDD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C564503C-A5C5-468C-B6BB-24066CBCEDD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C564503C-A5C5-468C-B6BB-24066CBCEDD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C564503C-A5C5-468C-B6BB-24066CBCEDD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -778,7 +784,6 @@ Global
 		{D8B70B77-EC66-4DB5-87B2-9454B699B579} = {84CF310C-3C75-44A0-930F-72EED7A50600}
 		{189AD125-963E-4E5A-B763-7F28E88856EE} = {E2BA4CAD-9914-4CC2-9273-F90C44238218}
 		{401516F1-0BE7-4EA4-9AC8-00EF979FE187} = {84CF310C-3C75-44A0-930F-72EED7A50600}
-		{FF76E013-1F51-4972-95A7-2CBB1CC27269} = {DBAF8655-4B80-44B5-AFA4-C4959CE016FB}
 		{B55FCC18-90F1-47F8-B2E5-8B9CF0008B5A} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
 		{D4DDB95D-F957-479B-A6B2-970E943FC944} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
 		{837BD2F8-9525-4F73-9EB4-A821684BFF11} = {D8B70B77-EC66-4DB5-87B2-9454B699B579}
@@ -909,6 +914,8 @@ Global
 		{58C27876-1A7E-4F02-ACDE-64D6E59AE8C1} = {40F997F0-8D43-4A99-AA8E-080FDFCBD3E3}
 		{60D01BBF-8E85-4925-A7CF-C94DCF00544D} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
 		{BE65B1F2-39B0-4846-97D3-EC07DAD6303E} = {31E3EA5C-B404-4772-8303-5A799D4136A8}
+		{EC677F72-6BD9-404C-9099-8C7121AC6D2C} = {DBAF8655-4B80-44B5-AFA4-C4959CE016FB}
+		{C564503C-A5C5-468C-B6BB-24066CBCEDD7} = {DBAF8655-4B80-44B5-AFA4-C4959CE016FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Diagnostics.Interception.2.1.505.0\lib\NET35;packages\Unity.Diagnostics.Interception.2.1.505.2\lib\NET35;packages\Unity.2.1.505.2\lib\NET35

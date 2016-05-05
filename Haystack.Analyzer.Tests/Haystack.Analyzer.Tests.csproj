@@ -78,11 +78,6 @@
       <Project>{0562e031-3587-4d9a-9ef8-e7fba20aec0c}</Project>
       <Name>Haystack.Analyzer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Net45\Haystack.Diagnostics.Amendments.Net45.csproj">
-      <Project>{ff76e013-1f51-4972-95a7-2cbb1cc27269}</Project>
-      <Name>Haystack.Diagnostics.Amendments.Net45</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
       <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
       <Name>Haystack.Bootstrap.Net45</Name>
@@ -178,7 +173,7 @@
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_0.Initializer.Net45\Haystack.Runner.NUnit_3_0_0.Initializer.Net45.csproj">
       <Project>{be65b1f2-39b0-4846-97d3-ec07dad6303e}</Project>
       <Name>Haystack.Runner.NUnit_3_0_0.Initializer.Net45</Name>
-	  <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_0.Net45\Haystack.Runner.NUnit_3_0_0.Net45.csproj">
       <Project>{36ff2646-7a6d-4436-a76a-7e3618dea2aa}</Project>
@@ -188,7 +183,7 @@
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_1.Initializer.Net45\Haystack.Runner.NUnit_3_0_1.Initializer.Net45.csproj">
       <Project>{60d01bbf-8e85-4925-a7cf-c94dcf00544d}</Project>
       <Name>Haystack.Runner.NUnit_3_0_1.Initializer.Net45</Name>
-	  <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_3_0_1.Net45\Haystack.Runner.NUnit_3_0_1.Net45.csproj">
       <Project>{9b69d2bf-f18d-4fa4-aeb0-e245bb26c2a1}</Project>
