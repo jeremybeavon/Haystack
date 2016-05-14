@@ -45,9 +45,10 @@ namespace Haystack.Bootstrap
 
             InitializeDiagnostics(configurationFile);
         }
-        
+
         private static void InitializeDiagnostics(string configurationFile)
         {
+            HaystackInitializer.LaunchDebuggerIfNecessary(configurationFile);
             HaystackInitializer.InitializeIfNecessary(configurationFile);
         }
 

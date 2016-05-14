@@ -36,6 +36,30 @@ namespace Haystack.Diagnostics.Configuration
                 RunnerConfiguration runner = configuration.Runner;
                 ResolveUsingFunctionIfNecessary(runner.RunnerArguments, path => runner.RunnerArguments = path);
                 ResolveUsingFunctionIfNecessary(runner.AssemblyToTest, path => runner.AssemblyToTest = path);
+                ResolveIfNecessary(runner.CleanUpTestMethod);
+                ResolveIfNecessary(runner.CleanUpTestSuite);
+                ResolveIfNecessary(runner.InitializeTestFramework);
+                ResolveIfNecessary(runner.InitializeTestMethod);
+                ResolveIfNecessary(runner.InitializeTestSuite);
+            }
+        }
+
+        private void ResolveIfNecessary(IEnumerable<TypeConfiguration> types)
+        {
+            if (types != null)
+            {
+                foreach (TypeConfiguration type in types)
+                {
+                    ResolveIfNecessary(type);
+                }
+            }
+        }
+
+        private void ResolveIfNecessary(TypeConfiguration type)
+        {
+            if (type != null)
+            {
+                ResolveUsingFunctionIfNecessary(type.AssemblyFile, path => type.AssemblyFile = path);
             }
         }
 
@@ -54,7 +78,7 @@ namespace Haystack.Diagnostics.Configuration
             if (!string.IsNullOrWhiteSpace(text))
             {
                 const string pattern = @"\$\(CurrentDirectory\((?<Path>[^\)]+)\)\)";
-                updateAction(Regex.Replace(text, pattern, match => Path.Combine(baseDirectory, match.Groups["Path"].Value)));
+                updateAction(Regex.Replace(text, pattern, match => Path.GetFullPath(Path.Combine(baseDirectory, match.Groups["Path"].Value))));
             }
         }
     }

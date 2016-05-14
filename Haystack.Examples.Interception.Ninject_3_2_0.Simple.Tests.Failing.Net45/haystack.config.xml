@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HaystackConfiguration>
+  <HaystackBaseDirectory>..\..\..\..\..\..\..</HaystackBaseDirectory>
+  <OutputDirectory>Output</OutputDirectory>
+  <Interception>
+    <InterceptionFramework>Ninject</InterceptionFramework>
+    <InterceptionFrameworkVersion>3.2.0</InterceptionFrameworkVersion>
+  </Interception>
+  <Runner>
+    <RunnerFramework>NUnit</RunnerFramework>
+    <RunnerFrameworkVersion>3.0.1</RunnerFrameworkVersion>
+    <RunnerExe>nunit3-console.exe</RunnerExe>
+    <RunnerArguments>&quot;$(CurrentDirectory(Haystack.Examples.Interception.Ninject.Simple.Tests.dll))&quot;</RunnerArguments>
+    <AssemblyToTest>$(CurrentDirectory(Haystack.Examples.Interception.Ninject.Simple.Tests.dll))</AssemblyToTest>
+    <InitializeTestFramework>
+      <Type>
+        <AssemblyFile>$(CurrentDirectory(..\Setup\Haystack.Examples.Interception.Ninject.Simple.Setup.dll))</AssemblyFile>
+        <Type>Haystack.Examples.Interception.Ninject.Simple.Setup.InitializeTestFrameworkSetup</Type>
+      </Type>
+    </InitializeTestFramework>
+  </Runner>
+</HaystackConfiguration>

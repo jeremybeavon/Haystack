@@ -5,6 +5,13 @@ namespace Haystack.Analyzer.ObjectModel
 {
     public sealed class HaystackMethodsWithRefactoring : IHaystackMethodsWithRefactoring
     {
+        public HaystackMethodsWithRefactoring()
+        {
+            RefactoredMethods = new List<RefactoredMethod>();
+            NonRefactoredMethodIndexes = new List<int>();
+            NonRefactoredMethods = new List<HaystackMethod>();
+        }
+
         [MessagePackMember(0)]
         public List<RefactoredMethod> RefactoredMethods { get; set; }
 

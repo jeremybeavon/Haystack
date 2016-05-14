@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Haystack.Core;
 using Haystack.Diagnostics.Configuration;
 
 namespace Haystack.Diagnostics.Amendments
@@ -92,7 +91,7 @@ namespace Haystack.Diagnostics.Amendments
             return TypeResolver.CreateInstances<IFinallyMethodAmender>(configuration.FinallyMethodAmendments);
         }
 
-        private static IEnumerable<T> CreateInstances<T>(IEnumerable<string> types, IEnumerable<T> extraAmenders)
+        private static IEnumerable<T> CreateInstances<T>(IEnumerable<TypeConfiguration> types, IEnumerable<T> extraAmenders)
             where T : class
         {
             return TypeResolver.CreateInstances<T>(types).Concat(extraAmenders).ToArray();

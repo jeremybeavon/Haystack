@@ -117,7 +117,7 @@ namespace Haystack.Analyzer
                 HaystackMethod haystackMethod;
                 if (!haystackMethods.TryGetValue(haystackMethodKey, out haystackMethod))
                 {
-                    CreateAndAddHaystackMethod(haystackMethodKey);
+                    haystackMethod = CreateAndAddHaystackMethod(haystackMethodKey);
                 }
 
                 methodCall.ResetMethodCallId();

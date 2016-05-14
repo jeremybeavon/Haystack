@@ -67,6 +67,9 @@
   <ItemGroup>
     <Compile Include="Amendments\SimplePropertyTests.cs" />
     <Compile Include="HaystackAnalyzerTestRunner.cs" />
+    <Compile Include="Interception\CastleWindsorTests.cs" />
+    <Compile Include="Interception\NinjectTests.cs" />
+    <Compile Include="Interception\AutofacTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

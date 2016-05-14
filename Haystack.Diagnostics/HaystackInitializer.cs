@@ -1,11 +1,15 @@
 ﻿using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.Configuration;
 using Haystack.Diagnostics.TestIntegration;
+using System.IO;
+using VisualStudioDebuggerLauncher;
 
 namespace Haystack.Diagnostics
 {
     public static class HaystackInitializer
     {
+        public const string LaunchDebuggerFileName = "launchdebugger";
+
         private static readonly object initializeLock = new object();
         private static bool isInitialized;
         private static IHaystackConfiguration configuration;
@@ -30,6 +34,16 @@ namespace Haystack.Diagnostics
             }
         }
 
+        public static void LaunchDebuggerIfNecessary(string configurationFile)
+        {
+            string launchDebgguerFile = Path.Combine(Path.GetDirectoryName(configurationFile), LaunchDebuggerFileName);
+            if (File.Exists(launchDebgguerFile))
+            {
+                File.Delete(launchDebgguerFile);
+                DebuggerLauncher.AttachDebugger("Haystack.sln");
+            }
+        }
+
         private static void Initialize(string configurationFile)
         {
             configuration = HaystackConfiguration.LoadFile(configurationFile);
@@ -39,6 +53,7 @@ namespace Haystack.Diagnostics
             }
 
             TestIntegrationRepository.Initialize(configuration.Runner);
+            HaystackConfiguration.Current = configuration;
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HaystackConfiguration>
+  <HaystackBaseDirectory>..\..\..\..\..\..\..</HaystackBaseDirectory>
+  <OutputDirectory>Output</OutputDirectory>
+  <Interception>
+    <InterceptionFramework>Castle.Windsor</InterceptionFramework>
+    <InterceptionFrameworkVersion>3.3.0</InterceptionFrameworkVersion>
+  </Interception>
+  <Runner>
+    <RunnerFramework>NUnit</RunnerFramework>
+    <RunnerFrameworkVersion>3.0.1</RunnerFrameworkVersion>
+    <RunnerExe>nunit3-console.exe</RunnerExe>
+    <RunnerArguments>&quot;$(CurrentDirectory(Haystack.Examples.Interception.Castle.Windsor.Simple.Tests.dll))&quot;</RunnerArguments>
+    <AssemblyToTest>$(CurrentDirectory(Haystack.Examples.Interception.Castle.Windsor.Simple.Tests.dll))</AssemblyToTest>
+    <InitializeTestFramework>
+      <Type>
+        <AssemblyFile>$(CurrentDirectory(..\Setup\Haystack.Examples.Interception.Castle.Windsor.Simple.Setup.dll))</AssemblyFile>
+        <Type>Haystack.Examples.Interception.Castle.Windsor.Simple.Setup.InitializeTestFrameworkSetup</Type>
+      </Type>
+    </InitializeTestFramework>
+  </Runner>
+</HaystackConfiguration>

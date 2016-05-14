@@ -36,7 +36,7 @@ namespace Haystack.Runner.NUnit
             {
                 Trace.WriteLine("Initializing Haystack NUnit Addin");
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string configurationFile = Path.Combine(baseDirectory, HaystackConfigurationFile.DefaultConfigurationFileName);
+                string configurationFile = Path.Combine(baseDirectory, HaystackConfigurationFile.ConfigurationFileName);
                 if (!File.Exists(configurationFile))
                 {
                     Trace.WriteLine(string.Format("Skipping Haystack NUnit Addin because configuration file was not found: {0}", configurationFile));

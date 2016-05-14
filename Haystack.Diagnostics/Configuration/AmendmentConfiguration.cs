@@ -12,74 +12,74 @@ namespace Haystack.Diagnostics.Configuration
         {
             builder = new AmendmentConfigurationBuilder(this);
             AssembliesToAmend = new List<string>();
-            HaystackPropertyAmendments = new List<string>();
-            HaystackConstructorAmendments = new List<string>();
-            HaystackMethodAmendments = new List<string>();
-            BeforePropertyGetAmendments = new List<string>();
-            AfterPropertyGetAmendments = new List<string>();
-            BeforePropertySetAmendments = new List<string>();
-            AfterPropertySetAmendments = new List<string>();
-            BeforeConstructorAmendments = new List<string>();
-            AfterConstructorAmendments = new List<string>();
-            CatchConstructorAmendments = new List<string>();
-            BeforeMethodAmendments = new List<string>();
-            AfterVoidMethodAmendments = new List<string>();
-            AfterMethodAmendments = new List<string>();
-            CatchVoidMethodAmendments = new List<string>();
-            CatchMethodAmendments = new List<string>();
-            FinallyMethodAmendments = new List<string>();
+            HaystackPropertyAmendments = new List<TypeConfiguration>();
+            HaystackConstructorAmendments = new List<TypeConfiguration>();
+            HaystackMethodAmendments = new List<TypeConfiguration>();
+            BeforePropertyGetAmendments = new List<TypeConfiguration>();
+            AfterPropertyGetAmendments = new List<TypeConfiguration>();
+            BeforePropertySetAmendments = new List<TypeConfiguration>();
+            AfterPropertySetAmendments = new List<TypeConfiguration>();
+            BeforeConstructorAmendments = new List<TypeConfiguration>();
+            AfterConstructorAmendments = new List<TypeConfiguration>();
+            CatchConstructorAmendments = new List<TypeConfiguration>();
+            BeforeMethodAmendments = new List<TypeConfiguration>();
+            AfterVoidMethodAmendments = new List<TypeConfiguration>();
+            AfterMethodAmendments = new List<TypeConfiguration>();
+            CatchVoidMethodAmendments = new List<TypeConfiguration>();
+            CatchMethodAmendments = new List<TypeConfiguration>();
+            FinallyMethodAmendments = new List<TypeConfiguration>();
         }
 
         [XmlArrayItem("Assembly")]
         public List<string> AssembliesToAmend { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> HaystackPropertyAmendments { get; set; }
+        public List<TypeConfiguration> HaystackPropertyAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> HaystackConstructorAmendments { get; set; }
+        public List<TypeConfiguration> HaystackConstructorAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> HaystackMethodAmendments { get; set; }
+        public List<TypeConfiguration> HaystackMethodAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> BeforePropertyGetAmendments { get; set; }
+        public List<TypeConfiguration> BeforePropertyGetAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> AfterPropertyGetAmendments { get; set; }
+        public List<TypeConfiguration> AfterPropertyGetAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> BeforePropertySetAmendments { get; set; }
+        public List<TypeConfiguration> BeforePropertySetAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> AfterPropertySetAmendments { get; set; }
+        public List<TypeConfiguration> AfterPropertySetAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> BeforeConstructorAmendments { get; set; }
+        public List<TypeConfiguration> BeforeConstructorAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> AfterConstructorAmendments { get; set; }
+        public List<TypeConfiguration> AfterConstructorAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> CatchConstructorAmendments { get; set; }
+        public List<TypeConfiguration> CatchConstructorAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> BeforeMethodAmendments { get; set; }
+        public List<TypeConfiguration> BeforeMethodAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> AfterVoidMethodAmendments { get; set; }
+        public List<TypeConfiguration> AfterVoidMethodAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> AfterMethodAmendments { get; set; }
+        public List<TypeConfiguration> AfterMethodAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> CatchVoidMethodAmendments { get; set; }
+        public List<TypeConfiguration> CatchVoidMethodAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> CatchMethodAmendments { get; set; }
+        public List<TypeConfiguration> CatchMethodAmendments { get; set; }
 
         [XmlArrayItem("AmendmentType")]
-        public List<string> FinallyMethodAmendments { get; set; }
+        public List<TypeConfiguration> FinallyMethodAmendments { get; set; }
 
         IEnumerable<string> IAmendmentConfiguration.AssembliesToAmend
         {

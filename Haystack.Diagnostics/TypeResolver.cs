@@ -1,22 +1,25 @@
-﻿using System;
+﻿using Haystack.Diagnostics.Configuration;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Linq;
 
-namespace Haystack.Core
+namespace Haystack.Diagnostics
 {
-    public static class TypeResolver
+    internal static class TypeResolver
     {
-        public static IEnumerable<T> CreateInstances<T>(IEnumerable<string> types)
+        public static IEnumerable<T> CreateInstances<T>(IEnumerable<TypeConfiguration> types)
             where T : class
         {
             List<T> instances = new List<T>();
             List<string> invalidTypes = new List<string>();
-            foreach (string type in types)
+            foreach (TypeConfiguration type in types)
             {
-                T instance = Activator.CreateInstance(Type.GetType(type, true)) as T;
+                Assembly assembly = Assembly.LoadFrom(type.AssemblyFile);
+                T instance = Activator.CreateInstance(assembly.GetType(type.Type, true)) as T;
                 if (instance == null)
                 {
-                    invalidTypes.Add(type);
+                    invalidTypes.Add(type.Type);
                 }
                 else
                 {
@@ -36,10 +39,10 @@ namespace Haystack.Core
             return instances;
         }
 
-        public static T CreateInstance<T>(string type)
+        public static T CreateInstance<T>(TypeConfiguration type)
             where T : class
         {
-            return string.IsNullOrWhiteSpace(type) ? null : CreateInstances<T>(new string[] { type }).First();
+            return type == null ? null : CreateInstances<T>(new TypeConfiguration[] { type }).First();
         }
     }
 }

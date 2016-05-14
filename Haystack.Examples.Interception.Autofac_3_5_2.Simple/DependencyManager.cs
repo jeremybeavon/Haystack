@@ -52,8 +52,11 @@ namespace Haystack.Examples.Interception.Autofac.Simple
 
             lock (simpleContainerLock)
             {
-                simpleContainer.Dispose();
-                simpleContainer = null;
+                if (simpleContainer != null)
+                {
+                    simpleContainer.Dispose();
+                    simpleContainer = null;
+                }
             }
         }
     }

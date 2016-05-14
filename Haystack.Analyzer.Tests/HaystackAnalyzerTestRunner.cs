@@ -1,15 +1,17 @@
-﻿using Haystack.Core;
+﻿using Haystack.Bootstrap;
 using Haystack.Core.IO;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.Configuration;
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace Haystack.Analyzer.Tests
 {
     public static class HaystackAnalyzerTestRunner
     {
-        private const string DefaultConfigurationFileName = HaystackConfigurationFile.DefaultConfigurationFileName;
+        private const string ConfigurationFileName = HaystackConfigurationFile.ConfigurationFileName;
+        private const string LaunchDebuggerFileName = HaystackInitializer.LaunchDebuggerFileName;
         private static readonly string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
         private static readonly string haystackBaseDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\Haystack"));
         private static readonly string haystackRunnerDirectory =
@@ -37,7 +39,7 @@ namespace Haystack.Analyzer.Tests
 
         private static string InitializeConfigurationFile(string testDirectory, bool isPassing)
         {
-            string configurationFile = Path.Combine(testDirectory, isPassing ? "Passing" : "Failing", DefaultConfigurationFileName);
+            string configurationFile = Path.Combine(testDirectory, isPassing ? "Passing" : "Failing", ConfigurationFileName);
             HaystackConfiguration haystackConfiguration = HaystackConfiguration.LoadText(File.ReadAllText(configurationFile));
             haystackConfiguration.HaystackBaseDirectory = haystackBaseDirectory;
             File.WriteAllText(configurationFile, haystackConfiguration.ToString());
@@ -46,6 +48,11 @@ namespace Haystack.Analyzer.Tests
 
         private static void RunHaystackRunner(string configurationFile)
         {
+            if (Debugger.IsAttached)
+            {
+                File.WriteAllText(Path.Combine(Path.GetDirectoryName(configurationFile), LaunchDebuggerFileName), string.Empty);
+            }
+
             string[] args = new string[] { "--ConfigurationFile", configurationFile };
             RunExecutable(Path.Combine(haystackRunnerDirectory, @"Haystack.Runner.exe"), args);
         }

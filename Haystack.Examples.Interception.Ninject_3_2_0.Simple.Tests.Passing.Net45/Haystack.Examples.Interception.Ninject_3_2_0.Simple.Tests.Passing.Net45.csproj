@@ -66,6 +66,12 @@
       <Name>Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing\haystack.config.xml">
+      <Link>haystack.config.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

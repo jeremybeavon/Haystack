@@ -46,6 +46,11 @@
       <HintPath>..\packages\AppDomainCallbackExtensions.1.0.6\lib\net40\AppDomainCallbackExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\VisualStudioDebuggerLauncher.1.0.0\lib\EnvDTE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.Build.Engine" />
     <Reference Include="Microsoft.Build.Framework" />
@@ -69,6 +74,11 @@
       <HintPath>..\packages\MsgPack.Cli.0.6.7\lib\net45\MsgPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\VisualStudioDebuggerLauncher.1.0.0\lib\stdole.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -79,6 +89,10 @@
     <Reference Include="TextSerialization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=048350c573d540a5, processorArchitecture=MSIL">
       <HintPath>..\packages\TextSerialization.1.0.0\lib\net45\TextSerialization.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="VisualStudioDebuggerLauncher, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9e103011fd8f0004, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\VisualStudioDebuggerLauncher.1.0.0\lib\VisualStudioDebuggerLauncher.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +194,9 @@
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\CodeCoverage\ICodeCoverageContext.cs">
       <Link>CodeCoverage\ICodeCoverageContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Configuration\TypeConfiguration.cs">
+      <Link>Configuration\TypeConfiguration.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\IRunnerArgumentsProvider.cs">
       <Link>IRunnerArgumentsProvider.cs</Link>
@@ -381,6 +398,9 @@
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\TestIntegration\TestIntegrationRepository.cs">
       <Link>TestIntegration\TestIntegrationRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\TypeResolver.cs">
+      <Link>TypeResolver.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

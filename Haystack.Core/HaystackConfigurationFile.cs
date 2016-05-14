@@ -9,11 +9,11 @@ namespace Haystack.Core
 {
     public static class HaystackConfigurationFile
     {
-        public const string DefaultConfigurationFileName = "haystack.config.xml";
+        public const string ConfigurationFileName = "haystack.config.xml";
 
         public static string GetHaystackConfigurationFile(Assembly assembly)
         {
-            return Path.Combine(assembly.AssemblyBaseDirectory(), DefaultConfigurationFileName);
+            return Path.Combine(assembly.AssemblyBaseDirectory(), ConfigurationFileName);
         }
     }
 }

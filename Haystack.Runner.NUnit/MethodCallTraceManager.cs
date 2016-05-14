@@ -2,18 +2,19 @@
 using System.IO;
 using System.Reflection;
 using Haystack.Diagnostics;
+using Haystack.Diagnostics.Configuration;
 
 namespace Haystack.Runner.NUnit
 {
     public sealed class MethodCallTraceManager
     {
-        private readonly string baseDirectory;
+        private readonly string outputDirectory;
         private int currentTestIndex;
         private int currentFixtureSetUpIndex;
 
         public MethodCallTraceManager()
         {
-            baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            outputDirectory = HaystackConfiguration.Current.OutputDirectory;
         }
 
         public void SaveCallTrace(string testName)
@@ -49,7 +50,7 @@ namespace Haystack.Runner.NUnit
 
         private void SaveCallTrace(string fileName, string description)
         {
-            MethodCallTraceContext.Save(Path.Combine(baseDirectory, fileName), description);
+            MethodCallTraceContext.Save(Path.Combine(outputDirectory, fileName), description);
         }
     }
 }

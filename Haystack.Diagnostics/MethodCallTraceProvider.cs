@@ -25,6 +25,8 @@ namespace Haystack.Diagnostics
             methodCallStack = new ConcurrentDictionary<int, Stack<MethodCall>>();
             objects = new ConcurrentDictionary<object, IndexedObject<ObjectInstance>>();
             types = new ConcurrentDictionary<Type, IndexedObject<ObjectType>>();
+            currentObjectId = -1;
+            currentTypeId = -1;
         }
 
         public void EnterMethodCall(MethodCall methodCall)

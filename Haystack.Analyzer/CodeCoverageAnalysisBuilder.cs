@@ -26,8 +26,8 @@ namespace Haystack.Analyzer
             List<CodeCoverageAnalysis> codeCoverageAnalysisList = new List<CodeCoverageAnalysis>();
             string passingCodeCoverageDirectory = GetCodeCoverageOutputDirectory(passingConfiguration);
             string failingCodeCoverageDirectory = GetCodeCoverageOutputDirectory(failingConfiguration);
-            List<string> failingCodeCoverageFiles = Directory.GetFiles(failingCodeCoverageDirectory, "*.htm").ToList();
-            foreach (string passingCodeCoverageFile in Directory.GetFiles(passingCodeCoverageDirectory, "*.htm"))
+            List<string> failingCodeCoverageFiles = GetHtmlFiles(failingCodeCoverageDirectory).ToList();
+            foreach (string passingCodeCoverageFile in GetHtmlFiles(passingCodeCoverageDirectory))
             {
                 CodeCoverageFile passingCoverageFile = LoadCodeCoverageFile(passingCodeCoverageFile);
                 CodeCoverageFile failingCoverageFile = null;
@@ -62,6 +62,11 @@ namespace Haystack.Analyzer
         public void InitializeCodeCoverageAnalysis(List<CodeCoverageAnalysis> codeCoverageAnalysis)
         {
 
+        }
+
+        private string[] GetHtmlFiles(string directoryName)
+        {
+            return Directory.Exists(directoryName) ? Directory.GetFiles(directoryName, "*.htm") : new string[0];
         }
 
         private CodeCoverageFile LoadCodeCoverageFile(string codeCoverageFile)

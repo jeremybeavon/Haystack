@@ -1,5 +1,4 @@
-﻿using Haystack.Core;
-using Haystack.Diagnostics.TestIntegration;
+﻿using Haystack.Diagnostics.TestIntegration;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
@@ -10,12 +9,12 @@ namespace Haystack.Diagnostics.Configuration
     {
         public RunnerConfiguration()
         {
-            RunnerInitializers = new List<string>();
-            InitializeTestFramework = new List<string>();
-            InitializeTestSuite = new List<string>();
-            CleanUpTestSuite = new List<string>();
-            InitializeTestMethod = new List<string>();
-            CleanUpTestMethod = new List<string>();
+            RunnerInitializers = new List<TypeConfiguration>();
+            InitializeTestFramework = new List<TypeConfiguration>();
+            InitializeTestSuite = new List<TypeConfiguration>();
+            CleanUpTestSuite = new List<TypeConfiguration>();
+            InitializeTestMethod = new List<TypeConfiguration>();
+            CleanUpTestMethod = new List<TypeConfiguration>();
         }
 
         [Required]
@@ -31,27 +30,27 @@ namespace Haystack.Diagnostics.Configuration
 
         public string RunnerArguments { get; set; }
 
-        public string RunnerArgumentsProvider { get; set; }
+        public TypeConfiguration RunnerArgumentsProvider { get; set; }
 
         [XmlArrayItem("Type")]
-        public List<string> RunnerInitializers { get; set; }
+        public List<TypeConfiguration> RunnerInitializers { get; set; }
 
         public string HaystackAddinName { get; set; }
 
         [XmlArrayItem("Type")]
-        public List<string> InitializeTestFramework { get; set; }
+        public List<TypeConfiguration> InitializeTestFramework { get; set; }
 
         [XmlArrayItem("Type")]
-        public List<string> InitializeTestSuite { get; set; }
+        public List<TypeConfiguration> InitializeTestSuite { get; set; }
 
         [XmlArrayItem("Type")]
-        public List<string> CleanUpTestSuite { get; set; }
+        public List<TypeConfiguration> CleanUpTestSuite { get; set; }
 
         [XmlArrayItem("Type")]
-        public List<string> InitializeTestMethod { get; set; }
+        public List<TypeConfiguration> InitializeTestMethod { get; set; }
 
         [XmlArrayItem("Type")]
-        public List<string> CleanUpTestMethod { get; set; }
+        public List<TypeConfiguration> CleanUpTestMethod { get; set; }
 
         IRunnerArgumentsProvider IRunnerConfiguration.RunnerArgumentsProvider
         {

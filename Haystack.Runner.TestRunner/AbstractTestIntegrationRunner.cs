@@ -36,9 +36,9 @@ namespace Haystack.Runner.TestRunner
         public void Execute()
         {
             HaystackConfiguration configuration = CreateConfiguration();
-            GetList(configuration.Runner).Add(typeof(TTestIntegrationImplementation).AssemblyQualifiedName);
+            GetList(configuration.Runner).Add(new TypeConfiguration(typeof(TTestIntegrationImplementation)));
             configuration.Initialize();
-            string path = Path.Combine(Path.GetDirectoryName(AssemblyToTest), HaystackConfigurationFile.DefaultConfigurationFileName);
+            string path = Path.Combine(Path.GetDirectoryName(AssemblyToTest), HaystackConfigurationFile.ConfigurationFileName);
             File.WriteAllText(path, configuration.ToString());
             HaystackRunner.RunHaystackDiagnostics(configuration);
             string expectedText = typeof(TTestIntegrationImplementation).GetCustomAttribute<DescriptionAttribute>().Description;
@@ -60,15 +60,15 @@ namespace Haystack.Runner.TestRunner
                     RunnerExe = RunnerExe,
                     RunnerArguments = string.Format("\"{0}\"", AssemblyToTest),
                     AssemblyToTest = AssemblyToTest,
-                    RunnerInitializers = new List<string>()
+                    RunnerInitializers = new List<TypeConfiguration>()
                     {
-                        typeof(TestRunnerInitializer<TTestIntegrationImplementation>).AssemblyQualifiedName
+                        new TypeConfiguration(typeof(TestRunnerInitializer<TTestIntegrationImplementation>))
                     }
                 }
             };
         }
 
-        private List<string> GetList(RunnerConfiguration configuration)
+        private List<TypeConfiguration> GetList(RunnerConfiguration configuration)
         {
             if (typeof(TTestIntegrationInterface) == typeof(IInitializeTestFramework))
             {

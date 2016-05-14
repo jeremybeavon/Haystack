@@ -25,9 +25,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        BeforePropertyGetAmendments = new List<string>()
+                        BeforePropertyGetAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(BeforePropertyGetAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(BeforePropertyGetAmendment))
                         }
                     }
                 }
@@ -49,9 +49,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        AfterPropertyGetAmendments = new List<string>()
+                        AfterPropertyGetAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(AfterPropertyGetAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(AfterPropertyGetAmendment))
                         }
                     }
                 }
@@ -73,9 +73,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        BeforePropertySetAmendments = new List<string>()
+                        BeforePropertySetAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(BeforePropertySetAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(BeforePropertySetAmendment))
                         }
                     }
                 }
@@ -97,9 +97,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        AfterPropertySetAmendments = new List<string>()
+                        AfterPropertySetAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(AfterPropertySetAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(AfterPropertySetAmendment))
                         }
                     }
                 }
@@ -120,9 +120,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        BeforeConstructorAmendments = new List<string>()
+                        BeforeConstructorAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(BeforeConstructorAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(BeforeConstructorAmendment))
                         }
                     }
                 }
@@ -143,9 +143,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        AfterConstructorAmendments = new List<string>()
+                        AfterConstructorAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(AfterConstructorAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(AfterConstructorAmendment))
                         }
                     }
                 }
@@ -167,9 +167,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        BeforeMethodAmendments = new List<string>()
+                        BeforeMethodAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(BeforeMethodAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(BeforeMethodAmendment))
                         }
                     }
                 }
@@ -191,9 +191,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        AfterVoidMethodAmendments = new List<string>()
+                        AfterVoidMethodAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(AfterVoidMethodAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(AfterVoidMethodAmendment))
                         }
                     }
                 }
@@ -217,9 +217,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        AfterMethodAmendments = new List<string>()
+                        AfterMethodAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(AfterMethodAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(AfterMethodAmendment))
                         }
                     }
                 }
@@ -240,9 +240,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        BeforePropertyGetAmendments = new List<string>()
+                        BeforePropertyGetAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(BeforePropertyGetAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(BeforePropertyGetAmendment))
                         }
                     }
                 }
@@ -261,9 +261,9 @@ namespace Haystack.Diagnostics.Amendments.Tests
                 {
                     Amendments = new AmendmentConfiguration()
                     {
-                        HaystackPropertyAmendments = new List<string>()
+                        HaystackPropertyAmendments = new List<TypeConfiguration>()
                         {
-                            typeof(HaystackPropertyAmendment).AssemblyQualifiedName
+                            new TypeConfiguration(typeof(HaystackPropertyAmendment))
                         }
                     }
                 }

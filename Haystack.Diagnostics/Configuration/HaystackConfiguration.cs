@@ -21,6 +21,8 @@ namespace Haystack.Diagnostics.Configuration
             StaticAnalysis = new List<StaticAnalysisConfiguration>();
         }
 
+        public static IHaystackConfiguration Current { get; internal set; }
+
         [Required]
         public string HaystackBaseDirectory { get; set; }
 
@@ -39,12 +41,16 @@ namespace Haystack.Diagnostics.Configuration
 
         public AmendmentConfiguration Amendments { get; set; }
 
+        [XmlElement("CodeCoverage")]
         public List<CodeCoverageConfiguration> CodeCoverage { get; set; }
 
+        [XmlElement("Interception")]
         public List<InterceptionConfiguration> Interception { get; set; }
 
+        [XmlElement("SourceControl")]
         public List<SourceControlConfiguration> SourceControl { get; set; }
 
+        [XmlElement("StaticAnalysis")]
         public List<StaticAnalysisConfiguration> StaticAnalysis { get; set; }
 
         [Required]
@@ -84,6 +90,7 @@ namespace Haystack.Diagnostics.Configuration
         {
             HaystackConfiguration configuration = LoadText(File.ReadAllText(fileName));
             HaystackConfigurationRelativePathResolver.ResolveRelativePaths(configuration, Path.GetDirectoryName(fileName));
+            configuration.Initialize();
             return configuration;
         }
 
@@ -93,7 +100,6 @@ namespace Haystack.Diagnostics.Configuration
             {
                 HaystackConfiguration configuration = XmlSerialization.Deserialize<HaystackConfiguration>(reader);
                 configuration.Validate();
-                configuration.Initialize();
                 return configuration;
             }
         }
