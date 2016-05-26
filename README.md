@@ -28,4 +28,20 @@ changes that caused the failure, if there were any.
 
 # Usage
 
-Still figuring that out
+**Runner**: This exe exists in [HaystackBaseDirectory]\Runner\[Framework]\Haystack.Runner.exe. A configuration file must be passed.
+* The configuration file must be called haystack.config.xml.
+* The configuration file must be in the same directory as the DLL being tested.
+* The [HaystackBaseDirectory]\Bootstrap\[Framework]\Haystack.Bootstrap.dll file may also need to be copied into the directory. When using NUnit 3, this is done automatically.
+
+Example:
+```
+Haystack.Runner.exe --ConfigurationFile MyTests\haystack.config.xml
+```
+
+**Analyzer**: This exe exists in [HaystackBaseDirectory]\Analysis\Haystack.Analyzer.exe. 
+The configuration files for the passing and failing tests must be passed.
+
+Example:
+```
+Haystack.Analyzer.exe --PassingConfigurationFile PassingTests\haystack.config.xml --FailingConfigurationFile FailingTests\haystack.config.xml
+```
