@@ -94,11 +94,20 @@
     <Compile Include="..\Haystack.Core\IO\IFileReader.cs">
       <Link>IO\IFileReader.cs</Link>
     </Compile>
+    <Compile Include="..\Haystack.Core\ITypeConfiguration.cs">
+      <Link>ITypeConfiguration.cs</Link>
+    </Compile>
     <Compile Include="..\Haystack.Core\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Core\RelativePathResolver.cs">
       <Link>RelativePathResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\TypeConfiguration.cs">
+      <Link>TypeConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Core\TypeResolver.cs">
+      <Link>TypeResolver.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Core\XmlSerialization.cs">
       <Link>XmlSerialization.cs</Link>

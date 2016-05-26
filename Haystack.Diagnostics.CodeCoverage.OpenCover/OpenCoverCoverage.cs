@@ -1,6 +1,4 @@
-﻿using Haystack.Diagnostics;
-using Haystack.Diagnostics.CodeCoverage;
-using Haystack.Core;
+﻿using Haystack.Core;
 using System.IO;
 using System.Reflection;
 using System.Text;

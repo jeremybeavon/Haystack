@@ -20,8 +20,6 @@ namespace Haystack.Diagnostics.Configuration
 
         IEnumerable<IStaticAnalysisConfiguration> StaticAnalysis { get; }
 
-        IEnumerable<ISourceControlConfiguration> SourceControl { get; }
-
         IRunnerConfiguration Runner { get; }
     }
 }

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4562AD5E-20CA-4934-9322-9D45D6F1FDBD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Haystack.Analysis</RootNamespace>
+    <AssemblyName>Haystack.Analysis</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiffPlex, Version=1.2.0.0, Culture=neutral, PublicKeyToken=1d35e91d1bd7bc0f, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiffPlex.1.2.1\lib\portable-net40+sl50+win+wpa81+wp80\DiffPlex.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MsgPack, Version=0.6.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsgPack.Cli.0.6.7\lib\net45\MsgPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.4.2.17\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Common, Version=4.2.17.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Patterns.Common.4.2.17\lib\net45\PostSharp.Patterns.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Model, Version=4.2.17.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Patterns.Model.4.2.17\lib\net40\PostSharp.Patterns.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeCoverageAnalysisProviderAttribute.cs" />
+    <Compile Include="CodeCoverageDifferenceType.cs" />
+    <Compile Include="Configuration\CodeCoverageConfiguration.cs" />
+    <Compile Include="Configuration\HaystackAnalysisConfiguration.cs" />
+    <Compile Include="Configuration\HaystackAnalysisConfigurationRelativePathResolver.cs" />
+    <Compile Include="Configuration\IHaystackAnalysisConfiguration.cs" />
+    <Compile Include="Configuration\ICodeCoverageConfiguration.cs" />
+    <Compile Include="Configuration\ISourceControlConfiguration.cs" />
+    <Compile Include="Configuration\SourceControlConfiguration.cs" />
+    <Compile Include="FileDifferences.cs" />
+    <Compile Include="HaystackAnalysisProvider.cs" />
+    <Compile Include="HaystackAnalyzer.cs" />
+    <Compile Include="HaystackMethodBuilder.cs" />
+    <Compile Include="ICodeCoverageAnalysisProvider.cs" />
+    <Compile Include="IHaystackAnalyzer.cs" />
+    <Compile Include="ObjectModel\CodeCoverageAnalysis.cs" />
+    <Compile Include="ObjectModel\CodeCoverageClass.cs" />
+    <Compile Include="ObjectModel\CodeCoverageClassFile.cs" />
+    <Compile Include="ObjectModel\CodeCoverageClassLines.cs" />
+    <Compile Include="ObjectModel\CodeCoverageFile.cs" />
+    <Compile Include="ObjectModel\CodeCoverageLine.cs" />
+    <Compile Include="ObjectModel\CodeCoverageMethod.cs" />
+    <Compile Include="ObjectModel\CodeCoverageMethodDifferenceType.cs" />
+    <Compile Include="ObjectModel\CodeCoverageMethodParameter.cs" />
+    <Compile Include="ObjectModel\CodeCoverageNestedClass.cs" />
+    <Compile Include="ObjectModel\HaystackAnalysis.cs" />
+    <Compile Include="ObjectModel\HaystackMethod.cs" />
+    <Compile Include="ObjectModel\HaystackMethodKey.cs" />
+    <Compile Include="ObjectModel\HaystackMethodParameter.cs" />
+    <Compile Include="ObjectModel\HaystackMethodsWithRefactoring.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageAnalysis.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageClass.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageClassFile.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageFile.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageLine.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageMethod.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageMethodParameter.cs" />
+    <Compile Include="ObjectModel\ICodeCoverageNestedClass.cs" />
+    <Compile Include="ObjectModel\IHaystackAnalysis.cs" />
+    <Compile Include="ObjectModel\IHaystackMethod.cs" />
+    <Compile Include="ObjectModel\IHaystackMethodParameter.cs" />
+    <Compile Include="ObjectModel\IHaystackMethodsWithRefactoring.cs" />
+    <Compile Include="ObjectModel\IMethodCallTraceFileAnalysis.cs" />
+    <Compile Include="ObjectModel\IRefactoredMethod.cs" />
+    <Compile Include="ObjectModel\ISourceControlLineChange.cs" />
+    <Compile Include="ObjectModel\ISourceControlRevision.cs" />
+    <Compile Include="ObjectModel\MethodCallTraceFileAnalysis.cs" />
+    <Compile Include="ObjectModel\MethodRefactorTypes.cs" />
+    <Compile Include="ObjectModel\RefactoredMethod.cs" />
+    <Compile Include="ObjectModel\SourceControlLineChange.cs" />
+    <Compile Include="ObjectModel\SourceControlRevision.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Range.cs" />
+    <Compile Include="SourceControl\ILineChange.cs" />
+    <Compile Include="SourceControl\ILineRange.cs" />
+    <Compile Include="SourceControl\IPartialFile.cs" />
+    <Compile Include="SourceControl\IRevision.cs" />
+    <Compile Include="SourceControl\ISourceControlProvider.cs" />
+    <Compile Include="SourceControl\ISourceControlSelector.cs" />
+    <Compile Include="SourceControl\LineChange.cs" />
+    <Compile Include="SourceControl\LineRange.cs" />
+    <Compile Include="SourceControl\PartialFile.cs" />
+    <Compile Include="SourceControl\Revision.cs" />
+    <Compile Include="SourceControl\SourceControlProviderAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
+      <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
+      <Name>Haystack.Core.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics.Net45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\PostSharp.4.2.17\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

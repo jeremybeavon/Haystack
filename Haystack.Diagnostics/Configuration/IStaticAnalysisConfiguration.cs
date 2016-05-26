@@ -4,7 +4,11 @@ namespace Haystack.Diagnostics.Configuration
 {
     public interface IStaticAnalysisConfiguration
     {
-        string StaticAnalysisFramework { get; }
+        string StaticAnalysisProvider { get; }
+
+        IStaticAnalysis StaticAnalysisRunner { get; }
+
+        string Name { get; }
 
         IEnumerable<string> IncludedItems { get; }
 

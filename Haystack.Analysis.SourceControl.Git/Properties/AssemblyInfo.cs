@@ -1,5 +1,5 @@
-﻿using Haystack.Diagnostics.SourceControl;
-using Haystack.SourceControl.Git;
+﻿using Haystack.Analysis.SourceControl;
+using Haystack.Analysis.SourceControl.Git;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;

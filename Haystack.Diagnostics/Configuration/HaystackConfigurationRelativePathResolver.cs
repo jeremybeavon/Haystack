@@ -1,19 +1,15 @@
 ﻿using Haystack.Core;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text.RegularExpressions;
 
 namespace Haystack.Diagnostics.Configuration
 {
     internal sealed class HaystackConfigurationRelativePathResolver
     {
-        private readonly string baseDirectory;
         private readonly RelativePathResolver relativePathResolver;
 
         private HaystackConfigurationRelativePathResolver(string baseDirectory)
         {
-            this.baseDirectory = baseDirectory;
             relativePathResolver = new RelativePathResolver(baseDirectory);
         }
 
@@ -75,11 +71,7 @@ namespace Haystack.Diagnostics.Configuration
 
         private void ResolveUsingFunctionIfNecessary(string text, Action<string> updateAction)
         {
-            if (!string.IsNullOrWhiteSpace(text))
-            {
-                const string pattern = @"\$\(CurrentDirectory\((?<Path>[^\)]+)\)\)";
-                updateAction(Regex.Replace(text, pattern, match => Path.GetFullPath(Path.Combine(baseDirectory, match.Groups["Path"].Value))));
-            }
+            relativePathResolver.ResolveUsingFunctionIfNecessary(text, updateAction);
         }
     }
 }

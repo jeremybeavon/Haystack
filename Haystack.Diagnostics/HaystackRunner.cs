@@ -60,7 +60,7 @@ namespace Haystack.Diagnostics
 
             foreach (IStaticAnalysisConfiguration staticAnalysis in configuration.StaticAnalysis ?? new IStaticAnalysisConfiguration[0])
             {
-                referencedDirectories.Add(Path.Combine(configuration.HaystackDiagnosticsDirectory, staticAnalysis.StaticAnalysisFramework));
+                referencedDirectories.Add(Path.Combine(configuration.HaystackDiagnosticsDirectory, staticAnalysis.StaticAnalysisProvider));
             }
 
             if (referencedDirectories.Count != 0)

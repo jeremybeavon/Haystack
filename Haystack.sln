@@ -339,6 +339,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple", "Simple", "{5803B4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Examples.Amendments.PostSharp.Simple.Net45", "Haystack.Examples.Amendments.PostSharp.Simple.Net45\Haystack.Examples.Amendments.PostSharp.Simple.Net45.csproj", "{689471D7-B900-42B6-A745-63F9931477EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analysis", "Haystack.Analysis\Haystack.Analysis.csproj", "{4562AD5E-20CA-4934-9322-9D45D6F1FDBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCoverage", "CodeCoverage", "{2A194E9D-27D8-4F60-81D0-7C245E595352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haystack.Analysis.CodeCoverage.OpenCover", "Haystack.Analysis.CodeCoverage.OpenCover\Haystack.Analysis.CodeCoverage.OpenCover.csproj", "{01486754-D906-4A35-BE5A-3B13EF6F2E3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -765,6 +771,14 @@ Global
 		{689471D7-B900-42B6-A745-63F9931477EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{689471D7-B900-42B6-A745-63F9931477EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{689471D7-B900-42B6-A745-63F9931477EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4562AD5E-20CA-4934-9322-9D45D6F1FDBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4562AD5E-20CA-4934-9322-9D45D6F1FDBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4562AD5E-20CA-4934-9322-9D45D6F1FDBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4562AD5E-20CA-4934-9322-9D45D6F1FDBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01486754-D906-4A35-BE5A-3B13EF6F2E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01486754-D906-4A35-BE5A-3B13EF6F2E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01486754-D906-4A35-BE5A-3B13EF6F2E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01486754-D906-4A35-BE5A-3B13EF6F2E3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -932,6 +946,9 @@ Global
 		{1F34E6AE-3D8F-465B-8251-B58F19333607} = {D2873630-2589-4EC6-B2EB-8F46B1D8CD9B}
 		{5803B446-7602-49C3-87D4-25D56097941F} = {1F34E6AE-3D8F-465B-8251-B58F19333607}
 		{689471D7-B900-42B6-A745-63F9931477EE} = {5803B446-7602-49C3-87D4-25D56097941F}
+		{4562AD5E-20CA-4934-9322-9D45D6F1FDBD} = {E2BA4CAD-9914-4CC2-9273-F90C44238218}
+		{2A194E9D-27D8-4F60-81D0-7C245E595352} = {E2BA4CAD-9914-4CC2-9273-F90C44238218}
+		{01486754-D906-4A35-BE5A-3B13EF6F2E3F} = {2A194E9D-27D8-4F60-81D0-7C245E595352}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Diagnostics.Interception.2.1.505.0\lib\NET35;packages\Unity.Diagnostics.Interception.2.1.505.2\lib\NET35;packages\Unity.2.1.505.2\lib\NET35

@@ -195,9 +195,6 @@
     <Compile Include="..\Haystack.Diagnostics\CodeCoverage\ICodeCoverageContext.cs">
       <Link>CodeCoverage\ICodeCoverageContext.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Diagnostics\Configuration\TypeConfiguration.cs">
-      <Link>Configuration\TypeConfiguration.cs</Link>
-    </Compile>
     <Compile Include="..\Haystack.Diagnostics\IRunnerArgumentsProvider.cs">
       <Link>IRunnerArgumentsProvider.cs</Link>
     </Compile>
@@ -267,17 +264,11 @@
     <Compile Include="..\Haystack.Diagnostics\Configuration\IRunnerConfiguration.cs">
       <Link>Configuration\IRunnerConfiguration.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Diagnostics\Configuration\ISourceControlConfiguration.cs">
-      <Link>Configuration\ISourceControlConfiguration.cs</Link>
-    </Compile>
     <Compile Include="..\Haystack.Diagnostics\Configuration\IStaticAnalysisConfiguration.cs">
       <Link>Configuration\IStaticAnalysisConfiguration.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\Configuration\RunnerConfiguration.cs">
       <Link>Configuration\RunnerConfiguration.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\Configuration\SourceControlConfiguration.cs">
-      <Link>Configuration\SourceControlConfiguration.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\Configuration\StaticAnalysisConfiguration.cs">
       <Link>Configuration\StaticAnalysisConfiguration.cs</Link>
@@ -345,39 +336,6 @@
       <DependentUpon>Properties\Resources.resx</DependentUpon>
       <Link>Properties\Resources.Designer.cs</Link>
     </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\ILineChange.cs">
-      <Link>SourceControl\ILineChange.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\ILineRange.cs">
-      <Link>SourceControl\ILineRange.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\IPartialFile.cs">
-      <Link>SourceControl\IPartialFile.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\IRevision.cs">
-      <Link>SourceControl\IRevision.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\ISourceControlProvider.cs">
-      <Link>SourceControl\ISourceControlProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\ISourceControlSelector.cs">
-      <Link>SourceControl\ISourceControlSelector.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\LineChange.cs">
-      <Link>SourceControl\LineChange.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\LineRange.cs">
-      <Link>SourceControl\LineRange.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\PartialFile.cs">
-      <Link>SourceControl\PartialFile.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\Revision.cs">
-      <Link>SourceControl\Revision.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\SourceControl\SourceControlProviderAttribute.cs">
-      <Link>SourceControl\SourceControlProviderAttribute.cs</Link>
-    </Compile>
     <Compile Include="..\Haystack.Diagnostics\StaticAnalysisOutput.cs">
       <Link>StaticAnalysisOutput.cs</Link>
     </Compile>
@@ -398,9 +356,6 @@
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\TestIntegration\TestIntegrationRepository.cs">
       <Link>TestIntegration\TestIntegrationRepository.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\TypeResolver.cs">
-      <Link>TypeResolver.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,8 @@
-﻿using Haystack.Diagnostics.SourceControl;
+﻿using Haystack.Analysis.SourceControl;
 using System;
 using System.Collections.Generic;
 
-namespace Haystack.SourceControl.Git
+namespace Haystack.Analysis.SourceControl.Git
 {
     public sealed class GitProvider : ISourceControlProvider
     {

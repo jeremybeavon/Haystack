@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Haystack.Core;
 using Haystack.Diagnostics.Amendments.Tests.Amendments;
 using Haystack.Diagnostics.Amendments.Tests.StrongNamedTestRunner;
 using Haystack.Diagnostics.Amendments.Tests.TestRunner;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Haystack.Core;
 using Haystack.Diagnostics.Configuration;
 
 namespace Haystack.Diagnostics.Amendments

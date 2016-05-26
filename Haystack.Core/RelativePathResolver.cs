@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Haystack.Core
 {
@@ -29,6 +30,15 @@ namespace Haystack.Core
                 {
                     ResolveIfNecessary(paths[index], UpdateList(paths, index));
                 }
+            }
+        }
+
+        public void ResolveUsingFunctionIfNecessary(string text, Action<string> updateAction)
+        {
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                const string pattern = @"\$\(CurrentDirectory\((?<Path>[^\)]+)\)\)";
+                updateAction(Regex.Replace(text, pattern, match => Path.GetFullPath(Path.Combine(baseDirectory, match.Groups["Path"].Value))));
             }
         }
 
