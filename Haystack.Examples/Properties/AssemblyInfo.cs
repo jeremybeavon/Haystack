@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Haystack.Examples.PostBuildScript")]
+[assembly: AssemblyTitle("Haystack.Examples")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Haystack.Examples.PostBuildScript")]
+[assembly: AssemblyProduct("Haystack.Examples")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1766454c-3482-4010-86f8-c611aaa9b3d1")]
+[assembly: Guid("bc70ca62-717d-42b8-ba03-cd134c80c7cd")]
 
 // Version information for an assembly consists of the following four values:
 //

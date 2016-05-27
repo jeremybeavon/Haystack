@@ -29,6 +29,8 @@ namespace Haystack.Analysis.Configuration
         [Required]
         public string PassingTestOutputDirectory { get; set; }
 
+        public string OutputDirectory { get; set; }
+
         [XmlElement("CodeCoverage")]
         public List<CodeCoverageConfiguration> CodeCoverage { get; set; }
 

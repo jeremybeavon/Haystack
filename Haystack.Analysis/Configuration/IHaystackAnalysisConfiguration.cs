@@ -12,6 +12,8 @@ namespace Haystack.Analysis.Configuration
 
         string FailingTestOutputDirectory { get; }
 
+        string OutputDirectory { get; }
+
         IEnumerable<ICodeCoverageConfiguration> CodeCoverage { get; }
 
         IEnumerable<ISourceControlConfiguration> SourceControl { get; }

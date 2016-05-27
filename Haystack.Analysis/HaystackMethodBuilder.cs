@@ -26,7 +26,7 @@ namespace Haystack.Analysis
                 ProcessCodeCoverageAnalysis(codeCoverageAnalysis);
             }
 
-            foreach (MethodCallTraceFileAnalysis methodCallTraceFileAnalysis in haystackAnalysis.MethodCallTraceFiles)
+            foreach (MethodCallTraceFileAnalysis methodCallTraceFileAnalysis in haystackAnalysis.MethodCallTraceFileAnalysis)
             {
                 ProcessMethodCallTraceFileAnalysis(methodCallTraceFileAnalysis);
             }

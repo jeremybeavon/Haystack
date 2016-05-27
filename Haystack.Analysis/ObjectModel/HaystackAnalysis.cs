@@ -13,7 +13,7 @@ namespace Haystack.Analysis.ObjectModel
         public HaystackAnalysis()
         {
             CodeCoverageAnalysis = new List<CodeCoverageAnalysis>();
-            MethodCallTraceFiles = new List<MethodCallTraceFileAnalysis>();
+            MethodCallTraceFileAnalysis = new List<MethodCallTraceFileAnalysis>();
             SourceControlRevisions = new List<SourceControlRevision>();
             HaystackMethods = new List<HaystackMethod>();
             HaystackMethodsWithRefactoring = new HaystackMethodsWithRefactoring();
@@ -31,7 +31,7 @@ namespace Haystack.Analysis.ObjectModel
 
         public List<CodeCoverageAnalysis> CodeCoverageAnalysis { get; set; }
 
-        public List<MethodCallTraceFileAnalysis> MethodCallTraceFiles { get; set; }
+        public List<MethodCallTraceFileAnalysis> MethodCallTraceFileAnalysis { get; set; }
 
         public List<SourceControlRevision> SourceControlRevisions { get; set; }
 
@@ -44,7 +44,7 @@ namespace Haystack.Analysis.ObjectModel
             get { return CodeCoverageAnalysis; }
         }
 
-        public IEnumerable<IMethodCallTraceFileAnalysis> MethodCallTraceFileAnalysis
+        IEnumerable<IMethodCallTraceFileAnalysis> IHaystackAnalysis.MethodCallTraceFileAnalysis
         {
             get { return MethodCallTraceFileAnalysis; }
         }
@@ -107,7 +107,7 @@ namespace Haystack.Analysis.ObjectModel
                     FileName = fileName,
                     PassingMethodCallTrace = MethodCallTraceProvider.Load(passingMethodCallTraceFile)
                 };
-                MethodCallTraceFiles.Add(methodCallTraceFileAnalysis);
+                MethodCallTraceFileAnalysis.Add(methodCallTraceFileAnalysis);
                 string failingMethodCallTraceFile = Path.Combine(configuration.FailingTestOutputDirectory, fileName);
                 if (File.Exists(failingMethodCallTraceFile))
                 {
@@ -123,7 +123,7 @@ namespace Haystack.Analysis.ObjectModel
                     FileName = Path.Combine(failingMethodCallTraceFile),
                     PassingMethodCallTrace = MethodCallTraceProvider.Load(failingMethodCallTraceFile)
                 };
-                MethodCallTraceFiles.Add(methodCallTraceFileAnalysis);
+                MethodCallTraceFileAnalysis.Add(methodCallTraceFileAnalysis);
             }
         }
 

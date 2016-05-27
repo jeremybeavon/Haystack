@@ -77,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Haystack.Analysis\Haystack.Analysis.csproj">
+      <Project>{4562ad5e-20ca-4934-9322-9d45d6f1fdbd}</Project>
+      <Name>Haystack.Analysis</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Analyzer\Haystack.Analyzer.csproj">
       <Project>{0562e031-3587-4d9a-9ef8-e7fba20aec0c}</Project>
       <Name>Haystack.Analyzer</Name>
@@ -97,11 +101,6 @@
     <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
       <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
       <Name>Haystack.Diagnostics.Net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Haystack.Examples.PostBuildScript\Haystack.Examples.PostBuildScript.csproj">
-      <Project>{1766454c-3482-4010-86f8-c611aaa9b3d1}</Project>
-      <Name>Haystack.Examples.PostBuildScript</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45\Haystack.Diagnostics.Interception.Autofac_3_5_2.Net45.csproj">
       <Project>{afdb6143-a0c6-473e-911b-a2718c8f7d3e}</Project>
@@ -152,6 +151,11 @@
       <Project>{da39fc2d-747e-46f6-a16e-5f279c30ce42}</Project>
       <Name>Haystack.Diagnostics.Interception.Unity_4_0_1.Net45</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples\Haystack.Examples.csproj">
+      <Project>{bc70ca62-717d-42b8-ba03-cd134c80c7cd}</Project>
+      <Name>Haystack.Examples</Name>
+	  <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Runner.NUnit_2_6_1.Net45\Haystack.Runner.NUnit_2_6_1.Net45.csproj">
       <Project>{4d5cffa8-c4bc-451e-82b9-47ad4647400d}</Project>

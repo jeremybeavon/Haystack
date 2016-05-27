@@ -1,4 +1,6 @@
-﻿using Haystack.Bootstrap;
+﻿using Haystack.Analysis;
+using Haystack.Analysis.ObjectModel;
+using Haystack.Bootstrap;
 using Haystack.Core.IO;
 using Haystack.Diagnostics;
 using Haystack.Diagnostics.Configuration;
@@ -19,14 +21,20 @@ namespace Haystack.Analyzer.Tests
         private static readonly string haystackExamplesDirectory =
             Path.Combine(haystackBaseDirectory, "Examples", FrameworkVersion.Current);
 
-        public static void RunHaystackAnalyzer(string exampleDirectory)
+        public static HaystackAnalysis RunHaystackAnalyzer(string exampleDirectory)
         {
             string testDirectory = InitializeTestDirectory(exampleDirectory);
             string passingConfigurationFile = InitializeConfigurationFile(testDirectory, true);
             string failingConfigurationFile = InitializeConfigurationFile(testDirectory, false);
             RunHaystackRunner(passingConfigurationFile);
             RunHaystackRunner(failingConfigurationFile);
-            RunHaystackAnalyzer(passingConfigurationFile, failingConfigurationFile);
+            string analysisConfigurationFile = Path.Combine(testDirectory, "haystackanalysis.config.xml");
+            string[] args = new string[]
+            {
+                "--ConfigurationFile", analysisConfigurationFile
+            };
+            RunExecutable(Path.Combine(haystackBaseDirectory, @"Analysis\Haystack.Analyzer.exe"), args);
+            return HaystackAnalysisProvider.Load(Path.Combine(testDirectory, "haystackAnalysis"));
         }
 
         private static string InitializeTestDirectory(string exampleDirectory)
@@ -56,17 +64,7 @@ namespace Haystack.Analyzer.Tests
             string[] args = new string[] { "--ConfigurationFile", configurationFile };
             RunExecutable(Path.Combine(haystackRunnerDirectory, @"Haystack.Runner.exe"), args);
         }
-
-        private static void RunHaystackAnalyzer(string passingConfigurationFile, string failingConfigurationFile)
-        {
-            string[] args = new string[]
-            {
-                "--PassingConfigurationFile", passingConfigurationFile,
-                "--FailingConfigurationFile", failingConfigurationFile
-            };
-            RunExecutable(Path.Combine(haystackBaseDirectory, @"Analysis\Haystack.Analyzer.exe"), args);
-        }
-
+        
         private static void RunExecutable(string exe, params string[] args)
         {
             ProcessRunner.ExecuteProcessInNewAppDomain(exe, args);

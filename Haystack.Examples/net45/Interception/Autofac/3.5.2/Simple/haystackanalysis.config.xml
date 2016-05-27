@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HaystackAnalysisConfiguration>
+  <HaystackBaseDirectory>..\..\..\..\..\..</HaystackBaseDirectory>
+  <FailingTestOutputDirectory>Failing\Output</FailingTestOutputDirectory>
+  <PassingTestOutputDirectory>Passing\Output</PassingTestOutputDirectory>
+</HaystackAnalysisConfiguration>

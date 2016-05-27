@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC70CA62-717D-42B8-BA03-CD134C80C7CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Haystack.Examples</RootNamespace>
+    <AssemblyName>Haystack.Examples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Haystack\Examples\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Haystack\Examples\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExamplesPostBuild.msbuild">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
+      <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
+      <Name>Haystack.Bootstrap.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Amendments.PostSharp.Simple.Net45\Haystack.Examples.Amendments.PostSharp.Simple.Net45.csproj">
+      <Project>{689471d7-b900-42b6-a745-63f9931477ee}</Project>
+      <Name>Haystack.Examples.Amendments.PostSharp.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Net45\Haystack.Examples.Amendments.SimpleProperty.Net45.csproj">
+      <Project>{f37356db-39d5-48e2-ac5f-14235fd749b0}</Project>
+      <Name>Haystack.Examples.Amendments.SimpleProperty.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45.csproj">
+      <Project>{960ed9fd-0dd6-45db-9987-43bd7fc6cd32}</Project>
+      <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45\Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45.csproj">
+      <Project>{8e5cc1d6-2696-4492-b77a-afdf53850e35}</Project>
+      <Name>Haystack.Examples.Amendments.SimpleProperty.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing.Net45\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing.Net45.csproj">
+      <Project>{2761604f-ca50-4f88-8960-de53ca297820}</Project>
+      <Name>Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing.Net45\Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing.Net45.csproj">
+      <Project>{5aef7e2f-a8df-45fd-87af-fdaeca1cb096}</Project>
+      <Name>Haystack.Examples.CodeCoverage.OpenCover.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45.csproj">
+      <Project>{9454d03d-df97-4ffd-b329-67a024582c59}</Project>
+      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup.Net45.csproj">
+      <Project>{6b200f3d-e52a-41d0-a758-1c1e120f940d}</Project>
+      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing.Net45.csproj">
+      <Project>{99fdff94-3eb9-419e-93cc-f7b30d65fbc6}</Project>
+      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing.Net45.csproj">
+      <Project>{a664dfbe-8bb6-44b3-9f75-91fb4ed3dbe4}</Project>
+      <Name>Haystack.Examples.Interception.Autofac_3_5_2.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45.csproj">
+      <Project>{7d543861-4844-4f4f-a857-1aac0a98ee1d}</Project>
+      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup.Net45.csproj">
+      <Project>{054678d4-5620-4aaa-aa4d-ae8793ef28ac}</Project>
+      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing.Net45.csproj">
+      <Project>{9777f3f4-cc4a-4de1-8359-b35db3565f84}</Project>
+      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing.Net45.csproj">
+      <Project>{096835ed-9a7f-4b7a-8833-7712844943b0}</Project>
+      <Name>Haystack.Examples.Interception.Castle.Windsor_3_3_0.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45.csproj">
+      <Project>{bcf8228a-3d26-4b11-9823-31822a1e3b69}</Project>
+      <Name>Haystack.Examples.Interception.Ninject_3_2_0.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup.Net45.csproj">
+      <Project>{1ca72fb1-0518-4ad0-aa1c-f9d4c2a32b96}</Project>
+      <Name>Haystack.Examples.Interception.Ninject_3_2_0.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing.Net45.csproj">
+      <Project>{b80afd60-7c93-4873-aeb4-df14e71676f6}</Project>
+      <Name>Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing.Net45.csproj">
+      <Project>{e02f71fa-876d-4261-b87c-7d40dce8a614}</Project>
+      <Name>Haystack.Examples.Interception.Ninject_3_2_0.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Net45.csproj">
+      <Project>{478911f6-81dc-46dd-b18f-a41d269b186d}</Project>
+      <Name>Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup.Net45.csproj">
+      <Project>{5357f020-b335-48b1-ac0a-e1f901457f1a}</Project>
+      <Name>Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing.Net45.csproj">
+      <Project>{ae8e161e-cc1d-4f25-9ec9-c5c55fb321d6}</Project>
+      <Name>Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing.Net45.csproj">
+      <Project>{677f3077-d0f1-406c-9451-9ce8b5e94301}</Project>
+      <Name>Haystack.Examples.Interception.StructureMap_4_0_1_318.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505.Simple.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Net45.csproj">
+      <Project>{f6dd50a0-40ee-4afb-920b-da5542df4dcc}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup.Net45.csproj">
+      <Project>{dc70b484-3fa3-487a-a733-3ecd811d5215}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing.Net45.csproj">
+      <Project>{c3dc3d36-38f4-48b6-a9cf-54a59a710015}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing.Net45.csproj">
+      <Project>{8995a977-bba3-40a9-b875-56a8d2b33dc3}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45.csproj">
+      <Project>{27a0b503-ce9b-4c9c-9277-50e39e1d6a60}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup.Net45.csproj">
+      <Project>{3577dcc7-3cce-4b03-b585-b46ca02210cc}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing.Net45.csproj">
+      <Project>{7525db1d-7fc5-4eb7-b05d-dc6987cc8162}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing.Net45.csproj">
+      <Project>{0824b579-4701-4671-800b-8ff06e9fc39e}</Project>
+      <Name>Haystack.Examples.Interception.Unity_2_1_505_2.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45.csproj">
+      <Project>{fdaf9374-e51f-4389-854a-f486218d21d5}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_0_1304.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup.Net45.csproj">
+      <Project>{8d8f8e08-0a1e-4684-9ecf-dece822d36a5}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_0_1304.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing.Net45.csproj">
+      <Project>{d0da0b80-ca01-47d0-be46-678c90292c59}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing.Net45.csproj">
+      <Project>{a853c80d-e307-4709-8e96-dff50ec5e243}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_0_1304.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Net45.csproj">
+      <Project>{e8cb0807-bc05-4a06-ad09-4ebce9d325a9}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_5_1304.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup.Net45.csproj">
+      <Project>{9a4b7715-d6d6-4859-a11c-577cd37dab98}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_5_1304.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing.Net45.csproj">
+      <Project>{2b2007d5-491b-45b8-885d-f2bda4883f10}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing.Net45.csproj">
+      <Project>{7e0387bb-68cc-49aa-9bb6-5893f8d7f96f}</Project>
+      <Name>Haystack.Examples.Interception.Unity_3_5_1304.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_4_0_1.Simple.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Net45.csproj">
+      <Project>{57343909-503e-431a-a6e4-018d28ed7746}</Project>
+      <Name>Haystack.Examples.Interception.Unity_4_0_1.Simple.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup.Net45.csproj">
+      <Project>{c9a7555a-c4ef-4e36-88fb-90f73f47c75e}</Project>
+      <Name>Haystack.Examples.Interception.Unity_4_0_1.Simple.Setup.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing.Net45.csproj">
+      <Project>{b9e1b04c-b3a0-481a-a16c-c91588d30ea0}</Project>
+      <Name>Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Failing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing.Net45\Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing.Net45.csproj">
+      <Project>{da913b2e-2627-4b82-8a89-5c88868bcd97}</Project>
+      <Name>Haystack.Examples.Interception.Unity_4_0_1.Simple.Tests.Passing.Net45</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="net45\Amendments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="net45\Interception\Autofac\3.5.2\Simple\haystackanalysis.config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <MSBuild Projects="$(ProjectDir)ExamplesPostBuild.msbuild" Properties="OutputDirectory=$(ProjectDir)..\bin\$(Configuration)\Haystack\" />
+  </Target>
+</Project>

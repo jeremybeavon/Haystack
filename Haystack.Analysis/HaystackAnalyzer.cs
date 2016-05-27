@@ -1,9 +1,6 @@
 ﻿using Haystack.Analysis.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Haystack.Analysis.ObjectModel;
+using System.IO;
 
 namespace Haystack.Analysis
 {
@@ -11,7 +8,12 @@ namespace Haystack.Analysis
     {
         public static void RunHaystackAnalyzer(IHaystackAnalysisConfiguration configuration)
         {
-
+            string haystackAnalysisOutputFile = Path.Combine(configuration.OutputDirectory, "haystackAnalysis");
+            HaystackAnalysis analysis =
+                File.Exists(haystackAnalysisOutputFile) ?
+                HaystackAnalysisProvider.Load(haystackAnalysisOutputFile) :
+                new HaystackAnalysis(configuration);
+            HaystackAnalysisProvider.Save(haystackAnalysisOutputFile, analysis);
         }
     }
 }

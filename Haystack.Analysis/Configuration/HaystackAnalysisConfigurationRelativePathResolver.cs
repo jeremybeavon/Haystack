@@ -10,10 +10,12 @@ namespace Haystack.Analysis.Configuration
 {
     internal sealed class HaystackAnalysisConfigurationRelativePathResolver
     {
+        private readonly string baseDirectory;
         private readonly RelativePathResolver relativePathResolver;
 
         private HaystackAnalysisConfigurationRelativePathResolver(string baseDirectory)
         {
+            this.baseDirectory = baseDirectory;
             relativePathResolver = new RelativePathResolver(baseDirectory);
         }
 
@@ -27,6 +29,14 @@ namespace Haystack.Analysis.Configuration
             ResolveIfNecessary(configuration.HaystackBaseDirectory, path => configuration.HaystackBaseDirectory = path);
             ResolveIfNecessary(configuration.FailingTestOutputDirectory, path => configuration.FailingTestOutputDirectory = path);
             ResolveIfNecessary(configuration.PassingTestOutputDirectory, path => configuration.PassingTestOutputDirectory = path);
+            if (string.IsNullOrWhiteSpace(configuration.OutputDirectory))
+            {
+                configuration.OutputDirectory = baseDirectory;
+            }
+            else
+            {
+                ResolveIfNecessary(configuration.OutputDirectory, path => configuration.OutputDirectory = path);
+            }
         }
 
         private void ResolveIfNecessary(string path, Action<string> updateAction)
