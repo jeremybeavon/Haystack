@@ -195,6 +195,9 @@
     <Compile Include="..\Haystack.Diagnostics\CodeCoverage\ICodeCoverageContext.cs">
       <Link>CodeCoverage\ICodeCoverageContext.cs</Link>
     </Compile>
+    <Compile Include="..\Haystack.Diagnostics\IndexedObject.cs">
+      <Link>IndexedObject.cs</Link>
+    </Compile>
     <Compile Include="..\Haystack.Diagnostics\IRunnerArgumentsProvider.cs">
       <Link>IRunnerArgumentsProvider.cs</Link>
     </Compile>
@@ -290,9 +293,6 @@
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\MsBuildRunner.cs">
       <Link>MsBuildRunner.cs</Link>
-    </Compile>
-    <Compile Include="..\Haystack.Diagnostics\ObjectModel\IndexedObject.cs">
-      <Link>ObjectModel\IndexedObject.cs</Link>
     </Compile>
     <Compile Include="..\Haystack.Diagnostics\ObjectModel\MethodCall.cs">
       <Link>ObjectModel\MethodCall.cs</Link>

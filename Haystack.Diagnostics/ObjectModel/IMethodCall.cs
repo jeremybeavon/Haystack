@@ -4,7 +4,7 @@ namespace Haystack.Diagnostics.ObjectModel
 {
     public interface IMethodCall
     {
-        int MethodCallId { get; }
+        int Index { get; }
 
         IObjectType DeclaringType { get; }
 

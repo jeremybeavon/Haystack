@@ -195,6 +195,7 @@ namespace Haystack.Diagnostics
         private void AddMethodCallToStack(MethodCall methodCall)
         {
             Stack<MethodCall> callStack = methodCallStack.GetOrAdd(Thread.CurrentThread.ManagedThreadId, CreateMethodCallStack);
+            methodCall.Index = callStack.Peek().MethodCalls.Count;
             callStack.Peek().MethodCalls.Add(methodCall);
             callStack.Push(methodCall);
         }

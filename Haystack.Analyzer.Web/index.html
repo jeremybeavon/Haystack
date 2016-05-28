@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.1/classic/theme-triton/resources/theme-triton-all.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.1/ext-all.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.1/classic/theme-triton/theme-triton.js"></script>
+    <script type="text/javascript">
+        Ext.application({
+            name: 'extjs-tutorial.com',
+
+            launch: function () {
+
+                Ext.create('Ext.container.Viewport',
+                {
+                    layout: 'fit',
+
+                    items: [{
+                        title: 'First ExtJS Application - Viewport title',
+                        html: 'Application Viewport area.'
+                    }]
+                });
+
+            }
+        });
+    </script>
+</body>
+</html>

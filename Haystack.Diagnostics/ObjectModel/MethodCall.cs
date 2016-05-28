@@ -19,33 +19,36 @@ namespace Haystack.Diagnostics.ObjectModel
         public int MethodCallId { get; set; }
 
         [MessagePackMember(1)]
+        public int Index { get; set; }
+
+        [MessagePackMember(2)]
         public int DeclaringTypeIndex { get; set; }
 
         public ObjectType DeclaringType { get; set; }
 
-        [MessagePackMember(2)]
+        [MessagePackMember(3)]
         public int InstanceIndex { get; set; }
 
         public ObjectInstance Instance { get; set; }
 
-        [MessagePackMember(3)]
+        [MessagePackMember(4)]
         public string MethodName { get; set; }
 
-        [MessagePackMember(4)]
+        [MessagePackMember(5)]
         public List<MethodParameter> Parameters { get; set; }
 
-        [MessagePackMember(5)]
+        [MessagePackMember(6)]
         public PropertyType PropertyType { get; set; }
 
-        [MessagePackMember(6)]
+        [MessagePackMember(7)]
         public int ReturnTypeIndex { get; set; }
 
         public ObjectType ReturnType { get; set; }
 
-        [MessagePackMember(7)]
+        [MessagePackMember(8)]
         public Value ReturnValue { get; set; }
 
-        [MessagePackMember(8)]
+        [MessagePackMember(9)]
         public List<MethodCall> MethodCalls { get; set; }
 
         public MethodCall CalledBy { get; set; }
