@@ -39,9 +39,9 @@ Haystack.Runner.exe --ConfigurationFile MyTests\haystack.config.xml
 ```
 
 **Analyzer**: This exe exists in [HaystackBaseDirectory]\Analysis\Haystack.Analyzer.exe. 
-The configuration files for the passing and failing tests must be passed.
+A configuration file must be passed.
 
 Example:
 ```
-Haystack.Analyzer.exe --PassingConfigurationFile PassingTests\haystack.config.xml --FailingConfigurationFile FailingTests\haystack.config.xml
+Haystack.Analyzer.exe --ConfigurationFile haystackanalysis.config.xml
 ```
