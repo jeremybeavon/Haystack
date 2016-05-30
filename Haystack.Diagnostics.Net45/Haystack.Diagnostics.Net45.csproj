@@ -96,6 +96,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AllConstructorsAmender.cs">
+      <Link>Amendments\AllConstructorsAmender.cs</Link>
+    </Compile>
+    <Compile Include="..\Haystack.Diagnostics\Amendments\AllMethodsAmender.cs">
+      <Link>Amendments\AllMethodsAmender.cs</Link>
+    </Compile>
     <Compile Include="..\Haystack.Diagnostics\Amendments\AllPropertiesAmender.cs">
       <Link>Amendments\AllPropertiesAmender.cs</Link>
     </Compile>
