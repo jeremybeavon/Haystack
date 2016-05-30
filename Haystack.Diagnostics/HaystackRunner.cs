@@ -49,15 +49,6 @@ namespace Haystack.Diagnostics
         private void InitializeAssemblyResolution()
         {
             List<string> referencedDirectories = new List<string>();
-            foreach (IInterceptionConfiguration interception in configuration.Interception ?? new IInterceptionConfiguration[0])
-            {
-                string interceptionDirectory = Path.Combine(
-                    configuration.HaystackDiagnosticsDirectory,
-                    interception.InterceptionFramework,
-                    interception.InterceptionFrameworkVersion);
-                referencedDirectories.Add(interceptionDirectory);
-            }
-
             foreach (IStaticAnalysisConfiguration staticAnalysis in configuration.StaticAnalysis ?? new IStaticAnalysisConfiguration[0])
             {
                 referencedDirectories.Add(Path.Combine(configuration.HaystackDiagnosticsDirectory, staticAnalysis.StaticAnalysisProvider));

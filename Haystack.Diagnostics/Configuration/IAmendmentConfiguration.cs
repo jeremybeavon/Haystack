@@ -32,5 +32,7 @@ namespace Haystack.Diagnostics.Configuration
         IEnumerable<ICatchMethodAmender> CatchMethodAmendments { get; }
 
         IEnumerable<IFinallyMethodAmender> FinallyMethodAmendments { get; }
+        
+        string StrongNameKeyFile { get; }
     }
 }

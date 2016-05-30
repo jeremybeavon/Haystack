@@ -43,6 +43,7 @@ namespace Haystack.Diagnostics.Amendments.Tests
         {
             Configuration.OutputDirectory = baseDirectory;
             Configuration.HaystackBaseDirectory = baseDirectory;
+            Configuration.Amendments.StrongNameKeyFile = StrongNameKey;
             string testDirectory = Path.Combine(baseDirectory, TestName);
             SetUpTestRun(testDirectory);
             AppDomainSetup appDomainSetup = new AppDomainSetup()
@@ -61,7 +62,7 @@ namespace Haystack.Diagnostics.Amendments.Tests
         {
             DirectoryCopy.CopyDirectory(Path.GetDirectoryName(TargetDll), testDirectory);
             string assemblyName = Path.GetFileNameWithoutExtension(TargetDll);
-            (new AmendmentSetupProvider(Path.Combine(testDirectory, Path.GetFileName(TargetDll)), Configuration, StrongNameKey)
+            (new AmendmentSetupProvider(Path.Combine(testDirectory, Path.GetFileName(TargetDll)), Configuration)
             {
                 AfterthoughtAmenderExe = Path.Combine(baseDirectory, AmendmentSetupProvider.AfterthoughtAmenderExeFileName),
                 AmendmentsDll = Path.Combine(baseDirectory, AmendmentSetupProvider.AmendmentsDllFileName)
