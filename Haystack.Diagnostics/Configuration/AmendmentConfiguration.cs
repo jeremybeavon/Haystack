@@ -81,6 +81,8 @@ namespace Haystack.Diagnostics.Configuration
 
         [XmlArrayItem("AmendmentType")]
         public List<TypeConfiguration> FinallyMethodAmendments { get; set; }
+        
+        public string StrongNameKeyFile { get; set; }
 
         IEnumerable<string> IAmendmentConfiguration.AssembliesToAmend
         {
