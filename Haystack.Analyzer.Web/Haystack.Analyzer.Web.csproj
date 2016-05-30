@@ -112,10 +112,12 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HaystackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HaystackMethodItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -156,6 +158,10 @@
     <ProjectReference Include="..\Haystack.Analysis\Haystack.Analysis.csproj">
       <Project>{4562ad5e-20ca-4934-9322-9d45d6f1fdbd}</Project>
       <Name>Haystack.Analysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Haystack.Diagnostics.Net45\Haystack.Diagnostics.Net45.csproj">
+      <Project>{8f094168-2764-495b-af6e-9c135af04cda}</Project>
+      <Name>Haystack.Diagnostics.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

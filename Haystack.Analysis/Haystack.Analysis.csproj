@@ -73,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeCoverageAnalysisProviderAttribute.cs" />
-    <Compile Include="CodeCoverageDifferenceType.cs" />
     <Compile Include="Configuration\CodeCoverageConfiguration.cs" />
     <Compile Include="Configuration\HaystackAnalysisConfiguration.cs" />
     <Compile Include="Configuration\HaystackAnalysisConfigurationRelativePathResolver.cs" />
@@ -99,6 +98,7 @@
     <Compile Include="ObjectModel\CodeCoverageNestedClass.cs" />
     <Compile Include="ObjectModel\HaystackAnalysis.cs" />
     <Compile Include="ObjectModel\HaystackMethod.cs" />
+    <Compile Include="ObjectModel\HaystackMethodDifferenceType.cs" />
     <Compile Include="ObjectModel\HaystackMethodKey.cs" />
     <Compile Include="ObjectModel\HaystackMethodParameter.cs" />
     <Compile Include="ObjectModel\HaystackMethodsWithRefactoring.cs" />
