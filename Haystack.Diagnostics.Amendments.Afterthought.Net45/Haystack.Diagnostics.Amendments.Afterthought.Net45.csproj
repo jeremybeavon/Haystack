@@ -81,6 +81,7 @@
     <ProjectReference Include="..\Haystack.Bootstrap.Net45\Haystack.Bootstrap.Net45.csproj">
       <Project>{c78e4bd0-5b9e-44a9-8daf-4be0731323fe}</Project>
       <Name>Haystack.Bootstrap.Net45</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Haystack.Core.Net45\Haystack.Core.Net45.csproj">
       <Project>{17d9bbd3-9567-45c7-84c1-3ba0a512f488}</Project>
