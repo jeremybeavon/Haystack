@@ -9,7 +9,7 @@ namespace Haystack.Diagnostics.Amendments
         public IEnumerable<ITypeAmendment> GetAmendments(Type target)
         {
             AmenderInitializer.InitializeIfNecessary();
-            return CreateAmendment(typeof(HaystackAmender<>), target);
+            return target.IsInterface || target.IsGenericType ? new ITypeAmendment[0] : CreateAmendment(typeof(HaystackAmender<>), target);
         }
 
         private static IEnumerable<ITypeAmendment> CreateAmendment(Type type, Type target)
