@@ -14,7 +14,7 @@ namespace Haystack.Diagnostics.Amendments
         {
             return properties
                 .Where(property => !IsGenericType(property.PropertyInfo))
-                .Where(property => !ContainsByRefParameter(property.PropertyInfo.GetIndexParameters()))
+                .Where(property => property.PropertyInfo.GetIndexParameters().Length == 0)
                 .Where(property => amenders.Any(amender => amender.AmendProperty(property.PropertyInfo)));
         }
 
@@ -25,7 +25,7 @@ namespace Haystack.Diagnostics.Amendments
         {
             return constructors
                 .Where(constructor => !IsGenericType(constructor.ConstructorInfo))
-                .Where(constructor => !ContainsByRefParameter(constructor.ConstructorInfo.GetParameters()))
+                .Where(constructor => !ContainsByRefOrMultiDimensionalArrayParameter(constructor.ConstructorInfo.GetParameters()))
                 .Where(constructor => amenders.Any(amender => amender.AmendConstructor(constructor.ConstructorInfo)));
         }
 
@@ -36,7 +36,7 @@ namespace Haystack.Diagnostics.Amendments
         {
             return methods
                 .Where(method => !IsGenericType(method.MethodInfo) && !method.MethodInfo.IsGenericMethod)
-                .Where(method => !ContainsByRefParameter(method.MethodInfo.GetParameters()))
+                .Where(method => !ContainsByRefOrMultiDimensionalArrayParameter(method.MethodInfo.GetParameters()))
                 .Where(method => amenders.Any(amender => amender.AmendMethod(method.MethodInfo)));
         }
 
@@ -45,9 +45,14 @@ namespace Haystack.Diagnostics.Amendments
             return member.DeclaringType != null && member.DeclaringType.IsGenericType;
         }
 
-        private static bool ContainsByRefParameter(IEnumerable<ParameterInfo> parameters)
+        private static bool ContainsByRefOrMultiDimensionalArrayParameter(IEnumerable<ParameterInfo> parameters)
         {
-            return parameters.Any(parameter => parameter.ParameterType.IsByRef);
+            return parameters.Any(parameter => parameter.ParameterType.IsByRef || IsMultiDimensionalArrayType(parameter.ParameterType));
+        }
+
+        private static bool IsMultiDimensionalArrayType(Type paramterType)
+        {
+            return paramterType.IsArray && paramterType.GetArrayRank() > 1;
         }
     }
 }
