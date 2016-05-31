@@ -103,6 +103,7 @@ namespace Haystack.Diagnostics.Amendments
             {
                 CrossDomainConsoleProvider.InitializeConsole(appDomain.AppDomain);
                 appDomain.AppDomain.SetData(ConfigurationKey, Configuration.ToString());
+                appDomain.AppDomain.AddAssemblyResolveDirectory(Assembly.GetExecutingAssembly().AssemblyBaseDirectory());
                 int result = appDomain.AppDomain.ExecuteAssembly(AfterthoughtAmenderExe, new string[] { AssemblyToAmend, AmendmentsDll });
                 if (result != 0)
                 {
