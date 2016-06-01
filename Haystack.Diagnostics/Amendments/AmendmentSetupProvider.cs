@@ -1,5 +1,4 @@
-﻿using AppDomainCallbackExtensions;
-using Haystack.Diagnostics.Configuration;
+﻿using Haystack.Diagnostics.Configuration;
 using Haystack.Core;
 using Haystack.Diagnostics.Properties;
 using Mono.Cecil;
@@ -44,19 +43,18 @@ namespace Haystack.Diagnostics.Amendments
         {
             if (!File.Exists(AssemblyToAmend))
             {
-                Trace.WriteLine("Skipping amendments because file not found: {0}", AssemblyToAmend);
+                Trace.WriteLine(string.Format("Skipping amendments because file not found: {0}", AssemblyToAmend));
                 return;
             }
 
             if (IsAssemblySetUp(AssemblyToAmend))
             {
-                Trace.WriteLine("Skipping amendments because amendments are already applied: {0}", AssemblyToAmend);
+                Trace.WriteLine(string.Format("Skipping amendments because amendments are already applied: {0}", AssemblyToAmend));
                 return;
             }
 
             CleanUpDirectory();
             AmendAssembly();
-            ReSignAssemblyIfNecessary();
         }
 
         private static bool IsAssemblySetUp(string path)
@@ -84,13 +82,13 @@ namespace Haystack.Diagnostics.Amendments
         {
             if (!File.Exists(AfterthoughtAmenderExe))
             {
-                Trace.WriteLine("Cannot set up Haystack diagnostics because {0} was not found.", AfterthoughtAmenderExe);
+                Trace.WriteLine(string.Format("Cannot set up Haystack diagnostics because {0} was not found.", AfterthoughtAmenderExe));
                 return;
             }
 
             if (!File.Exists(AmendmentsDll))
             {
-                Trace.WriteLine("Cannot set up Haystack diagnostics because {0} was not found.", AmendmentsDll);
+                Trace.WriteLine(string.Format("Cannot set up Haystack diagnostics because {0} was not found.", AmendmentsDll));
                 return;
             }
 
@@ -110,6 +108,8 @@ namespace Haystack.Diagnostics.Amendments
                     throw new InvalidOperationException("Assembly amendment failed.");
                 }
             }
+            
+            ReSignAssemblyIfNecessary();
         }
 
         private void ReSignAssemblyIfNecessary()
