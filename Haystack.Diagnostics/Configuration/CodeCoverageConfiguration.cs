@@ -5,11 +5,11 @@ namespace Haystack.Diagnostics.Configuration
     public sealed class CodeCoverageConfiguration : ICodeCoverageConfiguration
     {
         [Required]
-        public string CodeCoverageFramework { get; }
+        public string CodeCoverageFramework { get; set; }
 
         [Required]
-        public string CodeCoverageProviderAssembly { get; }
+        public string CodeCoverageProviderAssembly { get; set; }
 
-        public string CodeCoverageFilter { get; }
+        public string CodeCoverageFilter { get; set; }
     }
 }
