@@ -1,63 +1,83 @@
 ﻿using Haystack.Diagnostics.Amendments;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 
 namespace Haystack.Bootstrap
 {
     public static class ConstructorAmendments<TInstance>
     {
-        public static void BeforeConstructor(TInstance instance, string constructor, object[] parameters)
+        public static void BeforeConstructor(TInstance instance, string constructorName, object[] parameters)
         {
             HaystackBootstrapInitializer.InitializeIfNecessary();
-            BeforeConstructor(instance, parameters);
+            ConstructorInfo constructor = new StackFrame(1).GetMethod() as ConstructorInfo;
+            if (constructor == null)
+            {
+                throw new NotSupportedException("BeforeConstructor must be called from a constructor, not a method.");
+            }
+
+            BeforeConstructor(instance, constructor, parameters);
         }
 
-        public static void AfterConstructor(TInstance instance, string constructor, object[] parameters)
+        public static void AfterConstructor(TInstance instance, string constructorName, object[] parameters)
         {
             HaystackBootstrapInitializer.InitializeIfNecessary();
-            AfterConstructor(instance, parameters);
+            ConstructorInfo constructor = new StackFrame(1).GetMethod() as ConstructorInfo;
+            if (constructor == null)
+            {
+                throw new NotSupportedException("AfterConstructor must be called from a constructor, not a method.");
+            }
+
+            AfterConstructor(instance, constructor, parameters);
         }
 
-        public static void CatchConstructor(TInstance instance, string constructor, object[] parameters)
+        public static void CatchConstructor(TInstance instance, string constructorName, object[] parameters)
         {
             HaystackBootstrapInitializer.InitializeIfNecessary();
-            CatchConstructor(instance, parameters);
+            ConstructorInfo constructor = new StackFrame(1).GetMethod() as ConstructorInfo;
+            if (constructor == null)
+            {
+                throw new NotSupportedException("BeforeConstructor must be called from a constructor, not a method.");
+            }
+
+            CatchConstructor(instance, constructor, parameters);
         }
 
-        private static void BeforeConstructor(TInstance instance, object[] parameters)
+        private static void BeforeConstructor(TInstance instance, ConstructorInfo constructor, object[] parameters)
         {
             ProcessConstructor(
                 AmendmentRepository.BeforeConstructorAmenders,
-                parameters,
-                amendment => amendment.BeforeConstructor(instance, parameters));
+                constructor,
+                amendment => amendment.BeforeConstructor(instance, constructor, parameters));
         }
 
-        private static void AfterConstructor(TInstance instance, object[] parameters)
+        private static void AfterConstructor(TInstance instance, ConstructorInfo constructor, object[] parameters)
         {
             ProcessConstructor(
                 AmendmentRepository.AfterConstructorAmenders,
-                parameters,
-                amendment => amendment.AfterConstructor(instance, parameters));
+                constructor,
+                amendment => amendment.AfterConstructor(instance, constructor, parameters));
         }
 
-        private static void CatchConstructor(TInstance instance, object[] parameters)
+        private static void CatchConstructor(TInstance instance, ConstructorInfo constructor, object[] parameters)
         {
             ProcessConstructor(
                 AmendmentRepository.CatchConstructorAmenders,
-                parameters,
-                amendment => amendment.CatchConstructor(instance, parameters));
+                constructor,
+                amendment => amendment.CatchConstructor(instance, constructor, parameters));
         }
 
         private static void ProcessConstructor<TAmender>(
             IEnumerable<TAmender> amenders,
-            object[] parameters,
+            ConstructorInfo constructor,
             Action<TAmender> action)
             where TAmender : IConstructorAmender
         {
             if (amenders != null)
             {
-                foreach (TAmender amendment in amenders.Where(amender => amender.AmendConstructor(typeof(TInstance), parameters)))
+                foreach (TAmender amendment in amenders.Where(amender => amender.AmendConstructor(constructor)))
                 {
                     action(amendment);
                 }

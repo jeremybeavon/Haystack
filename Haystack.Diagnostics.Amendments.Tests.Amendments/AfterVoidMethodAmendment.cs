@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection;
-using Haystack.Diagnostics.Amendments;
+﻿using System.Reflection;
 
 namespace Haystack.Diagnostics.Amendments.Tests.Amendments
 {
@@ -10,16 +8,11 @@ namespace Haystack.Diagnostics.Amendments.Tests.Amendments
         {
             return true;
         }
-
-        public bool AmendMethod(Type type, string methodName, object[] parameters)
-        {
-            return true;
-        }
-
-        public void AfterMethod<TInstance>(TInstance instance, string methodName, object[] parameters)
+        
+        public void AfterMethod<TInstance>(TInstance instance, MethodInfo method, object[] parameters)
         {
             const string format = "AfterVoidMethod(instance = {0}, methodName = {1}, parameters = {2})";
-            TestTrace.TraceText = string.Format(format, typeof(TInstance).FullName, methodName, string.Join(",", parameters));
+            TestTrace.TraceText = string.Format(format, typeof(TInstance).FullName, method.Name, string.Join(",", parameters));
         }
     }
 }

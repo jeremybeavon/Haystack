@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Reflection;
 
 namespace Haystack.Diagnostics.Amendments
 {
@@ -9,9 +9,9 @@ namespace Haystack.Diagnostics.Amendments
         {
         }
 
-        public void BeforeMethod<TInstance>(TInstance instance, string methodName, object[] parameters)
+        public void BeforeMethod<TInstance>(TInstance instance, MethodInfo method, object[] parameters)
         {
-            throw new NotImplementedException();
+            MethodCallTraceContext.MethodCallTrace.EnterMethodCall(instance, method, parameters);
         }
     }
 }

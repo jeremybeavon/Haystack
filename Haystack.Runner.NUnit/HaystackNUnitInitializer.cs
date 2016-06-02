@@ -27,7 +27,7 @@ namespace Haystack.Runner.NUnit.Initializer
                 }
             }
             
-            if (!File.Exists(Path.Combine(assemblyToTest, "Haystack.Runner.NUnit.dlll")))
+            if (!File.Exists(Path.Combine(assemblyDirectory, "Haystack.Runner.NUnit.dll")))
             {
                 string baseDirectory = Assembly.GetExecutingAssembly().AssemblyBaseDirectory();
                 string runnerAddinDirectory = Path.Combine(baseDirectory, @"..\HaystackAddin");

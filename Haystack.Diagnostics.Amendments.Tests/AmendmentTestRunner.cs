@@ -6,6 +6,7 @@ using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.Configuration;
 using System;
 using System.IO;
+using System.Linq;
 using TextSerialization;
 
 namespace Haystack.Diagnostics.Amendments.Tests
@@ -61,12 +62,37 @@ namespace Haystack.Diagnostics.Amendments.Tests
         private void SetUpTestRun(string testDirectory)
         {
             DirectoryCopy.CopyDirectory(Path.GetDirectoryName(TargetDll), testDirectory);
+            UpdateConfiguration(testDirectory);
             string assemblyName = Path.GetFileNameWithoutExtension(TargetDll);
             (new AmendmentSetupProvider(Path.Combine(testDirectory, Path.GetFileName(TargetDll)), Configuration)
             {
                 AfterthoughtAmenderExe = Path.Combine(baseDirectory, AmendmentSetupProvider.AfterthoughtAmenderExeFileName),
                 AmendmentsDll = Path.Combine(baseDirectory, AmendmentSetupProvider.AmendmentsDllFileName)
             }).SetupIfNecessary();
+        }
+
+        private void UpdateConfiguration(string testDirectory)
+        {
+            AmendmentConfiguration configuration = Configuration.Amendments;
+            foreach (TypeConfiguration type in configuration.AfterConstructorAmendments.Concat(
+                configuration.AfterMethodAmendments).Concat(
+                configuration.AfterPropertyGetAmendments).Concat(
+                configuration.AfterPropertySetAmendments).Concat(
+                configuration.AfterVoidMethodAmendments).Concat(
+                configuration.BeforeConstructorAmendments).Concat(
+                configuration.BeforeMethodAmendments).Concat(
+                configuration.BeforePropertyGetAmendments).Concat(
+                configuration.BeforePropertySetAmendments).Concat(
+                configuration.CatchConstructorAmendments).Concat(
+                configuration.CatchMethodAmendments).Concat(
+                configuration.CatchVoidMethodAmendments).Concat(
+                configuration.FinallyMethodAmendments).Concat(
+                configuration.HaystackConstructorAmendments).Concat(
+                configuration.HaystackMethodAmendments).Concat(
+                configuration.HaystackPropertyAmendments))
+            {
+                type.AssemblyFile = Path.Combine(testDirectory, Path.GetFileName(type.AssemblyFile));
+            }
         }
     }
 }

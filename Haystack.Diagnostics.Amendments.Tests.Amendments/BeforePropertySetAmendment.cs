@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Reflection;
-using Haystack.Diagnostics.Amendments;
 
 namespace Haystack.Diagnostics.Amendments.Tests.Amendments
 {

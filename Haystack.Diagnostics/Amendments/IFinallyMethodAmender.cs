@@ -1,7 +1,9 @@
-﻿namespace Haystack.Diagnostics.Amendments
+﻿using System.Reflection;
+
+namespace Haystack.Diagnostics.Amendments
 {
     public interface IFinallyMethodAmender : IMethodAmender
     {
-        void Finally<TInstance>(TInstance instance, string methodName, object[] parameters);
+        void Finally<TInstance>(TInstance instance, MethodInfo methodName, object[] parameters);
     }
 }

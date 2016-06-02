@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection;
-using Haystack.Diagnostics.Amendments;
+﻿using System.Reflection;
 
 namespace Haystack.Diagnostics.Amendments.Tests.Amendments
 {
@@ -10,13 +8,8 @@ namespace Haystack.Diagnostics.Amendments.Tests.Amendments
         {
             return true;
         }
-
-        public bool AmendConstructor(Type type, object[] parameters)
-        {
-            return true;
-        }
-
-        public void BeforeConstructor<TInstance>(TInstance instance, object[] parameters)
+        
+        public void BeforeConstructor<TInstance>(TInstance instance, ConstructorInfo constructor, object[] parameters)
         {
             const string format = "BeforeConstructor(instance = {0}, parameters = {1})";
             TestTrace.TraceText = string.Format(format, typeof(TInstance).FullName, string.Join(",", parameters));

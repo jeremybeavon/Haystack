@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Haystack.Diagnostics.ObjectModel;
+using MsgPack.Serialization;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
-using Haystack.Diagnostics.ObjectModel;
-using MsgPack.Serialization;
 using ParameterModifier = Haystack.Diagnostics.ObjectModel.ParameterModifier;
 
 namespace Haystack.Diagnostics
@@ -29,6 +30,42 @@ namespace Haystack.Diagnostics
             currentTypeId = -1;
         }
 
+        public void EnterConstructorCall(object instance, ConstructorInfo constructor, object[] parameters)
+        {
+            MethodCall methodCall = new MethodCall()
+            {
+                DeclaringTypeIndex = GetTypeIndex(constructor.DeclaringType),
+                InstanceIndex = GetObjectIndex(instance),
+                MethodName = constructor.Name,
+                Parameters = GetParameters(parameters, constructor.GetParameters()),
+            };
+            EnterMethodCall(methodCall);
+        }
+
+        public void ExitConstructorCall(object[] parameters)
+        {
+            ExitMethodCall(null, parameters);
+        }
+
+        public void EnterMethodCall(object instance, MethodInfo method, object[] parameters)
+        {
+            MethodCall methodCall = new MethodCall()
+            {
+                DeclaringTypeIndex = GetTypeIndex(method.DeclaringType),
+                InstanceIndex = GetObjectIndex(instance),
+                MethodName = method.Name,
+                Parameters = GetParameters(parameters, method.GetParameters()),
+                ReturnTypeIndex = GetTypeIndex(method.ReturnType),
+            };
+            if (method.Attributes.HasFlag(MethodAttributes.SpecialName) && Regex.IsMatch(method.Name, "^[gs]et_"))
+            {
+                methodCall.PropertyType = method.Name.StartsWith("get_") ? PropertyType.Get : PropertyType.Set;
+                methodCall.MethodName = methodCall.MethodName.Substring(4);
+            }
+
+            EnterMethodCall(methodCall);
+        }
+
         public void EnterMethodCall(MethodCall methodCall)
         {
             AddMethodCallToStack(methodCall);
@@ -37,6 +74,16 @@ namespace Haystack.Diagnostics
         public MethodCall ExitMethodCall()
         {
             return RemoveMethodCallFromStack();
+        }
+
+        public void ExitMethodCall(object returnValue, object[] parameters)
+        {
+            MethodCall methodCall = ExitMethodCall();
+            methodCall.ReturnValue = GetValue(returnValue);
+            foreach (int index in methodCall.Parameters.Where(param => param.Modifier != ParameterModifier.None).Select((value, index) => index))
+            {
+                methodCall.Parameters[index].OutputValue = GetValue(parameters[index]);
+            }
         }
         
         public void EnterPropertyGet<TInstance>(TInstance instance, string propertyName)

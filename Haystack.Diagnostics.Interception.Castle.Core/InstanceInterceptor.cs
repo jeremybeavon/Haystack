@@ -25,37 +25,18 @@ namespace Haystack.Diagnostics.Interception.Castle.Core
             invocation.Proceed();
             ExitMethodCall(invocation);
         }
-
+        
         private void EnterMethodCall(IInvocation methodInvocation)
         {
-            MethodCallTraceProvider provider = MethodCallTraceContext.MethodCallTrace;
-            MethodInfo method = methodInvocation.Method;
-            MethodCall methodCall = new MethodCall()
-            {
-                DeclaringTypeIndex = provider.GetTypeIndex(method.DeclaringType),
-                InstanceIndex = provider.GetObjectIndex(methodInvocation.InvocationTarget),
-                MethodName = method.Name,
-                Parameters = provider.GetParameters(methodInvocation.Arguments, method.GetParameters()),
-                ReturnTypeIndex = provider.GetTypeIndex(method.ReturnType),
-            };
-            if (method.Attributes.HasFlag(MethodAttributes.SpecialName) && Regex.IsMatch(method.Name, "^[gs]et_"))
-            {
-                methodCall.PropertyType = method.Name.StartsWith("get_") ? PropertyType.Get : PropertyType.Set;
-                methodCall.MethodName = methodCall.MethodName.Substring(4);
-            }
-
-            provider.EnterMethodCall(methodCall);
+            MethodCallTraceContext.MethodCallTrace.EnterMethodCall(
+                methodInvocation.InvocationTarget,
+                methodInvocation.Method,
+                methodInvocation.Arguments);
         }
 
         private void ExitMethodCall(IInvocation methodInvocation)
         {
-            MethodCallTraceProvider provider = MethodCallTraceContext.MethodCallTrace;
-            MethodCall methodCall = provider.ExitMethodCall();
-            methodCall.ReturnValue = provider.GetValue(methodInvocation.ReturnValue);
-            foreach (int index in methodCall.Parameters.Where(param => param.Modifier != ParameterModifier.None).Select((value, index) => index))
-            {
-                methodCall.Parameters[index].OutputValue = provider.GetValue(methodInvocation.Arguments[index]);
-            }
+            MethodCallTraceContext.MethodCallTrace.ExitMethodCall(methodInvocation.ReturnValue, methodInvocation.Arguments);
         }
     }
 }

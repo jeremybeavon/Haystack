@@ -85,6 +85,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Afterthought.Net45\Haystack.Diagnostics.Amendments.Afterthought.Net45.csproj">
+      <Project>{c564503c-a5c5-468c-b6bb-24066cbcedd7}</Project>
+      <Name>Haystack.Diagnostics.Amendments.Afterthought.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45\Haystack.Diagnostics.Amendments.Tests.Amendments.Net45.csproj">
       <Project>{d8e9c6c2-e585-44fb-bbf6-05187682ae67}</Project>
       <Name>Haystack.Diagnostics.Amendments.Tests.Amendments.Net45</Name>

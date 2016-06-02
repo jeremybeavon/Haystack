@@ -15,12 +15,12 @@ namespace Haystack.Diagnostics.Amendments
             return method.ReturnType == typeof(void) && base.AmendMethod(method);
         }
 
-        public void AfterMethod<TInstance>(TInstance instance, string methodName, object[] parameters)
+        public void AfterMethod<TInstance>(TInstance instance, MethodInfo method, object[] parameters)
         {
-            throw new NotImplementedException();
+            MethodCallTraceContext.MethodCallTrace.ExitMethodCall(instance, parameters);
         }
 
-        public void CatchMethod<TInstance, TException>(TInstance instance, string methodName, TException exception, object[] parameters)
+        public void CatchMethod<TInstance, TException>(TInstance instance, MethodInfo method, TException exception, object[] parameters)
         {
             throw new NotImplementedException();
         }

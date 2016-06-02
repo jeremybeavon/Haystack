@@ -1,10 +1,12 @@
-﻿namespace Haystack.Diagnostics.Amendments
+﻿using System.Reflection;
+
+namespace Haystack.Diagnostics.Amendments
 {
     public interface IAfterMethodAmender : IMethodAmender
     {
         TReturnValue AfterMethod<TInstance, TReturnValue>(
             TInstance instance,
-            string methodName,
+            MethodInfo method,
             object[] parameters,
             TReturnValue returnValue);
     }

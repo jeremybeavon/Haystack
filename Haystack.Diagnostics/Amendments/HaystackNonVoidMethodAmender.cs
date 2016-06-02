@@ -15,12 +15,13 @@ namespace Haystack.Diagnostics.Amendments
             return method.ReturnType != typeof(void) && base.AmendMethod(method);
         }
 
-        public TReturnValue AfterMethod<TInstance, TReturnValue>(TInstance instance, string methodName, object[] parameters, TReturnValue returnValue)
+        public TReturnValue AfterMethod<TInstance, TReturnValue>(TInstance instance, MethodInfo method, object[] parameters, TReturnValue returnValue)
         {
-            throw new NotImplementedException();
+            MethodCallTraceContext.MethodCallTrace.ExitMethodCall(returnValue, parameters);
+            return returnValue;
         }
 
-        public TReturnValue CatchMethod<TInstance, TException, TReturnValue>(TInstance instance, string methodName, TException exception, object[] parameters)
+        public TReturnValue CatchMethod<TInstance, TException, TReturnValue>(TInstance instance, MethodInfo method, TException exception, object[] parameters)
         {
             throw new NotImplementedException();
         }

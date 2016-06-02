@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.Interception.Unity;
 
@@ -13,13 +12,8 @@ namespace Haystack.Examples.Interception.Unity.Simple.Setup
         {
             return constructor.DeclaringType.FullName == typeName;
         }
-
-        public bool AmendConstructor(Type type, object[] parameters)
-        {
-            return type.FullName == typeName;
-        }
-
-        public void AfterConstructor<TInstance>(TInstance instance, object[] parameters)
+        
+        public void AfterConstructor<TInstance>(TInstance instance, ConstructorInfo constructor, object[] parameters)
         {
             HaystackInterceptor.SetUp(DependencyManager.SimpleContainer);
         }

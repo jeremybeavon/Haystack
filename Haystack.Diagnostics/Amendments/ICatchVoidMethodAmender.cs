@@ -1,10 +1,12 @@
-﻿namespace Haystack.Diagnostics.Amendments
+﻿using System.Reflection;
+
+namespace Haystack.Diagnostics.Amendments
 {
     public interface ICatchVoidMethodAmender : IMethodAmender
     {
         void CatchMethod<TInstance, TException>(
             TInstance instance,
-            string methodName,
+            MethodInfo method,
             TException exception,
             object[] parameters);
     }

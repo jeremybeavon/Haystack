@@ -1,6 +1,4 @@
-﻿using Haystack.Diagnostics.ObjectModel;
-using System;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Haystack.Diagnostics.Amendments
 {
@@ -17,24 +15,15 @@ namespace Haystack.Diagnostics.Amendments
         {
             return amender.AmendConstructor(constructor);
         }
-
-        public bool AmendConstructor(Type type, object[] parameters)
+        
+        public void BeforeConstructor<TInstance>(TInstance instance, ConstructorInfo constructor, object[] parameters)
         {
-            return amender.AmendConstructor(type, parameters);
+            MethodCallTraceContext.MethodCallTrace.EnterConstructorCall(instance, constructor, parameters);
         }
 
-        public void BeforeConstructor<TInstance>(TInstance instance, object[] parameters)
+        public void AfterConstructor<TInstance>(TInstance instance, ConstructorInfo constructor, object[] parameters)
         {
-            MethodCallTraceProvider provider = MethodCallTraceContext.MethodCallTrace;
-            MethodCall methodCall = new MethodCall()
-            {
-            };
-            provider.EnterMethodCall(methodCall);
-        }
-
-        public void AfterConstructor<TInstance>(TInstance instance, object[] parameters)
-        {
-            MethodCallTraceContext.MethodCallTrace.ExitMethodCall();
+            MethodCallTraceContext.MethodCallTrace.ExitConstructorCall(parameters);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using Haystack.Diagnostics.Amendments;
 using Haystack.Diagnostics.Interception.Castle.Windsor;
 
@@ -13,13 +12,8 @@ namespace Haystack.Examples.Interception.Castle.Windsor.Simple.Setup
         {
             return method.DeclaringType.FullName == typeName && method.Name == "SetUp";
         }
-
-        public bool AmendMethod(Type type, string methodName, object[] parameters)
-        {
-            return type.FullName == typeName && methodName == "SetUp";
-        }
-
-        public void BeforeMethod<TInstance>(TInstance instance, string methodName, object[] parameters)
+        
+        public void BeforeMethod<TInstance>(TInstance instance, MethodInfo method, object[] parameters)
         {
             HaystackInterceptor.SetUp(DependencyManager.SimpleContainer);
         }

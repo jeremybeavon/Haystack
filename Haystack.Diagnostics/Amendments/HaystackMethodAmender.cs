@@ -16,10 +16,5 @@ namespace Haystack.Diagnostics.Amendments
         {
             return methodAmender.AmendMethod(method);
         }
-
-        public bool AmendMethod(Type type, string methodName, object[] parameters)
-        {
-            return methodAmender.AmendMethod(type, methodName, parameters);
-        }
     }
 }

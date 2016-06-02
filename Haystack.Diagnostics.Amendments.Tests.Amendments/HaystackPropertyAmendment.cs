@@ -1,5 +1,4 @@
-﻿using Haystack.Diagnostics.Amendments;
-using System;
+﻿using System;
 using System.Reflection;
 
 namespace Haystack.Diagnostics.Amendments.Tests.Amendments
