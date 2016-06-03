@@ -4,6 +4,7 @@ using Haystack.Diagnostics.Configuration;
 using Haystack.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -124,8 +125,15 @@ namespace Haystack.Diagnostics
             {
                 string assemblyPath = Path.Combine(
                     configuration.HaystackDiagnosticsDirectory,
+                    "CodeCoverage"
                     codeCoverage.CodeCoverageFramework,
                     codeCoverage.CodeCoverageProviderAssembly);
+                if (!File.Exists(assemblyPath))
+                {
+                    Trace.WriteLine(string.Format("CodeCoverageProviderAssembly does not exist: {0}", assemblyPath));
+                    return new CodeCoverageProvider[0];
+                }
+
                 Assembly assembly = Assembly.LoadFrom(assemblyPath);
                 CodeCoverageProviderAttribute attribute = assembly.GetCustomAttribute<CodeCoverageProviderAttribute>();
                 if (attribute == null)
