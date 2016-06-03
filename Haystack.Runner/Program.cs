@@ -1,11 +1,9 @@
 ﻿using CommandLine;
 using Haystack.Core;
 using Haystack.Diagnostics;
-using Haystack.Diagnostics.Configuration;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 
 namespace Haystack.Runner
 {
@@ -24,8 +22,7 @@ namespace Haystack.Runner
         
         private static void RunHaystackDiagnostics(CommandLineOptions options)
         {
-            IHaystackConfiguration configuration = HaystackInitializer.InitializeIfNecessary(options.ConfigurationFile);
-            HaystackRunner.RunHaystackDiagnostics(configuration);
+            HaystackRunner.RunHaystackDiagnostics(options.ConfigurationFile);
         }
     }
 }
