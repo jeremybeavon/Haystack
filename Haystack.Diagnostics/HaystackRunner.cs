@@ -13,11 +13,23 @@ namespace Haystack.Diagnostics
 {
     public sealed class HaystackRunner
     {
+        private readonly string configurationFile;
         private readonly IHaystackConfiguration configuration;
+
+        private HaystackRunner(string configurationFile)
+            : this(HaystackInitializer.InitializeIfNecessary(configurationFile))
+        {
+            this.configurationFile = configurationFile;
+        }
 
         private HaystackRunner(IHaystackConfiguration configuration)
         {
             this.configuration = configuration;
+        }
+        
+        public static void RunHaystackDiagnostics(string configurationFile)
+        {
+            new HaystackRunner(configurationFile).RunHaystackDiagnostics();
         }
         
         public static void RunHaystackDiagnostics(IHaystackConfiguration configuration)
@@ -160,6 +172,11 @@ namespace Haystack.Diagnostics
             foreach (IRunnerInitializer runnerInitializer in configuration.Runner.RunnerInitializers ?? new IRunnerInitializer[0])
             {
                 runnerInitializer.InitializeRunner(testRunContext);
+            }
+            
+            if (Debugger.IsAttached && !string.IsNullOrWhiteSpace(configurationFile))
+            {
+                File.WriteAllText(Path.Combine(Path.GetDirectoryName(configurationFile), HaystackInitializer.LaunchDebuggerFileName), string.Empty);
             }
 
             string runnerCommand = string.Format("\"{0}\" {1}", testRunContext.Exe, testRunContext.Arguments);
