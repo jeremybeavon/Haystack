@@ -1,6 +1,7 @@
 ﻿using MsgPack.Serialization;
 using System.Collections.Generic;
 using System.Threading;
+using System;
 
 namespace Haystack.Diagnostics.ObjectModel
 {
@@ -52,6 +53,10 @@ namespace Haystack.Diagnostics.ObjectModel
         public List<MethodCall> MethodCalls { get; set; }
 
         public MethodCall CalledBy { get; set; }
+
+        public IMethodCallThreadTrace Thread { get; set; }
+
+        public IMethodCallTrace Trace { get; set; }
 
         IObjectType IMethodCall.DeclaringType
         {

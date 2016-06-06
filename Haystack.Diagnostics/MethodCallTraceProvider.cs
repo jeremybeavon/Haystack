@@ -175,8 +175,13 @@ namespace Haystack.Diagnostics
             foreach (ObjectInstance @object in methodCallTrace.Objects)
                 @object.Type = methodCallTrace.Types[@object.TypeIndex];
 
-            foreach (MethodCall methodCall in methodCallTrace.MethodCallThreads.SelectMany(thread => thread.MethodCalls))
-                Initialize(methodCallTrace, methodCall);
+            foreach (MethodCallThreadTrace thread in methodCallTrace.MethodCallThreads)
+            {
+                foreach (MethodCall methodCall in thread.MethodCalls)
+                {
+                    Initialize(methodCallTrace, thread, methodCall);
+                }
+            }
         }
 
         public Value GetValue(object value)
@@ -213,11 +218,13 @@ namespace Haystack.Diagnostics
             }).ToList();
         }
 
-        private static void Initialize(MethodCallTrace methodCallTrace, MethodCall methodCall)
+        private static void Initialize(MethodCallTrace methodCallTrace, MethodCallThreadTrace thread, MethodCall methodCall)
         {
             methodCall.DeclaringType = methodCallTrace.Types[methodCall.DeclaringTypeIndex];
             methodCall.Instance = methodCallTrace.Objects[methodCall.InstanceIndex];
             methodCall.ReturnType = methodCallTrace.Types[methodCall.ReturnTypeIndex];
+            methodCall.Trace = methodCallTrace;
+            methodCall.Thread = thread;
             Initialize(methodCallTrace, methodCall.ReturnValue);
             foreach (MethodParameter parameter in methodCall.Parameters)
             {
@@ -229,7 +236,7 @@ namespace Haystack.Diagnostics
             foreach (MethodCall childMethodCall in methodCall.MethodCalls)
             {
                 childMethodCall.CalledBy = methodCall;
-                Initialize(methodCallTrace, childMethodCall);
+                Initialize(methodCallTrace, thread, childMethodCall);
             }
         }
         

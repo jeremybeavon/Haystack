@@ -24,6 +24,10 @@ namespace Haystack.Diagnostics.ObjectModel
 
         IMethodCall CalledBy { get; }
 
+        IMethodCallThreadTrace Thread { get; }
+
+        IMethodCallTrace Trace { get; }
+
         MethodCall ToMethodCall();
     }
 }

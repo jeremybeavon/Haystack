@@ -80,12 +80,12 @@
     <Compile Include="Configuration\ICodeCoverageConfiguration.cs" />
     <Compile Include="Configuration\ISourceControlConfiguration.cs" />
     <Compile Include="Configuration\SourceControlConfiguration.cs" />
-    <Compile Include="FileDifferences.cs" />
     <Compile Include="HaystackAnalysisProvider.cs" />
     <Compile Include="HaystackAnalyzer.cs" />
     <Compile Include="HaystackMethodBuilder.cs" />
     <Compile Include="ICodeCoverageAnalysisProvider.cs" />
     <Compile Include="IHaystackAnalyzer.cs" />
+    <Compile Include="MethodCallThreadTraceText.cs" />
     <Compile Include="ObjectModel\CodeCoverageAnalysis.cs" />
     <Compile Include="ObjectModel\CodeCoverageClass.cs" />
     <Compile Include="ObjectModel\CodeCoverageClassFile.cs" />
@@ -124,7 +124,6 @@
     <Compile Include="ObjectModel\SourceControlLineChange.cs" />
     <Compile Include="ObjectModel\SourceControlRevision.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Range.cs" />
     <Compile Include="SourceControl\ILineChange.cs" />
     <Compile Include="SourceControl\ILineRange.cs" />
     <Compile Include="SourceControl\IPartialFile.cs" />
