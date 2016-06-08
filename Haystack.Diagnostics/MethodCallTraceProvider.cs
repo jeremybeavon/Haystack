@@ -15,7 +15,7 @@ namespace Haystack.Diagnostics
     public class MethodCallTraceProvider
     {
         private const int NullValue = -1;
-        private readonly ConcurrentDictionary<int, Stack<MethodCall>> methodCallStack;
+        private readonly ConcurrentDictionary<int, MethodCallStack> methodCallStack;
         private readonly ConcurrentDictionary<object, IndexedObject<ObjectInstance>> objects;
         private readonly ConcurrentDictionary<Type, IndexedObject<ObjectType>> types;
         private int currentObjectId;
@@ -23,7 +23,7 @@ namespace Haystack.Diagnostics
 
         public MethodCallTraceProvider()
         {
-            methodCallStack = new ConcurrentDictionary<int, Stack<MethodCall>>();
+            methodCallStack = new ConcurrentDictionary<int, MethodCallStack>();
             objects = new ConcurrentDictionary<object, IndexedObject<ObjectInstance>>();
             types = new ConcurrentDictionary<Type, IndexedObject<ObjectType>>();
             currentObjectId = -1;
@@ -71,14 +71,14 @@ namespace Haystack.Diagnostics
             AddMethodCallToStack(methodCall);
         }
 
-        public MethodCall ExitMethodCall()
-        {
-            return RemoveMethodCallFromStack();
-        }
-
         public void ExitMethodCall(object returnValue, object[] parameters)
         {
-            MethodCall methodCall = ExitMethodCall();
+            MethodCall methodCall = RemoveMethodCallFromStack();
+            if (methodCall == null)
+            {
+                return;
+            }
+            
             methodCall.ReturnValue = GetValue(returnValue);
             foreach (int index in methodCall.Parameters.Where(param => param.Modifier != ParameterModifier.None).Select((value, index) => index))
             {
@@ -101,8 +101,11 @@ namespace Haystack.Diagnostics
         public void ExitPropertyGet<TProperty>(TProperty value)
         {
             MethodCall methodCall = RemoveMethodCallFromStack();
-            methodCall.ReturnTypeIndex = GetTypeIndex(typeof(TProperty));
-            methodCall.ReturnValue = GetValue(value);
+            if (methodCall != null)
+            {
+                methodCall.ReturnTypeIndex = GetTypeIndex(typeof(TProperty));
+                methodCall.ReturnValue = GetValue(value);
+            }
         }
 
         public void EnterPropertySet<TInstance, TProperty>(TInstance instance, string propertyName, TProperty value)
@@ -137,7 +140,7 @@ namespace Haystack.Diagnostics
         {
             return new MethodCallTrace
             {
-                MethodCallThreads = methodCallStack.Select(entry => new MethodCallThreadTrace(entry.Key, entry.Value.Peek().MethodCalls)).ToList(),
+                MethodCallThreads = methodCallStack.Select(entry => new MethodCallThreadTrace(entry.Key, entry.Value.CallStack.Peek().MethodCalls)).ToList(),
                 Objects = objects.Values.OrderBy(entry => entry.Index).Select(entry => entry.Object).ToList(),
                 Types = types.Values.OrderBy(entry => entry.Index).Select(entry => entry.Object).ToList()
             };
@@ -196,7 +199,27 @@ namespace Haystack.Diagnostics
 
         public int GetObjectIndex(object instance)
         {
-            return instance == null ? NullValue : objects.GetOrAdd(instance, CreateObjectIndex).Index;
+            if (instance == null)
+            {
+                return NullValue;
+            }
+
+            MethodCallStack callStack = methodCallStack.GetOrAdd(Thread.CurrentThread.ManagedThreadId, threadId => new MethodCallStack());
+            int objectIndex = NullValue;
+            if (!callStack.IsInGetHashCode)
+            {
+                callStack.IsInGetHashCode = true;
+                try
+                {
+                    objectIndex = objects.GetOrAdd(instance, CreateObjectIndex).Index;
+                }
+                finally
+                {
+                    callStack.IsInGetHashCode = false;
+                }
+            }
+
+            return objectIndex;
         }
 
         public int GetTypeIndex(Type type)
@@ -248,20 +271,21 @@ namespace Haystack.Diagnostics
 
         private void AddMethodCallToStack(MethodCall methodCall)
         {
-            Stack<MethodCall> callStack = methodCallStack.GetOrAdd(Thread.CurrentThread.ManagedThreadId, CreateMethodCallStack);
-            methodCall.Index = callStack.Peek().MethodCalls.Count;
-            callStack.Peek().MethodCalls.Add(methodCall);
-            callStack.Push(methodCall);
-        }
+            MethodCallStack callStack = methodCallStack.GetOrAdd(Thread.CurrentThread.ManagedThreadId, threadId => new MethodCallStack());
+            if (callStack.IsInGetHashCode)
+            {
+                return;
+            }
 
-        private Stack<MethodCall> CreateMethodCallStack(int threadId)
-        {
-            return new Stack<MethodCall>(new[] { new MethodCall() });
+            methodCall.Index = callStack.CallStack.Peek().MethodCalls.Count;
+            callStack.CallStack.Peek().MethodCalls.Add(methodCall);
+            callStack.CallStack.Push(methodCall);
         }
-
+        
         private MethodCall RemoveMethodCallFromStack()
         {
-            return methodCallStack[Thread.CurrentThread.ManagedThreadId].Pop();
+            MethodCallStack callStack = methodCallStack[Thread.CurrentThread.ManagedThreadId];
+            return callStack.IsInGetHashCode ? null : callStack.CallStack.Pop();
         }
 
         private IndexedObject<ObjectInstance> CreateObjectIndex(object instance)
