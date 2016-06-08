@@ -1,4 +1,4 @@
-﻿namespace Haystack.Diagnostics.ObjectModel
+﻿namespace Haystack.Diagnostics
 {
     internal sealed class IndexedObject<T>
     {
