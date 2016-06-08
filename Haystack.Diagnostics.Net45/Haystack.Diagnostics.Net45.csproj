@@ -219,6 +219,9 @@
     <Compile Include="..\Haystack.Diagnostics\ObjectModel\IMethodCall.cs">
       <Link>ObjectModel\IMethodCall.cs</Link>
     </Compile>
+    <Compile Include="..\Haystack.Diagnostics\MethodCallStack.cs">
+      <Link>MethodCallStack.cs</Link>
+    </Compile>
     <Compile Include="..\Haystack.Diagnostics\ObjectModel\IMethodCallThreadTrace.cs">
       <Link>ObjectModel\IMethodCallThreadTrace.cs</Link>
     </Compile>
