@@ -7,5 +7,7 @@
         string Arguments { get; set; }
 
         string StandardOutputFile { get; set; }
+        
+        string AssemblyToTest { get; }
     }
 }
