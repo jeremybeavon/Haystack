@@ -120,7 +120,8 @@ namespace Haystack.Diagnostics
             return new TestRunContext()
             {
                 Exe = exe,
-                Arguments = runnerArgumentsProvider == null ? runner.RunnerArguments : runnerArgumentsProvider.BuildRunnerArguments()
+                Arguments = runnerArgumentsProvider == null ? runner.RunnerArguments : runnerArgumentsProvider.BuildRunnerArguments(),
+                AssemblyToTest = runner.AssemblyToTest
             };
         }
 
