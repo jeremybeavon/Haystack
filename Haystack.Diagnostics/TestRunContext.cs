@@ -7,5 +7,7 @@
         public string Exe { get; set; }
 
         public string StandardOutputFile { get; set; }
+        
+        public string AssemblyToTest { get; set; }
     }
 }
