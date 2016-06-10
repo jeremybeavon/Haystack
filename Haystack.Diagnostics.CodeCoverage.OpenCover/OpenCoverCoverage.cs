@@ -19,7 +19,9 @@ namespace Haystack.Diagnostics.CodeCoverage.OpenCover
             StringBuilder argments = new StringBuilder();
             argments.AppendFormat("\"-target:{0}\"", testRunContext.Exe);
             argments.AppendFormat(" \"-targetargs:{0}\"", testRunContext.Arguments.Replace("\"", "\"\""));
-            argments.AppendFormat(" -register:user");
+            argments.AppendFormat(" \"-targetdir:{0}\"", Path.GetDirectoryName(testRunContext.AssemblyToTest));
+            argments.Append(" -register:user");
+            argments.Append(" -mergebyhash");
             argments.AppendFormat(" \"-output:{0}\"", outputXmlFile);
             argments.AppendFormat(" \"-filter:{0}\"", codeCoverageContext.CodeCoverageFilter);
             testRunContext.Exe = Path.Combine(assemblyDirectory, "OpenCover", "OpenCover.Console.exe");
