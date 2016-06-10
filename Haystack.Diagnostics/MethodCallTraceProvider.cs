@@ -159,6 +159,15 @@ namespace Haystack.Diagnostics
             {
                 SerializationContext.Default.GetSerializer<MethodCallTrace>().Pack(stream, methodCallTrace);
             }
+            
+            Initialize(methodCallTrace);
+            foreach (MethodCallThreadTrace threadTrace in methodCallTrace.MethodCallThreads)
+            {
+                using (TextWriter writer = File.CreateText(fileName + "." + threadTrace.ThreadId + ".txt"))
+                {
+                    new MethodCallThreadTraceText(threadTrace).WriteText(writer);
+                }
+            }
         }
 
         public static MethodCallTrace Load(string fileName)
